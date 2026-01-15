@@ -44,7 +44,7 @@ toc: false
 
 ※ 進度によって内容が若干変わることがあります。
 
-1. [Quartoとは＆R Markdownとの比較](index.qmd)
+1. [Quartoとは＆R Markdownとの比較](intro.qmd)
 1. [実習環境の導入](install.qmd)
 1. [Markdown文法の基礎](markdown.qmd)
 1. [文書の作成](document.qmd)

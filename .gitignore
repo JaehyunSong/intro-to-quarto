@@ -11,3 +11,6 @@ documents/
 /_freeze/
 .quarto
 
+
+/.quarto/
+**/*.quarto_ipynb

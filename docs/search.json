@@ -665,7 +665,7 @@
     "href": "share_slide.html#通常のhtmlファイルの限界",
     "title": "6/ 文書とスライドの共有",
     "section": "（通常の）HTMLファイルの限界",
-    "text": "（通常の）HTMLファイルの限界\n\n我々が見ているWEBブラウザ上の画面は1つのHTMLファイルだけではない。\n\nHTML（骨格とテキスト）、CSS（見た目、書式）、画像・動画、JavaScript1など\n\nHTMLだけを共有しても、我々が想定したものと違ったものが表示される。\n\nHTML単体にすべてのものを埋め込む必要がある\n\n\n\n\n\n\n\nHTMLのみ\n\n\n\n\n\n\nStandaloneなHTML\n\n\n\n短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込む"
+    "text": "（通常の）HTMLファイルの限界\n\n我々が見ているWEBブラウザ上の画面は1つのHTMLファイルだけではない。\n\nHTML（骨格とテキスト）、CSS（見た目、書式）、画像・動画、JavaScript1など\n\nHTMLだけを共有しても、我々が想定したものと違ったものが表示される。\n\nHTML単体にすべてのものを埋め込む必要がある\n\n\n\n\n\n\n\nHTMLのみ（CSS/JavaScript抜き）\n\n\n\n\n\n\nStandaloneなHTML\n\n\n\n短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込むことが多い"
   },
   {
     "objectID": "share_slide.html#html形式ファイルの共有方法",
@@ -679,7 +679,7 @@
     "href": "share_slide.html#pdfファイルの作成",
     "title": "6/ 文書とスライドの共有",
     "section": "PDFファイルの作成",
-    "text": "PDFファイルの作成\n\n文書\n\nHTMLファイルをWebブラウザ（Firefox、Chrome、Edge、Safari、…）でPDF印刷\nformat: pdfにして最初からPDF文書として作成する\n\nスライド\n\nHTMLファイルをWebブラウザ（Firefox、Chrome、Edge、Safari、…）でPDF印刷\nformat: beamerにして最初からPDFスライドとして作成する\nformat: pptxもありだが、…"
+    "text": "PDFファイルの作成\n\n文書\n\nHTMLファイルをWebブラウザ（Firefox、Chrome、Edge、Safari、…）でPDF印刷\nformat: pdfにして最初からPDF文書として作成する（第4回参照）\n\nスライド\n\nHTMLファイルをWebブラウザ（Firefox、Chrome、Edge、Safari、…）でPDF印刷\nformat: beamerにして最初からPDFスライドとして作成する\nformat: pptxもありだが、…"
   },
   {
     "objectID": "share_slide.html#standalone-htmlファイルの作成",

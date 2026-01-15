@@ -20,13 +20,13 @@ pacman::p_load(tidyverse)
 ## （通常の）HTMLファイルの限界
 
 - 我々が見ているWEBブラウザ上の画面は1つのHTMLファイル**だけではない**。
-   - HTML[（骨格とテキスト）]{.small}、CSS[（見た目、書式）]{.small}、画像・動画、JavaScript^[短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込む]など
+   - HTML[（骨格とテキスト）]{.small}、CSS[（見た目、書式）]{.small}、画像・動画、JavaScript^[短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込むことが多い]など
 - HTMLだけを共有しても、我々が想定したものと違ったものが表示される。
    - HTML単体にすべてのものを埋め込む必要がある
 
 :::: {.columns}
 ::: {.column width=50%}
-![HTMLのみ](figs/share/raw_html.png){style="border: 1px solid #CCCCCC;"}
+![HTMLのみ（CSS/JavaScript抜き）](figs/share/raw_html.png){style="border: 1px solid #CCCCCC;"}
 :::
 
 ::: {.column width=50%}
@@ -49,7 +49,7 @@ pacman::p_load(tidyverse)
 
 - 文書
    - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
-   - `format: pdf`にして最初からPDF文書として作成する
+   - `format: pdf`にして最初からPDF文書として作成する[（第4回参照）]{.small}
 - スライド
    - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
    - `format: beamer`にして最初からPDFスライドとして作成する
