@@ -311,6 +311,23 @@
 <span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> Noto Sans CJK JP</span><span class="co">       # フォントは自分のPC環境に合わせて修正</span></span>
 <span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">monofont</span><span class="kw">:</span><span class="at"> Noto Sans Mono CJK JP</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="参考文献の話" class="slide level2">
+<h2>参考文献の話</h2>
+<p>参考文献の管理・挿入はBibTeXを使用する（引用は<code>@固有キー</code>）</p>
+<ul>
+<li>参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介
+<ul>
+<li>英文のジャーナル名は<em>Journal</em>、和文のジャーナル名は『ジャーナル名』</li>
+</ul></li>
+<li>社会科学では<a href="https://github.com/ShiroTakeda/jecon-bst" target="_blank">jecon.bst</a><span class="small">（経済学用のBibTeX style file）</span>が定番</li>
+<li>2026年1月現在、正攻法でjecon.bstを使う方法は<span class="small">（少なくとも宋にとっては）</span>不明</li>
+<li>プロジェクトフォルダーに<code>.latexmkrc</code>ファイルを格納し、PDFエンジンとしてLatexmkを使用することで、<ruby>とりあえず<rt>・・・・・</rt></ruby>使うことはできる
+<ul>
+<li>『私たちのR』の<a href="https://www.jaysong.net/RBook/quarto2.html" target="blank">「第25章 Quarto[文書]」</a>を参照</li>
+<li><a href="https://www.jaysong.net/RBook/quarto2.html" class="uri">https://www.jaysong.net/RBook/quarto2.html</a></li>
+</ul></li>
+</ul>
+</section>
 <section id="スライドreveal.jsのpdf出力" class="slide level2">
 <h2>スライド（reveal.js）のPDF出力</h2>
 <p>Firefox、Chrome、Chromium<sup>1</sup>の場合<sup>2</sup></p>

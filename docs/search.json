@@ -799,5 +799,12 @@
     "title": "6/ 文書とスライドの共有",
     "section": "使い方（3）",
     "text": "使い方（3）\n\n以下のようなメッセージが表示されたら、上下キーで操作する。\n\nデフォルトは.qmdファイルのtitleのまま\n公開用URLにも使われるので、なるべく英数字のみの名前を付けよう\n\n上下キーでUse another name…を選択し、新しい名前をつける\n\n\n\n? Document name:\n❯ はじめてのQuarto\n  Use another name...\n\nしばらく待ったら、公開完了\n\nhttps://ユーザーID.quarto.pub/から公開したものの一覧が確認できる\n\n個別のファイルはhttps://ユーザーID.quarto.pub/ドキュメント名/から\n\n公開したファイルの削除、URLの変更はhttps://quartopub.com/から\n\n更新も同じ手順\n\n更新するか、新しいファイルとして公開するかを選択する必要はある"
+  },
+  {
+    "objectID": "share_slide.html#参考文献の話",
+    "href": "share_slide.html#参考文献の話",
+    "title": "6/ 文書とスライドの共有",
+    "section": "参考文献の話",
+    "text": "参考文献の話\n参考文献の管理・挿入はBibTeXを使用する（引用は@固有キー）\n\n参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介\n\n英文のジャーナル名はJournal、和文のジャーナル名は『ジャーナル名』\n\n社会科学ではjecon.bst（経済学用のBibTeX style file）が定番\n2026年1月現在、正攻法でjecon.bstを使う方法は（少なくとも宋にとっては）不明\nプロジェクトフォルダーに.latexmkrcファイルを格納し、PDFエンジンとしてLatexmkを使用することで、とりあえず・・・・・使うことはできる\n\n『私たちのR』の「第25章 Quarto[文書]」を参照\nhttps://www.jaysong.net/RBook/quarto2.html"
   }
 ]

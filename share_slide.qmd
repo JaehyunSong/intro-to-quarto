@@ -91,6 +91,18 @@ format:
     monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正
 ```
 
+## 参考文献の話
+
+参考文献の管理・挿入はBibTeXを使用する（引用は`@固有キー`）
+
+- 参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介
+   - 英文のジャーナル名は*Journal*、和文のジャーナル名は『ジャーナル名』
+- 社会科学では[jecon.bst](https://github.com/ShiroTakeda/jecon-bst){target="_blank"}[（経済学用のBibTeX style file）]{.small}が定番
+- 2026年1月現在、正攻法でjecon.bstを使う方法は[（少なくとも宋にとっては）]{.small}不明
+- プロジェクトフォルダーに`.latexmkrc`ファイルを格納し、PDFエンジンとしてLatexmkを使用することで、<ruby>とりあえず<rt>・・・・・</rt></ruby>使うことはできる
+   - 『私たちのR』の[「第25章 Quarto[文書]」](https://www.jaysong.net/RBook/quarto2.html){target="blank"}を参照
+   - <https://www.jaysong.net/RBook/quarto2.html>
+
 ## スライド（reveal.js）のPDF出力
 
 Firefox、Chrome、Chromium[^edge]の場合[^safari]
