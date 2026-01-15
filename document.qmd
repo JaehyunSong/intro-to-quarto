@@ -1,0 +1,16 @@
+---
+title: "文書の作成"
+modified-date: today
+format: html
+metadata-files: 
+  - "style/exercise.yml"
+---
+
+{{< revealjs file="document_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
+
+
+# PDF出力
+
+- LaTeX環境が用意されていればPass
+- LaTeX環境が用意されていなければ、{tinytex}パッケージインストール後、Consoleに`tinytex::install_tinytex()`かTerminalに`quarto install tinytex`
+   - 数ヶ月前までは予め`tinytex::tlmgr_install("haranoaji")`が必要だったが、今は不要になったぽい。念の為にやっておいても良いかも

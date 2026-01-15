@@ -1,0 +1,5 @@
+- source: project
+  quarto-pub:
+    - id: qpa_Tk2dYgC6NC0TYB6j9PMuRzU6PiSuhfnXtkHNJrl1YOEPctZXsiuV8I1eGijpaGmW
+    - id: c5edf8cf-0567-4bbf-becb-0aa6fb5972fa
+      url: https://tintstyle.quarto.pub/quarto-intro

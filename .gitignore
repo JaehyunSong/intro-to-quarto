@@ -1,0 +1,13 @@
+.Rhistory
+.Rapp.history
+.RData
+.RDataTmp
+.Ruserdata
+.Rproj.user/
+
+documents/
+/*_files/
+*_cache/
+/_freeze/
+.quarto
+

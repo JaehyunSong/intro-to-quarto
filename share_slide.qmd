@@ -1,0 +1,209 @@
+---
+title: "6/ 文書とスライドの共有"
+modified-date: today
+format: 
+  revealjs:
+    footer: "文書とスライドの共有"
+metadata-files: 
+  - "style/slide.yml"
+---
+
+```{r}
+#| include: false
+pacman::p_load(tidyverse)
+```
+
+{{< include _common.qmd >}}
+
+# **1** 共有方法
+
+## （通常の）HTMLファイルの限界
+
+- 我々が見ているWEBブラウザ上の画面は1つのHTMLファイル**だけではない**。
+   - HTML[（骨格とテキスト）]{.small}、CSS[（見た目、書式）]{.small}、画像・動画、JavaScript^[短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込む]など
+- HTMLだけを共有しても、我々が想定したものと違ったものが表示される。
+   - HTML単体にすべてのものを埋め込む必要がある
+
+:::: {.columns}
+::: {.column width=50%}
+![HTMLのみ](figs/share/raw_html.png){style="border: 1px solid #CCCCCC;"}
+:::
+
+::: {.column width=50%}
+![StandaloneなHTML](figs/share/full_html.png){style="border: 1px solid #CCCCCC;"}
+:::
+::::
+
+## HTML形式ファイルの共有方法
+
+- 文書、スライドを共有する方法
+   - ファイルとして共有する[（Harvard Dataverse、USB、メールの添付ファイルなど）]{.small}
+      - [**PDF化**]{.alert}する
+      - [**StandaloneなHTML**]{.alert}ファイルにする
+   - ネットに公開する
+      - [**Quarto Pub**]{.alert}、GitHub Pages、Posit Connect、Netifly、Hugging Face、...
+
+# **2** ファイル
+
+## PDFファイルの作成
+
+- 文書
+   - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
+   - `format: pdf`にして最初からPDF文書として作成する
+- スライド
+   - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
+   - `format: beamer`にして最初からPDFスライドとして作成する
+   - `format: pptx`もありだが、...
+
+## Standalone HTMLファイルの作成
+
+YAMLヘッダーを修正[（`html:`、または`revealjs:`の下）]{.small}
+
+- ファイルのサイズが非常に大きくなるので注意
+   - `embed-resources`：画像[（コードから生成された図を含む）]{.small}、CSS、JavaScript^[数式レンダリングエンジンを除く]等をHTML内に埋め込む
+   - `self-contained-math`：数式レンダリングエンジン[（MathJax等）]{.small}を埋め込む
+
+````yaml
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+````
+
+## スライド（reveal.js）のPDF出力
+
+Firefox、Chrome、Chromium[^edge]の場合[^safari]
+
+[^edge]: ChromiumベースのMicrosoft Edgeでも動作確認済み
+[^safari]: Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）
+
+1. スライドをWEBブラウザで開く
+2. `E`キーを教えてPrint Viewモードへ
+3. プリント画面を開く[（Cmd + P[macOS] or Ctrl + P[Windows/Linux]）]{.small}
+4. プリンターを「PDFとして保存」選択
+5. 用紙の向きを横長（landscape）にし、余白を「なし」にする
+6. 背景のグラフィックをONにする
+7. 保存
+
+# **3** Quarto Pub
+
+## Quarto Pub
+
+- Quartoで作成したHTMLファイル[（文書、スライド、Website、Web-book）]{.small}をネット上に公開できるサービス
+   - [**無料**]{.alert}（容量[100MB]、およびトラフィック[10GB/月]の制限あり）
+   - <https://quartopub.com/>[（会員登録が必要）]{.small}
+- R Markdown時代（?）の[RPubs](https://rpubs.com/)に類似したサービス[（上位互換?）]{.small}
+   - ドキュメント単位だけでなく、プロジェクト単位[（Website/Blog/Web-book）]{.small}の公開も可能
+   - GitHub Actionも使用可能
+- 詳細な使い方は<https://quarto.org/docs/publishing/quarto-pub.html>から
+
+<!--- 
+- 管理用ページ[（<https://quartopub.com/>）]{.small}と公開用ページ[（<https://ユーザーID.quarto.pub/>）]{.small}の区別 
+--->
+
+## 使い方
+
+共通：**Terminal**ペインを使用（Consoleベインじゃない）
+
+- 個別の文書、スライドの場合
+   - `quarto publish quarto-pub ファイル名.qmd`を入力
+   - `.qmd`ファイルが別のフォルダーに入っている場合、ファイルのパスを入力
+- Website/Web-bookの場合
+   - `quarto publish quarto-pub`を入力
+   - プロジェクトが位置したフォルダーから実行
+
+## 使い方（1）
+
+1. Terminalペインで以下のコマンドを入力
+
+```bash
+quarto publish quarto-pub my_quarto.qmd
+```
+
+2. 以下のメッセージが表示されたら「Y」を入力し、Enter（Return）キー
+
+```md
+? Authorize (Y/n) › 
+❯ In order to publish to Quarto Pub you need to authorize your account.
+  Please be sure you are logged into the correct Quarto Pub account in your
+  default web browser, then press Enter or 'Y' to authorize.
+```
+
+3. WebブラウザーからQuarto Pubへログインし、ALLOWをクリック
+   - Webブラウザーが開かず、`Please authorize by opening this url: https://quartopub.com/authorize?id=xxx`が表示されたら、URLをコピペしてアクセスする
+
+## 使い方（2）
+
+4. 以下のようなメッセージが表示されたら、上下キーで操作する。
+   - デフォルトは`.qmd`ファイルの`title`のまま
+   - 公開用URLにも使われるので、なるべく英数字のみの名前を付けよう
+      - 上下キーでUse another name...を選択し、新しい名前をつける
+
+```md
+? Document name:
+❯ はじめてのQuarto
+  Use another name...
+```
+
+5. しばらく待ったら、公開完了
+   - <https://ユーザーID.quarto.pub/>から公開したものの一覧が確認できる
+      - 個別のファイルは<https://ユーザーID.quarto.pub/ドキュメント名/>から
+   - 公開したファイルの削除、URLの変更は<https://quartopub.com/>から
+6. 更新も同じ手順
+   - 更新するか、新しいファイルとして公開するかを選択する必要はある
+
+# **4** GitHub Pages
+
+## GitHub Pages
+
+- GitHubレポジトリ内の静的HTMLファイルを外部に公開するサービス
+   - [**無料**]{.alert}
+   - 容量[（各レポジトリ1GB）]{.small}、トラフィック[（100GB/月）]{.small}、ビルド[（10回/1時間）]{.small}などの制限付き
+- gitおよびGitHubの使い方は省略
+   - これだけで1日講座が作れます...。
+   - ここで紹介するファイルのアップロード方法は正攻法でなく、邪道に近いもの
+      - GitHub CLI、GitHub Desktop、SourceTree、GitKraken
+      - RStudioやVS Code（Positron）とGitHubの連携
+
+## GitHubレポジトリの作成
+
+1. 画面左の「Create Repository」、または「New」ボタンをクリック
+2. レポジトリ名[（Repository name）]{.small}を入力し、Add READMEをONにする。
+
+![](figs/share/github_create_repo.png){fig-align="center"}
+
+## ファイルのアップロード（1）
+
+1. Add file > Upload filesを選択
+
+![](figs/share/github_upload_1.png){fig-align="center"}
+
+## ファイルのアップロード（2）
+
+2. 必要なファイルをDrag & Dropし、下段の「Commit changes」
+
+:::: {.columns}
+::: {.column width=50%}
+![](figs/share/github_upload_2.png)
+:::
+
+::: {.column width=50%}
+- Standalone HTMLならファイルのみ
+- それ以外の場合、`*_files`フォルダーや画像が格納されているフォルダー^[`![](画像のパス)`でローカルの画像を埋め込んだ場合など]等も入れる必要がある。
+:::
+::::
+
+## GitHub Pagesの設定
+
+1. Settingsメニュー（①）を選択し、Pagesタブ（②）へ
+2. BranchのNoneをmainに変更（③）
+
+![](figs/share/github_pages.png){fig-align="center"}
+
+## アップロードしたファイルの確認方法
+
+- <https://ユーザー名.github.io/レポジトリ名/ファイル名.html>から確認可能
+   - HTMLファイルがサブフォルダーに書くのされている場合、<https://ユーザー名.github.io/レポジトリ名/フォルダ名/ファイル名.html>の形式
+   - レポジトリ名が`ユーザー名.github.io`なら<https://ユーザー名.github.io/ファイル名.html>のようになるが、詳細は割愛^[主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが`docs`フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。]
+- アップロードしてから反映されるまで時間がかかる[（スライドや文書程度なら1〜2分）]{.small}
+   - Actionsメニューから処理状況が確認できる。
