@@ -1,9 +1,0 @@
----
-title: "Markdown文法の基礎"
-modified-date: today
-format: html
-metadata-files: 
-  - "style/exercise.yml"
----
-
-{{< revealjs file="markdown_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
