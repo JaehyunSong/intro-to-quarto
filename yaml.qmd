@@ -27,13 +27,13 @@ author:
   - name: カール・フリードリヒ・ガウス
     affiliation: ヘルムシュテット大学
     email: gauss@herumushutetto-u.ac.jp
-    url: https://www.jaysong.net/
+    url: https://www.gauss.com/
     attributes:
       corresponding: true
   - name: ベルンハルト・リーマン
     affiliation: ゲッティンゲン大学
     email: reimann@gettingen-u.ac.jp
-    url: https://yukiyanai.github.io/
+    url: https://wwww.riemann.shock/
 date: 1855/2/23
 date-modified: today
 lang: ja
@@ -166,12 +166,12 @@ knitr:
 
 　YAMLの基本的な書き方は`キー: 値`だ。`format: html`の場合、キー（key）が`format`、値（value）が`html`（または`"html"`）となる。YAMLの場合、値が文字列でも`"`が強制されない。また、階層構造を示すためには字下げを使うことも覚えておこう。決まった基準はないが、半角スペース2〜3個が無難だろう。
 
-　一つのキーに対し、値が2つ以上の場合、`[]`で囲み、`,`で区切る。たとえば、`author`の値が`"Jaehyun"`と`"Yuki"`なら`author: ["Jaehyun", "Yuki"]`となる。リストのもう一つの書き方は`-`である。`author:`の後に改行し、2〜3文字字下げをした上で各要素の前に`-`を付ける。つまり、以下のYAMLは`author: ["Jaehyun", "Yuki"]`と同じ内容だ。
+　一つのキーに対し、値が2つ以上の場合、`[]`で囲み、`,`で区切る。たとえば、`author`の値が`"Jaehyun"`と`"Poyon"`なら`author: ["Jaehyun", "Poyon"]`となる。リストのもう一つの書き方は`-`である。`author:`の後に改行し、2〜3文字字下げをした上で各要素の前に`-`を付ける。つまり、以下のYAMLは`author: ["Jaehyun", "Poyon"]`と同じ内容だ。
 
 ```yaml
 author:
   - "Jaehyun"
-  - "Yuki"
+  - "Poyon"
 ```
 
 　YAMLの場合、値として`キー: 値`を、つまり「キーと値のセット」を値として使うこともできる。つまり、`author`の値として`name: "Jaehyun"`を与えることもできる。しかし`author: name: "Jaehyun"`の書き方は通常ない。値の中にキーがあるということは、キーが複数ある時が一般的だろう。つまり、`author`の値として`name: "Jaehyun"`と`affiliation: "Kansai University"`両方を与えることが多いだろう。このように2つ以上の`プロパティ: 値`をブロックとしてまとめる場合は以下のように`{}`を使用する。
@@ -183,7 +183,7 @@ author: {name: "Jaeyun", affiliation: "Kansai University"}
 　もし、著者が二人以上であれば、これらを更に`[]`でまとめれば良い。
 
 ```yaml
-author: [{name: "Jaeyun", affiliation: "Kansai University"}, {name: "Yuki", affiliation: "Kochi University of Technology"}]
+author: [{name: "Jaeyun", affiliation: "Kansai University"}, {name: "Poyon", affiliation: "Seoul National University"}]
 ```
 
 　しかし、一行が非常に長くなるので、`-`で改行しても良いだろう。
@@ -191,7 +191,7 @@ author: [{name: "Jaeyun", affiliation: "Kansai University"}, {name: "Yuki", affi
 ```yaml
 author: 
   - {name: "Jaeyun", affiliation: "Kansai University"}
-  - {name: "Yuki", affiliation: "Kochi University of Technology"}
+  - {name: "Poyon", affiliation: "Seoul National University"}
 ```
 
 　また、`{}`内の要素も改行することができる。複数の`キー: 値`ペアをブロックとして扱う場合は、同じ階層で字下げをすれば良い。
@@ -200,8 +200,8 @@ author:
 author: 
   - name: "Jaeyun"
     affiliation: "Kansai University"
-  - name: "Yuki"
-    affiliation: "Kochi University of Technology"
+  - name: "Poyon"
+    affiliation: "Seoul National University"
 ```
 
 　この`[]`と`{}`、改行と字下げを組み合わせることで構造化されたメタ情報を記述できる。
@@ -230,8 +230,8 @@ author:
   # 第一著者が夜逃げしたので、著者から消す
   #- name: "Jaeyun"
   #  affiliation: "Kansai University"
-  - name: "Yuki"                                  # 土佐の猛猫
-    affiliation: "Kochi University of Technology" # a.k.a KUT
+  - name: "Poyon"
+    affiliation: "Seoul National University" # a.k.a SNU
 ```
 
 ## YAMLヘッダーの再利用

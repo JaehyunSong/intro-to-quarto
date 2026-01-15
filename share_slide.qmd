@@ -59,6 +59,7 @@ pacman::p_load(tidyverse)
 
 YAMLヘッダーを修正[（`html:`、または`revealjs:`の下）]{.small}
 
+- 文書、スライド共通
 - ファイルのサイズが非常に大きくなるので注意
    - `embed-resources`：画像[（コードから生成された図を含む）]{.small}、CSS、JavaScript^[数式レンダリングエンジンを除く]等をHTML内に埋め込む
    - `self-contained-math`：数式レンダリングエンジン[（MathJax等）]{.small}を埋め込む
@@ -69,6 +70,26 @@ format:
     embed-resources: true
     self-contained-math: true
 ````
+
+## 文書のPDF出力
+
+`format: pdf`を使用[（多少のTeXに関する知識も必要）]{.small}
+
+- LuaLaTeXの代わりにXeLaTeXも可[（CJKをすべて扱うならXeLaTeXの方がまだ便利かも）]{.small}
+
+```{.yaml}
+format:
+  pdf:
+    pdf-engine: lualatex
+    documentclass: ltjsarticle
+    classoption:
+      - a4paper
+      - 10.5pt
+    number-sections: true
+    mainfont: Noto Serif CJK JP      # フォントは自分のPC環境に合わせて修正
+    sansfont: Noto Sans CJK JP       # フォントは自分のPC環境に合わせて修正
+    monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正
+```
 
 ## スライド（reveal.js）のPDF出力
 
@@ -84,6 +105,27 @@ Firefox、Chrome、Chromium[^edge]の場合[^safari]
 5. 用紙の向きを横長（landscape）にし、余白を「なし」にする
 6. 背景のグラフィックをONにする
 7. 保存
+
+## PDF形式のスライド（Beamer）の作成
+
+`format: beamer`を使用
+
+- BeamerについてはGoogle等で「beamer 入門」で検索[（多少のTeXの知識も必要）]{.small}
+
+```{.yaml}
+format: 
+  beamer:
+    pdf-engine: lualatex
+    theme: metropolis                # 好きなテーマを使おう
+    classoption:
+      - aspectratio=169              # 縦横比4:3ならこの行を削除
+      - 10pt
+    mainfont: "Noto Sans CJK JP"     # フォントは自分のPC環境に合わせて修正
+    CJKmainfont: "Noto Sans CJK JP"  # フォントは自分のPC環境に合わせて修正
+    include-in-header: 
+      text: |
+        \usepackage{luatexja}
+```
 
 # **3** Quarto Pub
 
@@ -101,18 +143,18 @@ Firefox、Chrome、Chromium[^edge]の場合[^safari]
 - 管理用ページ[（<https://quartopub.com/>）]{.small}と公開用ページ[（<https://ユーザーID.quarto.pub/>）]{.small}の区別 
 --->
 
-## 使い方
+## 使い方（1）
 
-共通：**Terminal**ペインを使用（Consoleベインじゃない）
+共通：**Terminal**ペインを使用（Consoleベイン**じゃない**）
 
-- 個別の文書、スライドの場合
+- 個別の文書、スライドの場合[（本日はこのケースを紹介）]{.small}
    - `quarto publish quarto-pub ファイル名.qmd`を入力
    - `.qmd`ファイルが別のフォルダーに入っている場合、ファイルのパスを入力
 - Website/Web-bookの場合
    - `quarto publish quarto-pub`を入力
    - プロジェクトが位置したフォルダーから実行
 
-## 使い方（1）
+## 使い方（2）
 
 1. Terminalペインで以下のコマンドを入力
 
@@ -132,7 +174,7 @@ quarto publish quarto-pub my_quarto.qmd
 3. WebブラウザーからQuarto Pubへログインし、ALLOWをクリック
    - Webブラウザーが開かず、`Please authorize by opening this url: https://quartopub.com/authorize?id=xxx`が表示されたら、URLをコピペしてアクセスする
 
-## 使い方（2）
+## 使い方（3）
 
 4. 以下のようなメッセージが表示されたら、上下キーで操作する。
    - デフォルトは`.qmd`ファイルの`title`のまま
