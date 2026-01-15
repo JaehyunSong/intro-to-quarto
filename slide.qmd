@@ -1,0 +1,9 @@
+---
+title: "スライドの作成"
+modified-date: today
+format: html
+metadata-files: 
+  - "style/exercise.yml"
+---
+
+{{< revealjs file="slide_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}

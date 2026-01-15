@@ -1,0 +1,21 @@
+{
+  "hash": "e4b2c0e1b20d91d05155d6630bf63549",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"4/ 文書の作成\"\nmodified-date: today\nformat: \n  revealjs:\n    footer: \"文書の作成\"\nmetadata-files: [\"style/slide.yml\"]\n---\n\n\n\n\n# **1** \n\n## a\n\n- YAML header for html document\n- Cross-references\n- Callout\n- Mutliple figures / tables\n- Equation\n- PDF\n\n# **0** YAMLヘッダーの構成\n\n##\n\n- `title`と`subtitle`\n- `authro`\n- `date`\n- `lang`\n- `format`\n\n# **0** \n\n# **0** PDF出力\n\n## \n\n- 研究成果の公開、共有が目的ならあまり使わないかも\n- しかし、Quartoも立派な論文執筆のツールにもなり得るので、ここではとりあえずPDFに出力する方法を紹介\n- 最近は[typst](https://typst.app/)を使う手もあるが、定番のLaTeXを使用する方法を紹介\n\n## PDF出力のための準備\n\nLaTeX環境\n\n- TeXLive or macTeX\n- tinytex\n- haranoaji（昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう）\n\n##\n\n`{{< pagebreak >}}`\n\nCode annotation\n\n# **0** Tips\n\n## Tips\n\n1. `date`を本日（renderした日）にしたい\n   - `date: today`\n   - `date: \"2026/2/12\"`、`modified-date:today`にすると作成日と改定日が両方表示される（HTML）\n1. `.R`/`.qmd`ファイルの差し込み\n   - 1つの`.qmd`が肥大化した場合、またはよく使うコードをリサイクルする際に有効\n   - 文書内に`{{< include ファイル名.qmd >}}`を挿入\n   - チャンク内に`{{< include ファイル名.R >}}`もOK\n",
+    "supporting": [
+      "document_slide_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

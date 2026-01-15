@@ -1,0 +1,67 @@
+---
+title: "4/ 文書の作成"
+modified-date: today
+format: 
+  revealjs:
+    footer: "文書の作成"
+metadata-files: ["style/slide.yml"]
+---
+
+{{< include _common.qmd >}}
+
+# **1** 
+
+## a
+
+- YAML header for html document
+- Cross-references
+- Callout
+- Mutliple figures / tables
+- Equation
+- PDF
+
+# **0** YAMLヘッダーの構成
+
+##
+
+- `title`と`subtitle`
+- `authro`
+- `date`
+- `lang`
+- `format`
+
+# **0** 
+
+# **0** PDF出力
+
+## 
+
+- 研究成果の公開、共有が目的ならあまり使わないかも
+- しかし、Quartoも立派な論文執筆のツールにもなり得るので、ここではとりあえずPDFに出力する方法を紹介
+- 最近は[typst](https://typst.app/)を使う手もあるが、定番のLaTeXを使用する方法を紹介
+
+## PDF出力のための準備
+
+LaTeX環境
+
+- TeXLive or macTeX
+- tinytex
+- haranoaji（昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう）
+
+##
+
+`{{< pagebreak >}}`
+
+Code annotation
+
+# **0** Tips
+
+## Tips
+
+1. `date`を本日（renderした日）にしたい
+   - `date: today`
+   - `date: "2026/2/12"`、`modified-date:today`にすると作成日と改定日が両方表示される（HTML）
+1. `.R`/`.qmd`ファイルの差し込み
+   - 1つの`.qmd`が肥大化した場合、またはよく使うコードをリサイクルする際に有効
+   - 文書内に`{{< include ファイル名.qmd >}}`を挿入
+   - チャンク内に`{{< include ファイル名.R >}}`もOK
