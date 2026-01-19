@@ -1,0 +1,106 @@
+---
+title: "ショートコード"
+modified-date: today
+format: 
+  html:
+    toc: false
+metadata-files: 
+  - "style/exercise.yml"
+---
+
+## ショートコードとは
+
+　ショートコードとは様々なタイプのコンテンツを生成する少し特殊なMarkdown記法である。Quartoは十数種類のショートコードを内蔵しており、ユーザーが作成したショートコードを使うこともできる。むろん、自分でショートコードを作る[^create-shortcode]ことも可能だ。ショートコードはLua言語で作成されている。プログラミングの経験のある人なら簡単なショートコードを作ることはすぐにでもできよう[^intro-lua]。ショートコードを使う方法は`{{< ショートコード >}}`だ。これだけで動くものもあれば、引数が必要なショートコードもある。引数がある場合、`{{< ショートコード 引数1 引数2 ... >}}`のように記述する。たとえば、文書のメタ情報を呼び出すショートコードは`meta`であり、その中でもタイトルを呼び出したい場合は引数として`tittle`を使えば良い。つまり、`{{< meta title >}}`と入力すればその箇所には「{{< meta title>}}」が入ることになる。
+
+　ここでは宋がよく（?）使うショートコードを紹介する。Quarto内蔵ショートコードについては[公式ホームページ](https://quarto.org/docs/authoring/shortcodes.html){traget="_blank"}を参照されたい。
+
+[^create-shortcode]: <https://quarto.org/docs/extensions/shortcodes.html>
+
+[^intro-lua]: Lua言語の簡単な使用は<https://learnxinyminutes.com/lua/>から確認できる。
+
+## よく使うショートコード
+
+### include
+
+　includeは外部のqmdファイルを埋め込むショートコードであり、使い方は`{{< include ファイル名.qmd >}}`である。たとえば、以下のような2つのファイルがあるとする。
+
+:::: {.columns}
+::: {.column width=49%}
+````{.markdown filename="document.qmdの中身"}
+---
+title: My document
+format: html
+---
+
+{{{< include _common.qmd >}}}
+````
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=49%}
+````{.markdown filename="_common.qmdの中身"}
+```{{r}}
+pacman::p_load(tidyverse, gt)
+```
+````
+:::
+::::
+
+　この場合、`document.qmd`のショートコードの箇所に`_common.qmd`が入ることになる。したがって、以上のqmdファイルは以下のコードと同じ内容となる。
+
+````{.markdown}
+---
+title: My document
+format: html
+---
+
+```{{r}}
+pacman::p_load(tidyverse, gt)
+```
+````
+
+　よく使うチャンク（パッケージの読み込みや、Rの環境設定、{ggplot2}のテーマ設定など）を再利用することもできるし、一つのqmdファイルが膨大になった場合、セクションごとにファイルを分割する目的として使用しても良い。
+
+　ただし、includeショートコードは対象のファイルをコピー&ペーストする点は注意する必要がある。言い換えれると、評価（evaluation）が終わった`_common.qmd`を`document.qmd`に埋め込むのではなく、`_common.qmd`を`document.qmd`にコピペしてから評価を行うことである。多くの場合は問題ないが、相対パスの使い方には注意する必要がある。もし、`_common.qmd`が`document.qmd`と異なるフォルダーに保存されている場合、`_common.qmd`に書く相対パスは`document.qmd`を基準に記述する必要がある。
+
+### video
+
+　文書やスライドに動画を入れることもできる。ローカルにある`.mp4`ファイルも良いし、YouTubeの動画も挿入可能だ。たとえば、史上初のYouTube動画（<https://www.youtube.com/watch?v=jNQXAC9IVRw>）^[動画一本しかないのに、チャンネル登録者数が500万人を超えている...。]を文書の中に入れるためには以下のように入力する。
+
+**Input：**
+
+````{.markdown}
+{{{< video https://www.youtube.com/watch?v=jNQXAC9IVRw >}}}
+````
+
+**Output：**
+
+{{< video https://www.youtube.com/watch?v=jNQXAC9IVRw >}}
+
+　videoショートコードにはいくつかのオプションが提供されている。動画を15秒からスタートしたい場合は`{{< video 動画URL start="15">}}`にすれば良い。動画の大きさは`width`と`height`で調節可能で、縦横比は`aspect-ratio`で変更できる^[既定値は`"16x9"`であり、他に`"1x1"`、`"4x3"`、`"21x9"`が指定できる。]。
+
+### placeholder
+
+　placeholderは論文執筆やスライド作成段階で使える便利なショートコードだ。これは「ここに図/表が入る予定だが、まだ何も作っていない」といった場合、とりあえずダミーの画像を入れておく機能である。引数は横と縦の大きさ（px単位）を入れるだけだ^[大きさを指定しないと100 x 100の画像が生成される]。デフォルトはPNG形式の画像が生成されるが、ベクトルベースのSVGがほしいのであれば`format="svg"`を追加しよう。
+
+:::: {.columns}
+::: {.column width=49%}
+````{.markdown}
+{{{< placeholder 600 400 >}}}
+````
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=49%}
+{{< placeholder 600 400 >}}
+:::
+::::
+
+### pagebreak
+
+　pagebreakは「改ページ」のショートコードである。たとえばTeXの場合、`\newpage`や`\clearpage`で改ページを行う。Microsoft Wordとかであれば、改ページボタンを押せば良い。問題はQuartoはHTML、PDF、Microsoft Word、Open Documentなど様々なフォーマットで書き出すことができるということだ。つまり、改ページ方法が統一されていない。これを解決するショートコードがpagebreakである。`{{< pagebreak >}}`を入れると、そこで改ページが行われる^[HTMLの場合、画面上では改ページされているかどうかは分からないが、印刷の際にはちゃんと改ページされる。]。
+統一されていない

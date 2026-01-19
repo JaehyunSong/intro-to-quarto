@@ -33,8 +33,8 @@ website:
         contents:
           - text: "YAMLヘッダー"
             href: yaml.qmd
-          - text: "拡張機能"
-            href: extension.qmd
+          - text: "ショートコード"
+            href: shortcodes.qmd
       - section: "資料"
         contents:
           - text: "Quarto公式"

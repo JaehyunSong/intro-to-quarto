@@ -45,16 +45,6 @@ pacman::p_load(tidyverse)
 
 # **2** ファイル
 
-## PDFファイルの作成
-
-- 文書
-   - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
-   - `format: pdf`にして最初からPDF文書として作成する[（第4回参照）]{.small}
-- スライド
-   - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
-   - `format: beamer`にして最初からPDFスライドとして作成する
-   - `format: pptx`もありだが、...
-
 ## Standalone HTMLファイルの作成
 
 YAMLヘッダーを修正[（`html:`、または`revealjs:`の下）]{.small}
@@ -71,73 +61,15 @@ format:
     self-contained-math: true
 ````
 
-## 文書のPDF出力
+## PDFファイルの作成
 
-`format: pdf`を使用[（多少のTeXに関する知識も必要）]{.small}
-
-- LuaLaTeXの代わりにXeLaTeXも可[（CJKをすべて扱うならXeLaTeXの方がまだ便利かも）]{.small}
-
-```{.yaml}
-format:
-  pdf:
-    pdf-engine: lualatex
-    documentclass: ltjsarticle
-    classoption:
-      - a4paper
-      - 10.5pt
-    number-sections: true
-    mainfont: Noto Serif CJK JP      # フォントは自分のPC環境に合わせて修正
-    sansfont: Noto Sans CJK JP       # フォントは自分のPC環境に合わせて修正
-    monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正
-```
-
-## 参考文献の話
-
-参考文献の管理・挿入はBibTeXを使用する（引用は`@固有キー`）
-
-- 参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介
-   - 英文のジャーナル名は*Journal*、和文のジャーナル名は『ジャーナル名』
-- 社会科学では[jecon.bst](https://github.com/ShiroTakeda/jecon-bst){target="_blank"}[（経済学用のBibTeX style file）]{.small}が定番
-- 2026年1月現在、正攻法でjecon.bstを使う方法は[（少なくとも宋にとっては）]{.small}不明
-- プロジェクトフォルダーに`.latexmkrc`ファイルを格納し、PDFエンジンとしてLatexmkを使用することで、<ruby>とりあえず<rt>・・・・・</rt></ruby>使うことはできる
-   - 『私たちのR』の[「第25章 Quarto[文書]」](https://www.jaysong.net/RBook/quarto2.html){target="blank"}を参照
-   - <https://www.jaysong.net/RBook/quarto2.html>
-
-## スライド（reveal.js）のPDF出力
-
-Firefox、Chrome、Chromium[^edge]の場合[^safari]
-
-[^edge]: ChromiumベースのMicrosoft Edgeでも動作確認済み
-[^safari]: Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）
-
-1. スライドをWEBブラウザで開く
-2. `E`キーを教えてPrint Viewモードへ
-3. プリント画面を開く[（Cmd + P[macOS] or Ctrl + P[Windows/Linux]）]{.small}
-4. プリンターを「PDFとして保存」選択
-5. 用紙の向きを横長（landscape）にし、余白を「なし」にする
-6. 背景のグラフィックをONにする
-7. 保存
-
-## PDF形式のスライド（Beamer）の作成
-
-`format: beamer`を使用
-
-- BeamerについてはGoogle等で「beamer 入門」で検索[（多少のTeXの知識も必要）]{.small}
-
-```{.yaml}
-format: 
-  beamer:
-    pdf-engine: lualatex
-    theme: metropolis                # 好きなテーマを使おう
-    classoption:
-      - aspectratio=169              # 縦横比4:3ならこの行を削除
-      - 10pt
-    mainfont: "Noto Sans CJK JP"     # フォントは自分のPC環境に合わせて修正
-    CJKmainfont: "Noto Sans CJK JP"  # フォントは自分のPC環境に合わせて修正
-    include-in-header: 
-      text: |
-        \usepackage{luatexja}
-```
+- 文書
+   - HTMLファイルをWebブラウザ[（Firefox、Chrome、Edge、Safari、...）]{.small}でPDF印刷
+      - あまり推奨はできない
+   - `format: pdf`にして最初からPDF文書として作成する[（第4講参照）]{.small}
+- スライド
+   - HTMLファイルをWebブラウザでPDF印刷[（第5講参照）]{.small}
+   - `format: beamer`にして最初からPDFスライドとして作成する[（第5講参照）]{.small}
 
 # **3** Quarto Pub
 
@@ -261,3 +193,10 @@ quarto publish quarto-pub my_quarto.qmd
    - レポジトリ名が`ユーザー名.github.io`なら<https://ユーザー名.github.io/ファイル名.html>のようになるが、詳細は割愛^[主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが`docs`フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。]
 - アップロードしてから反映されるまで時間がかかる[（スライドや文書程度なら1〜2分）]{.small}
    - Actionsメニューから処理状況が確認できる。
+
+# **5** その他
+
+## その他
+
+- セッション情報やパッケージのバージョンを明記
+- renvや<https://www.mybinder.org>など

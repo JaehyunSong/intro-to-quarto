@@ -3,7 +3,7 @@ title: "3/ Markdown文法の基礎"
 modified-date: today
 format: 
   revealjs:
-    footer: "Markdown文法の基礎"
+    footer: "3/ Markdown文法の基礎"
 metadata-files: 
   - "style/slide.yml"
 ---
@@ -43,7 +43,7 @@ pacman::p_load(tidyverse, gt)
 
 ## Quartoファイルの構造
 
-````md
+````markdown
 ---
 YAMLヘッダー
 ---
@@ -84,7 +84,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 文章1
 文章2
 
@@ -108,7 +108,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 *Italic*
 
 **太字**
@@ -138,7 +138,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 # 見出し1
 
 ## 見出し2
@@ -170,7 +170,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 
 **Input:**
 
-```md
+```markdown
 [宋のHP](https://www.jaysong.net)
 
 [関大のHP](https://www.kansai-u.ac.jp/){target="_blank"}
@@ -191,7 +191,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 家系ラーメン^[横浜]が食べたい。
 
 ラーメン二郎[^jiro]も食べたい。
@@ -223,7 +223,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 これは文章1です。
 
 <!--
@@ -257,7 +257,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 - 項目1
   - 項目1-1
   - 項目1-2
@@ -293,7 +293,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 1. 項目1
    1. 項目1-1
    1. 項目1-2
@@ -319,6 +319,45 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 :::
 ::::
 
+## 箇条書き（チェックリスト）
+
+- `-` + 半角スペース + `[x]` + 半角スペース + テキスト：checked item
+   - `x`を半角スペースにするとunchecked item
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+```markdown
+買い物リスト（キムチチゲ）
+
+- 食材
+   - [x] キムチ
+   - [ ] 玉ねぎ
+   - [x] 豚肉（肩ロース）
+- 調味料
+   - [ ] 醤油
+   - [ ] 砂糖
+   - [x] 味の素
+```
+:::
+
+::: {.column width=50%}
+**Output:**
+
+買い物リスト（キムチチゲ）
+
+- 食材
+   - [x] キムチ
+   - [ ] 玉ねぎ
+   - [x] 豚肉（肩ロース）
+- 調味料
+   - [ ] 醤油
+   - [ ] 砂糖
+   - [x] 味の素
+:::
+::::
+
 ## 表
 
 - 行は改行（1回） + 列は`|`で表記
@@ -329,7 +368,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 |ID   |Name |Height|Favorite|
 |:---:|-----|-----:|:-------|
 |1    |SONG |176   |Ramen   |
@@ -351,7 +390,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 |ID|Name|Height|Favorite|
 |:-:|-|-:|:-|
 |1|SONG|176|Ramen|
@@ -376,7 +415,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 
 **Input:**
 
-```md
+```markdown
 ![R Cat](https://www.jaysong.net/imgs/favicon.png)
 ```
 
@@ -393,7 +432,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 ![Tiny cat](画像URL){width=30}
 
 ![Big cat](画像URL){width=100}
@@ -417,7 +456,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Input:**
 
-```md
+```markdown
 文中の数式：$e = mc^2$
 ```
 :::
@@ -431,7 +470,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 
 **Input:**
 
-```md
+```markdown
 $$
 F(x; \mu, b) =
 \begin{cases}
@@ -458,7 +497,7 @@ $$
 ::: {.column width=50%}
 **Input:**
 
-````md
+````markdown
 ::: {layout-ncol=4}
 ![零号機](画像1のURL or パス)
 
@@ -486,7 +525,7 @@ $$
 ::: {.column width=50%}
 **Input:**
 
-````md
+````markdown
 ::: {layout-ncol=2}
 |ID   |Name |Favorite|
 |:---:|-----|:-------|
@@ -776,7 +815,7 @@ print("Hi!")
 ::: {.column width=50%}
 **Input:**
 
-````md
+````markdown
 ```{{r}}
 #| include: false
 hidden_x <- 1:10

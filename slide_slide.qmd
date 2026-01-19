@@ -15,4 +15,58 @@ pacman::p_load(tidyverse)
 
 {{< include _common.qmd >}}
 
-# **1** 
+# **1** YAMLヘッダーの構成
+
+## revealjsについて
+
+# **2** よく使う機能
+
+## スライドの構成
+
+## ロゴの入れ方
+
+## 箇条書きのアニメーション
+
+## 隠しスライド
+
+## 発表者用画面
+
+## ホワイトボードとペン機能
+
+# **3** PDF出力
+
+## スライド（reveal.js）のPDF出力
+
+Firefox、Chrome、Chromium[^edge]の場合[^safari]
+
+[^edge]: ChromiumベースのMicrosoft Edgeでも動作確認済み
+[^safari]: Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）
+
+1. スライドをWEBブラウザで開く
+2. `E`キーを教えてPrint Viewモードへ
+3. プリント画面を開く[（Cmd + P[macOS] or Ctrl + P[Windows/Linux]）]{.small}
+4. プリンターを「PDFとして保存」選択
+5. 用紙の向きを横長（landscape）にし、余白を「なし」にする
+6. 背景のグラフィックをONにする
+7. 保存
+
+## PDF形式のスライド（Beamer）の作成
+
+`format: beamer`を使用
+
+- BeamerについてはGoogle等で「beamer 入門」で検索[（多少のTeXの知識も必要）]{.small}
+
+```{.yaml}
+format: 
+  beamer:
+    pdf-engine: lualatex
+    theme: metropolis                # 好きなテーマを使おう
+    classoption:
+      - aspectratio=169              # 縦横比4:3ならこの行を削除
+      - 10pt
+    mainfont: "Noto Sans CJK JP"     # フォントは自分のPC環境に合わせて修正
+    CJKmainfont: "Noto Sans CJK JP"  # フォントは自分のPC環境に合わせて修正
+    include-in-header: 
+      text: |
+        \usepackage{luatexja}
+```

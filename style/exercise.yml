@@ -3,6 +3,7 @@ format:
   html:
     theme: [style/exercise.scss, brand]
     toc: true
+    toc-depth: 3
     linestretch: 1.7
 knitr: 
   opts_chunk: 

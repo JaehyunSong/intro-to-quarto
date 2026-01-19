@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="宋財泫（関西大学）">
   <title>Quarto実習資料 – 6/ 文書とスライドの共有</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-a27a7969ea70ac853fa78e3f5e0e023b.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d16e513934ddcf5ac4200ff3440253c9.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -261,22 +261,6 @@
 <h1><strong>2</strong> ファイル</h1>
 
 </section>
-<section id="pdfファイルの作成" class="slide level2">
-<h2>PDFファイルの作成</h2>
-<ul>
-<li>文書
-<ul>
-<li>HTMLファイルをWebブラウザ<span class="small">（Firefox、Chrome、Edge、Safari、…）</span>でPDF印刷</li>
-<li><code>format: pdf</code>にして最初からPDF文書として作成する<span class="small">（第4回参照）</span></li>
-</ul></li>
-<li>スライド
-<ul>
-<li>HTMLファイルをWebブラウザ<span class="small">（Firefox、Chrome、Edge、Safari、…）</span>でPDF印刷</li>
-<li><code>format: beamer</code>にして最初からPDFスライドとして作成する</li>
-<li><code>format: pptx</code>もありだが、…</li>
-</ul></li>
-</ul>
-</section>
 <section id="standalone-htmlファイルの作成" class="slide level2">
 <h2>Standalone HTMLファイルの作成</h2>
 <p>YAMLヘッダーを修正<span class="small">（<code>html:</code>、または<code>revealjs:</code>の下）</span></p>
@@ -293,72 +277,23 @@
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self-contained-math</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <aside><ol class="aside-footnotes"><li id="fn2"><p>数式レンダリングエンジンを除く</p></li></ol></aside></section>
-<section id="文書のpdf出力" class="slide level2">
-<h2>文書のPDF出力</h2>
-<p><code>format: pdf</code>を使用<span class="small">（多少のTeXに関する知識も必要）</span></p>
+<section id="pdfファイルの作成" class="slide level2">
+<h2>PDFファイルの作成</h2>
 <ul>
-<li>LuaLaTeXの代わりにXeLaTeXも可<span class="small">（CJKをすべて扱うならXeLaTeXの方がまだ便利かも）</span></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> ltjsarticle</span></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> a4paper</span></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10.5pt</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> Noto Serif CJK JP</span><span class="co">      # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> Noto Sans CJK JP</span><span class="co">       # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">monofont</span><span class="kw">:</span><span class="at"> Noto Sans Mono CJK JP</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="参考文献の話" class="slide level2">
-<h2>参考文献の話</h2>
-<p>参考文献の管理・挿入はBibTeXを使用する（引用は<code>@固有キー</code>）</p>
+<li>文書
 <ul>
-<li>参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介
+<li>HTMLファイルをWebブラウザ<span class="small">（Firefox、Chrome、Edge、Safari、…）</span>でPDF印刷
 <ul>
-<li>英文のジャーナル名は<em>Journal</em>、和文のジャーナル名は『ジャーナル名』</li>
+<li>あまり推奨はできない</li>
 </ul></li>
-<li>社会科学では<a href="https://github.com/ShiroTakeda/jecon-bst" target="_blank">jecon.bst</a><span class="small">（経済学用のBibTeX style file）</span>が定番</li>
-<li>2026年1月現在、正攻法でjecon.bstを使う方法は<span class="small">（少なくとも宋にとっては）</span>不明</li>
-<li>プロジェクトフォルダーに<code>.latexmkrc</code>ファイルを格納し、PDFエンジンとしてLatexmkを使用することで、<ruby>とりあえず<rt>・・・・・</rt></ruby>使うことはできる
+<li><code>format: pdf</code>にして最初からPDF文書として作成する<span class="small">（第4講参照）</span></li>
+</ul></li>
+<li>スライド
 <ul>
-<li>『私たちのR』の<a href="https://www.jaysong.net/RBook/quarto2.html" target="blank">「第25章 Quarto[文書]」</a>を参照</li>
-<li><a href="https://www.jaysong.net/RBook/quarto2.html" class="uri">https://www.jaysong.net/RBook/quarto2.html</a></li>
+<li>HTMLファイルをWebブラウザでPDF印刷<span class="small">（第5講参照）</span></li>
+<li><code>format: beamer</code>にして最初からPDFスライドとして作成する<span class="small">（第5講参照）</span></li>
 </ul></li>
 </ul>
-</section>
-<section id="スライドreveal.jsのpdf出力" class="slide level2">
-<h2>スライド（reveal.js）のPDF出力</h2>
-<p>Firefox、Chrome、Chromium<sup>1</sup>の場合<sup>2</sup></p>
-<ol type="1">
-<li>スライドをWEBブラウザで開く</li>
-<li><code>E</code>キーを教えてPrint Viewモードへ</li>
-<li>プリント画面を開く<span class="small">（Cmd + P[macOS] or Ctrl + P[Windows/Linux]）</span></li>
-<li>プリンターを「PDFとして保存」選択</li>
-<li>用紙の向きを横長（landscape）にし、余白を「なし」にする</li>
-<li>背景のグラフィックをONにする</li>
-<li>保存</li>
-</ol>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>ChromiumベースのMicrosoft Edgeでも動作確認済み</p></li><li id="fn4"><p>Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）</p></li></ol></aside></section>
-<section id="pdf形式のスライドbeamerの作成" class="slide level2">
-<h2>PDF形式のスライド（Beamer）の作成</h2>
-<p><code>format: beamer</code>を使用</p>
-<ul>
-<li>BeamerについてはGoogle等で「beamer 入門」で検索<span class="small">（多少のTeXの知識も必要）</span></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> metropolis</span><span class="co">                # 好きなテーマを使おう</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> aspectratio=169</span><span class="co">              # 縦横比4:3ならこの行を削除</span></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10pt</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">     # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>        \usepackage{luatexja}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="quarto-pub" class="title-slide slide level1 center">
@@ -405,14 +340,14 @@
 <ol type="1">
 <li>Terminalペインで以下のコマンドを入力</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub my_quarto.qmd</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub my_quarto.qmd</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>以下のメッセージが表示されたら「Y」を入力し、Enter（Return）キー</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>? Authorize (Y/n) › </span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>❯ In order to publish to Quarto Pub you need to authorize your account.</span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>  Please be sure you are logged into the correct Quarto Pub account in your</span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>  default web browser, then press Enter or 'Y' to authorize.</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>? Authorize (Y/n) › </span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>❯ In order to publish to Quarto Pub you need to authorize your account.</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>  Please be sure you are logged into the correct Quarto Pub account in your</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>  default web browser, then press Enter or 'Y' to authorize.</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>WebブラウザーからQuarto Pubへログインし、ALLOWをクリック
 <ul>
@@ -432,9 +367,9 @@
 </ul></li>
 </ul></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>? Document name:</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>❯ はじめてのQuarto</span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>  Use another name...</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>? Document name:</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>❯ はじめてのQuarto</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>  Use another name...</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="5" type="1">
 <li>しばらく待ったら、公開完了
 <ul>
@@ -511,7 +446,7 @@
 <li>それ以外の場合、<code>*_files</code>フォルダーや画像が格納されているフォルダー<sup>1</sup>等も入れる必要がある。</li>
 </ul>
 </div></div>
-<aside><ol class="aside-footnotes"><li id="fn5"><p><code>![](画像のパス)</code>でローカルの画像を埋め込んだ場合など</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p><code>![](画像のパス)</code>でローカルの画像を埋め込んだ場合など</p></li></ol></aside></section>
 <section id="github-pagesの設定" class="slide level2">
 <h2>GitHub Pagesの設定</h2>
 <ol type="1">
@@ -537,9 +472,21 @@
 <li>Actionsメニューから処理状況が確認できる。</li>
 </ul></li>
 </ul>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが<code>docs</code>フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。</p></li></ol></aside></section></section>
+<section>
+<section id="その他" class="title-slide slide level1 center">
+<h1><strong>5</strong> その他</h1>
+
+</section>
+<section id="その他-1" class="slide level2">
+<h2>その他</h2>
+<ul>
+<li>セッション情報やパッケージのバージョンを明記</li>
+<li>renvや<a href="https://www.mybinder.org" class="uri">https://www.mybinder.org</a>など</li>
+</ul>
 
 
-<aside><ol class="aside-footnotes"><li id="fn6"><p>主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが<code>docs</code>フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。</p></li></ol></aside></section></section>
+</section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

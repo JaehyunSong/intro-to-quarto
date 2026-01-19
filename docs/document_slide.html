@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ja"><head>
+<html lang="en"><head>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="宋財泫（関西大学）">
   <title>Quarto実習資料 – 4/ 文書の作成</title>
@@ -28,8 +28,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-a27a7969ea70ac853fa78e3f5e0e023b.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d16e513934ddcf5ac4200ff3440253c9.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -140,95 +206,2980 @@
 
 </section>
 <section>
-<section id="section" class="title-slide slide level1 center">
-<h1><strong>1</strong></h1>
+<section id="yamlヘッダーの構成" class="title-slide slide level1 center">
+<h1><strong>1</strong> YAMLヘッダーの構成</h1>
 
 </section>
-<section id="a" class="slide level2">
-<h2>a</h2>
+<section id="yamlヘッダーの構成要素の一部" class="slide level2">
+<h2>YAMLヘッダーの構成要素（の一部）</h2>
 <ul>
-<li>YAML header for html document</li>
-<li>Cross-references</li>
-<li>Callout</li>
-<li>Mutliple figures / tables</li>
-<li>Equation</li>
-<li>PDF</li>
+<li>（1）<span class="alert"><strong>メタ情報</strong></span>、（2）<span class="alert"><strong>フォーマット</strong></span>、（3）<span class="alert"><strong>チャンクオプション</strong></span>に大別
+<ul>
+<li>メタ情報：タイトル、作成日、作成者、言語、概要、…</li>
+<li>フォーマット：HTML文書（<code>html</code>）か、PDF文書（<code>pdf</code>）か、HTMLスライド（<code>revealjs</code>）か、…
+<ul>
+<li>文書の幅、目次の見た目、コードハイライトのテーマなど文書の「全体的」な見た目や構成に関する内容が多い</li>
+</ul></li>
+<li>チャンクオプション：全チャンクに共通するチャンクオプション</li>
+</ul></li>
+<li>詳細はQuarto公式ホームページを参照
+<ul>
+<li><a href="https://quarto.org/docs/reference/" class="uri">https://quarto.org/docs/reference/</a></li>
+</ul></li>
 </ul>
+</section>
+<section id="文書のメタ情報例" class="slide level2">
+<h2>文書のメタ情報（例）</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> 文書のタイトル</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> 文書のサブタイトル</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3">3</button><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4">4</button><span id="annotated-cell-1-4" class="code-annotation-target"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 宋財泫</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5">5</button><span id="annotated-cell-1-5" class="code-annotation-target"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> 関西大学</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6">6</button><span id="annotated-cell-1-6" class="code-annotation-target"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> song@kansai-u.ac.jp</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7">7</button><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://www.jaysong.net/</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8">8</button><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> ぽよんぽよん</span></span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> 国立ソウル大学校</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9">9</button><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 1986/10/8</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10">10</button><span id="annotated-cell-1-11" class="code-annotation-target"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">date-modified</span><span class="kw">:</span><span class="at"> today</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11">11</button><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lang</span><span class="kw">:</span><span class="at"> ja</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="12">12</button><span id="annotated-cell-1-13" class="code-annotation-target"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a>      ここに概要が入る</span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a>      長ければ改行しても良い</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">文書のタイトル</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">文書のサブタイトル</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="3">著者名：著者が一人で、氏名のみOKなら<code>author: 著者名</code>でもOK</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="4">第一著者の氏名</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="5" data-code-annotation="5">第一著者の所属</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="6">第一著者のメールアドレス</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="7">第一著者のホームページ</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="8,9" data-code-annotation="8">第二著者の氏名と所属</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="9">文書の作成日</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="11" data-code-annotation="10">文書の最終修正日：<code>today</code>にするとレンダーした日付が自動的に入る</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="12" data-code-annotation="11">文書の言語</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="13,14,15" data-code-annotation="12">文書の概要：普段は不要だが、Quartoで論文を執筆する際はよく使う。概要が長い場合、<code>|</code>を入力し、改行してから概要を書く</span>
+</dd>
+</dl>
+</section>
+<section id="フォーマット例" class="slide level2">
+<h2>フォーマット（例）</h2>
+<p><code>format: html</code>を基本とし、オプションを追加したい場合は以下のように書く</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">grid</span><span class="kw">:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">body-width</span><span class="kw">:</span><span class="at"> 1024px</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> flatly</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> a11y</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6">6</button><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-location</span><span class="kw">:</span><span class="at"> right</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="7">7</button><span id="annotated-cell-2-9" class="code-annotation-target"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="8">8</button><span id="annotated-cell-2-10" class="code-annotation-target"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">ページレイアウト：<code>sidebar-width</code>（左のサイドバーの幅）、<code>body-width</code>（本文の幅）、<code>margin-width</code>（右のサイドバーの幅）、<code>gutter-width</code>（間隔）が調節可能</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="2">本文の幅を1024pxに（既定値は800px）</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="3">flatlyテーマを使用</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="4">コードハイライトのスタイルはa11y</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="5">目次あり</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="6">目次の位置は右側のサイドバー（通常、「マージン」と呼ばれる領域）</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="9" data-code-annotation="7">目次の深度は3</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="10" data-code-annotation="8">見出しに通し番号を付ける</span>
+</dd>
+</dl>
+</section>
+<section id="チャンクオプション例" class="slide level2">
+<h2>チャンクオプション（例）</h2>
+<p>すべてのチャンクに同じオプションを付けたい場合</p>
+<ul>
+<li>個別のチャンクにオプションは<code>knitr: opts_chunk</code>より優先する</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dev</span><span class="kw">:</span><span class="at"> ragg_png</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2">2</button><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig-align</span><span class="kw">:</span><span class="at"> center</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3">3</button><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dpi</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4">4</button><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5">5</button><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">作図エンジンは{ragg}のpngフォーマットにする（文字化け防止）</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">図は中央に揃える（<code>![]()</code>で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="3">図は解像度は300に（印刷する予定がないなら150程度でもOK））</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="4">メッセージを表示しない（{tidyverse}の読み込みや<code>read_csv()</code>後のメッセージなど）</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="5">警告メッセージを表示しない</span>
+</dd>
+</dl>
 </section></section>
 <section>
-<section id="yamlヘッダーの構成" class="title-slide slide level1 center">
-<h1><strong>0</strong> YAMLヘッダーの構成</h1>
+<section id="よく使う機能" class="title-slide slide level1 center">
+<h1><strong>2</strong> よく使う機能</h1>
 
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
+<section id="相互参照" class="slide level2">
+<h2>相互参照</h2>
+<p>相互参照（cross-reference）の方法：<code>@ラベル名</code></p>
 <ul>
-<li><code>title</code>と<code>subtitle</code></li>
-<li><code>authro</code></li>
-<li><code>date</code></li>
-<li><code>lang</code></li>
-<li><code>format</code></li>
+<li>図、表、式の場合、自動的に「図 1」や「Table 5」のように接頭詞が付く
+<ul>
+<li>文書の言語設定に依存</li>
+<li>見出しの場合は数字のみ出力される</li>
+</ul></li>
+<li>相互参照に使う図表等のラベル名には決まった接頭詞（prefix）を使う
+<ul>
+<li>図（<code>fig-</code>）、表（<code>tbl-</code>）、数式（<code>eq-</code>）、見出し（<code>sec-</code>）</li>
+</ul></li>
+<li><code>@ラベル名</code>の前後は半角スペースを入れる</li>
 </ul>
-</section></section>
-<section id="section-2" class="title-slide slide level1 center">
-<h1><strong>0</strong></h1>
-
 </section>
+<section id="相互参照単一の図" class="slide level2">
+<h2>相互参照（単一の図）</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>@fig-myfig1 は適当に作った表です。</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-myfig1</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: 適当に作った図</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<p><a href="#/fig-myfig1" class="quarto-xref">図&nbsp;1</a> は適当に作った図です。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-myfig1" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-myfig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="document_slide_files/figure-revealjs/fig-myfig1-1.png" class="quarto-figure quarto-figure-center" width="1800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-myfig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;1: 適当に作った図
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>R猫弐号機（@fig-rcat2nd）</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="al">![R猫弐号機](画像パス)</span>{#fig-rcat2nd}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:35%;">
+<p><strong>Output:</strong></p>
+<p>R猫弐号機（<a href="#/fig-rcat2nd" class="quarto-xref">図&nbsp;2</a>）</p>
+<div id="fig-rcat2nd" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-rcat2nd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/markdown/rcat_2.png" width="150">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rcat2nd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;2: R猫弐号機
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="相互参照単一の表" class="slide level2">
+<h2>相互参照（単一の表）</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>@tbl-mytbl1 は適当に作った表です。</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-mytbl1</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: 適当に作った表</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<p><a href="#/tbl-mytbl1" class="quarto-xref">表&nbsp;1</a> は適当に作った表です。</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-mytbl1" class="cell quarto-float quarto-figure quarto-figure-center" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mytbl1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;1: 適当に作った表
+</figcaption>
+<div aria-describedby="tbl-mytbl1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="auemzxeqwd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#auemzxeqwd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+#auemzxeqwd thead, #auemzxeqwd tbody, #auemzxeqwd tfoot, #auemzxeqwd tr, #auemzxeqwd td, #auemzxeqwd th {
+  border-style: none;
+}
+
+#auemzxeqwd p {
+  margin: 0;
+  padding: 0;
+}
+
+#auemzxeqwd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#auemzxeqwd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#auemzxeqwd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#auemzxeqwd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#auemzxeqwd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#auemzxeqwd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#auemzxeqwd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#auemzxeqwd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#auemzxeqwd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#auemzxeqwd .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#auemzxeqwd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#auemzxeqwd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#auemzxeqwd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#auemzxeqwd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#auemzxeqwd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#auemzxeqwd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#auemzxeqwd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#auemzxeqwd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#auemzxeqwd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#auemzxeqwd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#auemzxeqwd .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#auemzxeqwd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#auemzxeqwd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#auemzxeqwd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#auemzxeqwd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#auemzxeqwd .gt_left {
+  text-align: left;
+}
+
+#auemzxeqwd .gt_center {
+  text-align: center;
+}
+
+#auemzxeqwd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#auemzxeqwd .gt_font_normal {
+  font-weight: normal;
+}
+
+#auemzxeqwd .gt_font_bold {
+  font-weight: bold;
+}
+
+#auemzxeqwd .gt_font_italic {
+  font-style: italic;
+}
+
+#auemzxeqwd .gt_super {
+  font-size: 65%;
+}
+
+#auemzxeqwd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#auemzxeqwd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#auemzxeqwd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#auemzxeqwd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#auemzxeqwd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#auemzxeqwd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#auemzxeqwd .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#auemzxeqwd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#auemzxeqwd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Length">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Width">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Petal.Length">Petal.Length</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.1</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.5</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.9</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.0</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.7</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.2</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.3</td></tr>
+  </tbody>
+  
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>@tbl-mytbl2 も適当に作った表です。</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>Name    <span class="pp">|</span>Age <span class="pp">|</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|---:|</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>Takaichi<span class="pp">|</span>64  <span class="pp">|</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>Noda    <span class="pp">|</span>68  <span class="pp">|</span></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>:与野党党首の年齢 {#tbl-mytbl2}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<p><a href="#/tbl-mytbl2" class="quarto-xref">表&nbsp;2</a> も適当に作った表です。</p>
+<div id="tbl-mytbl2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mytbl2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;2: 与野党党首の年齢
+</figcaption>
+<div aria-describedby="tbl-mytbl2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">Age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Takaichi</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Noda</td>
+<td style="text-align: right;">68</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="相互参照複数の図" class="slide level2">
+<h2>相互参照（複数の図）</h2>
+<p>参照方法は<code>@fig-ラベル名</code><span class="small">（単一の図と同じ方法）</span></p>
+<ul>
+<li>ラベルは<code>::: {layout-ncol=n #fig-ラベル名}</code>と<code>![](画像パス){#fig-ラベル名}</code>のように両方指定</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2 #fig-rcats}</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="al">![弐号機](画像3のURL or パス)</span>{#fig-rcats1}</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="al">![量産機](画像4のURL or パス)</span>{#fig-rcats2}</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a>: かわいいR猫たち</span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>@fig-rcats は..., @fig-rcats2 は...</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<div id="fig-rcats" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-rcats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-rcats" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-rcats1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-rcats1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/markdown/rcat_2.png" data-ref-parent="fig-rcats" width="100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-rcats1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 弐号機
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-rcats" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-rcats2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-rcats2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/markdown/rcat_3.png" data-ref-parent="fig-rcats" width="100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-rcats2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 量産機
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rcats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;3: かわいいR猫たち
+</figcaption>
+</figure>
+</div>
+<p><a href="#/fig-rcats" class="quarto-xref">図&nbsp;3</a> は…, <a href="#/fig-rcats2" class="quarto-xref">図&nbsp;3 (b)</a> は…</p>
+</div></div>
+</section>
+<section id="相互参照複数の図-続き" class="slide level2">
+<h2>相互参照（複数の図; 続き）</h2>
+<p>図の群を参照する方法は<code>@fig-ラベル名</code><span class="small">（単一の図と同じ方法）</span></p>
+<ul>
+<li>個別の図を参照したい場合は<code>@fig-ラベル名-番号</code><span class="small">（最初の図から1、2、3、…）</span></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-two-plts</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: 2つの折れ線グラフ</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-subcap: </span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - 線のみ</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - 点 + 線</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"b"</span>)</span>
+<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a aria-hidden="true" tabindex="-1"></a>@fig-two-plts は..., @fig-two-plts-1 は...</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<div id="fig-two-plts" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-two-plts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-two-plts" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-two-plts-1" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-two-plts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="document_slide_files/figure-revealjs/fig-two-plts-1.png" class="quarto-figure quarto-figure-center" data-ref-parent="fig-two-plts" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-two-plts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 線のみ
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-two-plts" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-two-plts-2" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-two-plts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="document_slide_files/figure-revealjs/fig-two-plts-2.png" class="quarto-figure quarto-figure-center" data-ref-parent="fig-two-plts" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-two-plts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 点 + 線
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-plts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;4: 2つの折れ線グラフ
+</figcaption>
+</figure>
+</div>
+<p><a href="#/fig-two-plts" class="quarto-xref">図&nbsp;4</a> は…, <a href="#/fig-two-plts-1" class="quarto-xref">図&nbsp;4 (a)</a> は…</p>
+</div></div>
+</section>
+<section id="相互参照複数の表" class="slide level2">
+<h2>相互参照（複数の表）</h2>
+<p>参照方法は<code>@tbl-ラベル名</code><span class="small">（単一の表と同じ方法）</span></p>
+<ul>
+<li>図同様、群のラベルと個別のラベルを両方指定する</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>::: {#tbl-favorite layout-ncol=2}</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>ID   <span class="pp">|</span>Name <span class="pp">|</span>Favorite<span class="pp">|</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|:---:|-----|:-------|</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>1    <span class="pp">|</span>Song <span class="pp">|</span>Ramen   <span class="pp">|</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>: 宋の好物 {#tbl-favorite-s}</span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>ID   <span class="pp">|</span>Name <span class="pp">|</span>Favorite<span class="pp">|</span></span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|:---:|-----|:-------|</span></span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>2    <span class="pp">|</span>Kim  <span class="pp">|</span>Truffle <span class="pp">|</span></span>
+<span id="cb8-10"><a aria-hidden="true" tabindex="-1"></a>: 金の好物 {#tbl-favorite-k}</span>
+<span id="cb8-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a aria-hidden="true" tabindex="-1"></a>好物リスト</span>
+<span id="cb8-13"><a aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a aria-hidden="true" tabindex="-1"></a>@tbl-favorite と @tbl-favorite-s</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<div id="tbl-favorite" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-favorite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;3: 好物リスト
+</figcaption>
+<div aria-describedby="tbl-favorite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-favorite" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-favorite-s" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-favorite-s-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 宋の好物
+</figcaption>
+<div aria-describedby="tbl-favorite-s-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">ID</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Favorite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Song</td>
+<td style="text-align: left;">Ramen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-favorite" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-favorite-k" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-favorite-k-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 金の好物
+</figcaption>
+<div aria-describedby="tbl-favorite-k-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">ID</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Favorite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Kim</td>
+<td style="text-align: left;">Truffle</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p><a href="#/tbl-favorite" class="quarto-xref">表&nbsp;3</a> と <a href="#/tbl-favorite-s" class="quarto-xref">表&nbsp;3 (a)</a></p>
+</div></div>
+</section>
+<section id="相互参照複数の表-続き" class="slide level2">
+<h2>相互参照（複数の表; 続き）</h2>
+<p>複数の図の相互参照と同じ方法</p>
+<ul>
+<li>ただし、ラベルの接頭詞は<code>fig-</code>でなく、<code>tbl-</code></li>
+<li><code>fig-cap</code>、<code>fig-subcap</code>の代わりに<code>tbl-cap</code>と<code>tbl-subcap</code>を使用</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-two-tbls</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: irisデータセットの一部</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-subcap: </span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - setosa</span></span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - versicolor</span></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])   <span class="co"># setosa</span></span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]) <span class="co"># versicolor</span></span>
+<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a aria-hidden="true" tabindex="-1"></a>@tbl-two-tbls と @tbl-two-tbls-1</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])   <span class="co"># setosa</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]) <span class="co"># versicolor</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-two-tbls" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-two-tbls-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;4: irisデータセットの一部
+</figcaption>
+<div aria-describedby="tbl-two-tbls-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-two-tbls" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-two-tbls-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-two-tbls-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) setosa
+</figcaption>
+<div aria-describedby="tbl-two-tbls-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="mdnyefryrt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mdnyefryrt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#mdnyefryrt thead, #mdnyefryrt tbody, #mdnyefryrt tfoot, #mdnyefryrt tr, #mdnyefryrt td, #mdnyefryrt th {
+  border-style: none;
+}
+
+#mdnyefryrt p {
+  margin: 0;
+  padding: 0;
+}
+
+#mdnyefryrt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#mdnyefryrt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#mdnyefryrt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#mdnyefryrt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#mdnyefryrt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#mdnyefryrt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#mdnyefryrt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#mdnyefryrt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#mdnyefryrt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mdnyefryrt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#mdnyefryrt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mdnyefryrt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#mdnyefryrt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#mdnyefryrt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#mdnyefryrt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mdnyefryrt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#mdnyefryrt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#mdnyefryrt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mdnyefryrt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mdnyefryrt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#mdnyefryrt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mdnyefryrt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#mdnyefryrt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mdnyefryrt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mdnyefryrt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mdnyefryrt .gt_left {
+  text-align: left;
+}
+
+#mdnyefryrt .gt_center {
+  text-align: center;
+}
+
+#mdnyefryrt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#mdnyefryrt .gt_font_normal {
+  font-weight: normal;
+}
+
+#mdnyefryrt .gt_font_bold {
+  font-weight: bold;
+}
+
+#mdnyefryrt .gt_font_italic {
+  font-style: italic;
+}
+
+#mdnyefryrt .gt_super {
+  font-size: 65%;
+}
+
+#mdnyefryrt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#mdnyefryrt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#mdnyefryrt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#mdnyefryrt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#mdnyefryrt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#mdnyefryrt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#mdnyefryrt .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#mdnyefryrt .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mdnyefryrt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Length">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Width">Sepal.Width</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.1</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.5</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.9</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.0</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.7</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.2</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.6</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.1</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.0</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.6</td></tr>
+  </tbody>
+  
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-two-tbls" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-two-tbls-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-tbl">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-two-tbls-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) versicolor
+</figcaption>
+<div aria-describedby="tbl-two-tbls-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="vtbcgjtlkh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vtbcgjtlkh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vtbcgjtlkh thead, #vtbcgjtlkh tbody, #vtbcgjtlkh tfoot, #vtbcgjtlkh tr, #vtbcgjtlkh td, #vtbcgjtlkh th {
+  border-style: none;
+}
+
+#vtbcgjtlkh p {
+  margin: 0;
+  padding: 0;
+}
+
+#vtbcgjtlkh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vtbcgjtlkh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vtbcgjtlkh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vtbcgjtlkh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vtbcgjtlkh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vtbcgjtlkh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vtbcgjtlkh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vtbcgjtlkh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vtbcgjtlkh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vtbcgjtlkh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vtbcgjtlkh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vtbcgjtlkh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vtbcgjtlkh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vtbcgjtlkh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vtbcgjtlkh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vtbcgjtlkh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vtbcgjtlkh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vtbcgjtlkh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vtbcgjtlkh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vtbcgjtlkh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vtbcgjtlkh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vtbcgjtlkh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vtbcgjtlkh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vtbcgjtlkh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vtbcgjtlkh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vtbcgjtlkh .gt_left {
+  text-align: left;
+}
+
+#vtbcgjtlkh .gt_center {
+  text-align: center;
+}
+
+#vtbcgjtlkh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vtbcgjtlkh .gt_font_normal {
+  font-weight: normal;
+}
+
+#vtbcgjtlkh .gt_font_bold {
+  font-weight: bold;
+}
+
+#vtbcgjtlkh .gt_font_italic {
+  font-style: italic;
+}
+
+#vtbcgjtlkh .gt_super {
+  font-size: 65%;
+}
+
+#vtbcgjtlkh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vtbcgjtlkh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vtbcgjtlkh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vtbcgjtlkh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vtbcgjtlkh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vtbcgjtlkh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vtbcgjtlkh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vtbcgjtlkh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vtbcgjtlkh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Length">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Width">Sepal.Width</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">7.0</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.2</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">6.4</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.2</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">6.9</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.1</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.5</td>
+<td headers="Sepal.Width" class="gt_row gt_right">2.3</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">6.5</td>
+<td headers="Sepal.Width" class="gt_row gt_right">2.8</td></tr>
+  </tbody>
+  
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p><a href="#/tbl-two-tbls" class="quarto-xref">表&nbsp;4</a> と <a href="#/tbl-two-tbls-1" class="quarto-xref">表&nbsp;4 (a)</a></p>
+</div></div>
+</section>
+<section id="相互参照数式" class="slide level2">
+<h2>相互参照（数式）</h2>
+<p><code>$$</code>の後ろの<code>{#eq-ラベル名}</code>を追加</p>
+<ul>
+<li>2つ目の<code>$$</code>の後ろにラベルを付けること（1つ目の後だとエラーが出る）。</li>
+</ul>
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>ポアソン分布の確率密度関数（@eq-poisson）は美しいぞ。</span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}</span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>$$ {#eq-poisson}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output：</strong></p>
+<p>ポアソン分布の確率密度関数（<a href="#/eq-poisson" class="quarto-xref">式&nbsp;1</a>）は美しいぞ。</p>
+<p><span id="eq-poisson"><span class="math display">\[
+p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
+\tag{1}\]</span></span></p>
+</section>
+<section id="相互参照見出し" class="slide level2">
+<h2>相互参照（見出し）</h2>
+<ul>
+<li><code>[-@sec-ラベル名]</code><sup>1</sup>
+<ul>
+<li>見出しのラベルは<code>## 見出し {#sec-ラベル名}</code>のように指定</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># はじめに {#sec-intro}</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 背景 {#sec-background}</span></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 問い {#sec-rq}</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### 問い1 {#sec-rq1}</span></span>
+<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### 問い2 {#sec-rq2}</span></span>
+<span id="cb12-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 先行研究 {#sec-review}</span></span>
+<span id="cb12-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a aria-hidden="true" tabindex="-1"></a>第<span class="co">[</span><span class="ot">-@sec-intro</span><span class="co">]</span>章、第<span class="co">[</span><span class="ot">-@sec-rq</span><span class="co">]</span>章、第<span class="co">[</span><span class="ot">-@sec-rq2</span><span class="co">]</span>章</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:35%;">
+<p><strong>Output：</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/document/cross-ref-sec.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><code>@sec-ラベル名</code>でも動くが、自動的に「<strong>セクション</strong> 1.2」のような接頭詞が付いてしまう。</p></li></ol></aside></section>
+<section id="引用" class="slide level2">
+<h2>引用</h2>
+<ul>
+<li>YAMLヘッダーに<code>.bib</code>ファイルを指定（例：<code>bibliography: references.bib</code>）
+<ul>
+<li><code>@固有キー</code>：著者名（年）</li>
+<li><code>[@固有キー]</code>：（著者名 年）</li>
+<li><code>[-@固有キー]</code>：（年）</li>
+</ul></li>
+<li>英語の文献のみなら良いが、日本語の文献を引用する時はかなり厄介</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">引用の例</a></li><li><a href="#tabset-1-2"><code>references.bib</code>の中身</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>@imai_williams_2022 says ...</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">see @knuth_1984; @imai_williams_2022</span><span class="co">]</span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>The god<span class="co">[</span><span class="ot">-@knuth_1984</span><span class="co">]</span> says ...</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:55%;">
+<p><strong>Output：</strong></p>
+<p>Imai and Williams (2022) says …</p>
+<p>(see Knuth 1984; Imai and Williams 2022)</p>
+<p>The God (1984) says …</p>
+</div></div>
+</div>
+<div id="tabset-1-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bib code-with-copy"><code class="sourceCode bibtex"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">knuth_1984</span>,</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>  = {Donald E. Knuth},</span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>    = {1984},</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>   = {Literate Programming},</span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span> = {The Computer Journal},</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">volume</span>  = {27},</span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">number</span>  = {2},</span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>   = {97--111}</span>
+<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">imai_williams_2022</span>,</span>
+<span id="cb14-12"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Kosuke Imai and Nora Webb Williams},</span>
+<span id="cb14-13"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2022},</span>
+<span id="cb14-14"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Quantitative Social Science: An Introduction in tidyverse},</span>
+<span id="cb14-15"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Princeton University Press},</span>
+<span id="cb14-16"><a aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="コールアウト" class="slide level2">
+<h2>コールアウト</h2>
+<p><code>::: {.callout-*}</code>と<code>:::</code>（見出しは<code>#</code>、<code>##</code>、…）</p>
+<ul>
+<li><code>*</code>には<code>note</code>、<code>warning</code>、<code>important</code>、<code>tip</code>、<code>caution</code></li>
+<li>オプション：<code>icon="false"</code>と<code>collapse="true"</code></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">#### Quartoは私たちの友達!</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a>末永くよろしくね!</span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output：</strong></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Quartoは私たちの友達!</strong></p>
+</div>
+<div class="callout-content">
+<p>末永くよろしくね!</p>
+</div>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon="false"}</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">#### アイコンを消したい...?</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">`icon="false"`</span>を付けてみてね</span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output：</strong></p>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>アイコンを消したい…?</strong></p>
+</div>
+<div class="callout-content">
+<p><code>icon="false"</code>を付けてみてね</p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="パネル" class="slide level2">
+<h2>パネル</h2>
+<p><code>::: {.panel-tabset}</code>と<code>:::</code>で囲まれた領域内の内容が段組みの対象</p>
+<ul>
+<li>各タブの見出しは<code>#</code><span class="small">（宋は主に<code>####</code>か<code>#</code>5つ以上を使用）</span></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">#### コード</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a>my_plt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris) <span class="sc">+</span></span>
+<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,</span>
+<span id="cb17-9"><a aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> Petal.Width,</span>
+<span id="cb17-10"><a aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> Species))</span>
+<span id="cb17-11"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu">#### 結果</span></span>
+<span id="cb17-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-16"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my_plt)</span>
+<span id="cb17-17"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-18"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output：</strong></p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">コード</a></li><li><a href="#tabset-2-2">結果</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>my_plt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris) <span class="sc">+</span></span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,</span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> Petal.Width,</span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> Species))</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my_plt)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="document_slide_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="段組み" class="slide level2">
+<h2>段組み</h2>
+<aside class="notes">
+<p><code>format: revealjs</code>の場合、columnの幅の合計が100%になると最後のcolumnが改行される場合もある（普通に問題なく動くケースも多い）。合計99%にすると問題はない</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><code>::::{.columns}</code>と<code>::::</code>で囲まれた領域内の内容が段組みの対象</p>
+<ul>
+<li><code>:::{.column}</code>と<code>:::</code>で囲まれた領域が一つ一つの段（<code>width=</code>で幅指定）</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>:::: {.columns}</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>::: {.column width=15%}</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>1段目</span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a>::: {.column width=25%}</span>
+<span id="cb20-7"><a aria-hidden="true" tabindex="-1"></a><span class="al">![R Cat](画像パス)</span></span>
+<span id="cb20-8"><a aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb20-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a aria-hidden="true" tabindex="-1"></a>::: {.column width=60%}</span>
+<span id="cb20-11"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-12"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span>
+<span id="cb20-13"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-14"><a aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb20-15"><a aria-hidden="true" tabindex="-1"></a>::::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:70%;">
+<p><strong>Output：</strong></p>
+<div class="columns">
+<div class="column" style="width:15%;">
+<p>1段目</p>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/rcat.png" data-align="center"></p>
+<figcaption>R Cat</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:59%;">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="hdzyyyvupm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hdzyyyvupm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hdzyyyvupm thead, #hdzyyyvupm tbody, #hdzyyyvupm tfoot, #hdzyyyvupm tr, #hdzyyyvupm td, #hdzyyyvupm th {
+  border-style: none;
+}
+
+#hdzyyyvupm p {
+  margin: 0;
+  padding: 0;
+}
+
+#hdzyyyvupm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hdzyyyvupm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hdzyyyvupm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hdzyyyvupm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hdzyyyvupm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hdzyyyvupm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hdzyyyvupm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hdzyyyvupm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hdzyyyvupm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hdzyyyvupm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hdzyyyvupm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hdzyyyvupm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hdzyyyvupm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hdzyyyvupm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hdzyyyvupm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hdzyyyvupm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hdzyyyvupm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hdzyyyvupm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hdzyyyvupm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hdzyyyvupm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hdzyyyvupm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hdzyyyvupm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hdzyyyvupm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hdzyyyvupm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hdzyyyvupm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hdzyyyvupm .gt_left {
+  text-align: left;
+}
+
+#hdzyyyvupm .gt_center {
+  text-align: center;
+}
+
+#hdzyyyvupm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hdzyyyvupm .gt_font_normal {
+  font-weight: normal;
+}
+
+#hdzyyyvupm .gt_font_bold {
+  font-weight: bold;
+}
+
+#hdzyyyvupm .gt_font_italic {
+  font-style: italic;
+}
+
+#hdzyyyvupm .gt_super {
+  font-size: 65%;
+}
+
+#hdzyyyvupm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hdzyyyvupm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hdzyyyvupm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hdzyyyvupm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hdzyyyvupm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hdzyyyvupm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hdzyyyvupm .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hdzyyyvupm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hdzyyyvupm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Length">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sepal.Width">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Petal.Length">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Petal.Width">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.1</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.5</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.9</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.0</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.7</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.2</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.3</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.6</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.1</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.5</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.0</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.6</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.4</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.9</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.7</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.4</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.6</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.4</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.3</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">5.0</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.4</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.5</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.4</td>
+<td headers="Sepal.Width" class="gt_row gt_right">2.9</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.4</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.2</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+    <tr><td headers="Sepal.Length" class="gt_row gt_right">4.9</td>
+<td headers="Sepal.Width" class="gt_row gt_right">3.1</td>
+<td headers="Petal.Length" class="gt_row gt_right">1.5</td>
+<td headers="Petal.Width" class="gt_row gt_right">0.1</td>
+<td headers="Species" class="gt_row gt_center">setosa</td></tr>
+  </tbody>
+  
+</table>
+</div>
+</div>
+</div>
+</div></div>
+</div></div>
+</section>
+<section id="コードの注釈" class="slide level2">
+<h2>コードの注釈</h2>
+<p>チャンク内の各行の最後に<code># &lt;数字&gt;</code>を追加し、チャンク外に<code>数字. 注釈</code>を記入</p>
+<ul>
+<li>複数の行に同じ番号を振ることも可</li>
+<li>以下はYAMLヘッダーに<code>code-annotations: select</code>を指定した例
+<ul>
+<li>他にも<code>below</code>（既定値）、<code>hover</code>あり</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>   <span class="co"># &lt;1&gt;</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="co"># &lt;2&gt;</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)    <span class="co"># &lt;2&gt;</span></span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>xに1から10の自然数を格納</span>
+<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>yにxの和を格納し、出力</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output：</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-29"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-29" data-target-annotation="1">1</button><span id="annotated-cell-29-1" class="code-annotation-target"><a href="#annotated-cell-29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-29" data-target-annotation="2">2</button><span id="annotated-cell-29-2" class="code-annotation-target"><a href="#annotated-cell-29-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="annotated-cell-29-3"><a href="#annotated-cell-29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-29" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-29" data-code-lines="1" data-code-annotation="1">xに1から10の自然数を格納</span>
+</dd>
+<dt data-target-cell="annotated-cell-29" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-29" data-code-lines="2,3" data-code-annotation="2">yにxの和を格納し、出力</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 55</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="チャンクの表示" class="slide level2">
+<h2>チャンクの表示</h2>
+<p><code>{r}</code>の代わりに<code>{{r}}</code>を使用</p>
+<ul>
+<li>授業資料<span class="small">（Quartoの使い方）</span>を作成する時くらいしか使わない機能</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{{r}}</span></span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-myplt</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: My plot</span></span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">plot(1:10)</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Output：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-myplt</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: My plot</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section></section>
 <section>
 <section id="pdf出力" class="title-slide slide level1 center">
-<h1><strong>0</strong> PDF出力</h1>
+<h1><strong>3</strong> PDF出力</h1>
 
 </section>
-<section id="section-3" class="slide level2">
-<h2></h2>
+<section id="pdf出力が必要なケース" class="slide level2">
+<h2>PDF出力が必要なケース</h2>
 <ul>
-<li>研究成果の公開、共有が目的ならあまり使わないかも</li>
-<li>しかし、Quartoも立派な論文執筆のツールにもなり得るので、ここではとりあえずPDFに出力する方法を紹介</li>
-<li>最近は<a href="https://typst.app/">typst</a>を使う手もあるが、定番のLaTeXを使用する方法を紹介</li>
-</ul>
-</section>
-<section id="pdf出力のための準備" class="slide level2">
-<h2>PDF出力のための準備</h2>
-<p>LaTeX環境</p>
+<li><span class="alert"><strong>研究成果の公開、共有が目的ならHTMLで十分</strong></span>
 <ul>
-<li>TeXLive or macTeX</li>
-<li>tinytex</li>
-<li>haranoaji（昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう）</li>
-</ul>
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<p></p>
-<p>Code annotation</p>
-</section></section>
-<section>
-<section id="tips" class="title-slide slide level1 center">
-<h1><strong>0</strong> Tips</h1>
-
-</section>
-<section id="tips-1" class="slide level2">
-<h2>Tips</h2>
-<ol type="1">
-<li><code>date</code>を本日（renderした日）にしたい
-<ul>
-<li><code>date: today</code></li>
-<li><code>date: "2026/2/12"</code>、<code>modified-date:today</code>にすると作成日と改定日が両方表示される（HTML）</li>
+<li>HTMLの方が機能が豊富であり、見た目のカスタマイズも比較的簡単<sup>1</sup></li>
 </ul></li>
-<li><code>.R</code>/<code>.qmd</code>ファイルの差し込み
+<li>しかし、Quartoは論文執筆のための強力なツールでもある
 <ul>
-<li>1つの<code>.qmd</code>が肥大化した場合、またはよく使うコードをリサイクルする際に有効</li>
-<li>文書内に<code>{{&lt; include ファイル名.qmd &gt;}}</code>を挿入</li>
-<li>チャンク内に<code>{{&lt; include ファイル名.R &gt;}}</code>もOK</li>
+<li>HTMLフォーマッ可のジャーナルはないはず<span class="small">（少なくとも政治学では）</span></li>
+<li><span class="math inline">\(\Rightarrow\)</span> 論文、レポートをなどの<span class="alert"><strong>印刷を念頭においたもの</strong></span>を作成するのであれば、出力物はHTMLよりもPDFが望ましい</li>
+</ul></li>
+<li>最近は<a href="https://typst.app/">typst</a>を使う手もあるが、ここでは定番のLaTeXを使用する方法を紹介</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>CSS/SCSSの知識があれば相当細かいレベルまでいじれる。</p></li></ol></aside></section>
+<section id="quartoからpdfを作成するための準備" class="slide level2">
+<h2>QuartoからPDFを作成するための準備</h2>
+<p>LaTeX環境を予め用意しておくこと</p>
+<ol type="1">
+<li>TeXLive（Windows/Linux） or macTeX（macOS）
+<ul>
+<li>TeX環境のインストールは時間がかかるため、TeX初心者はtinytexを推奨</li>
 </ul></li>
 </ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>haranoajiパッケージ（多分、今は不要<sup>1</sup>）
+<ul>
+<li>TeXLive/macTeXの場合
+<ul>
+<li><code>tlmgr install haranoaji</code>（Windows<sup>2</sup>）</li>
+<li><code>sudo tlmgr install haranoaji</code>（macOS/Linux）</li>
+</ul></li>
+<li>tinytex環境ならRコンソールで<code>tinytex::tlmgr_install("haranoaji")</code></li>
+</ul></li>
+</ol>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう。</p></li><li id="fn4"><p>管理者としてターミナルを開く</p></li></ol></aside></section>
+<section id="どこを修正すれば良いか" class="slide level2">
+<h2>どこを修正すれば良いか</h2>
+<p>YAMLヘッダーの<code>format</code>を<code>html</code>から<code>pdf</code>に変えるだけ</p>
+<ul>
+<li>日本語が含まれた文書は文字化けが発生するおそれがあるため、修正が必要<sup>1</sup></li>
+<li>LuaLaTeXの代わりにXeLaTeXも可<sup>2</sup></li>
+<li>以下は日本語を含むPDFを出力するためのYAMLヘッダーの例</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> ltjsarticle</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> a4paper</span></span>
+<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10.5pt</span></span>
+<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> Noto Serif CJK JP</span><span class="co">      # フォントは自分のPC環境に合わせて修正</span></span>
+<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> Noto Sans CJK JP</span><span class="co">       # フォントは自分のPC環境に合わせて修正</span></span>
+<span id="cb27-11"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">monofont</span><span class="kw">:</span><span class="at"> Noto Sans Mono CJK JP</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>多少のTeXに関する知識も必要</p></li><li id="fn6"><p>CJKをすべて扱うならXeLaTeXの方がまだ便利かも知れない。</p></li></ol></aside></section>
+<section id="html-pdfの二刀流" class="slide level2">
+<h2>HTML + PDFの二刀流</h2>
+<p>一つのYAMLヘッダーに複数のフォーマットを指定することも可</p>
+<ul>
+<li>どのフォーマットでレンダーするかはRenderボタン右の▼をクリックして選べる</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> flatly</span></span>
+<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> a11y</span></span>
+<span id="cb28-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb28-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
+<span id="cb28-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> ltjsarticle</span></span>
+<span id="cb28-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
+<span id="cb28-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> a4paper</span></span>
+<span id="cb28-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10.5pt</span></span>
+<span id="cb28-11"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> Noto Serif CJK JP</span></span>
+<span id="cb28-12"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> Noto Sans CJK JP</span></span>
+<span id="cb28-13"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">monofont</span><span class="kw">:</span><span class="at"> Noto Sans Mono CJK JP</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="参考参考文献の話" class="slide level2">
+<h2>参考）参考文献の話</h2>
+<p>参考文献の管理・挿入はBibTeXを使用する（引用は<code>@固有キー</code>）</p>
+<ul>
+<li>参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介
+<ul>
+<li>例）英文のジャーナル名は<em>Journal</em>、和文のジャーナル名は『ジャーナル名』</li>
+</ul></li>
+<li>社会科学では<a href="https://github.com/ShiroTakeda/jecon-bst" target="_blank">jecon.bst</a><span class="small">（経済学用のBibTeX style file）</span>が定番</li>
+<li>2026年1月現在、正攻法でjecon.bstを使う方法は<span class="small">（少なくとも宋にとっては）</span>不明</li>
+<li>プロジェクトフォルダーに<code>.latexmkrc</code>ファイルを格納し、PDFエンジンとしてLatexmkを使用することで、<ruby>とりあえず<rt>・・・・・</rt></ruby>使うことはできる
+<ul>
+<li>『私たちのR』の<a href="https://www.jaysong.net/RBook/quarto2.html" target="blank">「第25章 Quarto[文書]」</a>を参照</li>
+<li><a href="https://www.jaysong.net/RBook/quarto2.html" class="uri">https://www.jaysong.net/RBook/quarto2.html</a></li>
+</ul></li>
+</ul>
 
 
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>文書の作成</p>
+<p>4/ 文書の作成</p>
 </div>
 </div></div>
 
@@ -612,6 +3563,160 @@
             }
           });
         }
+            let selectedAnnoteEl;
+            const selectorForAnnotation = ( cell, annotation) => {
+              let cellAttr = 'data-code-cell="' + cell + '"';
+              let lineAttr = 'data-code-annotation="' +  annotation + '"';
+              const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+              return selector;
+            }
+            const selectCodeLines = (annoteEl) => {
+              const doc = window.document;
+              const targetCell = annoteEl.getAttribute("data-target-cell");
+              const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+              const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+              const lineIds = lines.map((line) => {
+                return targetCell + "-" + line;
+              })
+              let top = null;
+              let height = null;
+              let parent = null;
+              if (lineIds.length > 0) {
+                  //compute the position of the single el (top and bottom and make a div)
+                  const el = window.document.getElementById(lineIds[0]);
+                  top = el.offsetTop;
+                  height = el.offsetHeight;
+                  parent = el.parentElement.parentElement;
+                if (lineIds.length > 1) {
+                  const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                  const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                  height = bottom - top;
+                }
+                if (top !== null && height !== null && parent !== null) {
+                  // cook up a div (if necessary) and position it 
+                  let div = window.document.getElementById("code-annotation-line-highlight");
+                  if (div === null) {
+                    div = window.document.createElement("div");
+                    div.setAttribute("id", "code-annotation-line-highlight");
+                    div.style.position = 'absolute';
+                    parent.appendChild(div);
+                  }
+                  div.style.top = top - 2 + "px";
+                  div.style.height = height + 4 + "px";
+                  div.style.left = 0;
+                  let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                  if (gutterDiv === null) {
+                    gutterDiv = window.document.createElement("div");
+                    gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                    gutterDiv.style.position = 'absolute';
+                    const codeCell = window.document.getElementById(targetCell);
+                    const gutter = codeCell.querySelector('.code-annotation-gutter');
+                    gutter.appendChild(gutterDiv);
+                  }
+                  gutterDiv.style.top = top - 2 + "px";
+                  gutterDiv.style.height = height + 4 + "px";
+                }
+                selectedAnnoteEl = annoteEl;
+              }
+            };
+            const unselectCodeLines = () => {
+              const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+              elementsIds.forEach((elId) => {
+                const div = window.document.getElementById(elId);
+                if (div) {
+                  div.remove();
+                }
+              });
+              selectedAnnoteEl = undefined;
+            };
+              // Handle positioning of the toggle
+          window.addEventListener(
+            "resize",
+            throttle(() => {
+              elRect = undefined;
+              if (selectedAnnoteEl) {
+                selectCodeLines(selectedAnnoteEl);
+              }
+            }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+            const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+            for (let i=0; i<annoteTargets.length; i++) {
+              const annoteTarget = annoteTargets[i];
+              const targetCell = annoteTarget.getAttribute("data-target-cell");
+              const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+              const contentFn = () => {
+                const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+                if (content) {
+                  const tipContent = content.cloneNode(true);
+                  tipContent.classList.add("code-annotation-tip-content");
+                  return tipContent.outerHTML;
+                }
+              }
+              const config = {
+                allowHTML: true,
+                content: contentFn,
+                onShow: (instance) => {
+                  selectCodeLines(instance.reference);
+                  instance.reference.classList.add('code-annotation-active');
+                  window.tippy.hideAll();
+                },
+                onHide: (instance) => {
+                  unselectCodeLines();
+                  instance.reference.classList.remove('code-annotation-active');
+                },
+                maxWidth: 300,
+                delay: [50, 0],
+                duration: [200, 0],
+                offset: [5, 10],
+                arrow: true,
+                trigger: 'click',
+                appendTo: function(el) {
+                  return el.parentElement.parentElement.parentElement;
+                },
+                interactive: true,
+                interactiveBorder: 10,
+                theme: 'light-border',
+                placement: 'right',
+                positionFixed: true,
+                popperOptions: {
+                  modifiers: [
+                  {
+                    name: 'flip',
+                    options: {
+                      flipVariations: false, // true by default
+                      allowedAutoPlacements: ['right'],
+                      fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                    },
+                  },
+                  {
+                    name: 'preventOverflow',
+                    options: {
+                      mainAxis: false,
+                      altAxis: false
+                    }
+                  }
+                  ]        
+                }      
+              };
+              window.tippy(annoteTarget, config); 
+            }
         const findCites = (el) => {
           const parentEl = el.parentElement;
           if (parentEl) {

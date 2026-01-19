@@ -3,65 +3,855 @@ title: "4/ 文書の作成"
 modified-date: today
 format: 
   revealjs:
-    footer: "文書の作成"
+    footer: "4/ 文書の作成"
+    code-annotations: select
 metadata-files: ["style/slide.yml"]
+lang: en
+bibliography: references.bib
 ---
 
 {{< include _common.qmd >}}
 
-# **1** 
+# **1** YAMLヘッダーの構成
 
-## a
+## YAMLヘッダーの構成要素（の一部）
 
-- YAML header for html document
-- Cross-references
-- Callout
-- Mutliple figures / tables
-- Equation
-- PDF
+- （1）[**メタ情報**]{.alert}、（2）[**フォーマット**]{.alert}、（3）[**チャンクオプション**]{.alert}に大別
+   - メタ情報：タイトル、作成日、作成者、言語、概要、...
+   - フォーマット：HTML文書（`html`）か、PDF文書（`pdf`）か、HTMLスライド（`revealjs`）か、...
+      - 文書の幅、目次の見た目、コードハイライトのテーマなど文書の「全体的」な見た目や構成に関する内容が多い
+   - チャンクオプション：全チャンクに共通するチャンクオプション
+- 詳細はQuarto公式ホームページを参照
+   - <https://quarto.org/docs/reference/>
 
-# **0** YAMLヘッダーの構成
 
-##
+## 文書のメタ情報（例）
 
-- `title`と`subtitle`
-- `authro`
-- `date`
-- `lang`
-- `format`
+```yaml
+title: 文書のタイトル              # <1>
+subtitle: 文書のサブタイトル       # <2>
+author:                            # <3>
+  - name: 宋財泫                   # <4>
+    affiliation: 関西大学          # <5>
+    email: song@kansai-u.ac.jp     # <6>
+    url: https://www.jaysong.net/  # <7>
+  - name: ぽよんぽよん             # <8>
+    affiliation: 国立ソウル大学校  # <8>
+date: 1986/10/8                    # <9>
+date-modified: today               # <10>
+lang: ja                           # <11>
+abstract: |                        # <12>
+      ここに概要が入る             # <12>
+      長ければ改行しても良い       # <12>
+```
 
-# **0** 
+1. 文書のタイトル
+2. 文書のサブタイトル
+3. 著者名：著者が一人で、氏名のみOKなら`author: 著者名`でもOK
+4. 第一著者の氏名
+5. 第一著者の所属
+6. 第一著者のメールアドレス
+7. 第一著者のホームページ
+8. 第二著者の氏名と所属
+9. 文書の作成日
+10. 文書の最終修正日：`today`にするとレンダーした日付が自動的に入る
+11. 文書の言語
+12. 文書の概要：普段は不要だが、Quartoで論文を執筆する際はよく使う。概要が長い場合、`|`を入力し、改行してから概要を書く
 
-# **0** PDF出力
+## フォーマット（例）
 
-## 
+`format: html`を基本とし、オプションを追加したい場合は以下のように書く
 
-- 研究成果の公開、共有が目的ならあまり使わないかも
-- しかし、Quartoも立派な論文執筆のツールにもなり得るので、ここではとりあえずPDFに出力する方法を紹介
-- 最近は[typst](https://typst.app/)を使う手もあるが、定番のLaTeXを使用する方法を紹介
+```yaml
+format: 
+  html:
+    grid:                 # <1>
+      body-width: 1024px  # <2>
+    theme: flatly         # <3>
+    highlight-style: a11y # <4>
+    toc: true             # <5>
+    toc-location: right   # <6>
+    toc-depth: 3          # <7>
+    number-sections: true # <8>
+```
 
-## PDF出力のための準備
+1. ページレイアウト：`sidebar-width`（左のサイドバーの幅）、`body-width`（本文の幅）、`margin-width`（右のサイドバーの幅）、`gutter-width`（間隔）が調節可能
+2. 本文の幅を1024pxに（既定値は800px）
+3. flatlyテーマを使用
+4. コードハイライトのスタイルはa11y
+5. 目次あり
+6. 目次の位置は右側のサイドバー（通常、「マージン」と呼ばれる領域）
+7. 目次の深度は3
+8. 見出しに通し番号を付ける
 
-LaTeX環境
+## チャンクオプション（例）
 
-- TeXLive or macTeX
-- tinytex
-- haranoaji（昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう）
+すべてのチャンクに同じオプションを付けたい場合
 
-##
+- 個別のチャンクにオプションは`knitr: opts_chunk`より優先する
 
-`{{< pagebreak >}}`
+```yaml
+knitr: 
+  opts_chunk: 
+    dev: ragg_png     # <1>
+    fig-align: center # <2>
+    dpi: 300          # <3>
+    message: false    # <4>
+    warning: false    # <5>
+```
 
-Code annotation
+1. 作図エンジンは{ragg}のpngフォーマットにする（文字化け防止）
+2. 図は中央に揃える（`![]()`で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）
+3. 図は解像度は300に（印刷する予定がないなら150程度でもOK））
+4. メッセージを表示しない（{tidyverse}の読み込みや`read_csv()`後のメッセージなど）
+5. 警告メッセージを表示しない
 
-# **0** Tips
+# **2** よく使う機能
 
-## Tips
+## 相互参照
 
-1. `date`を本日（renderした日）にしたい
-   - `date: today`
-   - `date: "2026/2/12"`、`modified-date:today`にすると作成日と改定日が両方表示される（HTML）
-1. `.R`/`.qmd`ファイルの差し込み
-   - 1つの`.qmd`が肥大化した場合、またはよく使うコードをリサイクルする際に有効
-   - 文書内に`{{< include ファイル名.qmd >}}`を挿入
-   - チャンク内に`{{< include ファイル名.R >}}`もOK
+相互参照（cross-reference）の方法：`@ラベル名`
+
+- 図、表、式の場合、自動的に「図 1」や「Table 5」のように接頭詞が付く
+   - 文書の言語設定に依存
+   - 見出しの場合は数字のみ出力される
+- 相互参照に使う図表等のラベル名には決まった接頭詞（prefix）を使う
+   - 図（`fig-`）、表（`tbl-`）、数式（`eq-`）、見出し（`sec-`）
+- `@ラベル名`の前後は半角スペースを入れる
+
+## 相互参照（単一の図）
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````{.md}
+@fig-myfig1 は適当に作った表です。
+
+```{{r}}
+#| label: fig-myfig1
+#| fig-cap: 適当に作った図
+#| echo: false
+plot(rnorm(100), type = "l")
+```
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+@fig-myfig1 は適当に作った図です。
+
+```{r}
+#| label: fig-myfig1
+#| fig-cap: 適当に作った図
+#| echo: false
+plot(rnorm(100), type = "l")
+```
+
+:::
+::::
+
+:::: {.columns}
+::: {.column width=65%}
+**Input:**
+
+````{.md}
+R猫弐号機（@fig-rcat2nd）
+
+![R猫弐号機](画像パス){#fig-rcat2nd}
+````
+:::
+
+::: {.column width=35%}
+**Output:**
+
+R猫弐号機（@fig-rcat2nd）
+
+![R猫弐号機](figs/markdown/rcat_2.png){#fig-rcat2nd width="150px"}
+:::
+::::
+
+## 相互参照（単一の表）
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````{.md}
+@tbl-mytbl1 は適当に作った表です。
+
+```{{r}}
+#| label: tbl-mytbl1
+#| tbl-cap: 適当に作った表
+gt::gt(iris[1:3, 1:3])
+```
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+@tbl-mytbl1 は適当に作った表です。
+
+```{r}
+#| label: tbl-mytbl1
+#| tbl-cap: 適当に作った表
+#| echo: true
+gt::gt(iris[1:3, 1:3])
+```
+:::
+::::
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````{.md}
+@tbl-mytbl2 も適当に作った表です。
+
+|Name    |Age |
+|:-------|---:|
+|Takaichi|64  |
+|Noda    |68  |
+
+:与野党党首の年齢 {#tbl-mytbl2}
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+@tbl-mytbl2 も適当に作った表です。
+
+|Name    |Age |
+|:-------|---:|
+|Takaichi|64  |
+|Noda    |68  |
+
+:与野党党首の年齢 {#tbl-mytbl2}
+:::
+::::
+
+## 相互参照（複数の図）
+
+参照方法は`@fig-ラベル名`[（単一の図と同じ方法）]{.small}
+
+- ラベルは`::: {layout-ncol=n #fig-ラベル名}`と`![](画像パス){#fig-ラベル名}`のように両方指定
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````markdown
+::: {layout-ncol=2 #fig-rcats}
+![弐号機](画像3のURL or パス){#fig-rcats1}
+
+![量産機](画像4のURL or パス){#fig-rcats2}
+
+: かわいいR猫たち
+:::
+
+@fig-rcats は..., @fig-rcats2 は...
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+::: {layout-ncol=2 #fig-rcats}
+![弐号機](figs/markdown/rcat_2.png){width=100 #fig-rcats1}
+
+![量産機](figs/markdown/rcat_3.png){#fig-rcats2 width=100}
+
+かわいいR猫たち
+:::
+
+@fig-rcats は..., @fig-rcats2 は...
+:::
+::::
+
+## 相互参照（複数の図; 続き）
+
+図の群を参照する方法は`@fig-ラベル名`[（単一の図と同じ方法）]{.small}
+
+- 個別の図を参照したい場合は`@fig-ラベル名-番号`[（最初の図から1、2、3、...）]{.small}
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````markdown
+```{{r}}
+#| label: fig-two-plts
+#| layout-ncol: 2
+#| fig-cap: 2つの折れ線グラフ
+#| fig-subcap: 
+#|   - 線のみ
+#|   - 点 + 線
+#| echo: false
+plot(rnorm(10), type = "l")
+
+plot(rnorm(10), type = "b")
+```
+
+@fig-two-plts は..., @fig-two-plts-1 は...
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+```{r}
+#| label: fig-two-plts
+#| layout-ncol: 2
+#| fig-cap: 2つの折れ線グラフ
+#| fig-subcap: 
+#|   - 線のみ
+#|   - 点 + 線
+#| fig-width: 3
+#| fig-height: 3
+#| echo: false
+plot(rnorm(10), type = "l")
+
+plot(rnorm(10), type = "b")
+```
+
+@fig-two-plts は..., @fig-two-plts-1 は...
+:::
+::::
+
+## 相互参照（複数の表）
+
+参照方法は`@tbl-ラベル名`[（単一の表と同じ方法）]{.small}
+
+- 図同様、群のラベルと個別のラベルを両方指定する
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````markdown
+::: {#tbl-favorite layout-ncol=2}
+|ID   |Name |Favorite|
+|:---:|-----|:-------|
+|1    |Song |Ramen   |
+: 宋の好物 {#tbl-favorite-s}
+
+|ID   |Name |Favorite|
+|:---:|-----|:-------|
+|2    |Kim  |Truffle |
+: 金の好物 {#tbl-favorite-k}
+
+好物リスト
+:::
+
+@tbl-favorite と @tbl-favorite-s
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+::: {#tbl-favorite layout-ncol=2}
+|ID   |Name |Favorite|
+|:---:|-----|:-------|
+|1    |Song |Ramen   |
+: 宋の好物 {#tbl-favorite-s}
+
+|ID   |Name |Favorite|
+|:---:|-----|:-------|
+|2    |Kim  |Truffle |
+: 金の好物 {#tbl-favorite-k}
+
+好物リスト
+:::
+
+@tbl-favorite と @tbl-favorite-s
+:::
+::::
+
+## 相互参照（複数の表; 続き）
+
+複数の図の相互参照と同じ方法
+
+- ただし、ラベルの接頭詞は`fig-`でなく、`tbl-`
+- `fig-cap`、`fig-subcap`の代わりに`tbl-cap`と`tbl-subcap`を使用
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+````markdown
+```{{r}}
+#| label: tbl-two-tbls
+#| layout-ncol: 2
+#| tbl-cap: irisデータセットの一部
+#| tbl-subcap: 
+#|   - setosa
+#|   - versicolor
+gt::gt(iris[1:5, 1:2])   # setosa
+gt::gt(iris[51:55, 1:2]) # versicolor
+```
+
+@tbl-two-tbls と @tbl-two-tbls-1
+````
+:::
+
+::: {.column width=50%}
+**Output:**
+
+```{r}
+#| label: tbl-two-tbls
+#| layout-ncol: 2
+#| tbl-cap: irisデータセットの一部
+#| tbl-subcap: 
+#|   - setosa
+#|   - versicolor
+#| echo: true
+gt::gt(iris[1:5, 1:2])   # setosa
+gt::gt(iris[51:55, 1:2]) # versicolor
+```
+
+@tbl-two-tbls と @tbl-two-tbls-1
+:::
+::::
+
+## 相互参照（数式）
+
+`$$`の後ろの`{#eq-ラベル名}`を追加
+
+- 2つ目の`$$`の後ろにラベルを付けること（1つ目の後だとエラーが出る）。
+
+**Input：**
+
+```{.md}
+ポアソン分布の確率密度関数（@eq-poisson）は美しいぞ。
+
+$$
+p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
+$$ {#eq-poisson}
+```
+
+**Output：**
+
+ポアソン分布の確率密度関数（@eq-poisson）は美しいぞ。
+
+$$
+p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
+$$ {#eq-poisson}
+
+## 相互参照（見出し）
+
+- `[-@sec-ラベル名]`^[`@sec-ラベル名`でも動くが、自動的に「**セクション** 1.2」のような接頭詞が付いてしまう。]
+   - 見出しのラベルは`## 見出し {#sec-ラベル名}`のように指定
+
+:::: {.columns}
+::: {.column width=65%}
+**Input：**
+
+````markdown
+# はじめに {#sec-intro}
+
+## 背景 {#sec-background}
+
+## 問い {#sec-rq}
+
+### 問い1 {#sec-rq1}
+
+### 問い2 {#sec-rq2}
+
+## 先行研究 {#sec-review}
+
+第[-@sec-intro]章、第[-@sec-rq]章、第[-@sec-rq2]章
+````
+:::
+
+::: {.column width=35%}
+**Output：**
+
+![](figs/document/cross-ref-sec.png){fig-align="center"}
+:::
+::::
+
+## 引用
+
+- YAMLヘッダーに`.bib`ファイルを指定（例：`bibliography: references.bib`）
+   - `@固有キー`：著者名（年）
+   - `[@固有キー]`：（著者名 年）
+   - `[-@固有キー]`：（年）
+- 英語の文献のみなら良いが、日本語の文献を引用する時はかなり厄介
+
+::: {.panel-tabset}
+#### 引用の例
+
+:::: {.columns}
+::: {.column width=45%}
+**Input：**
+
+````markdown
+@imai_williams_2022 says ...
+
+[see @knuth_1984; @imai_williams_2022]
+
+The god[-@knuth_1984] says ...
+````
+:::
+
+::: {.column width=55%}
+**Output：**
+
+Imai and Williams (2022) says …
+
+(see Knuth 1984; Imai and Williams 2022)
+
+The God (1984) says …
+:::
+::::
+
+#### `references.bib`の中身
+
+```bib
+@article{knuth_1984,
+  author  = {Donald E. Knuth},
+  year    = {1984},
+  title   = {Literate Programming},
+  journal = {The Computer Journal},
+  volume  = {27},
+  number  = {2},
+  pages   = {97--111}
+}
+
+@book{imai_williams_2022,
+  author    = {Kosuke Imai and Nora Webb Williams},
+  year      = {2022},
+  title     = {Quantitative Social Science: An Introduction in tidyverse},
+  publisher = {Princeton University Press},
+}
+```
+
+:::
+
+## コールアウト
+
+`::: {.callout-*}`と`:::`（見出しは`#`、`##`、...）
+
+- `*`には`note`、`warning`、`important`、`tip`、`caution`
+- オプション：`icon="false"`と`collapse="true"`
+
+:::: {.columns}
+::: {.column width=50%}
+**Input：**
+
+````markdown
+::: {.callout-note}
+#### Quartoは私たちの友達!
+
+末永くよろしくね!
+:::
+````
+:::
+
+::: {.column width=50%}
+**Output：**
+
+::: {.callout-note}
+#### Quartoは私たちの友達!
+
+末永くよろしくね!
+:::
+:::
+::::
+
+:::: {.columns}
+::: {.column width=50%}
+**Input：**
+
+````markdown
+::: {.callout-tip icon="false"}
+#### アイコンを消したい...?
+
+`icon="false"`を付けてみてね
+:::
+````
+:::
+
+::: {.column width=50%}
+**Output：**
+
+::: {.callout-tip icon="false"}
+#### アイコンを消したい...?
+
+`icon="false"`を付けてみてね
+:::
+:::
+::::
+
+## パネル
+
+`::: {.panel-tabset}`と`:::`で囲まれた領域内の内容が段組みの対象
+
+- 各タブの見出しは`#`[（宋は主に`####`か`#`5つ以上を使用）]{.small}
+
+:::: {.columns}
+::: {.column width=50%}
+**Input：**
+
+````markdown
+::: {.panel-tabset}
+#### コード
+
+```{{r}}
+library(tidyverse)
+
+my_plt <- ggplot(iris) +
+  geom_point(aes(x = Petal.Length,
+                 y = Petal.Width,
+                 color = Species))
+```
+
+#### 結果
+
+```{{r}}
+plot(my_plt)
+```
+:::
+````
+:::
+
+::: {.column width=50%}
+**Output：**
+
+::: {.panel-tabset}
+#### コード
+
+```{r}
+#| echo: true
+library(tidyverse)
+
+my_plt <- ggplot(iris) +
+  geom_point(aes(x = Petal.Length,
+                 y = Petal.Width,
+                 color = Species))
+```
+
+#### 結果
+
+```{r}
+#| echo: true
+#| fig-width: 5
+#| fig-height: 4
+plot(my_plt)
+```
+:::
+:::
+::::
+
+## 段組み
+
+::: {.notes}
+`format: revealjs`の場合、columnの幅の合計が100%になると最後のcolumnが改行される場合もある（普通に問題なく動くケースも多い）。合計99%にすると問題はない
+:::
+
+`::::{.columns}`と`::::`で囲まれた領域内の内容が段組みの対象
+
+- `:::{.column}`と`:::`で囲まれた領域が一つ一つの段（`width=`で幅指定）
+
+:::: {.columns}
+::: {.column width=30%}
+**Input：**
+
+````markdown
+:::: {.columns}
+::: {.column width=15%}
+1段目
+:::
+
+::: {.column width=25%}
+![R Cat](画像パス)
+:::
+
+::: {.column width=60%}
+```{{r}}
+gt::gt(iris[1:10,])
+```
+:::
+::::
+````
+:::
+
+::: {.column width=70%}
+**Output：**
+
+:::: {.columns}
+::: {.column width=15%}
+1段目
+:::
+
+::: {.column width=25%}
+![R Cat](figs/rcat.png){align="center"}
+:::
+
+::: {.column width=59%}
+```{r}
+#| echo: true
+gt::gt(iris[1:10,])
+```
+:::
+::::
+:::
+::::
+
+## コードの注釈
+
+チャンク内の各行の最後に`# <数字>`を追加し、チャンク外に`数字. 注釈`を記入
+
+- 複数の行に同じ番号を振ることも可
+- 以下はYAMLヘッダーに`code-annotations: select`を指定した例
+   - 他にも`below`（既定値）、`hover`あり
+
+:::: {.columns}
+::: {.column width=50%}
+**Input：**
+
+````markdown
+```{{r}}
+x <- 1:10   # <1>
+y <- sum(x) # <2>
+print(y)    # <2>
+```
+
+1. xに1から10の自然数を格納
+2. yにxの和を格納し、出力
+````
+:::
+
+::: {.column width=50%}
+**Output：**
+
+```{r}
+#| echo: true
+x <- 1:10   # <1>
+y <- sum(x) # <2>
+print(y)    # <2>
+```
+
+1. xに1から10の自然数を格納
+2. yにxの和を格納し、出力
+:::
+::::
+
+## チャンクの表示
+
+`{r}`の代わりに`{{{r}}}`を使用
+
+- 授業資料[（Quartoの使い方）]{.small}を作成する時くらいしか使わない機能
+
+:::: {.columns}
+::: {.column width=50%}
+**Input：**
+
+````markdown
+```{{{r}}}
+#| label: fig-myplt
+#| fig-cap: My plot
+plot(1:10)
+```
+````
+:::
+
+::: {.column width=50%}
+**Output：**
+
+```{{r}}
+#| label: fig-myplt
+#| fig-cap: My plot
+plot(1:10)
+```
+:::
+::::
+
+# **3** PDF出力
+
+## PDF出力が必要なケース
+
+- [**研究成果の公開、共有が目的ならHTMLで十分**]{.alert}
+   - HTMLの方が機能が豊富であり、見た目のカスタマイズも比較的簡単^[CSS/SCSSの知識があれば相当細かいレベルまでいじれる。]
+- しかし、Quartoは論文執筆のための強力なツールでもある
+   - HTMLフォーマッ可のジャーナルはないはず[（少なくとも政治学では）]{.small}
+   - $\Rightarrow$ 論文、レポートをなどの[**印刷を念頭においたもの**]{.alert}を作成するのであれば、出力物はHTMLよりもPDFが望ましい
+- 最近は[typst](https://typst.app/)を使う手もあるが、ここでは定番のLaTeXを使用する方法を紹介
+
+## QuartoからPDFを作成するための準備
+
+LaTeX環境を予め用意しておくこと
+
+1. TeXLive（Windows/Linux） or macTeX（macOS）
+   - TeX環境のインストールは時間がかかるため、TeX初心者はtinytexを推奨
+
+```{.r}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+2. haranoajiパッケージ（多分、今は不要^[昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう。]）
+   - TeXLive/macTeXの場合
+      - `tlmgr install haranoaji`（Windows^[管理者としてターミナルを開く]）
+      - `sudo tlmgr install haranoaji`（macOS/Linux）
+   - tinytex環境ならRコンソールで`tinytex::tlmgr_install("haranoaji")`
+
+## どこを修正すれば良いか
+
+YAMLヘッダーの`format`を`html`から`pdf`に変えるだけ
+
+- 日本語が含まれた文書は文字化けが発生するおそれがあるため、修正が必要^[多少のTeXに関する知識も必要]
+- LuaLaTeXの代わりにXeLaTeXも可^[CJKをすべて扱うならXeLaTeXの方がまだ便利かも知れない。]
+- 以下は日本語を含むPDFを出力するためのYAMLヘッダーの例
+
+```yaml
+format:
+  pdf:
+    pdf-engine: lualatex
+    documentclass: ltjsarticle
+    classoption:
+      - a4paper
+      - 10.5pt
+    number-sections: true
+    mainfont: Noto Serif CJK JP      # フォントは自分のPC環境に合わせて修正
+    sansfont: Noto Sans CJK JP       # フォントは自分のPC環境に合わせて修正
+    monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正
+```
+
+## HTML + PDFの二刀流
+
+一つのYAMLヘッダーに複数のフォーマットを指定することも可
+
+- どのフォーマットでレンダーするかはRenderボタン右の▼をクリックして選べる
+
+```yaml
+format:
+  html:
+    theme: flatly
+    highlight-style: a11y
+  pdf:
+    pdf-engine: lualatex
+    documentclass: ltjsarticle
+    classoption:
+      - a4paper
+      - 10.5pt
+    mainfont: Noto Serif CJK JP
+    sansfont: Noto Sans CJK JP
+    monofont: Noto Sans Mono CJK JP
+```
+
+## 参考）参考文献の話
+
+参考文献の管理・挿入はBibTeXを使用する（引用は`@固有キー`）
+
+- 参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介
+   - 例）英文のジャーナル名は*Journal*、和文のジャーナル名は『ジャーナル名』
+- 社会科学では[jecon.bst](https://github.com/ShiroTakeda/jecon-bst){target="_blank"}[（経済学用のBibTeX style file）]{.small}が定番
+- 2026年1月現在、正攻法でjecon.bstを使う方法は[（少なくとも宋にとっては）]{.small}不明
+- プロジェクトフォルダーに`.latexmkrc`ファイルを格納し、PDFエンジンとしてLatexmkを使用することで、<ruby>とりあえず<rt>・・・・・</rt></ruby>使うことはできる
+   - 『私たちのR』の[「第25章 Quarto[文書]」](https://www.jaysong.net/RBook/quarto2.html){target="blank"}を参照
+   - <https://www.jaysong.net/RBook/quarto2.html>

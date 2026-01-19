@@ -8,6 +8,19 @@ metadata-files:
 
 {{< revealjs file="document_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
 
+# はじめに {#sec-intro}
+
+## 背景 {#sec-background}
+
+## 問い {#sec-rq}
+
+### 問い1 {#sec-rq1}
+
+### 問い2 {#sec-rq2}
+
+## 先行研究 {#sec-review}
+
+第[-@sec-intro]章、第[-@sec-rq]章、第[-@sec-rq2]章
 
 # PDF出力
 

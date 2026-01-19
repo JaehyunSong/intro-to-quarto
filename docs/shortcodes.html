@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>実習環境の構築 – Quarto実習資料</title>
+<title>ショートコード – Quarto実習資料</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-626b926937a80f5233f9f26b84547f76.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,14 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "サーチ"
   }
 }</script>
- 
-  <style>
-  .slide-deck {
-      border: 3px solid #dee2e6;
-      width: 100%;
-  }
-  </style>
-  
 
 
 </head>
@@ -124,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install.html">2/ 実習環境の導入</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./yaml.html">その他の内容</a></li><li class="breadcrumb-item"><a href="./shortcodes.html">ショートコード</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="サーチ" onclick="window.quartoOpenSearch();">
@@ -157,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./install.html" class="sidebar-item-text sidebar-link active">
+  <a href="./install.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2/ 実習環境の導入</span></a>
   </div>
 </li>
@@ -202,8 +196,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./extension.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">拡張機能</span></a>
+  <a href="./shortcodes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">ショートコード</span></a>
   </div>
 </li>
       </ul>
@@ -247,19 +241,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">目次</h2>
    
   <ul>
-  <li><a href="#rとide" id="toc-rとide" class="nav-link active" data-scroll-target="#rとide"><span class="header-section-number">1</span> RとIDE</a></li>
-  <li><a href="#quarto-cliの入手" id="toc-quarto-cliの入手" class="nav-link" data-scroll-target="#quarto-cliの入手"><span class="header-section-number">2</span> Quarto CLIの入手</a></li>
-  <li><a href="#必要なパッケージをインストール" id="toc-必要なパッケージをインストール" class="nav-link" data-scroll-target="#必要なパッケージをインストール"><span class="header-section-number">3</span> 必要なパッケージをインストール</a></li>
-  <li><a href="#プロジェクトの作成" id="toc-プロジェクトの作成" class="nav-link" data-scroll-target="#プロジェクトの作成"><span class="header-section-number">4</span> プロジェクトの作成</a></li>
+  <li><a href="#ショートコードとは" id="toc-ショートコードとは" class="nav-link active" data-scroll-target="#ショートコードとは"><span class="header-section-number">1</span> ショートコードとは</a></li>
+  <li><a href="#よく使うショートコード" id="toc-よく使うショートコード" class="nav-link" data-scroll-target="#よく使うショートコード"><span class="header-section-number">2</span> よく使うショートコード</a>
+  <ul class="collapse">
+  <li><a href="#include" id="toc-include" class="nav-link" data-scroll-target="#include"><span class="header-section-number">2.1</span> include</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video"><span class="header-section-number">2.2</span> video</a></li>
+  <li><a href="#placeholder" id="toc-placeholder" class="nav-link" data-scroll-target="#placeholder"><span class="header-section-number">2.3</span> placeholder</a></li>
+  <li><a href="#pagebreak" id="toc-pagebreak" class="nav-link" data-scroll-target="#pagebreak"><span class="header-section-number">2.4</span> pagebreak</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./yaml.html">その他の内容</a></li><li class="breadcrumb-item"><a href="./shortcodes.html">ショートコード</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">実習環境の構築</h1>
+<h1 class="title">ショートコード</h1>
 </div>
 
 
@@ -276,48 +274,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-    <p><a href="install_slide.html" target="_blank" type="button" class="btn btn-outline-primary"><i class="bi bi-window-fullscreen"></i> 新しいタブで開く</a></p>
-       <div class="ratio ratio-4x3">
-      <iframe class="slide-deck" src="install_slide.html" height="900px"></iframe>
-    </div>
-  
-<section id="rとide" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> RとIDE</h1>
-<p>事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。</p>
-<ul>
-<li>Positronもあるが、ここではRStudioを使用</li>
-<li>mybinder.orgを使用する場合、</li>
-</ul>
-<p><a href="https://csrda.iss.u-tokyo.ac.jp/quantitative/seminar/" class="btn btn-outline-primary" target="_blank" type="button"><i class="bi bi-window-fullscreen"></i> 実習環境（mybinder.org）の起動</a></p>
+<section id="ショートコードとは" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ショートコードとは"><span class="header-section-number">1</span> ショートコードとは</h2>
+<p>　ショートコードとは様々なタイプのコンテンツを生成する少し特殊なMarkdown記法である。Quartoは十数種類のショートコードを内蔵しており、ユーザーが作成したショートコードを使うこともできる。むろん、自分でショートコードを作る<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>ことも可能だ。ショートコードはLua言語で作成されている。プログラミングの経験のある人なら簡単なショートコードを作ることはすぐにでもできよう<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>。ショートコードを使う方法は<code>{{&lt; ショートコード &gt;}}</code>だ。これだけで動くものもあれば、引数が必要なショートコードもある。引数がある場合、<code>{{&lt; ショートコード 引数1 引数2 ... &gt;}}</code>のように記述する。たとえば、文書のメタ情報を呼び出すショートコードは<code>meta</code>であり、その中でもタイトルを呼び出したい場合は引数として<code>tittle</code>を使えば良い。つまり、<code>ショートコード</code>と入力すればその箇所には「ショートコード」が入ることになる。</p>
+<p>　ここでは宋がよく（?）使うショートコードを紹介する。Quarto内蔵ショートコードについては<a href="https://quarto.org/docs/authoring/shortcodes.html" data-traget="_blank">公式ホームページ</a>を参照されたい。</p>
 </section>
-<section id="quarto-cliの入手" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Quarto CLIの入手</h1>
-<ul>
-<li>mybinder.orgを使用する場合、ここは不要</li>
-<li>公式ホームページ（<a href="https://quarto.org/" class="uri">https://quarto.org/</a>）から入手</li>
-<li>Get Startedメニューから自分のOSに合ったものをダウンロードし、インストール</li>
-<li>macOSの場合、homebrewもおすすめ</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> quarto</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="よく使うショートコード" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="よく使うショートコード"><span class="header-section-number">2</span> よく使うショートコード</h2>
+<section id="include" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="include"><span class="header-section-number">2.1</span> include</h3>
+<p>　includeは外部のqmdファイルを埋め込むショートコードであり、使い方は<code>{{&lt; include ファイル名.qmd &gt;}}</code>である。たとえば、以下のような2つのファイルがあるとする。</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>document.qmdの中身</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="document.qmdの中身"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> My document</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>{{&lt; include _common.qmd &gt;}}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:49%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_common.qmdの中身</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="_common.qmdの中身"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, gt)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>　この場合、<code>document.qmd</code>のショートコードの箇所に<code>_common.qmd</code>が入ることになる。したがって、以上のqmdファイルは以下のコードと同じ内容となる。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> My document</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, gt)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p>　よく使うチャンク（パッケージの読み込みや、Rの環境設定、{ggplot2}のテーマ設定など）を再利用することもできるし、一つのqmdファイルが膨大になった場合、セクションごとにファイルを分割する目的として使用しても良い。</p>
+<p>　ただし、includeショートコードは対象のファイルをコピー&amp;ペーストする点は注意する必要がある。言い換えれると、評価（evaluation）が終わった<code>_common.qmd</code>を<code>document.qmd</code>に埋め込むのではなく、<code>_common.qmd</code>を<code>document.qmd</code>にコピペしてから評価を行うことである。多くの場合は問題ないが、相対パスの使い方には注意する必要がある。もし、<code>_common.qmd</code>が<code>document.qmd</code>と異なるフォルダーに保存されている場合、<code>_common.qmd</code>に書く相対パスは<code>document.qmd</code>を基準に記述する必要がある。</p>
 </section>
-<section id="必要なパッケージをインストール" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> 必要なパッケージをインストール</h1>
-<ul>
-<li>{quarto}</li>
-<li>TinyTeX
-<ul>
-<li>{tinytex} &gt; <code>tinytex::install_tinytex()</code></li>
-<li>ターミナルで<code>quarto install tinytex</code></li>
-</ul></li>
-</ul>
+<section id="video" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="video"><span class="header-section-number">2.2</span> video</h3>
+<p>　文書やスライドに動画を入れることもできる。ローカルにある<code>.mp4</code>ファイルも良いし、YouTubeの動画も挿入可能だ。たとえば、史上初のYouTube動画（<a href="https://www.youtube.com/watch?v=jNQXAC9IVRw" class="uri">https://www.youtube.com/watch?v=jNQXAC9IVRw</a>）<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>を文書の中に入れるためには以下のように入力する。</p>
+<p><strong>Input：</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://www.youtube.com/watch?v=jNQXAC9IVRw &gt;}}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output：</strong></p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/jNQXAC9IVRw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>　videoショートコードにはいくつかのオプションが提供されている。動画を15秒からスタートしたい場合は<code></code>にすれば良い。動画の大きさは<code>width</code>と<code>height</code>で調節可能で、縦横比は<code>aspect-ratio</code>で変更できる<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>。</p>
 </section>
-<section id="プロジェクトの作成" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> プロジェクトの作成</h1>
+<section id="placeholder" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="placeholder"><span class="header-section-number">2.3</span> placeholder</h3>
+<p>　placeholderは論文執筆やスライド作成段階で使える便利なショートコードだ。これは「ここに図/表が入る予定だが、まだ何も作っていない」といった場合、とりあえずダミーの画像を入れておく機能である。引数は横と縦の大きさ（px単位）を入れるだけだ<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>。デフォルトはPNG形式の画像が生成されるが、ベクトルベースのSVGがほしいのであれば<code>format="svg"</code>を追加しよう。</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>{{&lt; placeholder 600 400 &gt;}}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:49%;">
+<p><img src="data:image/png;base64,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" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="pagebreak" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="pagebreak"><span class="header-section-number">2.4</span> pagebreak</h3>
+<p>　pagebreakは「改ページ」のショートコードである。たとえばTeXの場合、<code>\newpage</code>や<code>\clearpage</code>で改ページを行う。Microsoft Wordとかであれば、改ページボタンを押せば良い。問題はQuartoはHTML、PDF、Microsoft Word、Open Documentなど様々なフォーマットで書き出すことができるということだ。つまり、改ページ方法が統一されていない。これを解決するショートコードがpagebreakである。<code></code>を入れると、そこで改ページが行われる<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>。 統一されていない</p>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://quarto.org/docs/extensions/shortcodes.html" class="uri">https://quarto.org/docs/extensions/shortcodes.html</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Lua言語の簡単な使用は<a href="https://learnxinyminutes.com/lua/" class="uri">https://learnxinyminutes.com/lua/</a>から確認できる。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>動画一本しかないのに、チャンネル登録者数が500万人を超えている…。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>既定値は<code>"16x9"</code>であり、他に<code>"1x1"</code>、<code>"4x3"</code>、<code>"21x9"</code>が指定できる。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>大きさを指定しないと100 x 100の画像が生成される<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>HTMLの場合、画面上では改ページされているかどうかは分からないが、印刷の際にはちゃんと改ページされる。<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -737,6 +783,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
