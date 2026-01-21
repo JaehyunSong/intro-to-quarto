@@ -35,6 +35,8 @@ website:
             href: yaml.qmd
           - text: "ショートコード"
             href: shortcodes.qmd
+          - text: "拡張機能"
+            href: extensions.qmd
       - section: "資料"
         contents:
           - text: "Quarto公式"

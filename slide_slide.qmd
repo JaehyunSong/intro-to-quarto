@@ -4,6 +4,7 @@ modified-date: today
 format: 
   revealjs:
     footer: "スライドの作成"
+    chalkboard: true
 metadata-files: 
   - "style/slide.yml"
 ---
@@ -17,21 +18,275 @@ pacman::p_load(tidyverse)
 
 # **1** YAMLヘッダーの構成
 
-## revealjsについて
+## Reveal.jsについて
+
+Quartoでは3種類[（フォーマット）]{.small}のスライドが作成可能
+
+- [**Reveal.js**]{.alert}（`.html`）
+   - HTMLベースのプレゼンテーション・フレームワーク
+   - Quartoを使うとMarkdown文法でスライドが作成可能
+- Beamer（`.pdf`）
+- Microsoft Powerpoint（`.pptx`）
+
+## Reveal.jsで作成したスライドの例
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 800px;"}
+これです
+:::
+
+## スライドの操作方法
+
+詳細は{{< kbd ? >}}キーで確認
+
+|キー|動作|
+|:---:|:---|
+|左右キー|前後のスライド[^move]|
+|Shift + 左右キー|最初/最後のスライド|
+|{{< kbd . >}}|一時停止（暗転）|
+|{{< kbd F >}}|フルスクリーン|
+|{{< kbd G >}}|任意のスライドへ移動|
+|{{< kbd ESC >}}, {{< kbd O >}}|アウトライン表示|
+|{{< kbd S >}}|発表者用画面の表示|
+|{{< kbd M >}}|メニュー呼び出し|
+|{{< kbd CTRL + Shift + F >}}|検索|
+
+[^move]: SPACEキーを押せば次のスライドへ移動する。また、上下キーも左右キーと同じく機能する。
+
+## YAMLヘッダーの構成要素（の一部）
+
+第5講（HTML文書）の構成と同じ
+
+- （1）[**メタ情報**]{.alert}、（2）[**フォーマット**]{.alert}、（3）[**チャンクオプション**]{.alert}に大別
+   - メタ情報：タイトル、作成日、作成者、言語、概要、...
+   - フォーマット：Reveal.js（`revealjs`）、Beamer（`beamer`）、Microsoft Powerpoint（`pptx`）
+      - `revealjs`の場合、拡張機能として提供されるテーマを使用する場合、別の名前に変更する必要がある
+   - チャンクオプション：全チャンクに共通するチャンクオプション
+
+
+## 文書のメタ情報（例）
+
+```yaml
+title: 文書のタイトル              # <1>
+subtitle: 文書のサブタイトル       # <1>
+author:                            # <2>
+  - name: 宋財泫                   # <2>
+    affiliation: 関西大学          # <2>
+    email: song@kansai-u.ac.jp     # <2>
+    url: https://www.jaysong.net   # <2>
+date: 1986/10/8                    # <3>
+lang: ja                           # <4>
+```
+
+1. 文書のタイトルとサブタイトル
+2. 著者情報
+3. 作成日
+4. スライドの言語
+
+## フォーマット（例）
+
+```yaml
+format:
+  revealjs:
+    theme: simple                   # <1>
+    width: 1200                     # <2>
+    height: 900                     # <2>
+    footer: "はじめてのQuarto"      # <3>
+    link-external-newwindow: true   # <4>
+    slide-number: "c/t"             # <5>
+    code-line-numbers: true         # <6>
+    auto-stretch: false             # <7>
+```
+
+1. スライドのテーマ[（`default` = `black`、`white`、`beige`、`solarized`、...）]{.small}
+2. スライドの横と縦の幅[（px単位）]{.small}
+3. スライド中央下段のテキスト
+4. リンクを新しいタブとして開くようにする
+5. 右下にスライド番号を挿入[（`"c/t"` = 現在のページ/ページ数）]{.small}
+6. コードチャンクの各行に番号を付ける
+7. オートストレッチ^[図の大きさがスライドの残りの空間よりも小さい場合、自動的に拡大する機能]を無効化[（既定値は`ture`）]{.small}
+
+## チャンクオプション（例）
+
+すべてのチャンクに同じオプションを付けたい場合
+
+- 個別のチャンクにオプションは`knitr: opts_chunk`より優先する
+
+```yaml
+knitr: 
+  opts_chunk: 
+    dev: ragg_png     # <1>
+    fig-align: center # <2>
+    dpi: 300          # <3>
+    message: false    # <4>
+    warning: false    # <5>
+```
+
+1. 作図エンジンは{ragg}のpngフォーマットにする[（文字化け防止）]{.small}
+2. 図は中央に揃える[（`![]()`で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）]{.small}
+3. 図は解像度は300に[（印刷する予定がないなら150程度でもOK））]{.small}
+4. メッセージを表示しない[（{tidyverse}の読み込みや`read_csv()`後のメッセージなど）]{.small}
+5. 警告メッセージを表示しない
 
 # **2** よく使う機能
 
 ## スライドの構成
 
+見出し（`#`と`##`のみ） = 改ページ
+
+- 以下のコードは計6ページのスライドの例　　　　　　　　
+
+:::: {.columns}
+::: {.column width=30%}
+````markdown
+---
+YAMLヘッダー
+---
+
+# はじめに
+
+## 問題背景
+
+## 先行研究
+
+## 本研究の位置づけ
+
+# 理論・仮説
+
+## 理論
+````
+:::
+
+::: {.column width=70%}
+- Quartoのスライドは`##`でページを区切る
+- `#`でスライドをセクションに分割
+   - 問題背景〜本研究の位置づけは「はじめに」、理論は「理論・仮説」のセクションに属する
+   - {{< kbd ESC >}}を押してみると構造が分かる
+:::
+::::
+
 ## ロゴの入れ方
 
-## 箇条書きのアニメーション
+YAMLヘッダーの`format: revealjs`の下に`logo: 画像のパス`を追加
+
+- 通常、ロゴは右下に入るが、CSS/SCSSファイルを修正することで調整可能
+   - 右下にロゴが入る場合、スライドのページ番号が見えなくなる
+- `header-logo-link: URL` $\Rightarrow$ ロゴをクリックすると指定されたURLへ飛ぶ
+
+````yaml
+format:
+  revealjs: 
+    logo: my_logo.png
+    header-logo-link: https://www.jaysong.net/
+````
+
+![](figs/slide/logo.png){width="75%" fig-align="center" style="border: 1px solid #ccc;"}
+
+## 箇条書きのアニメーション（コード）
+
+`::: {.incremental}`と`:::`の間に箇条書きを記入
+
+````markdown
+宋が訪問したことのある店のみ紹介（順不同）
+
+::: {.incremental}
+
+1. 蔵木（牛モツつけ麺）
+1. まんしゅう（じゃんめん+白ご飯）
+1. 鶏と魚（メニューがよく変わる）
+1. チョンマゲ（ラーメン零）
+1. とさの家（ラーメン+のり多め+硬め濃いめ少なめ）
+1. 呑兵衛屋台（しじみラーメン）
+1. 谷口食堂（鍋焼きラーメン）
+
+:::
+````
+
+## 箇条書きのアニメーション（結果）
+
+宋が訪問したことのある店のみ紹介（順不同）
+
+::: {.incremental}
+
+1. 蔵木（牛モツつけ麺）
+1. まんしゅう（じゃんめん+白ご飯）
+1. 鶏と魚（メニューがよく変わる）
+1. チョンマゲ（ラーメン零）
+1. とさの家（ラーメン+のり多め+硬め濃いめ少なめ）
+1. 呑兵衛屋台（しじみラーメン）
+1. 谷口食堂（鍋焼きラーメン）
+
+:::
 
 ## 隠しスライド
 
+見出し（`#`と`##`）の後ろに`{visibility=}`を追加
+
+- `"hidden"`：スライドを隠す
+- `"uncounted"`：スライドを表示するものの、スライド番号が増加しない
+
+````markdown
+# 『私たちのR』のここがすごい! {visibility="uncounted"}
+
+## ネコが書いた本格R入門書
+
+- 世界人口を8割を占めているネコのための本格R入門書
+- ネコの、ネコによる、ネコのためのR入門書
+
+## ふざけた例が満載 {visibility="hidden"}
+
+- 世界各国の社会経済的データなどふざけた例が多い
+- ラーメン屋データのような真面目な例も少なめではあるが、一応ある。
+````
+
 ## 発表者用画面
 
-## ホワイトボードとペン機能
+- フルスクリーン（{{< kbd F >}}）と発表者用画面（{{< kbd S >}}）
+   - 発表者の画面が別ウィンドウとして開かれる。発表者画面での操作はスライド本体にも反映される
+   - スライドで移す場合、ミラーリングでなく別画面構成にする
+
+````markdown
+宋が訪問したことのある店のみ紹介（**太字**は大阪支店あり）
+
+1. 蔵木（牛モツつけ麺）
+1. **まんしゅう**（じゃんめん+白ご飯）
+1. 鶏と魚（メニューがよく変わる）
+1. **チョンマゲ**（ラーメン零）
+1. とさの家（ラーメン+のり多め+硬め濃いめ少なめ）
+1. 呑兵衛屋台（しじみラーメン）
+1. 谷口食堂（鍋焼きラーメン）
+
+::: {.notes}
+- 鶏と魚はドライトマトが乗っているやつがあれば間違いない
+- チョンマゲはラーメンよりも玉子焼き飯がうまいことも言っておく
+:::
+````
+
+## 発表者用画面（例）
+
+- 右上のボタンでレイアウト変更可能
+- 時計部分はクリックするとリセットされる
+
+![](figs/slide/speakernote.png){width=90% fig-align="center" style="border: 1px solid #000;"}
+
+## 黒板とペン機能
+
+YAMLヘッダーの`format: revealjs`の下に`chalkboard: true`を追加
+
+````yaml
+format:
+  revealjs: 
+    chalkboard: true
+````
+
+- {{< kbd C >}}でペンモード（[**c**]{.alert}anvas）、{{< kbd B >}}で黒板モード（chalk[**b**]{.alert}oard）のON/OFF
+- 削除は{{< kbd BACKSPACE >}}（すべて）、または{{< kbd DEL >}}（当該スライドのみ）
+- [**注意**]{.alert}：`embed-resources: true`とは併用不可
+
+::: {layout-ncol=2}
+![Canvasモード（Cキー）](figs/slide/canvas.png){width=500 fig-align="center"}
+
+![Chalkboardモード（Bキー）](figs/slide/chalkboard.png){width=500 fig-align="center"}
+:::
 
 # **3** PDF出力
 

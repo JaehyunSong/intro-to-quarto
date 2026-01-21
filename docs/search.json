@@ -65,507 +65,109 @@
     ]
   },
   {
-    "objectID": "share.html",
-    "href": "share.html",
-    "title": "共有",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "6/ 共有"
-    ]
+    "objectID": "share_slide.html#通常のhtmlファイルの限界",
+    "href": "share_slide.html#通常のhtmlファイルの限界",
+    "title": "6/ 文書とスライドの共有",
+    "section": "（通常の）HTMLファイルの限界",
+    "text": "（通常の）HTMLファイルの限界\n\n我々が見ているWEBブラウザ上の画面は1つのHTMLファイルだけではない。\n\nHTML（骨格とテキスト）、CSS（見た目、書式）、画像・動画、JavaScript1など\n\nHTMLだけを共有しても、我々が想定したものと違ったものが表示される。\n\nHTML単体にすべてのものを埋め込む必要がある\n\n\n\n\n\n\n\nHTMLのみ（CSS/JavaScript抜き）\n\n\n\n\n\n\nStandaloneなHTML\n\n\n\n短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込むことが多い"
   },
   {
-    "objectID": "share.html#yamlヘッダーの例",
-    "href": "share.html#yamlヘッダーの例",
-    "title": "共有",
-    "section": "1 YAMLヘッダーの例",
-    "text": "1 YAMLヘッダーの例\n\n1.1 PDF文書用\nあ\n\n\n1.2 Beamer用\n---\ntitle: \"ほとんど無害な『私たちのR』\"\nsubtitle: \"『私たちのR』をR教の聖典にすべき\"\ndate: today\nauthor: \"\\\\ltjruby{羽鳥}{ハドリー}ウィッカム\"\ninstitute: \"整然大学\"\nlang: ja\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis\n    classoption:\n      - aspectratio=169\n      - 10.5pt\n    mainfont: \"Noto Sans CJK JP\"\n    CJKmainfont: \"Noto Sans CJK JP\"\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}\n        \\usepackage{luatexja-ruby}\nknitr: \n  opts_chunk: \n    dev: \"ragg_png\"\n    dpi: 300\n    fig.align: \"center\"\n    echo: false\n    message: false\n    warning: false\n---\n\n## 概要\n\n::::{.columns}\n:::{.column width=30%}\n![THE BIBLE](https://jaysong.net/RBook/Figs/Cover.png)\n:::\n\n:::{.column width=70%}\n- 近年、爆発的に売り上げを伸ばした『私たちR』の紹介\n- 2.7秒に1冊売れているらしい。\n- メリットとデメリットの紹介\n:::\n::::\n\n# 『私たちのR』のここがすごい!\n\n## ネコが書いた本格R入門書\n\n::: {.incremental}\n- 世界人口の8割を占めているネコのための本格R入門書\n- ネコの、ネコによる、ネコのためのR入門書\n:::\n\n## ふざけた例が満載\n\n::: {.incremental}\n- 世界各国の社会経済的データなどふざけた例が多い\n- ラーメン屋データのような真面目な例も少なめではあるが、一応ある。\n:::\n\n# 『私たちのR』のここがダメ!\n\n## ネコしか読めない\n\n- にゃーにゃにゃーにゃーにゃーにゃにゃにゃ\n- にゃーにゃーにゃーにゃにゃーにゃにゃ\n- にゃーにゃにゃーにゃーにゃーにゃにゃ\n\n## ふざけた例しかない\n\n- にゃーにゃにゃーにゃーにゃーわん！わん！わん！\n- にゃーにゃーわんーにゃにゃーにゃにゃ\n- にゃーにゃにゃーにゃーわんーにゃにゃ\n\n:::{.callout-note icon=false}\n## にゃー？\n\n- にゃーー！にゃにゃ！！\n- にゃ...\n:::\n\n## コードの例\n\n:::: {.columns}\n::: {.column width=55%}\n```{r}\n#| echo: true\nlibrary(tidyverse)\nmy_plt &lt;- midwest |&gt; \n  ggplot(aes(x = area, \n             y = poptotal)) + \n  geom_point(aes(col = state, \n                 size = popdensity)) + \n  geom_smooth(method = \"loess\") + \n  xlim(c(0, 0.1)) +\n  ylim(c(0, 500000)) +\n  labs(title = \"Area Vs Population\",\n       x = \"Area\", \n       y = \"Population\")\n```\n:::\n\n::: {.column width=45%}\n```{r}\n#| echo: true\n#| fig-width: 5\n#| fig-height: 4\nplot(my_plt)\n```\n:::\n::::",
-    "crumbs": [
-      "6/ 共有"
-    ]
+    "objectID": "share_slide.html#html形式ファイルの共有方法",
+    "href": "share_slide.html#html形式ファイルの共有方法",
+    "title": "6/ 文書とスライドの共有",
+    "section": "HTML形式ファイルの共有方法",
+    "text": "HTML形式ファイルの共有方法\n\n文書、スライドを共有する方法\n\nファイルとして共有する（Harvard Dataverse、USB、メールの添付ファイルなど）\n\nPDF化する\nStandaloneなHTMLファイルにする\n\nネットに公開する\n\nQuarto Pub、GitHub Pages、Posit Connect、Netifly、Hugging Face、…"
   },
   {
-    "objectID": "markdown.html",
-    "href": "markdown.html",
-    "title": "Markdown文法の基礎",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
+    "objectID": "share_slide.html#standalone-htmlファイルの作成",
+    "href": "share_slide.html#standalone-htmlファイルの作成",
+    "title": "6/ 文書とスライドの共有",
+    "section": "Standalone HTMLファイルの作成",
+    "text": "Standalone HTMLファイルの作成\nYAMLヘッダーを修正（html:、またはrevealjs:の下）\n\n文書、スライド共通\nファイルのサイズが非常に大きくなるので注意\n\nembed-resources：画像（コードから生成された図を含む）、CSS、JavaScript1等をHTML内に埋め込む\nself-contained-math：数式レンダリングエンジン（MathJax等）を埋め込む\n\n\nformat:\n  html:\n    embed-resources: true\n    self-contained-math: true\n数式レンダリングエンジンを除く"
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Quartoとは & R Markdownとの比較",
-    "section": "",
-    "text": "新しいタブで開く\n       \n      \n    \n  \n\n1 Quartoとは\n\n\n2 なぜQuartoか\n\n\n3 vs. R Markdown",
-    "crumbs": [
-      "1/ イントロダクション"
-    ]
+    "objectID": "share_slide.html#pdfファイルの作成",
+    "href": "share_slide.html#pdfファイルの作成",
+    "title": "6/ 文書とスライドの共有",
+    "section": "PDFファイルの作成",
+    "text": "PDFファイルの作成\n\n文書\n\nHTMLファイルをWebブラウザ（Firefox、Chrome、Edge、Safari、…）でPDF印刷\n\nあまり推奨はできない\n\nformat: pdfにして最初からPDF文書として作成する（第4講参照）\n\nスライド\n\nHTMLファイルをWebブラウザでPDF印刷（第5講参照）\nformat: beamerにして最初からPDFスライドとして作成する（第5講参照）"
   },
   {
-    "objectID": "install.html",
-    "href": "install.html",
-    "title": "実習環境の構築",
-    "section": "",
-    "text": "新しいタブで開く\n       \n      \n    \n  \n\n1 RとIDE\n事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。\n\nPositronもあるが、ここではRStudioを使用\nmybinder.orgを使用する場合、\n\n 実習環境（mybinder.org）の起動\n\n\n2 Quarto CLIの入手\n\nmybinder.orgを使用する場合、ここは不要\n公式ホームページ（https://quarto.org/）から入手\nGet Startedメニューから自分のOSに合ったものをダウンロードし、インストール\nmacOSの場合、homebrewもおすすめ\n\nbrew install --cask quarto\n\n\n3 必要なパッケージをインストール\n\n{quarto}\nTinyTeX\n\n{tinytex} &gt; tinytex::install_tinytex()\nターミナルでquarto install tinytex\n\n\n\n\n4 プロジェクトの作成",
-    "crumbs": [
-      "2/ 実習環境の導入"
-    ]
+    "objectID": "share_slide.html#quarto-pub-1",
+    "href": "share_slide.html#quarto-pub-1",
+    "title": "6/ 文書とスライドの共有",
+    "section": "Quarto Pub",
+    "text": "Quarto Pub\n\nQuartoで作成したHTMLファイル（文書、スライド、Website、Web-book）をネット上に公開できるサービス\n\n無料（容量[100MB]、およびトラフィック[10GB/月]の制限あり）\nhttps://quartopub.com/（会員登録が必要）\n\nR Markdown時代（?）のRPubsに類似したサービス（上位互換?）\n\nドキュメント単位だけでなく、プロジェクト単位（Website/Blog/Web-book）の公開も可能\nGitHub Actionも使用可能\n\n詳細な使い方はhttps://quarto.org/docs/publishing/quarto-pub.htmlから"
   },
   {
-    "objectID": "document.html",
-    "href": "document.html",
-    "title": "文書の作成",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "share_slide.html#使い方1",
+    "href": "share_slide.html#使い方1",
+    "title": "6/ 文書とスライドの共有",
+    "section": "使い方（1）",
+    "text": "使い方（1）\n共通：Terminalペインを使用（Consoleベインじゃない）\n\n個別の文書、スライドの場合（本日はこのケースを紹介）\n\nquarto publish quarto-pub ファイル名.qmdを入力\n.qmdファイルが別のフォルダーに入っている場合、ファイルのパスを入力\n\nWebsite/Web-bookの場合\n\nquarto publish quarto-pubを入力\nプロジェクトが位置したフォルダーから実行"
   },
   {
-    "objectID": "document.html#sec-background",
-    "href": "document.html#sec-background",
-    "title": "文書の作成",
-    "section": "1.1 背景",
-    "text": "1.1 背景",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "share_slide.html#使い方2",
+    "href": "share_slide.html#使い方2",
+    "title": "6/ 文書とスライドの共有",
+    "section": "使い方（2）",
+    "text": "使い方（2）\n\nTerminalペインで以下のコマンドを入力\n\nquarto publish quarto-pub my_quarto.qmd\n\n以下のメッセージが表示されたら「Y」を入力し、Enter（Return）キー\n\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to authorize your account.\n  Please be sure you are logged into the correct Quarto Pub account in your\n  default web browser, then press Enter or 'Y' to authorize.\n\nWebブラウザーからQuarto Pubへログインし、ALLOWをクリック\n\nWebブラウザーが開かず、Please authorize by opening this url: https://quartopub.com/authorize?id=xxxが表示されたら、URLをコピペしてアクセスする"
   },
   {
-    "objectID": "document.html#sec-rq",
-    "href": "document.html#sec-rq",
-    "title": "文書の作成",
-    "section": "1.2 問い",
-    "text": "1.2 問い\n\n1.2.1 問い1\n\n\n1.2.2 問い2",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "share_slide.html#使い方3",
+    "href": "share_slide.html#使い方3",
+    "title": "6/ 文書とスライドの共有",
+    "section": "使い方（3）",
+    "text": "使い方（3）\n\n以下のようなメッセージが表示されたら、上下キーで操作する。\n\nデフォルトは.qmdファイルのtitleのまま\n公開用URLにも使われるので、なるべく英数字のみの名前を付けよう\n\n上下キーでUse another name…を選択し、新しい名前をつける\n\n\n\n? Document name:\n❯ はじめてのQuarto\n  Use another name...\n\nしばらく待ったら、公開完了\n\nhttps://ユーザーID.quarto.pub/から公開したものの一覧が確認できる\n\n個別のファイルはhttps://ユーザーID.quarto.pub/ドキュメント名/から\n\n公開したファイルの削除、URLの変更はhttps://quartopub.com/から\n\n更新も同じ手順\n\n更新するか、新しいファイルとして公開するかを選択する必要はある"
   },
   {
-    "objectID": "document.html#sec-review",
-    "href": "document.html#sec-review",
-    "title": "文書の作成",
-    "section": "1.3 先行研究",
-    "text": "1.3 先行研究\n第1章、第1.2章、第1.2.2章",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "share_slide.html#github-pages-1",
+    "href": "share_slide.html#github-pages-1",
+    "title": "6/ 文書とスライドの共有",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\n\nGitHubレポジトリ内の静的HTMLファイルを外部に公開するサービス\n\n無料\n容量（各レポジトリ1GB）、トラフィック（100GB/月）、ビルド（10回/1時間）などの制限付き\n\ngitおよびGitHubの使い方は省略\n\nこれだけで1日講座が作れます…。\nここで紹介するファイルのアップロード方法は正攻法でなく、邪道に近いもの\n\nGitHub CLI、GitHub Desktop、SourceTree、GitKraken\nRStudioやVS Code（Positron）とGitHubの連携"
   },
   {
-    "objectID": "document_slide.html#yamlヘッダーの構成要素の一部",
-    "href": "document_slide.html#yamlヘッダーの構成要素の一部",
-    "title": "4/ 文書の作成",
-    "section": "YAMLヘッダーの構成要素（の一部）",
-    "text": "YAMLヘッダーの構成要素（の一部）\n\n（1）メタ情報、（2）フォーマット、（3）チャンクオプションに大別\n\nメタ情報：タイトル、作成日、作成者、言語、概要、…\nフォーマット：HTML文書（html）か、PDF文書（pdf）か、HTMLスライド（revealjs）か、…\n\n文書の幅、目次の見た目、コードハイライトのテーマなど文書の「全体的」な見た目や構成に関する内容が多い\n\nチャンクオプション：全チャンクに共通するチャンクオプション\n\n詳細はQuarto公式ホームページを参照\n\nhttps://quarto.org/docs/reference/"
+    "objectID": "share_slide.html#githubレポジトリの作成",
+    "href": "share_slide.html#githubレポジトリの作成",
+    "title": "6/ 文書とスライドの共有",
+    "section": "GitHubレポジトリの作成",
+    "text": "GitHubレポジトリの作成\n\n画面左の「Create Repository」、または「New」ボタンをクリック\nレポジトリ名（Repository name）を入力し、Add READMEをONにする。"
   },
   {
-    "objectID": "document_slide.html#文書のメタ情報例",
-    "href": "document_slide.html#文書のメタ情報例",
-    "title": "4/ 文書の作成",
-    "section": "文書のメタ情報（例）",
-    "text": "文書のメタ情報（例）\n1title: 文書のタイトル\n2subtitle: 文書のサブタイトル\n3author:\n4  - name: 宋財泫\n5    affiliation: 関西大学\n6    email: song@kansai-u.ac.jp\n7    url: https://www.jaysong.net/\n8  - name: ぽよんぽよん\n    affiliation: 国立ソウル大学校\n9date: 1986/10/8\n10date-modified: today\n11lang: ja\n12abstract: |\n      ここに概要が入る\n      長ければ改行しても良い\n\n1\n\n文書のタイトル\n\n2\n\n文書のサブタイトル\n\n3\n\n著者名：著者が一人で、氏名のみOKならauthor: 著者名でもOK\n\n4\n\n第一著者の氏名\n\n5\n\n第一著者の所属\n\n6\n\n第一著者のメールアドレス\n\n7\n\n第一著者のホームページ\n\n8\n\n第二著者の氏名と所属\n\n9\n\n文書の作成日\n\n10\n\n文書の最終修正日：todayにするとレンダーした日付が自動的に入る\n\n11\n\n文書の言語\n\n12\n\n文書の概要：普段は不要だが、Quartoで論文を執筆する際はよく使う。概要が長い場合、|を入力し、改行してから概要を書く"
+    "objectID": "share_slide.html#ファイルのアップロード1",
+    "href": "share_slide.html#ファイルのアップロード1",
+    "title": "6/ 文書とスライドの共有",
+    "section": "ファイルのアップロード（1）",
+    "text": "ファイルのアップロード（1）\n\nAdd file &gt; Upload filesを選択"
   },
   {
-    "objectID": "document_slide.html#フォーマット例",
-    "href": "document_slide.html#フォーマット例",
-    "title": "4/ 文書の作成",
-    "section": "フォーマット（例）",
-    "text": "フォーマット（例）\nformat: htmlを基本とし、オプションを追加したい場合は以下のように書く\nformat: \n  html:\n1    grid:\n2      body-width: 1024px\n3    theme: flatly\n4    highlight-style: a11y\n5    toc: true\n6    toc-location: right\n7    toc-depth: 3\n8    number-sections: true\n\n1\n\nページレイアウト：sidebar-width（左のサイドバーの幅）、body-width（本文の幅）、margin-width（右のサイドバーの幅）、gutter-width（間隔）が調節可能\n\n2\n\n本文の幅を1024pxに（既定値は800px）\n\n3\n\nflatlyテーマを使用\n\n4\n\nコードハイライトのスタイルはa11y\n\n5\n\n目次あり\n\n6\n\n目次の位置は右側のサイドバー（通常、「マージン」と呼ばれる領域）\n\n7\n\n目次の深度は3\n\n8\n\n見出しに通し番号を付ける"
+    "objectID": "share_slide.html#ファイルのアップロード2",
+    "href": "share_slide.html#ファイルのアップロード2",
+    "title": "6/ 文書とスライドの共有",
+    "section": "ファイルのアップロード（2）",
+    "text": "ファイルのアップロード（2）\n\n必要なファイルをDrag & Dropし、下段の「Commit changes」\n\n\n\n\n\n\nStandalone HTMLならファイルのみ\nそれ以外の場合、*_filesフォルダーや画像が格納されているフォルダー1等も入れる必要がある。\n\n\n![](画像のパス)でローカルの画像を埋め込んだ場合など"
   },
   {
-    "objectID": "document_slide.html#チャンクオプション例",
-    "href": "document_slide.html#チャンクオプション例",
-    "title": "4/ 文書の作成",
-    "section": "チャンクオプション（例）",
-    "text": "チャンクオプション（例）\nすべてのチャンクに同じオプションを付けたい場合\n\n個別のチャンクにオプションはknitr: opts_chunkより優先する\n\nknitr: \n  opts_chunk: \n1    dev: ragg_png\n2    fig-align: center\n3    dpi: 300\n4    message: false\n5    warning: false\n\n1\n\n作図エンジンは{ragg}のpngフォーマットにする（文字化け防止）\n\n2\n\n図は中央に揃える（![]()で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）\n\n3\n\n図は解像度は300に（印刷する予定がないなら150程度でもOK））\n\n4\n\nメッセージを表示しない（{tidyverse}の読み込みやread_csv()後のメッセージなど）\n\n5\n\n警告メッセージを表示しない"
+    "objectID": "share_slide.html#github-pagesの設定",
+    "href": "share_slide.html#github-pagesの設定",
+    "title": "6/ 文書とスライドの共有",
+    "section": "GitHub Pagesの設定",
+    "text": "GitHub Pagesの設定\n\nSettingsメニュー（①）を選択し、Pagesタブ（②）へ\nBranchのNoneをmainに変更（③）"
   },
   {
-    "objectID": "document_slide.html#相互参照",
-    "href": "document_slide.html#相互参照",
-    "title": "4/ 文書の作成",
-    "section": "相互参照",
-    "text": "相互参照\n相互参照（cross-reference）の方法：@ラベル名\n\n図、表、式の場合、自動的に「図 1」や「Table 5」のように接頭詞が付く\n\n文書の言語設定に依存\n見出しの場合は数字のみ出力される\n\n相互参照に使う図表等のラベル名には決まった接頭詞（prefix）を使う\n\n図（fig-）、表（tbl-）、数式（eq-）、見出し（sec-）\n\n@ラベル名の前後は半角スペースを入れる"
+    "objectID": "share_slide.html#アップロードしたファイルの確認方法",
+    "href": "share_slide.html#アップロードしたファイルの確認方法",
+    "title": "6/ 文書とスライドの共有",
+    "section": "アップロードしたファイルの確認方法",
+    "text": "アップロードしたファイルの確認方法\n\nhttps://ユーザー名.github.io/レポジトリ名/ファイル名.htmlから確認可能\n\nHTMLファイルがサブフォルダーに書くのされている場合、https://ユーザー名.github.io/レポジトリ名/フォルダ名/ファイル名.htmlの形式\nレポジトリ名がユーザー名.github.ioならhttps://ユーザー名.github.io/ファイル名.htmlのようになるが、詳細は割愛1\n\nアップロードしてから反映されるまで時間がかかる（スライドや文書程度なら1〜2分）\n\nActionsメニューから処理状況が確認できる。\n\n\n主にホームページを作成する時に使う。この場合、WebページのHTMLファイルがdocsフォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。"
   },
   {
-    "objectID": "document_slide.html#相互参照単一の図",
-    "href": "document_slide.html#相互参照単一の図",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（単一の図）",
-    "text": "相互参照（単一の図）\n\n\nInput:\n@fig-myfig1 は適当に作った表です。\n\n```{r}\n#| label: fig-myfig1\n#| fig-cap: 適当に作った図\n#| echo: false\nplot(rnorm(100), type = \"l\")\n```\n\nOutput:\n図 1 は適当に作った図です。\n\n\n\n\n\n\n\n\n図 1: 適当に作った図\n\n\n\n\n\n\n\n\nInput:\nR猫弐号機（@fig-rcat2nd）\n\n![R猫弐号機](画像パス){#fig-rcat2nd}\n\nOutput:\nR猫弐号機（図 2）\n\n\n\n\n\n\n図 2: R猫弐号機"
-  },
-  {
-    "objectID": "document_slide.html#相互参照単一の表",
-    "href": "document_slide.html#相互参照単一の表",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（単一の表）",
-    "text": "相互参照（単一の表）\n\n\nInput:\n@tbl-mytbl1 は適当に作った表です。\n\n```{r}\n#| label: tbl-mytbl1\n#| tbl-cap: 適当に作った表\ngt::gt(iris[1:3, 1:3])\n```\n\nOutput:\n表 1 は適当に作った表です。\n\ngt::gt(iris[1:3, 1:3])\n\n\n\n表 1: 適当に作った表\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n      Petal.Length\n    \n  \n  \n    5.1\n3.5\n1.4\n    4.9\n3.0\n1.4\n    4.7\n3.2\n1.3\n  \n  \n\n\n\n\n\n\n\n\n\n\nInput:\n@tbl-mytbl2 も適当に作った表です。\n\n|Name    |Age |\n|:-------|---:|\n|Takaichi|64  |\n|Noda    |68  |\n\n:与野党党首の年齢 {#tbl-mytbl2}\n\nOutput:\n表 2 も適当に作った表です。\n\n\n\n表 2: 与野党党首の年齢\n\n\n\n\n\nName\nAge\n\n\n\n\nTakaichi\n64\n\n\nNoda\n68"
-  },
-  {
-    "objectID": "document_slide.html#相互参照複数の図",
-    "href": "document_slide.html#相互参照複数の図",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（複数の図）",
-    "text": "相互参照（複数の図）\n参照方法は@fig-ラベル名（単一の図と同じ方法）\n\nラベルは::: {layout-ncol=n #fig-ラベル名}と![](画像パス){#fig-ラベル名}のように両方指定\n\n\n\nInput:\n::: {layout-ncol=2 #fig-rcats}\n![弐号機](画像3のURL or パス){#fig-rcats1}\n\n![量産機](画像4のURL or パス){#fig-rcats2}\n\n: かわいいR猫たち\n:::\n\n@fig-rcats は..., @fig-rcats2 は...\n\nOutput:\n\n\n\n\n\n\n\n\n\n\n\n(a) 弐号機\n\n\n\n\n\n\n\n\n\n\n\n(b) 量産機\n\n\n\n\n\n\n\n図 3: かわいいR猫たち\n\n\n\n図 3 は…, 図 3 (b) は…"
-  },
-  {
-    "objectID": "document_slide.html#相互参照複数の図-続き",
-    "href": "document_slide.html#相互参照複数の図-続き",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（複数の図; 続き）",
-    "text": "相互参照（複数の図; 続き）\n図の群を参照する方法は@fig-ラベル名（単一の図と同じ方法）\n\n個別の図を参照したい場合は@fig-ラベル名-番号（最初の図から1、2、3、…）\n\n\n\nInput:\n```{r}\n#| label: fig-two-plts\n#| layout-ncol: 2\n#| fig-cap: 2つの折れ線グラフ\n#| fig-subcap: \n#|   - 線のみ\n#|   - 点 + 線\n#| echo: false\nplot(rnorm(10), type = \"l\")\n\nplot(rnorm(10), type = \"b\")\n```\n\n@fig-two-plts は..., @fig-two-plts-1 は...\n\nOutput:\n\n\n\n\n\n\n\n\n\n\n\n(a) 線のみ\n\n\n\n\n\n\n\n\n\n\n\n(b) 点 + 線\n\n\n\n\n\n\n\n図 4: 2つの折れ線グラフ\n\n\n\n図 4 は…, 図 4 (a) は…"
-  },
-  {
-    "objectID": "document_slide.html#相互参照複数の表",
-    "href": "document_slide.html#相互参照複数の表",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（複数の表）",
-    "text": "相互参照（複数の表）\n参照方法は@tbl-ラベル名（単一の表と同じ方法）\n\n図同様、群のラベルと個別のラベルを両方指定する\n\n\n\nInput:\n::: {#tbl-favorite layout-ncol=2}\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|1    |Song |Ramen   |\n: 宋の好物 {#tbl-favorite-s}\n\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|2    |Kim  |Truffle |\n: 金の好物 {#tbl-favorite-k}\n\n好物リスト\n:::\n\n@tbl-favorite と @tbl-favorite-s\n\nOutput:\n\n\n\n表 3: 好物リスト\n\n\n\n\n\n\n\n(a) 宋の好物\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n1\nSong\nRamen\n\n\n\n\n\n\n\n\n\n\n\n(b) 金の好物\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n2\nKim\nTruffle\n\n\n\n\n\n\n\n\n\n\n\n表 3 と 表 3 (a)"
-  },
-  {
-    "objectID": "document_slide.html#相互参照複数の表-続き",
-    "href": "document_slide.html#相互参照複数の表-続き",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（複数の表; 続き）",
-    "text": "相互参照（複数の表; 続き）\n複数の図の相互参照と同じ方法\n\nただし、ラベルの接頭詞はfig-でなく、tbl-\nfig-cap、fig-subcapの代わりにtbl-capとtbl-subcapを使用\n\n\n\nInput:\n```{r}\n#| label: tbl-two-tbls\n#| layout-ncol: 2\n#| tbl-cap: irisデータセットの一部\n#| tbl-subcap: \n#|   - setosa\n#|   - versicolor\ngt::gt(iris[1:5, 1:2])   # setosa\ngt::gt(iris[51:55, 1:2]) # versicolor\n```\n\n@tbl-two-tbls と @tbl-two-tbls-1\n\nOutput:\ngt::gt(iris[1:5, 1:2])   # setosa\ngt::gt(iris[51:55, 1:2]) # versicolor\n\n\n\n表 4: irisデータセットの一部\n\n\n\n\n\n\n\n(a) setosa\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    5.1\n3.5\n    4.9\n3.0\n    4.7\n3.2\n    4.6\n3.1\n    5.0\n3.6\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n(b) versicolor\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    7.0\n3.2\n    6.4\n3.2\n    6.9\n3.1\n    5.5\n2.3\n    6.5\n2.8\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n表 4 と 表 4 (a)"
-  },
-  {
-    "objectID": "document_slide.html#相互参照数式",
-    "href": "document_slide.html#相互参照数式",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（数式）",
-    "text": "相互参照（数式）\n$$の後ろの{#eq-ラベル名}を追加\n\n2つ目の$$の後ろにラベルを付けること（1つ目の後だとエラーが出る）。\n\nInput：\nポアソン分布の確率密度関数（@eq-poisson）は美しいぞ。\n\n$$\np(x) = \\frac{e^{-\\lambda} \\lambda^{x}}{x !}\n$$ {#eq-poisson}\nOutput：\nポアソン分布の確率密度関数（式 1）は美しいぞ。\n\\[\np(x) = \\frac{e^{-\\lambda} \\lambda^{x}}{x !}\n\\tag{1}\\]"
-  },
-  {
-    "objectID": "document_slide.html#相互参照見出し",
-    "href": "document_slide.html#相互参照見出し",
-    "title": "4/ 文書の作成",
-    "section": "相互参照（見出し）",
-    "text": "相互参照（見出し）\n\n[-@sec-ラベル名]1\n\n見出しのラベルは## 見出し {#sec-ラベル名}のように指定\n\n\n\n\nInput：\n# はじめに {#sec-intro}\n\n## 背景 {#sec-background}\n\n## 問い {#sec-rq}\n\n### 問い1 {#sec-rq1}\n\n### 問い2 {#sec-rq2}\n\n## 先行研究 {#sec-review}\n\n第[-@sec-intro]章、第[-@sec-rq]章、第[-@sec-rq2]章\n\nOutput：\n\n\n\n\n\n\n@sec-ラベル名でも動くが、自動的に「セクション 1.2」のような接頭詞が付いてしまう。"
-  },
-  {
-    "objectID": "document_slide.html#引用",
-    "href": "document_slide.html#引用",
-    "title": "4/ 文書の作成",
-    "section": "引用",
-    "text": "引用\n\nYAMLヘッダーに.bibファイルを指定（例：bibliography: references.bib）\n\n@固有キー：著者名（年）\n[@固有キー]：（著者名 年）\n[-@固有キー]：（年）\n\n英語の文献のみなら良いが、日本語の文献を引用する時はかなり厄介\n\n\n引用の例references.bibの中身\n\n\n\n\nInput：\n@imai_williams_2022 says ...\n\n[see @knuth_1984; @imai_williams_2022]\n\nThe god[-@knuth_1984] says ...\n\nOutput：\nImai and Williams (2022) says …\n(see Knuth 1984; Imai and Williams 2022)\nThe God (1984) says …\n\n\n\n@article{knuth_1984,\n  author  = {Donald E. Knuth},\n  year    = {1984},\n  title   = {Literate Programming},\n  journal = {The Computer Journal},\n  volume  = {27},\n  number  = {2},\n  pages   = {97--111}\n}\n\n@book{imai_williams_2022,\n  author    = {Kosuke Imai and Nora Webb Williams},\n  year      = {2022},\n  title     = {Quantitative Social Science: An Introduction in tidyverse},\n  publisher = {Princeton University Press},\n}"
-  },
-  {
-    "objectID": "document_slide.html#コールアウト",
-    "href": "document_slide.html#コールアウト",
-    "title": "4/ 文書の作成",
-    "section": "コールアウト",
-    "text": "コールアウト\n::: {.callout-*}と:::（見出しは#、##、…）\n\n*にはnote、warning、important、tip、caution\nオプション：icon=\"false\"とcollapse=\"true\"\n\n\n\nInput：\n::: {.callout-note}\n#### Quartoは私たちの友達!\n\n末永くよろしくね!\n:::\n\nOutput：\n\n\n\n\n\n\nQuartoは私たちの友達!\n\n\n末永くよろしくね!\n\n\n\n\n\n\nInput：\n::: {.callout-tip icon=\"false\"}\n#### アイコンを消したい...?\n\n`icon=\"false\"`を付けてみてね\n:::\n\nOutput：\n\n\n\nアイコンを消したい…?\n\n\nicon=\"false\"を付けてみてね"
-  },
-  {
-    "objectID": "document_slide.html#パネル",
-    "href": "document_slide.html#パネル",
-    "title": "4/ 文書の作成",
-    "section": "パネル",
-    "text": "パネル\n::: {.panel-tabset}と:::で囲まれた領域内の内容が段組みの対象\n\n各タブの見出しは#（宋は主に####か#5つ以上を使用）\n\n\n\nInput：\n::: {.panel-tabset}\n#### コード\n\n```{r}\nlibrary(tidyverse)\n\nmy_plt &lt;- ggplot(iris) +\n  geom_point(aes(x = Petal.Length,\n                 y = Petal.Width,\n                 color = Species))\n```\n\n#### 結果\n\n```{r}\nplot(my_plt)\n```\n:::\n\nOutput：\n\nコード結果\n\n\n\nlibrary(tidyverse)\n\nmy_plt &lt;- ggplot(iris) +\n  geom_point(aes(x = Petal.Length,\n                 y = Petal.Width,\n                 color = Species))\n\n\n\n\nplot(my_plt)"
-  },
-  {
-    "objectID": "document_slide.html#段組み",
-    "href": "document_slide.html#段組み",
-    "title": "4/ 文書の作成",
-    "section": "段組み",
-    "text": "段組み\n\nformat: revealjsの場合、columnの幅の合計が100%になると最後のcolumnが改行される場合もある（普通に問題なく動くケースも多い）。合計99%にすると問題はない\n\n::::{.columns}と::::で囲まれた領域内の内容が段組みの対象\n\n:::{.column}と:::で囲まれた領域が一つ一つの段（width=で幅指定）\n\n\n\nInput：\n:::: {.columns}\n::: {.column width=15%}\n1段目\n:::\n\n::: {.column width=25%}\n![R Cat](画像パス)\n:::\n\n::: {.column width=60%}\n```{r}\ngt::gt(iris[1:10,])\n```\n:::\n::::\n\nOutput：\n\n\n1段目\n\n\n\n\nR Cat\n\n\n\n\ngt::gt(iris[1:10,])\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n      Petal.Length\n      Petal.Width\n      Species\n    \n  \n  \n    5.1\n3.5\n1.4\n0.2\nsetosa\n    4.9\n3.0\n1.4\n0.2\nsetosa\n    4.7\n3.2\n1.3\n0.2\nsetosa\n    4.6\n3.1\n1.5\n0.2\nsetosa\n    5.0\n3.6\n1.4\n0.2\nsetosa\n    5.4\n3.9\n1.7\n0.4\nsetosa\n    4.6\n3.4\n1.4\n0.3\nsetosa\n    5.0\n3.4\n1.5\n0.2\nsetosa\n    4.4\n2.9\n1.4\n0.2\nsetosa\n    4.9\n3.1\n1.5\n0.1\nsetosa"
-  },
-  {
-    "objectID": "document_slide.html#コードの注釈",
-    "href": "document_slide.html#コードの注釈",
-    "title": "4/ 文書の作成",
-    "section": "コードの注釈",
-    "text": "コードの注釈\nチャンク内の各行の最後に# &lt;数字&gt;を追加し、チャンク外に数字. 注釈を記入\n\n複数の行に同じ番号を振ることも可\n以下はYAMLヘッダーにcode-annotations: selectを指定した例\n\n他にもbelow（既定値）、hoverあり\n\n\n\n\nInput：\n```{r}\nx &lt;- 1:10   # &lt;1&gt;\ny &lt;- sum(x) # &lt;2&gt;\nprint(y)    # &lt;2&gt;\n```\n\n1. xに1から10の自然数を格納\n2. yにxの和を格納し、出力\n\nOutput：\n\n1x &lt;- 1:10\n2y &lt;- sum(x)\nprint(y)\n\n\n1\n\nxに1から10の自然数を格納\n\n2\n\nyにxの和を格納し、出力\n\n\n\n\n[1] 55"
-  },
-  {
-    "objectID": "document_slide.html#チャンクの表示",
-    "href": "document_slide.html#チャンクの表示",
-    "title": "4/ 文書の作成",
-    "section": "チャンクの表示",
-    "text": "チャンクの表示\n{r}の代わりに{{r}}を使用\n\n授業資料（Quartoの使い方）を作成する時くらいしか使わない機能\n\n\n\nInput：\n```{{r}}\n#| label: fig-myplt\n#| fig-cap: My plot\nplot(1:10)\n```\n\nOutput：\n```{r}\n#| label: fig-myplt\n#| fig-cap: My plot\nplot(1:10)\n```"
-  },
-  {
-    "objectID": "document_slide.html#pdf出力が必要なケース",
-    "href": "document_slide.html#pdf出力が必要なケース",
-    "title": "4/ 文書の作成",
-    "section": "PDF出力が必要なケース",
-    "text": "PDF出力が必要なケース\n\n研究成果の公開、共有が目的ならHTMLで十分\n\nHTMLの方が機能が豊富であり、見た目のカスタマイズも比較的簡単1\n\nしかし、Quartoは論文執筆のための強力なツールでもある\n\nHTMLフォーマッ可のジャーナルはないはず（少なくとも政治学では）\n\\(\\Rightarrow\\) 論文、レポートをなどの印刷を念頭においたものを作成するのであれば、出力物はHTMLよりもPDFが望ましい\n\n最近はtypstを使う手もあるが、ここでは定番のLaTeXを使用する方法を紹介\n\nCSS/SCSSの知識があれば相当細かいレベルまでいじれる。"
-  },
-  {
-    "objectID": "document_slide.html#quartoからpdfを作成するための準備",
-    "href": "document_slide.html#quartoからpdfを作成するための準備",
-    "title": "4/ 文書の作成",
-    "section": "QuartoからPDFを作成するための準備",
-    "text": "QuartoからPDFを作成するための準備\nLaTeX環境を予め用意しておくこと\n\nTeXLive（Windows/Linux） or macTeX（macOS）\n\nTeX環境のインストールは時間がかかるため、TeX初心者はtinytexを推奨\n\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()\n\nharanoajiパッケージ（多分、今は不要1）\n\nTeXLive/macTeXの場合\n\ntlmgr install haranoaji（Windows2）\nsudo tlmgr install haranoaji（macOS/Linux）\n\ntinytex環境ならRコンソールでtinytex::tlmgr_install(\"haranoaji\")\n\n\n昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう。管理者としてターミナルを開く"
-  },
-  {
-    "objectID": "document_slide.html#どこを修正すれば良いか",
-    "href": "document_slide.html#どこを修正すれば良いか",
-    "title": "4/ 文書の作成",
-    "section": "どこを修正すれば良いか",
-    "text": "どこを修正すれば良いか\nYAMLヘッダーのformatをhtmlからpdfに変えるだけ\n\n日本語が含まれた文書は文字化けが発生するおそれがあるため、修正が必要1\nLuaLaTeXの代わりにXeLaTeXも可2\n以下は日本語を含むPDFを出力するためのYAMLヘッダーの例\n\nformat:\n  pdf:\n    pdf-engine: lualatex\n    documentclass: ltjsarticle\n    classoption:\n      - a4paper\n      - 10.5pt\n    number-sections: true\n    mainfont: Noto Serif CJK JP      # フォントは自分のPC環境に合わせて修正\n    sansfont: Noto Sans CJK JP       # フォントは自分のPC環境に合わせて修正\n    monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正\n多少のTeXに関する知識も必要CJKをすべて扱うならXeLaTeXの方がまだ便利かも知れない。"
-  },
-  {
-    "objectID": "document_slide.html#html-pdfの二刀流",
-    "href": "document_slide.html#html-pdfの二刀流",
-    "title": "4/ 文書の作成",
-    "section": "HTML + PDFの二刀流",
-    "text": "HTML + PDFの二刀流\n一つのYAMLヘッダーに複数のフォーマットを指定することも可\n\nどのフォーマットでレンダーするかはRenderボタン右の▼をクリックして選べる\n\nformat:\n  html:\n    theme: flatly\n    highlight-style: a11y\n  pdf:\n    pdf-engine: lualatex\n    documentclass: ltjsarticle\n    classoption:\n      - a4paper\n      - 10.5pt\n    mainfont: Noto Serif CJK JP\n    sansfont: Noto Sans CJK JP\n    monofont: Noto Sans Mono CJK JP"
-  },
-  {
-    "objectID": "document_slide.html#tips-1",
-    "href": "document_slide.html#tips-1",
-    "title": "4/ 文書の作成",
-    "section": "Tips",
-    "text": "Tips\n\ndateを本日（renderした日）にしたい\n\ndate: today\ndate: \"2026/2/12\"、modified-date:todayにすると作成日と改定日が両方表示される（HTML）\n\n.R/.qmdファイルの差し込み\n\n1つの.qmdが肥大化した場合、またはよく使うコードをリサイクルする際に有効\n文書内に{{&lt; include ファイル名.qmd &gt;}}を挿入\nチャンク内に{{&lt; include ファイル名.R &gt;}}もOK\n\n\n\n\n\n\nImai, Kosuke, and Nora Webb Williams. 2022. Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "",
-    "text": "重要本資料は作成中のものです。\n\n\n\n　本資料は、以下の2026年2月20日に行われる東京大学社会科学研究所計量分析セミナーの「Quartoを使った研究成果と分析プロセスの共」の教材として執筆中のものであり、2026年2月15日頃の公開を予定しております。現時点では\\(\\alpha\\)版に相当する段階であり、内容に不備や誤りが含まれている可能性が非常に高いです。したがって、本資料の内容に起因するいかなる問題についても、著者（宋）は一切の責任を負いかねます。"
-  },
-  {
-    "objectID": "index.html#概要",
-    "href": "index.html#概要",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "概要",
-    "text": "概要\n\n日時：2026年2月20日（金）10:30～17:00\n場所：東京ドーム \n料金：一般 5,000,000ペリカ、学生 2,500,000ペリカ\n講師：宋財泫（関西大学）\n定員：35,000名　※変更の可能性あり"
-  },
-  {
-    "objectID": "index.html#本コースの内容",
-    "href": "index.html#本コースの内容",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "本コースの内容",
-    "text": "本コースの内容\n　本コースは、新しいオープンソース文書作成システムである「Quarto」を導入することで、研究成果の作成と共有のプロセスを効率化・強化することを目指します。近年、研究の透明性と再現性の確保は、研究コミュニティにおける大きな課題となっています。たとえば自分の（または他人の）研究成果の再現に苦労する研究者も多くいるでしょう。中には「自分の過去の研究が再現できない」研究者もいるかも知れません。Quartoを用いることで、データ分析や解析に使用したコード、その実行結果、そして文章（説明）を一つのファイル内で統合できます。これにより、上記のような再現性の問題は根本的に解決できます。また、Quartoは、これまで広く利用されてきたR Markdownの後継として開発されたため、R Markdownよりも柔軟で強力な文書作成環境を提供します。RStudioはもちろん、Jupyter Notebookなど多様な実行環境と連携可能で、HTML、PDF、Word文書、プレゼンテーションスライド、書籍、ウェブサイトなど多様な形式への出力も容易です。さらに、Rだけでなく、近年の定量的社会科学で幅広く使われているPython、Julia等の言語にも対応しているなど、QuartoはRとRStudioを使わない方でもおすすめできるシステムです（本コースではRとRStudioを使用します）。"
-  },
-  {
-    "objectID": "index.html#次のような方におすすめです",
-    "href": "index.html#次のような方におすすめです",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "次のような方におすすめです",
-    "text": "次のような方におすすめです\n\n研究の再現性に課題を感じている方（自分の過去の分析が再現できなかった、他者の研究の再現に苦労したなど）\nデータ分析・解析プロセスと、文書/スライド作成を効率的に統合したい方\nR Markdownの機能や柔軟性に限界を感じている方"
-  },
-  {
-    "objectID": "index.html#注意事項",
-    "href": "index.html#注意事項",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "注意事項",
-    "text": "注意事項\n\nどなたでもご参加いただけます。\n本コースの実習環境はRおよびRStudioです。ご自身のPCにインストールした環境を前提としますが、実習用にクラウド環境（mybinder.org）も用意しております。クラウド実習環境の導入方法は講義中に解説します。\nRおよびRStudioの操作に不慣れな方でも受講可能ですが、全く初めての方は基本的な操作方法を事前に習得してください。事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。"
-  },
-  {
-    "objectID": "index.html#本コースの日程",
-    "href": "index.html#本コースの日程",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "本コースの日程",
-    "text": "本コースの日程\n※ 進度によって内容が若干変わることがあります。\n\nQuartoとは＆R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
-  },
-  {
-    "objectID": "install_slide.html#実習環境",
-    "href": "install_slide.html#実習環境",
-    "title": "2/ 実習環境の構築",
-    "section": "実習環境",
-    "text": "実習環境\n以下のソフトウェア、ライブラリをなるべく最新版で用意\n\nR\nRStudio\nQuarto CLI\n{quarto}パッケージ\n（PDF出力をする場合）TeX環境（TeX Live、MacTeX、TinyTeXなど）"
-  },
-  {
-    "objectID": "install_slide.html#ローカル環境とクラウド環境",
-    "href": "install_slide.html#ローカル環境とクラウド環境",
-    "title": "2/ 実習環境の構築",
-    "section": "ローカル環境とクラウド環境",
-    "text": "ローカル環境とクラウド環境\n\nローカル環境\n\n自分のPCにR/RStudio/Quarto CLI/TeX等をすべてインストール\n導入コスト（時間）はかかるが、クラウド環境より快適1\n既存のRユーザーならこちらを推奨\n\nクラウド環境\n\nR/RStudio/Quarto CLI/TeX一式が完備された環境（ネット接続必須）\n導入コストは非常に低いが、動作が重い\nとりあえずQuartoと味わってみたいのであれば、これも\\(\\bigcirc\\)\n\n\nPCのスペックにもよる。"
-  },
-  {
-    "objectID": "install_slide.html#rとrstudio",
-    "href": "install_slide.html#rとrstudio",
-    "title": "2/ 実習環境の構築",
-    "section": "RとRStudio",
-    "text": "RとRStudio\n省略"
-  },
-  {
-    "objectID": "install_slide.html#quarto-cli",
-    "href": "install_slide.html#quarto-cli",
-    "title": "2/ 実習環境の構築",
-    "section": "Quarto CLI",
-    "text": "Quarto CLI\nQuarto公式ホームページ（https://quarto.org/）から入手&インストール\n\n「Get Started」メニュー、または以下のページから入手\n\nhttps://quarto.org/docs/download/\n\nmacOSの場合、homebrewからインストールも可\n\nターミナルでbrew install --cask quarto"
-  },
-  {
-    "objectID": "install_slide.html#quartoパッケージ",
-    "href": "install_slide.html#quartoパッケージ",
-    "title": "2/ 実習環境の構築",
-    "section": "{quarto}パッケージ",
-    "text": "{quarto}パッケージ\nRコンソールで以下のコマンドで{quarto}パッケージをインストール\ninstall.packages(\"quarto\")\n\nインストールのみで十分（読み込みは不要）"
-  },
-  {
-    "objectID": "install_slide.html#tex環境",
-    "href": "install_slide.html#tex環境",
-    "title": "2/ 実習環境の構築",
-    "section": "TeX環境",
-    "text": "TeX環境\n作成した文書、スライドをPDFフォーマットで出力したい場合\n\nすでに自分のPCにTeX環境が用意されている場合 \\(\\Rightarrow\\) 別途の設定は不要\n\n例）TeX Live（Windows/Unix/Linux）、MacTeX（macOS）\n\nTeXを使ったことがない or クラウド版（Overleafなど）のみ使用している場合\n\n{tinytex}のインストールがおすすめ\n\n\n# {tinytexパッケージのインストール}\ninstall.packages(\"tinytex\")\n# tinytexのインストール\ntinytex::install_tinytex()\n# 今は（多分）不要だが、念のために\ntinytex::tlmgr_install(\"haranoaji\")"
-  },
-  {
-    "objectID": "install_slide.html#クラウド環境の種類",
-    "href": "install_slide.html#クラウド環境の種類",
-    "title": "2/ 実習環境の構築",
-    "section": "クラウド環境の種類",
-    "text": "クラウド環境の種類\n\nposit Cloud\nmybinder.org\nJDCat分析ツール"
-  },
-  {
-    "objectID": "install_slide.html#posit-cloud",
-    "href": "install_slide.html#posit-cloud",
-    "title": "2/ 実習環境の構築",
-    "section": "posit Cloud",
-    "text": "posit Cloud\nRStudioの開発元であるposit社が提供するクラウド版R & RStudio\n\n無料版の制約（詳細はhttps://posit.cloud/plans）\n\n月間利用時間の上限あり（25時間）\nスペックの制限（1GB RAM / 1CPU）\n\n導入手順\n\nposit Cloud（https://posit.cloud/）のアカウント登録&ログイン\n右のNew ProjectでNew RStudio Project\n\nRStudioの設定は以下の設定を参照\nhttps://www.jaysong.net/RBook/r_customize.html\n\nDefault working directoryは「/cloud/project」のままでOK\n\n\n画面上段の「Untitled Project」をクリックし、プロジェクト名を指定\n{quarto}、{ragg}パッケージをインストールする"
-  },
-  {
-    "objectID": "install_slide.html#mybinder.org",
-    "href": "install_slide.html#mybinder.org",
-    "title": "2/ 実習環境の構築",
-    "section": "mybinder.org",
-    "text": "mybinder.org\nウェブでRStudioが使えるサービス（事前登録不要）\n\nアカウントの概念が存在しないため、アクセスする度にすべて初期化される。\n\n再現/再生用データ&コードの共有に適したサービス\nとりあえず手軽にQuartoを味わっていみないのであればオススメ\n\n次頁で紹介するJDCat分析ツールより劣るが、安定性は\n起動方法\n\nhttps://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD \\(\\leftarrow\\) クリック"
-  },
-  {
-    "objectID": "install_slide.html#jdcat分析ツール",
-    "href": "install_slide.html#jdcat分析ツール",
-    "title": "2/ 実習環境の構築",
-    "section": "JDCat分析ツール",
-    "text": "JDCat分析ツール\n\nmybinder.orgと同じサービスだが、継続的に使用可能なサービス\n\nただし、サーバーが不安定になることが多々ある\n\n導入手順（サーバーの立ち上げ）\n\nOrthrosのホームーページでアカウント登録\n\nhttps://ui.orthros.gakunin.nii.ac.jp/\n必ず.ac.jp、または.go.jpのメールアドレスを使うこと\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD\n所属機関を「Orthros」とし、ログインする。\n数分待てばOK\n\n立ち上げたサーバーの起動（再利用）\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n所属機関を「Orthros」とし、ログインする。\n表示されているURLをクリックする\n\nURLが表示されていない場合、右の「Start」をクリック"
-  },
-  {
-    "objectID": "install_slide.html#プロジェクトの作成-1",
-    "href": "install_slide.html#プロジェクトの作成-1",
-    "title": "2/ 実習環境の構築",
-    "section": "プロジェクトの作成",
-    "text": "プロジェクトの作成\n実習用のプロジェクトを作成する\n\nプロジェクトを作る理由、方法は省略（本講義の前提知識）\nposit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）"
-  },
-  {
-    "objectID": "intro_slide.html#自己紹介",
-    "href": "intro_slide.html#自己紹介",
-    "title": "1/ Quartoとは",
-    "section": "自己紹介",
-    "text": "自己紹介\n\n\n\n\n\n講義名：社会科学における因果推論\n担当教員：宋そん財泫じぇひょん\n\n関西大学総合情報学部　准教授\n博士（政治学）\n\n https://www.jaysong.net/\n songkansai-u.ac.jp"
-  },
-  {
-    "objectID": "intro_slide.html#まずはr-markdownから",
-    "href": "intro_slide.html#まずはr-markdownから",
-    "title": "1/ Quartoとは",
-    "section": "まずはR Markdownから",
-    "text": "まずはR Markdownから\n\n\n\n\n\n\n{knitr}（2012年頃）と{rmarkdown}（2014年頃）パッケージの登場\nRのコードと結果、文章が一つの文書としてまとめたもの\n\nHTML、Microsoft Word、PDF等\n\n外部パッケージを使用することで様々な出力物が作成可能\n\nスライド（{xaringan}）、ホームページ（{blogdown}）、書籍（{bookdown}）など\n\nR + Markdown \\(\\rightarrow\\) Markdownって何?"
-  },
-  {
-    "objectID": "intro_slide.html#プレーンテキストとリッチテキスト",
-    "href": "intro_slide.html#プレーンテキストとリッチテキスト",
-    "title": "1/ Quartoとは",
-    "section": "プレーンテキストとリッチテキスト",
-    "text": "プレーンテキストとリッチテキスト\n\nPlain text：純粋なテキストのみで構成されている文書（図表、書式情報\\(\\times\\)）\n\nmacOSのテキストエディット、Windowsのメモ帳、VS Code、Vimなど\n\nRich text：テキストだけでなく、書式情報、図表なども含まれる文書\n\n書式情報の例: 文書の余白、行間の幅、文字サイズ、太さ、色\nMicrosoft Word、Apple Pages、LibreOffice Writer、一太郎など\n\nリッチテキストには文字情報以外にも様々な書式情報が含まれているため、サイズが大きく、パソコンへの負担も大きい（\\(\\doteqdot\\) .xlsx vs. .csv）"
-  },
-  {
-    "objectID": "intro_slide.html#プレーンテキストからリッチテキストへ",
-    "href": "intro_slide.html#プレーンテキストからリッチテキストへ",
-    "title": "1/ Quartoとは",
-    "section": "プレーンテキストからリッチテキストへ",
-    "text": "プレーンテキストからリッチテキストへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\nWebブラウザ（Chrome、Firefox、Edge、Safari等）はHTMLをリッチテキストへ変換するレンダリングエンジン（Gecko、Blink、WebKit等）を搭載している\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nOutput:\nこの文字は太字にしましょう。 ここをクリックしてください。"
-  },
-  {
-    "objectID": "intro_slide.html#markdownとは",
-    "href": "intro_slide.html#markdownとは",
-    "title": "1/ Quartoとは",
-    "section": "Markdownとは",
-    "text": "Markdownとは\n\nMarkdown（）: Markup言語の軽量版\n\n文章作成に必要なタグ（tag）を、より簡単に記述できる。\n\n\nMarkupの場合（HTML）\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nMarkdownの場合\nこの文字は**太字**にしましょう。\n\n[ここ](https://www.jaysong.net)をクリックしてください。\n結果\nこの文字は太字にしましょう。 ここをクリックしてください。"
-  },
-  {
-    "objectID": "intro_slide.html#markup-vs.-markdown表",
-    "href": "intro_slide.html#markup-vs.-markdown表",
-    "title": "1/ Quartoとは",
-    "section": "Markup vs. Markdown（表）",
-    "text": "Markup vs. Markdown（表）\n\n\nMarkup（HTML）\n&lt;table&gt;\n    &lt;thead style = \"font-weight:bold;\"&gt;\n        &lt;td&gt;ID&lt;/td&gt;\n        &lt;td&gt;Name&lt;/td&gt;\n    &lt;/thead&gt;\n    &lt;tr&gt;\n        &lt;td&gt;1&lt;/td&gt;\n        &lt;td&gt;Quarto&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;2&lt;/td&gt;\n        &lt;td&gt;Markdown&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n\nMarkdown\n| ID | Name     |\n|----|----------|\n| 1  | Quarto   |\n| 2  | Markdown |\nOutput\n\n\n\nID\nName\n\n\n\n\n1\nQuarto\n\n\n2\nMarkdown"
-  },
-  {
-    "objectID": "intro_slide.html#markup-vs.-markdown箇条書き1",
-    "href": "intro_slide.html#markup-vs.-markdown箇条書き1",
-    "title": "1/ Quartoとは",
-    "section": "Markup vs. Markdown（箇条書き1）",
-    "text": "Markup vs. Markdown（箇条書き1）\n\n\nMarkup（HTML）\n&lt;ul&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ul&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ul&gt;\n\nMarkdown\n- 箇条書き1\n   - 箇条書き1A\n   - 箇条書き1B\n- 箇条書き2\n- 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
-  },
-  {
-    "objectID": "intro_slide.html#markup-vs.-markdown箇条書き2",
-    "href": "intro_slide.html#markup-vs.-markdown箇条書き2",
-    "title": "1/ Quartoとは",
-    "section": "Markup vs. Markdown（箇条書き2）",
-    "text": "Markup vs. Markdown（箇条書き2）\n\n\nMarkup（HTML）\n&lt;ol&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ol&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ol&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ol&gt;\n\nMarkdown\n1. 箇条書き1\n   1. 箇条書き1A\n   1. 箇条書き1B\n1. 箇条書き2\n1. 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
-  },
-  {
-    "objectID": "intro_slide.html#quartoの登場",
-    "href": "intro_slide.html#quartoの登場",
-    "title": "1/ Quartoとは",
-    "section": "Quartoの登場",
-    "text": "Quartoの登場\n2026年2月現在、QuartoはR Markdownの（ほぼ）上位互換だと考えても良い\n\n\n\n\n\n\n2022年7月登場（Ver. 1.0）したR markdownの後継\n読み方は「クゥオート」（クワトロじゃない）\n断片化されつつあるR Markdown生態系を一つに統合したもの\n\nR Markdown界隈の{blogdown}、{bookdown}、{xaringan}、…\nQuartoは別途のパッケージ不要\n\nR以外の言語、knitr以外のエンジンも使用可能\nR Markdownと使い方はほぼ同じ"
-  },
-  {
-    "objectID": "intro_slide.html#なぜquartor-markdownを使うか",
-    "href": "intro_slide.html#なぜquartor-markdownを使うか",
-    "title": "1/ Quartoとは",
-    "section": "なぜQuarto/R Markdownを使うか",
-    "text": "なぜQuarto/R Markdownを使うか\nQuarto/R Markdownは文芸的プログラミング（literate programming）のツール\n\n文芸的プログラミング：ソースコードとドキュメントを別々のファイルに記入せず、一つのファイルでまとめるプログラミングのスタイル\n\n既存の「コード + コメント（#、//、&lt;!-- ~ --&gt;、…）」より発展した概念\nプログラミングの界隈では流行らなかったが…\n\n\n\n学術研究における文芸的プログラミングとは…\n\n「何をしたか（code）」と「そこから何が得られたか（result）」、「説明（narrative; なぜそうしたか、その結果は何を意味するか、…）」を同じ場所に記述すること\n\n例）既存のやり方：Rで分析し、推定結果や作成した図をLaTeX、Wordに貼り付けながら論文や資料を作成\n例）文芸的プログラミングのやり方：Quarto"
-  },
-  {
-    "objectID": "intro_slide.html#文芸的プログラミングのすゝめ",
-    "href": "intro_slide.html#文芸的プログラミングのすゝめ",
-    "title": "1/ Quartoとは",
-    "section": "文芸的プログラミングのすゝめ",
-    "text": "文芸的プログラミングのすゝめ\n\n「手作業」の排除によるエラー防止（自動化）\n分析プロセスの透明化\nバージョン管理システムとの親和性\n環境依存性の記述とポータビリティ\n\n\n\n\n\n\n\n\n\n\n従来のツール（R + Word）\nQuarto\n\n\n\n\nプロセス\n手作業の連続（分断）\nコードによる自動化（統合）\n\n\n変更への対応\n最初からやり直し（高コスト）\n再実行のみ（低コスト）\n\n\n透明性\n操作履歴が見えにくい\nコードですべて可視化される\n\n\n再現性\n低い（人の記憶や手作業に依存）\n高い（データとコードがあれば再現可能）\n\n\n\n\n\\(\\Downarrow\\)\nQuartoやR Markdownを使用すると「分析結果」だけでなく「分析のプロセスそのもの」を成果物として保存・共有できる"
-  },
-  {
-    "objectID": "intro_slide.html#文書生成の流れr-markdownの場合",
-    "href": "intro_slide.html#文書生成の流れr-markdownの場合",
-    "title": "1/ Quartoとは",
-    "section": "文書生成の流れ（R Markdownの場合）",
-    "text": "文書生成の流れ（R Markdownの場合）\nR&Knitr使用を前提として開発され、拡張されていくR Markdown"
-  },
-  {
-    "objectID": "intro_slide.html#文書生成の流れquartoの場合",
-    "href": "intro_slide.html#文書生成の流れquartoの場合",
-    "title": "1/ Quartoとは",
-    "section": "文書生成の流れ（Quartoの場合）",
-    "text": "文書生成の流れ（Quartoの場合）\n複数言語&エンジン使用を念頭において開発されたQuarto"
-  },
-  {
-    "objectID": "intro_slide.html#言語エンジンの豊富さ",
-    "href": "intro_slide.html#言語エンジンの豊富さ",
-    "title": "1/ Quartoとは",
-    "section": "言語、エンジンの豊富さ",
-    "text": "言語、エンジンの豊富さ\nQuarto公式HPのFAQ for R Markdown Usersにより\n\n(…) Quarto is at its core multi-language and multi-engine (supporting Knitr, Jupyter, and Observable today and potentially other engines tomorrow). (…) Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don’t yet exist.\n\n\n使用可能な言語：R、Python、Julia、Javascript、…\n使用可能なエンジン：Knitr、Jupyter、Observable、…\nその他：PDF作成の際、\\(\\LaTeX\\)でなくtypstも使用可能"
-  },
-  {
-    "objectID": "intro_slide.html#生態系の統合",
-    "href": "intro_slide.html#生態系の統合",
-    "title": "1/ Quartoとは",
-    "section": "生態系の統合",
-    "text": "生態系の統合\n詳細な例は公式ホームページを確認\n\nただし、Quartoは外部のパッケージでなく、拡張機能（extensions）が存在\nダッシュボードの作成やShinyとの統合もOK\n\n\n\nR Markdown\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n{bookdown}\n\n\nスライド\n{xaringan}\n\n\nホームページ\n{blogdown}\n\n\nポスター\n{posterdown}\n\n\n\n\nQuarto\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n不要\n\n\nスライド\n不要\n\n\nホームページ\n不要\n\n\nポスター\n???"
-  },
-  {
-    "objectID": "intro_slide.html#コース概要-1",
-    "href": "intro_slide.html#コース概要-1",
-    "title": "1/ Quartoとは",
-    "section": "コース概要",
-    "text": "コース概要\n進度によって内容が若干変わることがある。\n\nQuartoとは & R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
-  },
-  {
-    "objectID": "intro_slide.html#到達目標",
-    "href": "intro_slide.html#到達目標",
-    "title": "1/ Quartoとは",
-    "section": "到達目標",
-    "text": "到達目標\n\nMarkdown文法が分かる。\nQuartoで再現・再生用ファイルが作成できる。\n\nPDF文書が作成できる。\n\nQuartoでHTMLスライドが作れる。\n作成した文書、スライドが共有できる。\nより複雑なプロジェクトに取り組むための基礎知識を習得する。\n\nQuarto公式のガイド/レファレンスを読めば応用できるようになる。"
-  },
-  {
-    "objectID": "intro_slide.html#コース資料の入手先",
-    "href": "intro_slide.html#コース資料の入手先",
-    "title": "1/ Quartoとは",
-    "section": "コース資料の入手先",
-    "text": "コース資料の入手先\n\nhttps://www.jaysong.net/quarto_intro"
+    "objectID": "share_slide.html#その他-1",
+    "href": "share_slide.html#その他-1",
+    "title": "6/ 文書とスライドの共有",
+    "section": "その他",
+    "text": "その他\n\nセッション情報やパッケージのバージョンを明記\nrenvやhttps://www.mybinder.orgなど"
   },
   {
     "objectID": "markdown_slide.html#とりあえずレンダー1",
@@ -834,137 +436,536 @@
     "text": "その他のオプション\nQuartoの公式ホームページかknitrエンジンのマニュアルを参照\n\nhttps://quarto.org/docs/reference/cells/cells-knitr.html\nhttps://yihui.org/knitr/options/"
   },
   {
-    "objectID": "share_slide.html#通常のhtmlファイルの限界",
-    "href": "share_slide.html#通常のhtmlファイルの限界",
-    "title": "6/ 文書とスライドの共有",
-    "section": "（通常の）HTMLファイルの限界",
-    "text": "（通常の）HTMLファイルの限界\n\n我々が見ているWEBブラウザ上の画面は1つのHTMLファイルだけではない。\n\nHTML（骨格とテキスト）、CSS（見た目、書式）、画像・動画、JavaScript1など\n\nHTMLだけを共有しても、我々が想定したものと違ったものが表示される。\n\nHTML単体にすべてのものを埋め込む必要がある\n\n\n\n\n\n\n\nHTMLのみ（CSS/JavaScript抜き）\n\n\n\n\n\n\nStandaloneなHTML\n\n\n\n短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込むことが多い"
+    "objectID": "intro_slide.html#自己紹介",
+    "href": "intro_slide.html#自己紹介",
+    "title": "1/ Quartoとは",
+    "section": "自己紹介",
+    "text": "自己紹介\n\n\n\n\n\n講義名：社会科学における因果推論\n担当教員：宋そん財泫じぇひょん\n\n関西大学総合情報学部　准教授\n博士（政治学）\n\n https://www.jaysong.net/\n songkansai-u.ac.jp"
   },
   {
-    "objectID": "share_slide.html#html形式ファイルの共有方法",
-    "href": "share_slide.html#html形式ファイルの共有方法",
-    "title": "6/ 文書とスライドの共有",
-    "section": "HTML形式ファイルの共有方法",
-    "text": "HTML形式ファイルの共有方法\n\n文書、スライドを共有する方法\n\nファイルとして共有する（Harvard Dataverse、USB、メールの添付ファイルなど）\n\nPDF化する\nStandaloneなHTMLファイルにする\n\nネットに公開する\n\nQuarto Pub、GitHub Pages、Posit Connect、Netifly、Hugging Face、…"
+    "objectID": "intro_slide.html#まずはr-markdownから",
+    "href": "intro_slide.html#まずはr-markdownから",
+    "title": "1/ Quartoとは",
+    "section": "まずはR Markdownから",
+    "text": "まずはR Markdownから\n\n\n\n\n\n\n{knitr}（2012年頃）と{rmarkdown}（2014年頃）パッケージの登場\nRのコードと結果、文章が一つの文書としてまとめたもの\n\nHTML、Microsoft Word、PDF等\n\n外部パッケージを使用することで様々な出力物が作成可能\n\nスライド（{xaringan}）、ホームページ（{blogdown}）、書籍（{bookdown}）など\n\nR + Markdown \\(\\rightarrow\\) Markdownって何?"
   },
   {
-    "objectID": "share_slide.html#standalone-htmlファイルの作成",
-    "href": "share_slide.html#standalone-htmlファイルの作成",
-    "title": "6/ 文書とスライドの共有",
-    "section": "Standalone HTMLファイルの作成",
-    "text": "Standalone HTMLファイルの作成\nYAMLヘッダーを修正（html:、またはrevealjs:の下）\n\n文書、スライド共通\nファイルのサイズが非常に大きくなるので注意\n\nembed-resources：画像（コードから生成された図を含む）、CSS、JavaScript1等をHTML内に埋め込む\nself-contained-math：数式レンダリングエンジン（MathJax等）を埋め込む\n\n\nformat:\n  html:\n    embed-resources: true\n    self-contained-math: true\n数式レンダリングエンジンを除く"
+    "objectID": "intro_slide.html#プレーンテキストとリッチテキスト",
+    "href": "intro_slide.html#プレーンテキストとリッチテキスト",
+    "title": "1/ Quartoとは",
+    "section": "プレーンテキストとリッチテキスト",
+    "text": "プレーンテキストとリッチテキスト\n\nPlain text：純粋なテキストのみで構成されている文書（図表、書式情報\\(\\times\\)）\n\nmacOSのテキストエディット、Windowsのメモ帳、VS Code、Vimなど\n\nRich text：テキストだけでなく、書式情報、図表なども含まれる文書\n\n書式情報の例: 文書の余白、行間の幅、文字サイズ、太さ、色\nMicrosoft Word、Apple Pages、LibreOffice Writer、一太郎など\n\nリッチテキストには文字情報以外にも様々な書式情報が含まれているため、サイズが大きく、パソコンへの負担も大きい（\\(\\doteqdot\\) .xlsx vs. .csv）"
   },
   {
-    "objectID": "share_slide.html#pdfファイルの作成",
-    "href": "share_slide.html#pdfファイルの作成",
-    "title": "6/ 文書とスライドの共有",
-    "section": "PDFファイルの作成",
-    "text": "PDFファイルの作成\n\n文書\n\nHTMLファイルをWebブラウザ（Firefox、Chrome、Edge、Safari、…）でPDF印刷\n\nあまり推奨はできない\n\nformat: pdfにして最初からPDF文書として作成する（第4講参照）\n\nスライド\n\nHTMLファイルをWebブラウザでPDF印刷（第5講参照）\nformat: beamerにして最初からPDFスライドとして作成する（第5講参照）"
+    "objectID": "intro_slide.html#プレーンテキストからリッチテキストへ",
+    "href": "intro_slide.html#プレーンテキストからリッチテキストへ",
+    "title": "1/ Quartoとは",
+    "section": "プレーンテキストからリッチテキストへ",
+    "text": "プレーンテキストからリッチテキストへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\nWebブラウザ（Chrome、Firefox、Edge、Safari等）はHTMLをリッチテキストへ変換するレンダリングエンジン（Gecko、Blink、WebKit等）を搭載している\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nOutput:\nこの文字は太字にしましょう。 ここをクリックしてください。"
   },
   {
-    "objectID": "share_slide.html#文書のpdf出力",
-    "href": "share_slide.html#文書のpdf出力",
-    "title": "6/ 文書とスライドの共有",
-    "section": "文書のPDF出力",
-    "text": "文書のPDF出力\nformat: pdfを使用（多少のTeXに関する知識も必要）\n\nLuaLaTeXの代わりにXeLaTeXも可（CJKをすべて扱うならXeLaTeXの方がまだ便利かも）\n\nformat:\n  pdf:\n    pdf-engine: lualatex\n    documentclass: ltjsarticle\n    classoption:\n      - a4paper\n      - 10.5pt\n    number-sections: true\n    mainfont: Noto Serif CJK JP      # フォントは自分のPC環境に合わせて修正\n    sansfont: Noto Sans CJK JP       # フォントは自分のPC環境に合わせて修正\n    monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正"
+    "objectID": "intro_slide.html#markdownとは",
+    "href": "intro_slide.html#markdownとは",
+    "title": "1/ Quartoとは",
+    "section": "Markdownとは",
+    "text": "Markdownとは\n\nMarkdown（）: Markup言語の軽量版\n\n文章作成に必要なタグ（tag）を、より簡単に記述できる。\n\n\nMarkupの場合（HTML）\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nMarkdownの場合\nこの文字は**太字**にしましょう。\n\n[ここ](https://www.jaysong.net)をクリックしてください。\n結果\nこの文字は太字にしましょう。 ここをクリックしてください。"
   },
   {
-    "objectID": "share_slide.html#参考文献の話",
-    "href": "share_slide.html#参考文献の話",
-    "title": "6/ 文書とスライドの共有",
-    "section": "参考文献の話",
-    "text": "参考文献の話\n参考文献の管理・挿入はBibTeXを使用する（引用は@固有キー）\n\n参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介\n\n英文のジャーナル名はJournal、和文のジャーナル名は『ジャーナル名』\n\n社会科学ではjecon.bst（経済学用のBibTeX style file）が定番\n2026年1月現在、正攻法でjecon.bstを使う方法は（少なくとも宋にとっては）不明\nプロジェクトフォルダーに.latexmkrcファイルを格納し、PDFエンジンとしてLatexmkを使用することで、とりあえず・・・・・使うことはできる\n\n『私たちのR』の「第25章 Quarto[文書]」を参照\nhttps://www.jaysong.net/RBook/quarto2.html"
+    "objectID": "intro_slide.html#markup-vs.-markdown表",
+    "href": "intro_slide.html#markup-vs.-markdown表",
+    "title": "1/ Quartoとは",
+    "section": "Markup vs. Markdown（表）",
+    "text": "Markup vs. Markdown（表）\n\n\nMarkup（HTML）\n&lt;table&gt;\n    &lt;thead style = \"font-weight:bold;\"&gt;\n        &lt;td&gt;ID&lt;/td&gt;\n        &lt;td&gt;Name&lt;/td&gt;\n    &lt;/thead&gt;\n    &lt;tr&gt;\n        &lt;td&gt;1&lt;/td&gt;\n        &lt;td&gt;Quarto&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;2&lt;/td&gt;\n        &lt;td&gt;Markdown&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n\nMarkdown\n| ID | Name     |\n|----|----------|\n| 1  | Quarto   |\n| 2  | Markdown |\nOutput\n\n\n\nID\nName\n\n\n\n\n1\nQuarto\n\n\n2\nMarkdown"
   },
   {
-    "objectID": "share_slide.html#スライドreveal.jsのpdf出力",
-    "href": "share_slide.html#スライドreveal.jsのpdf出力",
-    "title": "6/ 文書とスライドの共有",
-    "section": "スライド（reveal.js）のPDF出力",
-    "text": "スライド（reveal.js）のPDF出力\nFirefox、Chrome、Chromium1の場合2\n\nスライドをWEBブラウザで開く\nEキーを教えてPrint Viewモードへ\nプリント画面を開く（Cmd + P[macOS] or Ctrl + P[Windows/Linux]）\nプリンターを「PDFとして保存」選択\n用紙の向きを横長（landscape）にし、余白を「なし」にする\n背景のグラフィックをONにする\n保存\n\nChromiumベースのMicrosoft Edgeでも動作確認済みSafariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）"
+    "objectID": "intro_slide.html#markup-vs.-markdown箇条書き1",
+    "href": "intro_slide.html#markup-vs.-markdown箇条書き1",
+    "title": "1/ Quartoとは",
+    "section": "Markup vs. Markdown（箇条書き1）",
+    "text": "Markup vs. Markdown（箇条書き1）\n\n\nMarkup（HTML）\n&lt;ul&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ul&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ul&gt;\n\nMarkdown\n- 箇条書き1\n   - 箇条書き1A\n   - 箇条書き1B\n- 箇条書き2\n- 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
   },
   {
-    "objectID": "share_slide.html#pdf形式のスライドbeamerの作成",
-    "href": "share_slide.html#pdf形式のスライドbeamerの作成",
-    "title": "6/ 文書とスライドの共有",
-    "section": "PDF形式のスライド（Beamer）の作成",
-    "text": "PDF形式のスライド（Beamer）の作成\nformat: beamerを使用\n\nBeamerについてはGoogle等で「beamer 入門」で検索（多少のTeXの知識も必要）\n\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis                # 好きなテーマを使おう\n    classoption:\n      - aspectratio=169              # 縦横比4:3ならこの行を削除\n      - 10pt\n    mainfont: \"Noto Sans CJK JP\"     # フォントは自分のPC環境に合わせて修正\n    CJKmainfont: \"Noto Sans CJK JP\"  # フォントは自分のPC環境に合わせて修正\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}"
+    "objectID": "intro_slide.html#markup-vs.-markdown箇条書き2",
+    "href": "intro_slide.html#markup-vs.-markdown箇条書き2",
+    "title": "1/ Quartoとは",
+    "section": "Markup vs. Markdown（箇条書き2）",
+    "text": "Markup vs. Markdown（箇条書き2）\n\n\nMarkup（HTML）\n&lt;ol&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ol&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ol&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ol&gt;\n\nMarkdown\n1. 箇条書き1\n   1. 箇条書き1A\n   1. 箇条書き1B\n1. 箇条書き2\n1. 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
   },
   {
-    "objectID": "share_slide.html#quarto-pub-1",
-    "href": "share_slide.html#quarto-pub-1",
-    "title": "6/ 文書とスライドの共有",
-    "section": "Quarto Pub",
-    "text": "Quarto Pub\n\nQuartoで作成したHTMLファイル（文書、スライド、Website、Web-book）をネット上に公開できるサービス\n\n無料（容量[100MB]、およびトラフィック[10GB/月]の制限あり）\nhttps://quartopub.com/（会員登録が必要）\n\nR Markdown時代（?）のRPubsに類似したサービス（上位互換?）\n\nドキュメント単位だけでなく、プロジェクト単位（Website/Blog/Web-book）の公開も可能\nGitHub Actionも使用可能\n\n詳細な使い方はhttps://quarto.org/docs/publishing/quarto-pub.htmlから"
+    "objectID": "intro_slide.html#quartoの登場",
+    "href": "intro_slide.html#quartoの登場",
+    "title": "1/ Quartoとは",
+    "section": "Quartoの登場",
+    "text": "Quartoの登場\n2026年2月現在、QuartoはR Markdownの（ほぼ）上位互換だと考えても良い\n\n\n\n\n\n\n2022年7月登場（Ver. 1.0）したR markdownの後継\n読み方は「クゥオート」（クワトロじゃない）\n断片化されつつあるR Markdown生態系を一つに統合したもの\n\nR Markdown界隈の{blogdown}、{bookdown}、{xaringan}、…\nQuartoは別途のパッケージ不要\n\nR以外の言語、knitr以外のエンジンも使用可能\nR Markdownと使い方はほぼ同じ"
   },
   {
-    "objectID": "share_slide.html#使い方1",
-    "href": "share_slide.html#使い方1",
-    "title": "6/ 文書とスライドの共有",
-    "section": "使い方（1）",
-    "text": "使い方（1）\n共通：Terminalペインを使用（Consoleベインじゃない）\n\n個別の文書、スライドの場合（本日はこのケースを紹介）\n\nquarto publish quarto-pub ファイル名.qmdを入力\n.qmdファイルが別のフォルダーに入っている場合、ファイルのパスを入力\n\nWebsite/Web-bookの場合\n\nquarto publish quarto-pubを入力\nプロジェクトが位置したフォルダーから実行"
+    "objectID": "intro_slide.html#なぜquartor-markdownを使うか",
+    "href": "intro_slide.html#なぜquartor-markdownを使うか",
+    "title": "1/ Quartoとは",
+    "section": "なぜQuarto/R Markdownを使うか",
+    "text": "なぜQuarto/R Markdownを使うか\nQuarto/R Markdownは文芸的プログラミング（literate programming）のツール\n\n文芸的プログラミング：ソースコードとドキュメントを別々のファイルに記入せず、一つのファイルでまとめるプログラミングのスタイル\n\n既存の「コード + コメント（#、//、&lt;!-- ~ --&gt;、…）」より発展した概念\nプログラミングの界隈では流行らなかったが…\n\n\n\n学術研究における文芸的プログラミングとは…\n\n「何をしたか（code）」と「そこから何が得られたか（result）」、「説明（narrative; なぜそうしたか、その結果は何を意味するか、…）」を同じ場所に記述すること\n\n例）既存のやり方：Rで分析し、推定結果や作成した図をLaTeX、Wordに貼り付けながら論文や資料を作成\n例）文芸的プログラミングのやり方：Quarto"
   },
   {
-    "objectID": "share_slide.html#使い方2",
-    "href": "share_slide.html#使い方2",
-    "title": "6/ 文書とスライドの共有",
-    "section": "使い方（2）",
-    "text": "使い方（2）\n\nTerminalペインで以下のコマンドを入力\n\nquarto publish quarto-pub my_quarto.qmd\n\n以下のメッセージが表示されたら「Y」を入力し、Enter（Return）キー\n\n? Authorize (Y/n) › \n❯ In order to publish to Quarto Pub you need to authorize your account.\n  Please be sure you are logged into the correct Quarto Pub account in your\n  default web browser, then press Enter or 'Y' to authorize.\n\nWebブラウザーからQuarto Pubへログインし、ALLOWをクリック\n\nWebブラウザーが開かず、Please authorize by opening this url: https://quartopub.com/authorize?id=xxxが表示されたら、URLをコピペしてアクセスする"
+    "objectID": "intro_slide.html#文芸的プログラミングのすゝめ",
+    "href": "intro_slide.html#文芸的プログラミングのすゝめ",
+    "title": "1/ Quartoとは",
+    "section": "文芸的プログラミングのすゝめ",
+    "text": "文芸的プログラミングのすゝめ\n\n「手作業」の排除によるエラー防止（自動化）\n分析プロセスの透明化\nバージョン管理システムとの親和性\n環境依存性の記述とポータビリティ\n\n\n\n\n\n\n\n\n\n\n従来のツール（R + Word）\nQuarto\n\n\n\n\nプロセス\n手作業の連続（分断）\nコードによる自動化（統合）\n\n\n変更への対応\n最初からやり直し（高コスト）\n再実行のみ（低コスト）\n\n\n透明性\n操作履歴が見えにくい\nコードですべて可視化される\n\n\n再現性\n低い（人の記憶や手作業に依存）\n高い（データとコードがあれば再現可能）\n\n\n\n\n\\(\\Downarrow\\)\nQuartoやR Markdownを使用すると「分析結果」だけでなく「分析のプロセスそのもの」を成果物として保存・共有できる"
   },
   {
-    "objectID": "share_slide.html#使い方3",
-    "href": "share_slide.html#使い方3",
-    "title": "6/ 文書とスライドの共有",
-    "section": "使い方（3）",
-    "text": "使い方（3）\n\n以下のようなメッセージが表示されたら、上下キーで操作する。\n\nデフォルトは.qmdファイルのtitleのまま\n公開用URLにも使われるので、なるべく英数字のみの名前を付けよう\n\n上下キーでUse another name…を選択し、新しい名前をつける\n\n\n\n? Document name:\n❯ はじめてのQuarto\n  Use another name...\n\nしばらく待ったら、公開完了\n\nhttps://ユーザーID.quarto.pub/から公開したものの一覧が確認できる\n\n個別のファイルはhttps://ユーザーID.quarto.pub/ドキュメント名/から\n\n公開したファイルの削除、URLの変更はhttps://quartopub.com/から\n\n更新も同じ手順\n\n更新するか、新しいファイルとして公開するかを選択する必要はある"
+    "objectID": "intro_slide.html#文書生成の流れr-markdownの場合",
+    "href": "intro_slide.html#文書生成の流れr-markdownの場合",
+    "title": "1/ Quartoとは",
+    "section": "文書生成の流れ（R Markdownの場合）",
+    "text": "文書生成の流れ（R Markdownの場合）\nR&Knitr使用を前提として開発され、拡張されていくR Markdown"
   },
   {
-    "objectID": "share_slide.html#github-pages-1",
-    "href": "share_slide.html#github-pages-1",
-    "title": "6/ 文書とスライドの共有",
-    "section": "GitHub Pages",
-    "text": "GitHub Pages\n\nGitHubレポジトリ内の静的HTMLファイルを外部に公開するサービス\n\n無料\n容量（各レポジトリ1GB）、トラフィック（100GB/月）、ビルド（10回/1時間）などの制限付き\n\ngitおよびGitHubの使い方は省略\n\nこれだけで1日講座が作れます…。\nここで紹介するファイルのアップロード方法は正攻法でなく、邪道に近いもの\n\nGitHub CLI、GitHub Desktop、SourceTree、GitKraken\nRStudioやVS Code（Positron）とGitHubの連携"
+    "objectID": "intro_slide.html#文書生成の流れquartoの場合",
+    "href": "intro_slide.html#文書生成の流れquartoの場合",
+    "title": "1/ Quartoとは",
+    "section": "文書生成の流れ（Quartoの場合）",
+    "text": "文書生成の流れ（Quartoの場合）\n複数言語&エンジン使用を念頭において開発されたQuarto"
   },
   {
-    "objectID": "share_slide.html#githubレポジトリの作成",
-    "href": "share_slide.html#githubレポジトリの作成",
-    "title": "6/ 文書とスライドの共有",
-    "section": "GitHubレポジトリの作成",
-    "text": "GitHubレポジトリの作成\n\n画面左の「Create Repository」、または「New」ボタンをクリック\nレポジトリ名（Repository name）を入力し、Add READMEをONにする。"
+    "objectID": "intro_slide.html#言語エンジンの豊富さ",
+    "href": "intro_slide.html#言語エンジンの豊富さ",
+    "title": "1/ Quartoとは",
+    "section": "言語、エンジンの豊富さ",
+    "text": "言語、エンジンの豊富さ\nQuarto公式HPのFAQ for R Markdown Usersにより\n\n(…) Quarto is at its core multi-language and multi-engine (supporting Knitr, Jupyter, and Observable today and potentially other engines tomorrow). (…) Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don’t yet exist.\n\n\n使用可能な言語：R、Python、Julia、Javascript、…\n使用可能なエンジン：Knitr、Jupyter、Observable、…\nその他：PDF作成の際、\\(\\LaTeX\\)でなくtypstも使用可能"
   },
   {
-    "objectID": "share_slide.html#ファイルのアップロード1",
-    "href": "share_slide.html#ファイルのアップロード1",
-    "title": "6/ 文書とスライドの共有",
-    "section": "ファイルのアップロード（1）",
-    "text": "ファイルのアップロード（1）\n\nAdd file &gt; Upload filesを選択"
+    "objectID": "intro_slide.html#生態系の統合",
+    "href": "intro_slide.html#生態系の統合",
+    "title": "1/ Quartoとは",
+    "section": "生態系の統合",
+    "text": "生態系の統合\n詳細な例は公式ホームページを確認\n\nただし、Quartoは外部のパッケージでなく、拡張機能（extensions）が存在\nダッシュボードの作成やShinyとの統合もOK\n\n\n\nR Markdown\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n{bookdown}\n\n\nスライド\n{xaringan}\n\n\nホームページ\n{blogdown}\n\n\nポスター\n{posterdown}\n\n\n\n\nQuarto\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n不要\n\n\nスライド\n不要\n\n\nホームページ\n不要\n\n\nポスター\n???"
   },
   {
-    "objectID": "share_slide.html#ファイルのアップロード2",
-    "href": "share_slide.html#ファイルのアップロード2",
-    "title": "6/ 文書とスライドの共有",
-    "section": "ファイルのアップロード（2）",
-    "text": "ファイルのアップロード（2）\n\n必要なファイルをDrag & Dropし、下段の「Commit changes」\n\n\n\n\n\n\nStandalone HTMLならファイルのみ\nそれ以外の場合、*_filesフォルダーや画像が格納されているフォルダー1等も入れる必要がある。\n\n\n![](画像のパス)でローカルの画像を埋め込んだ場合など"
+    "objectID": "intro_slide.html#コース概要-1",
+    "href": "intro_slide.html#コース概要-1",
+    "title": "1/ Quartoとは",
+    "section": "コース概要",
+    "text": "コース概要\n進度によって内容が若干変わることがある。\n\nQuartoとは & R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
   },
   {
-    "objectID": "share_slide.html#github-pagesの設定",
-    "href": "share_slide.html#github-pagesの設定",
-    "title": "6/ 文書とスライドの共有",
-    "section": "GitHub Pagesの設定",
-    "text": "GitHub Pagesの設定\n\nSettingsメニュー（①）を選択し、Pagesタブ（②）へ\nBranchのNoneをmainに変更（③）"
+    "objectID": "intro_slide.html#到達目標",
+    "href": "intro_slide.html#到達目標",
+    "title": "1/ Quartoとは",
+    "section": "到達目標",
+    "text": "到達目標\n\nMarkdown文法が分かる。\nQuartoで再現・再生用ファイルが作成できる。\n\nPDF文書が作成できる。\n\nQuartoでHTMLスライドが作れる。\n作成した文書、スライドが共有できる。\nより複雑なプロジェクトに取り組むための基礎知識を習得する。\n\nQuarto公式のガイド/レファレンスを読めば応用できるようになる。"
   },
   {
-    "objectID": "share_slide.html#アップロードしたファイルの確認方法",
-    "href": "share_slide.html#アップロードしたファイルの確認方法",
-    "title": "6/ 文書とスライドの共有",
-    "section": "アップロードしたファイルの確認方法",
-    "text": "アップロードしたファイルの確認方法\n\nhttps://ユーザー名.github.io/レポジトリ名/ファイル名.htmlから確認可能\n\nHTMLファイルがサブフォルダーに書くのされている場合、https://ユーザー名.github.io/レポジトリ名/フォルダ名/ファイル名.htmlの形式\nレポジトリ名がユーザー名.github.ioならhttps://ユーザー名.github.io/ファイル名.htmlのようになるが、詳細は割愛1\n\nアップロードしてから反映されるまで時間がかかる（スライドや文書程度なら1〜2分）\n\nActionsメニューから処理状況が確認できる。\n\n\n主にホームページを作成する時に使う。この場合、WebページのHTMLファイルがdocsフォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。"
+    "objectID": "intro_slide.html#コース資料の入手先",
+    "href": "intro_slide.html#コース資料の入手先",
+    "title": "1/ Quartoとは",
+    "section": "コース資料の入手先",
+    "text": "コース資料の入手先\n\nhttps://www.jaysong.net/quarto_intro"
   },
   {
-    "objectID": "share_slide.html#その他-1",
-    "href": "share_slide.html#その他-1",
-    "title": "6/ 文書とスライドの共有",
-    "section": "その他",
-    "text": "その他\n\nセッション情報やパッケージのバージョンを明記\nrenvやhttps://www.mybinder.orgなど"
+    "objectID": "install_slide.html#実習環境",
+    "href": "install_slide.html#実習環境",
+    "title": "2/ 実習環境の構築",
+    "section": "実習環境",
+    "text": "実習環境\n以下のソフトウェア、ライブラリをなるべく最新版で用意\n\nR\nRStudio\nQuarto CLI\n{quarto}パッケージ\n（PDF出力をする場合）TeX環境（TeX Live、MacTeX、TinyTeXなど）"
+  },
+  {
+    "objectID": "install_slide.html#ローカル環境とクラウド環境",
+    "href": "install_slide.html#ローカル環境とクラウド環境",
+    "title": "2/ 実習環境の構築",
+    "section": "ローカル環境とクラウド環境",
+    "text": "ローカル環境とクラウド環境\n\nローカル環境\n\n自分のPCにR/RStudio/Quarto CLI/TeX等をすべてインストール\n導入コスト（時間）はかかるが、クラウド環境より快適1\n既存のRユーザーならこちらを推奨\n\nクラウド環境\n\nR/RStudio/Quarto CLI/TeX一式が完備された環境（ネット接続必須）\n導入コストは非常に低いが、動作が重い\nとりあえずQuartoと味わってみたいのであれば、これも\\(\\bigcirc\\)\n\n\nPCのスペックにもよる。"
+  },
+  {
+    "objectID": "install_slide.html#rとrstudio",
+    "href": "install_slide.html#rとrstudio",
+    "title": "2/ 実習環境の構築",
+    "section": "RとRStudio",
+    "text": "RとRStudio\n省略"
+  },
+  {
+    "objectID": "install_slide.html#quarto-cli",
+    "href": "install_slide.html#quarto-cli",
+    "title": "2/ 実習環境の構築",
+    "section": "Quarto CLI",
+    "text": "Quarto CLI\nQuarto公式ホームページ（https://quarto.org/）から入手&インストール\n\n「Get Started」メニュー、または以下のページから入手\n\nhttps://quarto.org/docs/download/\n\nmacOSの場合、homebrewからインストールも可\n\nターミナルでbrew install --cask quarto"
+  },
+  {
+    "objectID": "install_slide.html#quartoパッケージ",
+    "href": "install_slide.html#quartoパッケージ",
+    "title": "2/ 実習環境の構築",
+    "section": "{quarto}パッケージ",
+    "text": "{quarto}パッケージ\nRコンソールで以下のコマンドで{quarto}パッケージをインストール\ninstall.packages(\"quarto\")\n\nインストールのみで十分（読み込みは不要）"
+  },
+  {
+    "objectID": "install_slide.html#tex環境",
+    "href": "install_slide.html#tex環境",
+    "title": "2/ 実習環境の構築",
+    "section": "TeX環境",
+    "text": "TeX環境\n作成した文書、スライドをPDFフォーマットで出力したい場合\n\nすでに自分のPCにTeX環境が用意されている場合 \\(\\Rightarrow\\) 別途の設定は不要\n\n例）TeX Live（Windows/Unix/Linux）、MacTeX（macOS）\n\nTeXを使ったことがない or クラウド版（Overleafなど）のみ使用している場合\n\n{tinytex}のインストールがおすすめ\n\n\n# {tinytexパッケージのインストール}\ninstall.packages(\"tinytex\")\n# tinytexのインストール\ntinytex::install_tinytex()\n# 今は（多分）不要だが、念のために\ntinytex::tlmgr_install(\"haranoaji\")"
+  },
+  {
+    "objectID": "install_slide.html#クラウド環境の種類",
+    "href": "install_slide.html#クラウド環境の種類",
+    "title": "2/ 実習環境の構築",
+    "section": "クラウド環境の種類",
+    "text": "クラウド環境の種類\n\nposit Cloud\nmybinder.org\nJDCat分析ツール"
+  },
+  {
+    "objectID": "install_slide.html#posit-cloud",
+    "href": "install_slide.html#posit-cloud",
+    "title": "2/ 実習環境の構築",
+    "section": "posit Cloud",
+    "text": "posit Cloud\nRStudioの開発元であるposit社が提供するクラウド版R & RStudio\n\n無料版の制約（詳細はhttps://posit.cloud/plans）\n\n月間利用時間の上限あり（25時間）\nスペックの制限（1GB RAM / 1CPU）\n\n導入手順\n\nposit Cloud（https://posit.cloud/）のアカウント登録&ログイン\n右のNew ProjectでNew RStudio Project\n\nRStudioの設定は以下の設定を参照\nhttps://www.jaysong.net/RBook/r_customize.html\n\nDefault working directoryは「/cloud/project」のままでOK\n\n\n画面上段の「Untitled Project」をクリックし、プロジェクト名を指定\n{quarto}、{ragg}パッケージをインストールする"
+  },
+  {
+    "objectID": "install_slide.html#mybinder.org",
+    "href": "install_slide.html#mybinder.org",
+    "title": "2/ 実習環境の構築",
+    "section": "mybinder.org",
+    "text": "mybinder.org\nウェブでRStudioが使えるサービス（事前登録不要）\n\nアカウントの概念が存在しないため、アクセスする度にすべて初期化される。\n\n再現/再生用データ&コードの共有に適したサービス\nとりあえず手軽にQuartoを味わっていみないのであればオススメ\n\n次頁で紹介するJDCat分析ツールより劣るが、安定性は\n起動方法\n\nhttps://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD \\(\\leftarrow\\) クリック"
+  },
+  {
+    "objectID": "install_slide.html#jdcat分析ツール",
+    "href": "install_slide.html#jdcat分析ツール",
+    "title": "2/ 実習環境の構築",
+    "section": "JDCat分析ツール",
+    "text": "JDCat分析ツール\n\nmybinder.orgと同じサービスだが、継続的に使用可能なサービス\n\nただし、サーバーが不安定になることが多々ある\n\n導入手順（サーバーの立ち上げ）\n\nOrthrosのホームーページでアカウント登録\n\nhttps://ui.orthros.gakunin.nii.ac.jp/\n必ず.ac.jp、または.go.jpのメールアドレスを使うこと\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD\n所属機関を「Orthros」とし、ログインする。\n数分待てばOK\n\n立ち上げたサーバーの起動（再利用）\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n所属機関を「Orthros」とし、ログインする。\n表示されているURLをクリックする\n\nURLが表示されていない場合、右の「Start」をクリック"
+  },
+  {
+    "objectID": "install_slide.html#プロジェクトの作成-1",
+    "href": "install_slide.html#プロジェクトの作成-1",
+    "title": "2/ 実習環境の構築",
+    "section": "プロジェクトの作成",
+    "text": "プロジェクトの作成\n実習用のプロジェクトを作成する\n\nプロジェクトを作る理由、方法は省略（本講義の前提知識）\nposit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quartoを使った研究成果と分析プロセスの共有",
+    "section": "",
+    "text": "重要本資料は作成中のものです。\n\n\n\n　本資料は、以下の2026年2月20日に行われる東京大学社会科学研究所計量分析セミナーの「Quartoを使った研究成果と分析プロセスの共」の教材として執筆中のものであり、2026年2月15日頃の公開を予定しております。現時点では\\(\\alpha\\)版に相当する段階であり、内容に不備や誤りが含まれている可能性が非常に高いです。したがって、本資料の内容に起因するいかなる問題についても、著者（宋）は一切の責任を負いかねます。"
+  },
+  {
+    "objectID": "index.html#概要",
+    "href": "index.html#概要",
+    "title": "Quartoを使った研究成果と分析プロセスの共有",
+    "section": "概要",
+    "text": "概要\n\n日時：2026年2月20日（金）10:30～17:00\n場所：東京ドーム \n料金：一般 5,000,000ペリカ、学生 2,500,000ペリカ\n講師：宋財泫（関西大学）\n定員：35,000名　※変更の可能性あり"
+  },
+  {
+    "objectID": "index.html#本コースの内容",
+    "href": "index.html#本コースの内容",
+    "title": "Quartoを使った研究成果と分析プロセスの共有",
+    "section": "本コースの内容",
+    "text": "本コースの内容\n　本コースは、新しいオープンソース文書作成システムである「Quarto」を導入することで、研究成果の作成と共有のプロセスを効率化・強化することを目指します。近年、研究の透明性と再現性の確保は、研究コミュニティにおける大きな課題となっています。たとえば自分の（または他人の）研究成果の再現に苦労する研究者も多くいるでしょう。中には「自分の過去の研究が再現できない」研究者もいるかも知れません。Quartoを用いることで、データ分析や解析に使用したコード、その実行結果、そして文章（説明）を一つのファイル内で統合できます。これにより、上記のような再現性の問題は根本的に解決できます。また、Quartoは、これまで広く利用されてきたR Markdownの後継として開発されたため、R Markdownよりも柔軟で強力な文書作成環境を提供します。RStudioはもちろん、Jupyter Notebookなど多様な実行環境と連携可能で、HTML、PDF、Word文書、プレゼンテーションスライド、書籍、ウェブサイトなど多様な形式への出力も容易です。さらに、Rだけでなく、近年の定量的社会科学で幅広く使われているPython、Julia等の言語にも対応しているなど、QuartoはRとRStudioを使わない方でもおすすめできるシステムです（本コースではRとRStudioを使用します）。"
+  },
+  {
+    "objectID": "index.html#次のような方におすすめです",
+    "href": "index.html#次のような方におすすめです",
+    "title": "Quartoを使った研究成果と分析プロセスの共有",
+    "section": "次のような方におすすめです",
+    "text": "次のような方におすすめです\n\n研究の再現性に課題を感じている方（自分の過去の分析が再現できなかった、他者の研究の再現に苦労したなど）\nデータ分析・解析プロセスと、文書/スライド作成を効率的に統合したい方\nR Markdownの機能や柔軟性に限界を感じている方"
+  },
+  {
+    "objectID": "index.html#注意事項",
+    "href": "index.html#注意事項",
+    "title": "Quartoを使った研究成果と分析プロセスの共有",
+    "section": "注意事項",
+    "text": "注意事項\n\nどなたでもご参加いただけます。\n本コースの実習環境はRおよびRStudioです。ご自身のPCにインストールした環境を前提としますが、実習用にクラウド環境（mybinder.org）も用意しております。クラウド実習環境の導入方法は講義中に解説します。\nRおよびRStudioの操作に不慣れな方でも受講可能ですが、全く初めての方は基本的な操作方法を事前に習得してください。事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。"
+  },
+  {
+    "objectID": "index.html#本コースの日程",
+    "href": "index.html#本コースの日程",
+    "title": "Quartoを使った研究成果と分析プロセスの共有",
+    "section": "本コースの日程",
+    "text": "本コースの日程\n※ 進度によって内容が若干変わることがあります。\n\nQuartoとは＆R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
+  },
+  {
+    "objectID": "document_slide.html#yamlヘッダーの構成要素の一部",
+    "href": "document_slide.html#yamlヘッダーの構成要素の一部",
+    "title": "4/ 文書の作成",
+    "section": "YAMLヘッダーの構成要素（の一部）",
+    "text": "YAMLヘッダーの構成要素（の一部）\n\n（1）メタ情報、（2）フォーマット、（3）チャンクオプションに大別\n\nメタ情報：タイトル、作成日、作成者、言語、概要、…\nフォーマット：HTML文書（html）か、PDF文書（pdf）か、HTMLスライド（revealjs）か、…\n\n文書の幅、目次の見た目、コードハイライトのテーマなど文書の「全体的」な見た目や構成に関する内容が多い\n\nチャンクオプション：全チャンクに共通するチャンクオプション\n\n詳細はQuarto公式ホームページを参照\n\nhttps://quarto.org/docs/reference/"
+  },
+  {
+    "objectID": "document_slide.html#文書のメタ情報例",
+    "href": "document_slide.html#文書のメタ情報例",
+    "title": "4/ 文書の作成",
+    "section": "文書のメタ情報（例）",
+    "text": "文書のメタ情報（例）\n1title: 文書のタイトル\n2subtitle: 文書のサブタイトル\n3author:\n4  - name: 宋財泫\n5    affiliation: 関西大学\n6    email: song@kansai-u.ac.jp\n7    url: https://www.jaysong.net/\n8  - name: ぽよんぽよん\n    affiliation: 国立ソウル大学校\n9date: 1986/10/8\n10date-modified: today\n11lang: ja\n12abstract: |\n      ここに概要が入る\n      長ければ改行しても良い\n\n1\n\n文書のタイトル\n\n2\n\n文書のサブタイトル\n\n3\n\n著者名：著者が一人で、氏名のみOKならauthor: 著者名でもOK\n\n4\n\n第一著者の氏名\n\n5\n\n第一著者の所属\n\n6\n\n第一著者のメールアドレス\n\n7\n\n第一著者のホームページ\n\n8\n\n第二著者の氏名と所属\n\n9\n\n文書の作成日\n\n10\n\n文書の最終修正日：todayにするとレンダーした日付が自動的に入る\n\n11\n\n文書の言語\n\n12\n\n文書の概要：普段は不要だが、Quartoで論文を執筆する際はよく使う。概要が長い場合、|を入力し、改行してから概要を書く"
+  },
+  {
+    "objectID": "document_slide.html#フォーマット例",
+    "href": "document_slide.html#フォーマット例",
+    "title": "4/ 文書の作成",
+    "section": "フォーマット（例）",
+    "text": "フォーマット（例）\nformat: htmlを基本とし、オプションを追加したい場合は以下のように書く\nformat: \n  html:\n1    grid:\n2      body-width: 1024px\n3    theme: flatly\n4    highlight-style: a11y\n5    toc: true\n6    toc-location: right\n7    toc-depth: 3\n8    number-sections: true\n\n1\n\nページレイアウト：sidebar-width（左のサイドバーの幅）、body-width（本文の幅）、margin-width（右のサイドバーの幅）、gutter-width（間隔）が調節可能\n\n2\n\n本文の幅を1024pxに（既定値は800px）\n\n3\n\nflatlyテーマを使用\n\n4\n\nコードハイライトのスタイルはa11y\n\n5\n\n目次あり\n\n6\n\n目次の位置は右側のサイドバー（通常、「マージン」と呼ばれる領域）\n\n7\n\n目次の深度は3\n\n8\n\n見出しに通し番号を付ける"
+  },
+  {
+    "objectID": "document_slide.html#チャンクオプション例",
+    "href": "document_slide.html#チャンクオプション例",
+    "title": "4/ 文書の作成",
+    "section": "チャンクオプション（例）",
+    "text": "チャンクオプション（例）\nすべてのチャンクに同じオプションを付けたい場合\n\n個別のチャンクにオプションはknitr: opts_chunkより優先する\n\nknitr: \n  opts_chunk: \n1    dev: ragg_png\n2    fig-align: center\n3    dpi: 300\n4    message: false\n5    warning: false\n\n1\n\n作図エンジンは{ragg}のpngフォーマットにする（文字化け防止）\n\n2\n\n図は中央に揃える（![]()で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）\n\n3\n\n図は解像度は300に（印刷する予定がないなら150程度でもOK））\n\n4\n\nメッセージを表示しない（{tidyverse}の読み込みやread_csv()後のメッセージなど）\n\n5\n\n警告メッセージを表示しない"
+  },
+  {
+    "objectID": "document_slide.html#相互参照",
+    "href": "document_slide.html#相互参照",
+    "title": "4/ 文書の作成",
+    "section": "相互参照",
+    "text": "相互参照\n相互参照（cross-reference）の方法：@ラベル名\n\n図、表、式の場合、自動的に「図 1」や「Table 5」のように接頭詞が付く\n\n文書の言語設定に依存\n見出しの場合は数字のみ出力される\n\n相互参照に使う図表等のラベル名には決まった接頭詞（prefix）を使う\n\n図（fig-）、表（tbl-）、数式（eq-）、見出し（sec-）\n\n@ラベル名の前後は半角スペースを入れる"
+  },
+  {
+    "objectID": "document_slide.html#相互参照単一の図",
+    "href": "document_slide.html#相互参照単一の図",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（単一の図）",
+    "text": "相互参照（単一の図）\n\n\nInput:\n@fig-myfig1 は適当に作った表です。\n\n```{r}\n#| label: fig-myfig1\n#| fig-cap: 適当に作った図\n#| echo: false\nplot(rnorm(100), type = \"l\")\n```\n\nOutput:\n図 1 は適当に作った図です。\n\n\n\n\n\n\n\n\n図 1: 適当に作った図\n\n\n\n\n\n\n\n\nInput:\nR猫弐号機（@fig-rcat2nd）\n\n![R猫弐号機](画像パス){#fig-rcat2nd}\n\nOutput:\nR猫弐号機（図 2）\n\n\n\n\n\n\n図 2: R猫弐号機"
+  },
+  {
+    "objectID": "document_slide.html#相互参照単一の表",
+    "href": "document_slide.html#相互参照単一の表",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（単一の表）",
+    "text": "相互参照（単一の表）\n\n\nInput:\n@tbl-mytbl1 は適当に作った表です。\n\n```{r}\n#| label: tbl-mytbl1\n#| tbl-cap: 適当に作った表\ngt::gt(iris[1:3, 1:3])\n```\n\nOutput:\n表 1 は適当に作った表です。\n\ngt::gt(iris[1:3, 1:3])\n\n\n\n表 1: 適当に作った表\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n      Petal.Length\n    \n  \n  \n    5.1\n3.5\n1.4\n    4.9\n3.0\n1.4\n    4.7\n3.2\n1.3\n  \n  \n\n\n\n\n\n\n\n\n\n\nInput:\n@tbl-mytbl2 も適当に作った表です。\n\n|Name    |Age |\n|:-------|---:|\n|Takaichi|64  |\n|Noda    |68  |\n\n:与野党党首の年齢 {#tbl-mytbl2}\n\nOutput:\n表 2 も適当に作った表です。\n\n\n\n表 2: 与野党党首の年齢\n\n\n\n\n\nName\nAge\n\n\n\n\nTakaichi\n64\n\n\nNoda\n68"
+  },
+  {
+    "objectID": "document_slide.html#相互参照複数の図",
+    "href": "document_slide.html#相互参照複数の図",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（複数の図）",
+    "text": "相互参照（複数の図）\n参照方法は@fig-ラベル名（単一の図と同じ方法）\n\nラベルは::: {layout-ncol=n #fig-ラベル名}と![](画像パス){#fig-ラベル名}のように両方指定\n\n\n\nInput:\n::: {layout-ncol=2 #fig-rcats}\n![弐号機](画像3のURL or パス){#fig-rcats1}\n\n![量産機](画像4のURL or パス){#fig-rcats2}\n\n: かわいいR猫たち\n:::\n\n@fig-rcats は..., @fig-rcats2 は...\n\nOutput:\n\n\n\n\n\n\n\n\n\n\n\n(a) 弐号機\n\n\n\n\n\n\n\n\n\n\n\n(b) 量産機\n\n\n\n\n\n\n\n図 3: かわいいR猫たち\n\n\n\n図 3 は…, 図 3 (b) は…"
+  },
+  {
+    "objectID": "document_slide.html#相互参照複数の図-続き",
+    "href": "document_slide.html#相互参照複数の図-続き",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（複数の図; 続き）",
+    "text": "相互参照（複数の図; 続き）\n図の群を参照する方法は@fig-ラベル名（単一の図と同じ方法）\n\n個別の図を参照したい場合は@fig-ラベル名-番号（最初の図から1、2、3、…）\n\n\n\nInput:\n```{r}\n#| label: fig-two-plts\n#| layout-ncol: 2\n#| fig-cap: 2つの折れ線グラフ\n#| fig-subcap: \n#|   - 線のみ\n#|   - 点 + 線\n#| echo: false\nplot(rnorm(10), type = \"l\")\n\nplot(rnorm(10), type = \"b\")\n```\n\n@fig-two-plts は..., @fig-two-plts-1 は...\n\nOutput:\n\n\n\n\n\n\n\n\n\n\n\n(a) 線のみ\n\n\n\n\n\n\n\n\n\n\n\n(b) 点 + 線\n\n\n\n\n\n\n\n図 4: 2つの折れ線グラフ\n\n\n\n図 4 は…, 図 4 (a) は…"
+  },
+  {
+    "objectID": "document_slide.html#相互参照複数の表",
+    "href": "document_slide.html#相互参照複数の表",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（複数の表）",
+    "text": "相互参照（複数の表）\n参照方法は@tbl-ラベル名（単一の表と同じ方法）\n\n図同様、群のラベルと個別のラベルを両方指定する\n\n\n\nInput:\n::: {#tbl-favorite layout-ncol=2}\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|1    |Song |Ramen   |\n: 宋の好物 {#tbl-favorite-s}\n\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|2    |Kim  |Truffle |\n: 金の好物 {#tbl-favorite-k}\n\n好物リスト\n:::\n\n@tbl-favorite と @tbl-favorite-s\n\nOutput:\n\n\n\n表 3: 好物リスト\n\n\n\n\n\n\n\n(a) 宋の好物\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n1\nSong\nRamen\n\n\n\n\n\n\n\n\n\n\n\n(b) 金の好物\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n2\nKim\nTruffle\n\n\n\n\n\n\n\n\n\n\n\n表 3 と 表 3 (a)"
+  },
+  {
+    "objectID": "document_slide.html#相互参照複数の表-続き",
+    "href": "document_slide.html#相互参照複数の表-続き",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（複数の表; 続き）",
+    "text": "相互参照（複数の表; 続き）\n複数の図の相互参照と同じ方法\n\nただし、ラベルの接頭詞はfig-でなく、tbl-\nfig-cap、fig-subcapの代わりにtbl-capとtbl-subcapを使用\n\n\n\nInput:\n```{r}\n#| label: tbl-two-tbls\n#| layout-ncol: 2\n#| tbl-cap: irisデータセットの一部\n#| tbl-subcap: \n#|   - setosa\n#|   - versicolor\ngt::gt(iris[1:5, 1:2])   # setosa\ngt::gt(iris[51:55, 1:2]) # versicolor\n```\n\n@tbl-two-tbls と @tbl-two-tbls-1\n\nOutput:\ngt::gt(iris[1:5, 1:2])   # setosa\ngt::gt(iris[51:55, 1:2]) # versicolor\n\n\n\n表 4: irisデータセットの一部\n\n\n\n\n\n\n\n(a) setosa\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    5.1\n3.5\n    4.9\n3.0\n    4.7\n3.2\n    4.6\n3.1\n    5.0\n3.6\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n(b) versicolor\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    7.0\n3.2\n    6.4\n3.2\n    6.9\n3.1\n    5.5\n2.3\n    6.5\n2.8\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n表 4 と 表 4 (a)"
+  },
+  {
+    "objectID": "document_slide.html#相互参照数式",
+    "href": "document_slide.html#相互参照数式",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（数式）",
+    "text": "相互参照（数式）\n$$の後ろの{#eq-ラベル名}を追加\n\n2つ目の$$の後ろにラベルを付けること（1つ目の後だとエラーが出る）。\n\nInput：\nポアソン分布の確率密度関数（@eq-poisson）は美しいぞ。\n\n$$\np(x) = \\frac{e^{-\\lambda} \\lambda^{x}}{x !}\n$$ {#eq-poisson}\nOutput：\nポアソン分布の確率密度関数（式 1）は美しいぞ。\n\\[\np(x) = \\frac{e^{-\\lambda} \\lambda^{x}}{x !}\n\\tag{1}\\]"
+  },
+  {
+    "objectID": "document_slide.html#相互参照見出し",
+    "href": "document_slide.html#相互参照見出し",
+    "title": "4/ 文書の作成",
+    "section": "相互参照（見出し）",
+    "text": "相互参照（見出し）\n\n[-@sec-ラベル名]1\n\n見出しのラベルは## 見出し {#sec-ラベル名}のように指定\n\n\n\n\nInput：\n# はじめに {#sec-intro}\n\n## 背景 {#sec-background}\n\n## 問い {#sec-rq}\n\n### 問い1 {#sec-rq1}\n\n### 問い2 {#sec-rq2}\n\n## 先行研究 {#sec-review}\n\n第[-@sec-intro]章、第[-@sec-rq]章、第[-@sec-rq2]章\n\nOutput：\n\n\n\n\n\n\n@sec-ラベル名でも動くが、自動的に「セクション 1.2」のような接頭詞が付いてしまう。"
+  },
+  {
+    "objectID": "document_slide.html#引用",
+    "href": "document_slide.html#引用",
+    "title": "4/ 文書の作成",
+    "section": "引用",
+    "text": "引用\n\nYAMLヘッダーに.bibファイルを指定（例：bibliography: references.bib）\n\n@固有キー：著者名（年）\n[@固有キー]：（著者名 年）\n[-@固有キー]：（年）\n\n英語の文献のみなら良いが、日本語の文献を引用する時はかなり厄介\n\n\n引用の例references.bibの中身\n\n\n\n\nInput：\n@imai_williams_2022 says ...\n\n[see @knuth_1984; @imai_williams_2022]\n\nThe god[-@knuth_1984] says ...\n\nOutput：\nImai and Williams (2022) says …\n(see Knuth 1984; Imai and Williams 2022)\nThe god(1984) says …\n\n\n\n@article{knuth_1984,\n  author  = {Donald E. Knuth},\n  year    = {1984},\n  title   = {Literate Programming},\n  journal = {The Computer Journal},\n  volume  = {27},\n  number  = {2},\n  pages   = {97--111}\n}\n\n@book{imai_williams_2022,\n  author    = {Kosuke Imai and Nora Webb Williams},\n  year      = {2022},\n  title     = {Quantitative Social Science: An Introduction in tidyverse},\n  publisher = {Princeton University Press},\n}"
+  },
+  {
+    "objectID": "document_slide.html#コールアウト",
+    "href": "document_slide.html#コールアウト",
+    "title": "4/ 文書の作成",
+    "section": "コールアウト",
+    "text": "コールアウト\n::: {.callout-*}と:::（見出しは#、##、…）\n\n*にはnote、warning、important、tip、caution\nオプション：icon=\"false\"とcollapse=\"true\"\n\n\n\nInput：\n::: {.callout-note}\n#### Quartoは私たちの友達!\n\n末永くよろしくね!\n:::\n\nOutput：\n\n\n\n\n\n\nQuartoは私たちの友達!\n\n\n末永くよろしくね!\n\n\n\n\n\n\nInput：\n::: {.callout-tip icon=\"false\"}\n#### アイコンを消したい...?\n\n`icon=\"false\"`を付けてみてね\n:::\n\nOutput：\n\n\n\nアイコンを消したい…?\n\n\nicon=\"false\"を付けてみてね"
+  },
+  {
+    "objectID": "document_slide.html#パネル",
+    "href": "document_slide.html#パネル",
+    "title": "4/ 文書の作成",
+    "section": "パネル",
+    "text": "パネル\n::: {.panel-tabset}と:::で囲まれた領域内の内容が段組みの対象\n\n各タブの見出しは#（宋は主に####か#5つ以上を使用）\n\n\n\nInput：\n::: {.panel-tabset}\n#### コード\n\n```{r}\nlibrary(tidyverse)\n\nmy_plt &lt;- ggplot(iris) +\n  geom_point(aes(x = Petal.Length,\n                 y = Petal.Width,\n                 color = Species))\n```\n\n#### 結果\n\n```{r}\nplot(my_plt)\n```\n:::\n\nOutput：\n\nコード結果\n\n\n\nlibrary(tidyverse)\n\nmy_plt &lt;- ggplot(iris) +\n  geom_point(aes(x = Petal.Length,\n                 y = Petal.Width,\n                 color = Species))\n\n\n\n\nplot(my_plt)"
+  },
+  {
+    "objectID": "document_slide.html#段組み",
+    "href": "document_slide.html#段組み",
+    "title": "4/ 文書の作成",
+    "section": "段組み",
+    "text": "段組み\n\nformat: revealjsの場合、columnの幅の合計が100%になると最後のcolumnが改行される場合もある（普通に問題なく動くケースも多い）。合計99%にすると問題はない\n\n::::{.columns}と::::で囲まれた領域内の内容が段組みの対象\n\n:::{.column}と:::で囲まれた領域が一つ一つの段（width=で幅指定）\n\n\n\nInput：\n:::: {.columns}\n::: {.column width=15%}\n1段目\n:::\n\n::: {.column width=25%}\n![R Cat](画像パス)\n:::\n\n::: {.column width=60%}\n```{r}\ngt::gt(iris[1:10,])\n```\n:::\n::::\n\nOutput：\n\n\n1段目\n\n\n\n\nR Cat\n\n\n\n\ngt::gt(iris[1:10,])\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n      Petal.Length\n      Petal.Width\n      Species\n    \n  \n  \n    5.1\n3.5\n1.4\n0.2\nsetosa\n    4.9\n3.0\n1.4\n0.2\nsetosa\n    4.7\n3.2\n1.3\n0.2\nsetosa\n    4.6\n3.1\n1.5\n0.2\nsetosa\n    5.0\n3.6\n1.4\n0.2\nsetosa\n    5.4\n3.9\n1.7\n0.4\nsetosa\n    4.6\n3.4\n1.4\n0.3\nsetosa\n    5.0\n3.4\n1.5\n0.2\nsetosa\n    4.4\n2.9\n1.4\n0.2\nsetosa\n    4.9\n3.1\n1.5\n0.1\nsetosa"
+  },
+  {
+    "objectID": "document_slide.html#コードの注釈",
+    "href": "document_slide.html#コードの注釈",
+    "title": "4/ 文書の作成",
+    "section": "コードの注釈",
+    "text": "コードの注釈\nチャンク内の各行の最後に# &lt;数字&gt;を追加し、チャンク外に数字. 注釈を記入\n\n複数の行に同じ番号を振ることも可\n以下はYAMLヘッダーにcode-annotations: selectを指定した例\n\n他にもbelow（既定値）、hoverあり\n\n\n\n\nInput：\n```{r}\nx &lt;- 1:10   # &lt;1&gt;\ny &lt;- sum(x) # &lt;2&gt;\nprint(y)    # &lt;2&gt;\n```\n\n1. xに1から10の自然数を格納\n2. yにxの和を格納し、出力\n\nOutput：\n\n1x &lt;- 1:10\n2y &lt;- sum(x)\nprint(y)\n\n\n1\n\nxに1から10の自然数を格納\n\n2\n\nyにxの和を格納し、出力\n\n\n\n\n[1] 55"
+  },
+  {
+    "objectID": "document_slide.html#チャンクの表示",
+    "href": "document_slide.html#チャンクの表示",
+    "title": "4/ 文書の作成",
+    "section": "チャンクの表示",
+    "text": "チャンクの表示\n{r}の代わりに{{r}}を使用\n\n授業資料（Quartoの使い方）を作成する時くらいしか使わない機能\n\n\n\nInput：\n```{{r}}\n#| label: fig-myplt\n#| fig-cap: My plot\nplot(1:10)\n```\n\nOutput：\n```{r}\n#| label: fig-myplt\n#| fig-cap: My plot\nplot(1:10)\n```"
+  },
+  {
+    "objectID": "document_slide.html#pdf出力が必要なケース",
+    "href": "document_slide.html#pdf出力が必要なケース",
+    "title": "4/ 文書の作成",
+    "section": "PDF出力が必要なケース",
+    "text": "PDF出力が必要なケース\n\n研究成果の公開、共有が目的ならHTMLで十分\n\nHTMLの方が機能が豊富であり、見た目のカスタマイズも比較的簡単1\n\nしかし、Quartoは論文執筆のための強力なツールでもある\n\nHTMLフォーマッ可のジャーナルはないはず（少なくとも政治学では）\n\\(\\Rightarrow\\) 論文、レポートをなどの印刷を念頭においたものを作成するのであれば、出力物はHTMLよりもPDFが望ましい\n\n最近はtypstを使う手もあるが、ここでは定番のLaTeXを使用する方法を紹介\n\nCSS/SCSSの知識があれば相当細かいレベルまでいじれる。"
+  },
+  {
+    "objectID": "document_slide.html#quartoからpdfを作成するための準備",
+    "href": "document_slide.html#quartoからpdfを作成するための準備",
+    "title": "4/ 文書の作成",
+    "section": "QuartoからPDFを作成するための準備",
+    "text": "QuartoからPDFを作成するための準備\nLaTeX環境を予め用意しておくこと\n\nTeXLive（Windows/Linux） or macTeX（macOS）\n\nTeX環境のインストールは時間がかかるため、TeX初心者はtinytexを推奨\n\n\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()\n\nharanoajiパッケージ（多分、今は不要1）\n\nTeXLive/macTeXの場合\n\ntlmgr install haranoaji（Windows2）\nsudo tlmgr install haranoaji（macOS/Linux）\n\ntinytex環境ならRコンソールでtinytex::tlmgr_install(\"haranoaji\")\n\n\n昔は事前インストールが必要だったが、今はそうでもない。不安ならインストールしておこう。管理者としてターミナルを開く"
+  },
+  {
+    "objectID": "document_slide.html#どこを修正すれば良いか",
+    "href": "document_slide.html#どこを修正すれば良いか",
+    "title": "4/ 文書の作成",
+    "section": "どこを修正すれば良いか",
+    "text": "どこを修正すれば良いか\nYAMLヘッダーのformatをhtmlからpdfに変えるだけ\n\n日本語が含まれた文書は文字化けが発生するおそれがあるため、修正が必要1\nLuaLaTeXの代わりにXeLaTeXも可2\n以下は日本語を含むPDFを出力するためのYAMLヘッダーの例\n\nformat:\n  pdf:\n    pdf-engine: lualatex\n    documentclass: ltjsarticle\n    classoption:\n      - a4paper\n      - 10.5pt\n    number-sections: true\n    mainfont: Noto Serif CJK JP      # フォントは自分のPC環境に合わせて修正\n    sansfont: Noto Sans CJK JP       # フォントは自分のPC環境に合わせて修正\n    monofont: Noto Sans Mono CJK JP  # フォントは自分のPC環境に合わせて修正\n多少のTeXに関する知識も必要CJKをすべて扱うならXeLaTeXの方がまだ便利かも知れない。"
+  },
+  {
+    "objectID": "document_slide.html#html-pdfの二刀流",
+    "href": "document_slide.html#html-pdfの二刀流",
+    "title": "4/ 文書の作成",
+    "section": "HTML + PDFの二刀流",
+    "text": "HTML + PDFの二刀流\n一つのYAMLヘッダーに複数のフォーマットを指定することも可\n\nどのフォーマットでレンダーするかはRenderボタン右の▼をクリックして選べる\n\nformat:\n  html:\n    theme: flatly\n    highlight-style: a11y\n  pdf:\n    pdf-engine: lualatex\n    documentclass: ltjsarticle\n    classoption:\n      - a4paper\n      - 10.5pt\n    mainfont: Noto Serif CJK JP\n    sansfont: Noto Sans CJK JP\n    monofont: Noto Sans Mono CJK JP"
+  },
+  {
+    "objectID": "document_slide.html#参考参考文献の話",
+    "href": "document_slide.html#参考参考文献の話",
+    "title": "4/ 文書の作成",
+    "section": "参考）参考文献の話",
+    "text": "参考）参考文献の話\n参考文献の管理・挿入はBibTeXを使用する（引用は@固有キー）\n\n参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介\n\n例）英文のジャーナル名はJournal、和文のジャーナル名は『ジャーナル名』\n\n社会科学ではjecon.bst（経済学用のBibTeX style file）が定番\n2026年1月現在、正攻法でjecon.bstを使う方法は（少なくとも宋にとっては）不明\nプロジェクトフォルダーに.latexmkrcファイルを格納し、PDFエンジンとしてLatexmkを使用することで、とりあえず・・・・・使うことはできる\n\n『私たちのR』の「第25章 Quarto[文書]」を参照\nhttps://www.jaysong.net/RBook/quarto2.html"
+  },
+  {
+    "objectID": "document_slide.html#参考文献",
+    "href": "document_slide.html#参考文献",
+    "title": "4/ 文書の作成",
+    "section": "参考文献",
+    "text": "参考文献\n\n\nImai, Kosuke, and Nora Webb Williams. 2022. Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111."
+  },
+  {
+    "objectID": "document.html",
+    "href": "document.html",
+    "title": "文書の作成",
+    "section": "",
+    "text": "新しいタブで開く",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "document.html#sec-background",
+    "href": "document.html#sec-background",
+    "title": "文書の作成",
+    "section": "1.1 背景",
+    "text": "1.1 背景",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "document.html#sec-rq",
+    "href": "document.html#sec-rq",
+    "title": "文書の作成",
+    "section": "1.2 問い",
+    "text": "1.2 問い\n\n1.2.1 問い1\n\n\n1.2.2 問い2",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "document.html#sec-review",
+    "href": "document.html#sec-review",
+    "title": "文書の作成",
+    "section": "1.3 先行研究",
+    "text": "1.3 先行研究\n第1章、第1.2章、第1.2.2章",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "extensions.html#使い方",
+    "href": "extensions.html#使い方",
+    "title": "拡張機能",
+    "section": "2 使い方",
+    "text": "2 使い方",
+    "crumbs": [
+      "その他の内容",
+      "拡張機能"
+    ]
+  },
+  {
+    "objectID": "extensions.html#拡張機能の紹介",
+    "href": "extensions.html#拡張機能の紹介",
+    "title": "拡張機能",
+    "section": "3 拡張機能の紹介",
+    "text": "3 拡張機能の紹介\n　ここでは宋が実際に使ったことのある拡張機能や、面白いと思った拡張機能をいくつか紹介する。",
+    "crumbs": [
+      "その他の内容",
+      "拡張機能"
+    ]
+  },
+  {
+    "objectID": "install.html",
+    "href": "install.html",
+    "title": "実習環境の構築",
+    "section": "",
+    "text": "新しいタブで開く\n       \n      \n    \n  \n\n1 RとIDE\n事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。\n\nPositronもあるが、ここではRStudioを使用\nmybinder.orgを使用する場合、\n\n 実習環境（mybinder.org）の起動\n\n\n2 Quarto CLIの入手\n\nmybinder.orgを使用する場合、ここは不要\n公式ホームページ（https://quarto.org/）から入手\nGet Startedメニューから自分のOSに合ったものをダウンロードし、インストール\nmacOSの場合、homebrewもおすすめ\n\nbrew install --cask quarto\n\n\n3 必要なパッケージをインストール\n\n{quarto}\nTinyTeX\n\n{tinytex} &gt; tinytex::install_tinytex()\nターミナルでquarto install tinytex\n\n\n\n\n4 プロジェクトの作成",
+    "crumbs": [
+      "2/ 実習環境の導入"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Quartoとは & R Markdownとの比較",
+    "section": "",
+    "text": "新しいタブで開く\n       \n      \n    \n  \n\n1 Quartoとは\n\n\n2 なぜQuartoか\n\n\n3 vs. R Markdown",
+    "crumbs": [
+      "1/ イントロダクション"
+    ]
+  },
+  {
+    "objectID": "markdown.html",
+    "href": "markdown.html",
+    "title": "Markdown文法の基礎",
+    "section": "",
+    "text": "新しいタブで開く",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "share.html",
+    "href": "share.html",
+    "title": "共有",
+    "section": "",
+    "text": "新しいタブで開く",
+    "crumbs": [
+      "6/ 共有"
+    ]
+  },
+  {
+    "objectID": "share.html#yamlヘッダーの例",
+    "href": "share.html#yamlヘッダーの例",
+    "title": "共有",
+    "section": "1 YAMLヘッダーの例",
+    "text": "1 YAMLヘッダーの例\n\n1.1 PDF文書用\nあ\n\n\n1.2 Beamer用\n---\ntitle: \"ほとんど無害な『私たちのR』\"\nsubtitle: \"『私たちのR』をR教の聖典にすべき\"\ndate: today\nauthor: \"\\\\ltjruby{羽鳥}{ハドリー}ウィッカム\"\ninstitute: \"整然大学\"\nlang: ja\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis\n    classoption:\n      - aspectratio=169\n      - 10.5pt\n    mainfont: \"Noto Sans CJK JP\"\n    CJKmainfont: \"Noto Sans CJK JP\"\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}\n        \\usepackage{luatexja-ruby}\nknitr: \n  opts_chunk: \n    dev: \"ragg_png\"\n    dpi: 300\n    fig.align: \"center\"\n    echo: false\n    message: false\n    warning: false\n---\n\n## 概要\n\n::::{.columns}\n:::{.column width=30%}\n![THE BIBLE](https://jaysong.net/RBook/Figs/Cover.png)\n:::\n\n:::{.column width=70%}\n- 近年、爆発的に売り上げを伸ばした『私たちR』の紹介\n- 2.7秒に1冊売れているらしい。\n- メリットとデメリットの紹介\n:::\n::::\n\n# 『私たちのR』のここがすごい!\n\n## ネコが書いた本格R入門書\n\n::: {.incremental}\n- 世界人口の8割を占めているネコのための本格R入門書\n- ネコの、ネコによる、ネコのためのR入門書\n:::\n\n## ふざけた例が満載\n\n::: {.incremental}\n- 世界各国の社会経済的データなどふざけた例が多い\n- ラーメン屋データのような真面目な例も少なめではあるが、一応ある。\n:::\n\n# 『私たちのR』のここがダメ!\n\n## ネコしか読めない\n\n- にゃーにゃにゃーにゃーにゃーにゃにゃにゃ\n- にゃーにゃーにゃーにゃにゃーにゃにゃ\n- にゃーにゃにゃーにゃーにゃーにゃにゃ\n\n## ふざけた例しかない\n\n- にゃーにゃにゃーにゃーにゃーわん！わん！わん！\n- にゃーにゃーわんーにゃにゃーにゃにゃ\n- にゃーにゃにゃーにゃーわんーにゃにゃ\n\n:::{.callout-note icon=false}\n## にゃー？\n\n- にゃーー！にゃにゃ！！\n- にゃ...\n:::\n\n## コードの例\n\n:::: {.columns}\n::: {.column width=55%}\n```{r}\n#| echo: true\nlibrary(tidyverse)\nmy_plt &lt;- midwest |&gt; \n  ggplot(aes(x = area, \n             y = poptotal)) + \n  geom_point(aes(col = state, \n                 size = popdensity)) + \n  geom_smooth(method = \"loess\") + \n  xlim(c(0, 0.1)) +\n  ylim(c(0, 500000)) +\n  labs(title = \"Area Vs Population\",\n       x = \"Area\", \n       y = \"Population\")\n```\n:::\n\n::: {.column width=45%}\n```{r}\n#| echo: true\n#| fig-width: 5\n#| fig-height: 4\nplot(my_plt)\n```\n:::\n::::",
+    "crumbs": [
+      "6/ 共有"
+    ]
   },
   {
     "objectID": "shortcodes.html",
@@ -1011,11 +1012,109 @@
     ]
   },
   {
-    "objectID": "document_slide.html#参考文献の話",
-    "href": "document_slide.html#参考文献の話",
-    "title": "4/ 文書の作成",
-    "section": "参考文献の話",
-    "text": "参考文献の話\n参考文献の管理・挿入はBibTeXを使用する（引用は@固有キー）\n\n参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介\n\n例）英文のジャーナル名はJournal、和文のジャーナル名は『ジャーナル名』\n\n社会科学ではjecon.bst（経済学用のBibTeX style file）が定番\n2026年1月現在、正攻法でjecon.bstを使う方法は（少なくとも宋にとっては）不明\nプロジェクトフォルダーに.latexmkrcファイルを格納し、PDFエンジンとしてLatexmkを使用することで、とりあえず・・・・・使うことはできる\n\n『私たちのR』の「第25章 Quarto[文書]」を参照\nhttps://www.jaysong.net/RBook/quarto2.html"
+    "objectID": "slide_slide.html#reveal.jsについて",
+    "href": "slide_slide.html#reveal.jsについて",
+    "title": "5/ スライドの作成",
+    "section": "Reveal.jsについて",
+    "text": "Reveal.jsについて\nQuartoでは3種類（フォーマット）のスライドが作成可能\n\nReveal.js（.html）\n\nHTMLベースのプレゼンテーション・フレームワーク\nQuartoを使うとMarkdown文法でスライドが作成可能\n\nBeamer（.pdf）\nMicrosoft Powerpoint（.pptx）"
+  },
+  {
+    "objectID": "slide_slide.html#reveal.jsで作成したスライドの例",
+    "href": "slide_slide.html#reveal.jsで作成したスライドの例",
+    "title": "5/ スライドの作成",
+    "section": "Reveal.jsで作成したスライドの例",
+    "text": "Reveal.jsで作成したスライドの例\n\nこれです"
+  },
+  {
+    "objectID": "slide_slide.html#スライドの操作方法",
+    "href": "slide_slide.html#スライドの操作方法",
+    "title": "5/ スライドの作成",
+    "section": "スライドの操作方法",
+    "text": "スライドの操作方法\n詳細は??キーで確認\n\n\n\n\n\n\n\nキー\n動作\n\n\n\n\n左右キー\n前後のスライド1\n\n\nShift + 左右キー\n最初/最後のスライド\n\n\n..\n一時停止（暗転）\n\n\nFF\nフルスクリーン\n\n\nGG\n任意のスライドへ移動\n\n\nESCESC, OO\nアウトライン表示\n\n\nSS\n発表者用画面の表示\n\n\nMM\nメニュー呼び出し\n\n\nCTRLCTRL\n検索\n\n\n\nSPACEキーを押せば次のスライドへ移動する。また、上下キーも左右キーと同じく機能する。"
+  },
+  {
+    "objectID": "slide_slide.html#yamlヘッダーの構成要素の一部",
+    "href": "slide_slide.html#yamlヘッダーの構成要素の一部",
+    "title": "5/ スライドの作成",
+    "section": "YAMLヘッダーの構成要素（の一部）",
+    "text": "YAMLヘッダーの構成要素（の一部）\n第5講（HTML文書）の構成と同じ\n\n（1）メタ情報、（2）フォーマット、（3）チャンクオプションに大別\n\nメタ情報：タイトル、作成日、作成者、言語、概要、…\nフォーマット：Reveal.js（revealjs）、Beamer（beamer）、Microsoft Powerpoint（pptx）\n\nrevealjsの場合、拡張機能として提供されるテーマを使用する場合、別の名前に変更する必要がある\n\nチャンクオプション：全チャンクに共通するチャンクオプション"
+  },
+  {
+    "objectID": "slide_slide.html#文書のメタ情報例",
+    "href": "slide_slide.html#文書のメタ情報例",
+    "title": "5/ スライドの作成",
+    "section": "文書のメタ情報（例）",
+    "text": "文書のメタ情報（例）\n1title: 文書のタイトル\nsubtitle: 文書のサブタイトル\n2author:\n  - name: 宋財泫\n    affiliation: 関西大学\n    email: song@kansai-u.ac.jp\n    url: https://www.jaysong.net\n3date: 1986/10/8\n4lang: ja\n\n1\n\n文書のタイトルとサブタイトル\n\n2\n\n著者情報\n\n3\n\n作成日\n\n4\n\nスライドの言語"
+  },
+  {
+    "objectID": "slide_slide.html#フォーマット例",
+    "href": "slide_slide.html#フォーマット例",
+    "title": "5/ スライドの作成",
+    "section": "フォーマット（例）",
+    "text": "フォーマット（例）\nformat:\n  revealjs:\n1    theme: simple\n2    width: 1200\n    height: 900\n3    footer: \"はじめてのQuarto\"\n4    link-external-newwindow: true\n5    slide-number: \"c/t\"\n6    code-line-numbers: true\n7    auto-stretch: false\n\n1\n\nスライドのテーマ（default = black、white、beige、solarized、…）\n\n2\n\nスライドの横と縦の幅（px単位）\n\n3\n\nスライド中央下段のテキスト\n\n4\n\nリンクを新しいタブとして開くようにする\n\n5\n\n右下にスライド番号を挿入（\"c/t\" = 現在のページ/ページ数）\n\n6\n\nコードチャンクの各行に番号を付ける\n\n7\n\nオートストレッチ1を無効化（既定値はture）\n\n\n図の大きさがスライドの残りの空間よりも小さい場合、自動的に拡大する機能"
+  },
+  {
+    "objectID": "slide_slide.html#チャンクオプション例",
+    "href": "slide_slide.html#チャンクオプション例",
+    "title": "5/ スライドの作成",
+    "section": "チャンクオプション（例）",
+    "text": "チャンクオプション（例）\nすべてのチャンクに同じオプションを付けたい場合\n\n個別のチャンクにオプションはknitr: opts_chunkより優先する\n\nknitr: \n  opts_chunk: \n1    dev: ragg_png\n2    fig-align: center\n3    dpi: 300\n4    message: false\n5    warning: false\n\n1\n\n作図エンジンは{ragg}のpngフォーマットにする（文字化け防止）\n\n2\n\n図は中央に揃える（![]()で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）\n\n3\n\n図は解像度は300に（印刷する予定がないなら150程度でもOK））\n\n4\n\nメッセージを表示しない（{tidyverse}の読み込みやread_csv()後のメッセージなど）\n\n5\n\n警告メッセージを表示しない"
+  },
+  {
+    "objectID": "slide_slide.html#スライドの構成",
+    "href": "slide_slide.html#スライドの構成",
+    "title": "5/ スライドの作成",
+    "section": "スライドの構成",
+    "text": "スライドの構成\n見出し（#と##のみ） = 改ページ\n\n以下のコードは計6ページのスライドの例　　　　　　　　\n\n\n\n---\nYAMLヘッダー\n---\n\n# はじめに\n\n## 問題背景\n\n## 先行研究\n\n## 本研究の位置づけ\n\n# 理論・仮説\n\n## 理論\n\n\nQuartoのスライドは##でページを区切る\n#でスライドをセクションに分割\n\n問題背景〜本研究の位置づけは「はじめに」、理論は「理論・仮説」のセクションに属する\nESCESCを押してみると構造が分かる"
+  },
+  {
+    "objectID": "slide_slide.html#ロゴの入れ方",
+    "href": "slide_slide.html#ロゴの入れ方",
+    "title": "5/ スライドの作成",
+    "section": "ロゴの入れ方",
+    "text": "ロゴの入れ方\nYAMLヘッダーのformat: revealjsの下にlogo: 画像のパスを追加\n\n通常、ロゴは右下に入るが、CSS/SCSSファイルを修正することで調整可能\n\n右下にロゴが入る場合、スライドのページ番号が見えなくなる\n\nheader-logo-link: URL \\(\\Rightarrow\\) ロゴをクリックすると指定されたURLへ飛ぶ\n\nformat:\n  revealjs: \n    logo: my_logo.png\n    header-logo-link: https://www.jaysong.net/"
+  },
+  {
+    "objectID": "slide_slide.html#箇条書きのアニメーションコード",
+    "href": "slide_slide.html#箇条書きのアニメーションコード",
+    "title": "5/ スライドの作成",
+    "section": "箇条書きのアニメーション（コード）",
+    "text": "箇条書きのアニメーション（コード）\n::: {.incremental}と:::の間に箇条書きを記入\n宋が訪問したことのある店のみ紹介（順不同）\n\n::: {.incremental}\n\n1. 蔵木（牛モツつけ麺）\n1. まんしゅう（じゃんめん+白ご飯）\n1. 鶏と魚（メニューがよく変わる）\n1. チョンマゲ（ラーメン零）\n1. とさの家（ラーメン+のり多め+硬め濃いめ少なめ）\n1. 呑兵衛屋台（しじみラーメン）\n1. 谷口食堂（鍋焼きラーメン）\n\n:::"
+  },
+  {
+    "objectID": "slide_slide.html#箇条書きのアニメーション結果",
+    "href": "slide_slide.html#箇条書きのアニメーション結果",
+    "title": "5/ スライドの作成",
+    "section": "箇条書きのアニメーション（結果）",
+    "text": "箇条書きのアニメーション（結果）\n宋が訪問したことのある店のみ紹介（順不同）\n\n蔵木（牛モツつけ麺）\nまんしゅう（じゃんめん+白ご飯）\n鶏と魚（メニューがよく変わる）\nチョンマゲ（ラーメン零）\nとさの家（ラーメン+のり多め+硬め濃いめ少なめ）\n呑兵衛屋台（しじみラーメン）\n谷口食堂（鍋焼きラーメン）"
+  },
+  {
+    "objectID": "slide_slide.html#隠しスライド",
+    "href": "slide_slide.html#隠しスライド",
+    "title": "5/ スライドの作成",
+    "section": "隠しスライド",
+    "text": "隠しスライド\n見出し（#と##）の後ろに{visibility=}を追加\n\n\"hidden\"：スライドを隠す\n\"uncounted\"：スライドを表示するものの、スライド番号が増加しない\n\n# 『私たちのR』のここがすごい! {visibility=\"uncounted\"}\n\n## ネコが書いた本格R入門書\n\n- 世界人口を8割を占めているネコのための本格R入門書\n- ネコの、ネコによる、ネコのためのR入門書\n\n## ふざけた例が満載 {visibility=\"hidden\"}\n\n- 世界各国の社会経済的データなどふざけた例が多い\n- ラーメン屋データのような真面目な例も少なめではあるが、一応ある。"
+  },
+  {
+    "objectID": "slide_slide.html#発表者用画面",
+    "href": "slide_slide.html#発表者用画面",
+    "title": "5/ スライドの作成",
+    "section": "発表者用画面",
+    "text": "発表者用画面\n\nフルスクリーン（FF）と発表者用画面（SS）\n\n発表者の画面が別ウィンドウとして開かれる。発表者画面での操作はスライド本体にも反映される\nスライドで移す場合、ミラーリングでなく別画面構成にする\n\n\n宋が訪問したことのある店のみ紹介（**太字**は大阪支店あり）\n\n1. 蔵木（牛モツつけ麺）\n1. **まんしゅう**（じゃんめん+白ご飯）\n1. 鶏と魚（メニューがよく変わる）\n1. **チョンマゲ**（ラーメン零）\n1. とさの家（ラーメン+のり多め+硬め濃いめ少なめ）\n1. 呑兵衛屋台（しじみラーメン）\n1. 谷口食堂（鍋焼きラーメン）\n\n::: {.notes}\n- 鶏と魚はドライトマトが乗っているやつがあれば間違いない\n- チョンマゲはラーメンよりも玉子焼き飯がうまいことも言っておく\n:::"
+  },
+  {
+    "objectID": "slide_slide.html#発表者用画面例",
+    "href": "slide_slide.html#発表者用画面例",
+    "title": "5/ スライドの作成",
+    "section": "発表者用画面（例）",
+    "text": "発表者用画面（例）\n\n右上のボタンでレイアウト変更可能\n時計部分はクリックするとリセットされる"
+  },
+  {
+    "objectID": "slide_slide.html#黒板とペン機能",
+    "href": "slide_slide.html#黒板とペン機能",
+    "title": "5/ スライドの作成",
+    "section": "黒板とペン機能",
+    "text": "黒板とペン機能\nYAMLヘッダーのformat: revealjsの下にchalkboard: trueを追加\nformat:\n  revealjs: \n    chalkboard: true\n\nCCでペンモード（canvas）、BBで黒板モード（chalkboard）のON/OFF\n削除はBACKSPACEBACKSPACE（すべて）、またはDELDEL（当該スライドのみ）\n注意：embed-resources: trueとは併用不可\n\n\n\n\n\n\n\nCanvasモード（Cキー）\n\n\n\n\n\n\n\nChalkboardモード（Bキー）"
   },
   {
     "objectID": "slide_slide.html#スライドreveal.jsのpdf出力",
@@ -1030,61 +1129,5 @@
     "title": "5/ スライドの作成",
     "section": "PDF形式のスライド（Beamer）の作成",
     "text": "PDF形式のスライド（Beamer）の作成\nformat: beamerを使用\n\nBeamerについてはGoogle等で「beamer 入門」で検索（多少のTeXの知識も必要）\n\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis                # 好きなテーマを使おう\n    classoption:\n      - aspectratio=169              # 縦横比4:3ならこの行を削除\n      - 10pt\n    mainfont: \"Noto Sans CJK JP\"     # フォントは自分のPC環境に合わせて修正\n    CJKmainfont: \"Noto Sans CJK JP\"  # フォントは自分のPC環境に合わせて修正\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}"
-  },
-  {
-    "objectID": "document_slide.html#参考参考文献の話",
-    "href": "document_slide.html#参考参考文献の話",
-    "title": "4/ 文書の作成",
-    "section": "参考）参考文献の話",
-    "text": "参考）参考文献の話\n参考文献の管理・挿入はBibTeXを使用する（引用は@固有キー）\n\n参考文献が英文のみなら問題ないが、日本語の参考文献が混ざっていると厄介\n\n例）英文のジャーナル名はJournal、和文のジャーナル名は『ジャーナル名』\n\n社会科学ではjecon.bst（経済学用のBibTeX style file）が定番\n2026年1月現在、正攻法でjecon.bstを使う方法は（少なくとも宋にとっては）不明\nプロジェクトフォルダーに.latexmkrcファイルを格納し、PDFエンジンとしてLatexmkを使用することで、とりあえず・・・・・使うことはできる\n\n『私たちのR』の「第25章 Quarto[文書]」を参照\nhttps://www.jaysong.net/RBook/quarto2.html"
-  },
-  {
-    "objectID": "slide_slide.html#revealjsについて",
-    "href": "slide_slide.html#revealjsについて",
-    "title": "5/ スライドの作成",
-    "section": "revealjsについて",
-    "text": "revealjsについて"
-  },
-  {
-    "objectID": "slide_slide.html#スライドの構成",
-    "href": "slide_slide.html#スライドの構成",
-    "title": "5/ スライドの作成",
-    "section": "スライドの構成",
-    "text": "スライドの構成"
-  },
-  {
-    "objectID": "slide_slide.html#ロゴの入れ方",
-    "href": "slide_slide.html#ロゴの入れ方",
-    "title": "5/ スライドの作成",
-    "section": "ロゴの入れ方",
-    "text": "ロゴの入れ方"
-  },
-  {
-    "objectID": "slide_slide.html#箇条書きのアニメーション",
-    "href": "slide_slide.html#箇条書きのアニメーション",
-    "title": "5/ スライドの作成",
-    "section": "箇条書きのアニメーション",
-    "text": "箇条書きのアニメーション"
-  },
-  {
-    "objectID": "slide_slide.html#隠しスライド",
-    "href": "slide_slide.html#隠しスライド",
-    "title": "5/ スライドの作成",
-    "section": "隠しスライド",
-    "text": "隠しスライド"
-  },
-  {
-    "objectID": "slide_slide.html#発表者用画面",
-    "href": "slide_slide.html#発表者用画面",
-    "title": "5/ スライドの作成",
-    "section": "発表者用画面",
-    "text": "発表者用画面"
-  },
-  {
-    "objectID": "slide_slide.html#ホワイトボードとペン機能",
-    "href": "slide_slide.html#ホワイトボードとペン機能",
-    "title": "5/ スライドの作成",
-    "section": "ホワイトボードとペン機能",
-    "text": "ホワイトボードとペン機能"
   }
 ]

@@ -24,6 +24,7 @@ format:
     slide-number: "c/t"
     html-table-processing: none
     code-line-numbers: false
+    code-annotations: select
     auto-stretch: false
 html-math-method:
   method: mathjax

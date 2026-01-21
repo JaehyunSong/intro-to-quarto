@@ -6,7 +6,9 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="宋財泫（関西大学）">
@@ -99,6 +101,8 @@
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -210,8 +214,202 @@
 <h1><strong>1</strong> YAMLヘッダーの構成</h1>
 
 </section>
-<section id="revealjsについて" class="slide level2">
-<h2>revealjsについて</h2>
+<section id="reveal.jsについて" class="slide level2">
+<h2>Reveal.jsについて</h2>
+<p>Quartoでは3種類<span class="small">（フォーマット）</span>のスライドが作成可能</p>
+<ul>
+<li><span class="alert"><strong>Reveal.js</strong></span>（<code>.html</code>）
+<ul>
+<li>HTMLベースのプレゼンテーション・フレームワーク</li>
+<li>Quartoを使うとMarkdown文法でスライドが作成可能</li>
+</ul></li>
+<li>Beamer（<code>.pdf</code>）</li>
+<li>Microsoft Powerpoint（<code>.pptx</code>）</li>
+</ul>
+</section>
+<section id="reveal.jsで作成したスライドの例" class="slide level2">
+<h2>Reveal.jsで作成したスライドの例</h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 800px;">
+<p>これです</p>
+</div>
+</section>
+<section id="スライドの操作方法" class="slide level2">
+<h2>スライドの操作方法</h2>
+<p>詳細は<kbd title="?" aria-hidden="true">?</kbd><span class="visually-hidden">?</span>キーで確認</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">キー</th>
+<th style="text-align: left;">動作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">左右キー</td>
+<td style="text-align: left;">前後のスライド<sup>1</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Shift + 左右キー</td>
+<td style="text-align: left;">最初/最後のスライド</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><p><kbd title="." aria-hidden="true">.</kbd><span class="visually-hidden">.</span></p></td>
+<td style="text-align: left;">一時停止（暗転）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><p><kbd title="F" aria-hidden="true">F</kbd><span class="visually-hidden">F</span></p></td>
+<td style="text-align: left;">フルスクリーン</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><p><kbd title="G" aria-hidden="true">G</kbd><span class="visually-hidden">G</span></p></td>
+<td style="text-align: left;">任意のスライドへ移動</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><kbd title="ESC" aria-hidden="true">ESC</kbd><span class="visually-hidden">ESC</span>, <kbd title="O" aria-hidden="true">O</kbd><span class="visually-hidden">O</span></td>
+<td style="text-align: left;">アウトライン表示</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><p><kbd title="S" aria-hidden="true">S</kbd><span class="visually-hidden">S</span></p></td>
+<td style="text-align: left;">発表者用画面の表示</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><p><kbd title="M" aria-hidden="true">M</kbd><span class="visually-hidden">M</span></p></td>
+<td style="text-align: left;">メニュー呼び出し</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><p><kbd title="CTRL" aria-hidden="true">CTRL</kbd><span class="visually-hidden">CTRL</span></p></td>
+<td style="text-align: left;">検索</td>
+</tr>
+</tbody>
+</table>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>SPACEキーを押せば次のスライドへ移動する。また、上下キーも左右キーと同じく機能する。</p></li></ol></aside></section>
+<section id="yamlヘッダーの構成要素の一部" class="slide level2">
+<h2>YAMLヘッダーの構成要素（の一部）</h2>
+<p>第5講（HTML文書）の構成と同じ</p>
+<ul>
+<li>（1）<span class="alert"><strong>メタ情報</strong></span>、（2）<span class="alert"><strong>フォーマット</strong></span>、（3）<span class="alert"><strong>チャンクオプション</strong></span>に大別
+<ul>
+<li>メタ情報：タイトル、作成日、作成者、言語、概要、…</li>
+<li>フォーマット：Reveal.js（<code>revealjs</code>）、Beamer（<code>beamer</code>）、Microsoft Powerpoint（<code>pptx</code>）
+<ul>
+<li><code>revealjs</code>の場合、拡張機能として提供されるテーマを使用する場合、別の名前に変更する必要がある</li>
+</ul></li>
+<li>チャンクオプション：全チャンクに共通するチャンクオプション</li>
+</ul></li>
+</ul>
+</section>
+<section id="文書のメタ情報例" class="slide level2">
+<h2>文書のメタ情報（例）</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> 文書のタイトル</span></span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> 文書のサブタイトル</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 宋財泫</span></span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> 関西大学</span></span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> song@kansai-u.ac.jp</span></span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://www.jaysong.net</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3">3</button><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 1986/10/8</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4">4</button><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lang</span><span class="kw">:</span><span class="at"> ja</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1,2" data-code-annotation="1">文書のタイトルとサブタイトル</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="3,4,5,6,7" data-code-annotation="2">著者情報</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="3">作成日</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="4">スライドの言語</span>
+</dd>
+</dl>
+</section>
+<section id="フォーマット例" class="slide level2">
+<h2>フォーマット（例）</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> simple</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">width</span><span class="kw">:</span><span class="at"> </span><span class="dv">1200</span></span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">900</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"はじめてのQuarto"</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link-external-newwindow</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="st">"c/t"</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6">6</button><span id="annotated-cell-2-9" class="code-annotation-target"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-line-numbers</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="7">7</button><span id="annotated-cell-2-10" class="code-annotation-target"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">auto-stretch</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">スライドのテーマ<span class="small">（<code>default</code> = <code>black</code>、<code>white</code>、<code>beige</code>、<code>solarized</code>、…）</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4,5" data-code-annotation="2">スライドの横と縦の幅<span class="small">（px単位）</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="3">スライド中央下段のテキスト</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="4">リンクを新しいタブとして開くようにする</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="5">右下にスライド番号を挿入<span class="small">（<code>"c/t"</code> = 現在のページ/ページ数）</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="9" data-code-annotation="6">コードチャンクの各行に番号を付ける</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="10" data-code-annotation="7">オートストレッチ<sup>1</sup>を無効化<span class="small">（既定値は<code>ture</code>）</span></span>
+</dd>
+</dl>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>図の大きさがスライドの残りの空間よりも小さい場合、自動的に拡大する機能</p></li></ol></aside></section>
+<section id="チャンクオプション例" class="slide level2">
+<h2>チャンクオプション（例）</h2>
+<p>すべてのチャンクに同じオプションを付けたい場合</p>
+<ul>
+<li>個別のチャンクにオプションは<code>knitr: opts_chunk</code>より優先する</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dev</span><span class="kw">:</span><span class="at"> ragg_png</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2">2</button><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig-align</span><span class="kw">:</span><span class="at"> center</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3">3</button><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dpi</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4">4</button><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5">5</button><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">作図エンジンは{ragg}のpngフォーマットにする<span class="small">（文字化け防止）</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">図は中央に揃える<span class="small">（<code>![]()</code>で入れた図には適用されない。チャンクオプションなので、チャンクから生成される図のみ適用される）</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="3">図は解像度は300に<span class="small">（印刷する予定がないなら150程度でもOK））</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="4">メッセージを表示しない<span class="small">（{tidyverse}の読み込みや<code>read_csv()</code>後のメッセージなど）</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="5">警告メッセージを表示しない</span>
+</dd>
+</dl>
 </section></section>
 <section>
 <section id="よく使う機能" class="title-slide slide level1 center">
@@ -220,21 +418,174 @@
 </section>
 <section id="スライドの構成" class="slide level2">
 <h2>スライドの構成</h2>
+<p>見出し（<code>#</code>と<code>##</code>のみ） = 改ページ</p>
+<ul>
+<li>以下のコードは計6ページのスライドの例　　　　　　　　</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">YAMLヘッダー</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># はじめに</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 問題背景</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 先行研究</span></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 本研究の位置づけ</span></span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># 理論・仮説</span></span>
+<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 理論</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Quartoのスライドは<code>##</code>でページを区切る</li>
+<li><code>#</code>でスライドをセクションに分割
+<ul>
+<li>問題背景〜本研究の位置づけは「はじめに」、理論は「理論・仮説」のセクションに属する</li>
+<li><kbd title="ESC" aria-hidden="true">ESC</kbd><span class="visually-hidden">ESC</span>を押してみると構造が分かる</li>
+</ul></li>
+</ul>
+</div></div>
 </section>
 <section id="ロゴの入れ方" class="slide level2">
 <h2>ロゴの入れ方</h2>
+<p>YAMLヘッダーの<code>format: revealjs</code>の下に<code>logo: 画像のパス</code>を追加</p>
+<ul>
+<li>通常、ロゴは右下に入るが、CSS/SCSSファイルを修正することで調整可能
+<ul>
+<li>右下にロゴが入る場合、スライドのページ番号が見えなくなる</li>
+</ul></li>
+<li><code>header-logo-link: URL</code> <span class="math inline">\(\Rightarrow\)</span> ロゴをクリックすると指定されたURLへ飛ぶ</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> my_logo.png</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-logo-link</span><span class="kw">:</span><span class="at"> https://www.jaysong.net/</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/slide/logo.png" class="quarto-figure quarto-figure-center" style="border: 1px solid #ccc;;width:75.0%"></p>
+</figure>
+</div>
 </section>
-<section id="箇条書きのアニメーション" class="slide level2">
-<h2>箇条書きのアニメーション</h2>
+<section id="箇条書きのアニメーションコード" class="slide level2">
+<h2>箇条書きのアニメーション（コード）</h2>
+<p><code>::: {.incremental}</code>と<code>:::</code>の間に箇条書きを記入</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>宋が訪問したことのある店のみ紹介（順不同）</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>::: {.incremental}</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>蔵木（牛モツつけ麺）</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>まんしゅう（じゃんめん+白ご飯）</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>鶏と魚（メニューがよく変わる）</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>チョンマゲ（ラーメン零）</span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>とさの家（ラーメン+のり多め+硬め濃いめ少なめ）</span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>呑兵衛屋台（しじみラーメン）</span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>谷口食堂（鍋焼きラーメン）</span>
+<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="箇条書きのアニメーション結果" class="slide level2">
+<h2>箇条書きのアニメーション（結果）</h2>
+<p>宋が訪問したことのある店のみ紹介（順不同）</p>
+<ol type="1">
+<li class="fragment">蔵木（牛モツつけ麺）</li>
+<li class="fragment">まんしゅう（じゃんめん+白ご飯）</li>
+<li class="fragment">鶏と魚（メニューがよく変わる）</li>
+<li class="fragment">チョンマゲ（ラーメン零）</li>
+<li class="fragment">とさの家（ラーメン+のり多め+硬め濃いめ少なめ）</li>
+<li class="fragment">呑兵衛屋台（しじみラーメン）</li>
+<li class="fragment">谷口食堂（鍋焼きラーメン）</li>
+</ol>
 </section>
 <section id="隠しスライド" class="slide level2">
 <h2>隠しスライド</h2>
+<p>見出し（<code>#</code>と<code>##</code>）の後ろに<code>{visibility=}</code>を追加</p>
+<ul>
+<li><code>"hidden"</code>：スライドを隠す</li>
+<li><code>"uncounted"</code>：スライドを表示するものの、スライド番号が増加しない</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># 『私たちのR』のここがすごい! {visibility="uncounted"}</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## ネコが書いた本格R入門書</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>世界人口を8割を占めているネコのための本格R入門書</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ネコの、ネコによる、ネコのためのR入門書</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## ふざけた例が満載 {visibility="hidden"}</span></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>世界各国の社会経済的データなどふざけた例が多い</span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ラーメン屋データのような真面目な例も少なめではあるが、一応ある。</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="発表者用画面" class="slide level2">
 <h2>発表者用画面</h2>
+<ul>
+<li>フルスクリーン（<kbd title="F" aria-hidden="true">F</kbd><span class="visually-hidden">F</span>）と発表者用画面（<kbd title="S" aria-hidden="true">S</kbd><span class="visually-hidden">S</span>）
+<ul>
+<li>発表者の画面が別ウィンドウとして開かれる。発表者画面での操作はスライド本体にも反映される</li>
+<li>スライドで移す場合、ミラーリングでなく別画面構成にする</li>
+</ul></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>宋が訪問したことのある店のみ紹介（**太字**は大阪支店あり）</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>蔵木（牛モツつけ麺）</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**まんしゅう**（じゃんめん+白ご飯）</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>鶏と魚（メニューがよく変わる）</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**チョンマゲ**（ラーメン零）</span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>とさの家（ラーメン+のり多め+硬め濃いめ少なめ）</span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>呑兵衛屋台（しじみラーメン）</span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>谷口食堂（鍋焼きラーメン）</span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a>::: {.notes}</span>
+<span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>鶏と魚はドライトマトが乗っているやつがあれば間違いない</span>
+<span id="cb5-13"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>チョンマゲはラーメンよりも玉子焼き飯がうまいことも言っておく</span>
+<span id="cb5-14"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="ホワイトボードとペン機能" class="slide level2">
-<h2>ホワイトボードとペン機能</h2>
+<section id="発表者用画面例" class="slide level2">
+<h2>発表者用画面（例）</h2>
+<ul>
+<li>右上のボタンでレイアウト変更可能</li>
+<li>時計部分はクリックするとリセットされる</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/slide/speakernote.png" class="quarto-figure quarto-figure-center" style="border: 1px solid #000;;width:90.0%"></p>
+</figure>
+</div>
+</section>
+<section id="黒板とペン機能" class="slide level2">
+<h2>黒板とペン機能</h2>
+<p>YAMLヘッダーの<code>format: revealjs</code>の下に<code>chalkboard: true</code>を追加</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">chalkboard</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><kbd title="C" aria-hidden="true">C</kbd><span class="visually-hidden">C</span>でペンモード（<span class="alert"><strong>c</strong></span>anvas）、<kbd title="B" aria-hidden="true">B</kbd><span class="visually-hidden">B</span>で黒板モード（chalk<span class="alert"><strong>b</strong></span>oard）のON/OFF</li>
+<li>削除は<kbd title="BACKSPACE" aria-hidden="true">BACKSPACE</kbd><span class="visually-hidden">BACKSPACE</span>（すべて）、または<kbd title="DEL" aria-hidden="true">DEL</kbd><span class="visually-hidden">DEL</span>（当該スライドのみ）</li>
+<li><span class="alert"><strong>注意</strong></span>：<code>embed-resources: true</code>とは併用不可</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/slide/canvas.png" width="500"></p>
+<figcaption>Canvasモード（Cキー）</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/slide/chalkboard.png" width="500"></p>
+<figcaption>Chalkboardモード（Bキー）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="pdf出力" class="title-slide slide level1 center">
@@ -253,25 +604,25 @@
 <li>背景のグラフィックをONにする</li>
 <li>保存</li>
 </ol>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>ChromiumベースのMicrosoft Edgeでも動作確認済み</p></li><li id="fn2"><p>Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>ChromiumベースのMicrosoft Edgeでも動作確認済み</p></li><li id="fn4"><p>Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）</p></li></ol></aside></section>
 <section id="pdf形式のスライドbeamerの作成" class="slide level2">
 <h2>PDF形式のスライド（Beamer）の作成</h2>
 <p><code>format: beamer</code>を使用</p>
 <ul>
 <li>BeamerについてはGoogle等で「beamer 入門」で検索<span class="small">（多少のTeXの知識も必要）</span></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> metropolis</span><span class="co">                # 好きなテーマを使おう</span></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> aspectratio=169</span><span class="co">              # 縦横比4:3ならこの行を削除</span></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10pt</span></span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">     # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>        \usepackage{luatexja}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> metropolis</span><span class="co">                # 好きなテーマを使おう</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> aspectratio=169</span><span class="co">              # 縦横比4:3ならこの行を削除</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10pt</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">     # フォントは自分のPC環境に合わせて修正</span></span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>        \usepackage{luatexja}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section></section>
@@ -290,6 +641,7 @@
   <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -311,7 +663,8 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -482,7 +835,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -663,6 +1016,160 @@
             }
           });
         }
+            let selectedAnnoteEl;
+            const selectorForAnnotation = ( cell, annotation) => {
+              let cellAttr = 'data-code-cell="' + cell + '"';
+              let lineAttr = 'data-code-annotation="' +  annotation + '"';
+              const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+              return selector;
+            }
+            const selectCodeLines = (annoteEl) => {
+              const doc = window.document;
+              const targetCell = annoteEl.getAttribute("data-target-cell");
+              const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+              const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+              const lineIds = lines.map((line) => {
+                return targetCell + "-" + line;
+              })
+              let top = null;
+              let height = null;
+              let parent = null;
+              if (lineIds.length > 0) {
+                  //compute the position of the single el (top and bottom and make a div)
+                  const el = window.document.getElementById(lineIds[0]);
+                  top = el.offsetTop;
+                  height = el.offsetHeight;
+                  parent = el.parentElement.parentElement;
+                if (lineIds.length > 1) {
+                  const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                  const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                  height = bottom - top;
+                }
+                if (top !== null && height !== null && parent !== null) {
+                  // cook up a div (if necessary) and position it 
+                  let div = window.document.getElementById("code-annotation-line-highlight");
+                  if (div === null) {
+                    div = window.document.createElement("div");
+                    div.setAttribute("id", "code-annotation-line-highlight");
+                    div.style.position = 'absolute';
+                    parent.appendChild(div);
+                  }
+                  div.style.top = top - 2 + "px";
+                  div.style.height = height + 4 + "px";
+                  div.style.left = 0;
+                  let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                  if (gutterDiv === null) {
+                    gutterDiv = window.document.createElement("div");
+                    gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                    gutterDiv.style.position = 'absolute';
+                    const codeCell = window.document.getElementById(targetCell);
+                    const gutter = codeCell.querySelector('.code-annotation-gutter');
+                    gutter.appendChild(gutterDiv);
+                  }
+                  gutterDiv.style.top = top - 2 + "px";
+                  gutterDiv.style.height = height + 4 + "px";
+                }
+                selectedAnnoteEl = annoteEl;
+              }
+            };
+            const unselectCodeLines = () => {
+              const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+              elementsIds.forEach((elId) => {
+                const div = window.document.getElementById(elId);
+                if (div) {
+                  div.remove();
+                }
+              });
+              selectedAnnoteEl = undefined;
+            };
+              // Handle positioning of the toggle
+          window.addEventListener(
+            "resize",
+            throttle(() => {
+              elRect = undefined;
+              if (selectedAnnoteEl) {
+                selectCodeLines(selectedAnnoteEl);
+              }
+            }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+            const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+            for (let i=0; i<annoteTargets.length; i++) {
+              const annoteTarget = annoteTargets[i];
+              const targetCell = annoteTarget.getAttribute("data-target-cell");
+              const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+              const contentFn = () => {
+                const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+                if (content) {
+                  const tipContent = content.cloneNode(true);
+                  tipContent.classList.add("code-annotation-tip-content");
+                  return tipContent.outerHTML;
+                }
+              }
+              const config = {
+                allowHTML: true,
+                content: contentFn,
+                onShow: (instance) => {
+                  selectCodeLines(instance.reference);
+                  instance.reference.classList.add('code-annotation-active');
+                  window.tippy.hideAll();
+                },
+                onHide: (instance) => {
+                  unselectCodeLines();
+                  instance.reference.classList.remove('code-annotation-active');
+                },
+                maxWidth: 300,
+                delay: [50, 0],
+                duration: [200, 0],
+                offset: [5, 10],
+                arrow: true,
+                trigger: 'click',
+                appendTo: function(el) {
+                  return el.parentElement.parentElement.parentElement;
+                },
+                interactive: true,
+                interactiveBorder: 10,
+                theme: 'light-border',
+                placement: 'right',
+                positionFixed: true,
+                popperOptions: {
+                  modifiers: [
+                  {
+                    name: 'flip',
+                    options: {
+                      flipVariations: false, // true by default
+                      allowedAutoPlacements: ['right'],
+                      fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                    },
+                  },
+                  {
+                    name: 'preventOverflow',
+                    options: {
+                      mainAxis: false,
+                      altAxis: false
+                    }
+                  }
+                  ]        
+                }      
+              };
+              window.tippy(annoteTarget, config); 
+            }
         const findCites = (el) => {
           const parentEl = el.parentElement;
           if (parentEl) {
