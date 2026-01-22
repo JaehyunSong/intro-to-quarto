@@ -195,7 +195,7 @@
     "href": "02_install.html",
     "title": "実習環境の構築",
     "section": "",
-    "text": "新しいタブで開く\n       \n      \n    \n  \n\n1 RとIDE\n事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。\n\nPositronもあるが、ここではRStudioを使用\nmybinder.orgを使用する場合、\n\n 実習環境（mybinder.org）の起動\n\n\n2 Quarto CLIの入手\n\nmybinder.orgを使用する場合、ここは不要\n公式ホームページ（https://quarto.org/）から入手\nGet Startedメニューから自分のOSに合ったものをダウンロードし、インストール\nmacOSの場合、homebrewもおすすめ\n\nbrew install --cask quarto\n\n\n3 必要なパッケージをインストール\n\n{quarto}\nTinyTeX\n\n{tinytex} &gt; tinytex::install_tinytex()\nターミナルでquarto install tinytex\n\n\n\n\n4 プロジェクトの作成",
+    "text": "新しいタブで開く",
     "crumbs": [
       "2/ 実習環境の導入"
     ]
@@ -1120,6 +1120,16 @@
     "crumbs": [
       "その他の内容",
       "ショートコード"
+    ]
+  },
+  {
+    "objectID": "02_install.html#links",
+    "href": "02_install.html#links",
+    "title": "実習環境の構築",
+    "section": "1 Links",
+    "text": "1 Links\n\na\n\n mybinder.org\n\nb\n\n JDCat分析ツール（起動）\n JDCat分析ツール（サーバー立ち上げ; 1回のみ）\n\nc\n\n Posit Cloud",
+    "crumbs": [
+      "2/ 実習環境の導入"
     ]
   }
 ]
