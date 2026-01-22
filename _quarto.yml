@@ -18,25 +18,27 @@ website:
     collapse-level: 2
     contents:
       - text: "1/ イントロダクション"
-        href: intro.qmd
+        href: 01_intro.qmd
       - text: "2/ 実習環境の導入"
-        href: install.qmd
+        href: 02_install.qmd
       - text: "3/ Markdown文法"
-        href: markdown.qmd
+        href: 03_markdown.qmd
       - text: "4/ 文書の作成"
-        href: document.qmd
+        href: 04_document.qmd
       - text: "5/ スライドの作成"
-        href: slide.qmd
+        href: 05_slide.qmd
       - text: "6/ 共有"
-        href: share.qmd
+        href: 06_share.qmd
       - section: "その他の内容"
         contents:
           - text: "YAMLヘッダー"
-            href: yaml.qmd
+            href: A1_yaml.qmd
           - text: "ショートコード"
-            href: shortcodes.qmd
+            href: A2_shortcodes.qmd
           - text: "拡張機能"
-            href: extensions.qmd
+            href: A3_extensions.qmd
+          - text: "テンプレート"
+            href: A4_slide-template.qmd
       - section: "資料"
         contents:
           - text: "Quarto公式"

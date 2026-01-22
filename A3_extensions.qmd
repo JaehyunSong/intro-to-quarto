@@ -1,0 +1,118 @@
+---
+title: "拡張機能"
+modified-date: today
+format: 
+  html:
+    toc: false
+metadata-files: 
+  - "style/exercise.yml"
+lightbox: auto
+---
+
+## 拡張機能とは
+
+https://quarto.org/docs/extensions/
+
+## 使い方
+
+## 拡張機能の紹介
+
+　ここでは宋が実際に使ったことのある拡張機能や、面白いと思った拡張機能をいくつか紹介する。
+
+### pointer
+
+```bash
+quarto add quarto-ext/pointer
+```
+
+````{.yaml}
+---
+title: タイトル
+author: 著者名
+format: 
+  revealjs:
+    ...
+revealjs-plugins:
+  - pointer
+---
+````
+
+### lightbox
+
+```bash
+quarto add quarto-ext/lightbox
+```
+
+![かわいいR猫](figs/rcat.png)
+
+::: {layout-ncol=4}
+![零号機](figs/markdown/rcat_0.png){group="rcats"}
+
+![初号機](figs/markdown/rcat_1.png){group="rcats"}
+
+![弐号機](figs/markdown/rcat_2.png){group="rcats"}
+
+![量産機](figs/markdown/rcat_3.png){group="rcats"}
+:::
+
+```{r}
+#| label: fig-scatterplot-matrix
+#| echo: false
+#| fig-cap: 散布図行列の例
+#| fig-subcap: 
+#|   - mtcars
+#|   - iris
+#| fig-width: 10
+#| fig-height: 10
+#| layout-ncol: 2
+#| lightbox:
+#|   group: scatter-matrix
+#|     - mtcarsの散布図行列
+#|     - irisの散布図行列
+plot(mtcars)
+plot(iris)
+```
+
+### qrcode
+
+:::: {.columns}
+::: {.column width=50%}
+**Input：**
+
+````markdown
+{{{< qrcode https://www.jaysong.net >}}}
+````
+:::
+
+::: {.column width=50%}
+**Output：**
+
+<center>
+{{< qrcode https://www.jaysong.net width=200 height=200 >}}
+</center>
+
+:::
+::::
+
+### countdown
+
+画面の右下にタイマーが表示されるので、revealjsと使用することを推奨。HTML文書とは相性はあまり良くない
+
+**Input：**
+
+````markdown
+## 今すぐQuartoをインストールしてください
+
+5分30秒以内にインストールしないと流血事件が発生します
+
+{{{< countdown "5:30" >}}}
+````
+
+**Output：**
+
+![](figs/etc/countdown.png)
+
+
+### webr
+
+### metropolis-revealjs

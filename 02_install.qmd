@@ -1,0 +1,38 @@
+---
+title: "実習環境の構築"
+modified-date: today
+format: html
+metadata-files: 
+  - "style/exercise.yml"
+---
+
+{{< revealjs file="02_install_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
+
+# RとIDE
+
+事務局より事前に配布する R の準備に関する動画（事務局作成）をご確認いただくか、「R による二次分析入門」の受講をお勧めします。
+
+- Positronもあるが、ここではRStudioを使用
+- mybinder.orgを使用する場合、
+
+[<i class="bi bi-window-fullscreen"></i> 実習環境（mybinder.org）の起動](https://csrda.iss.u-tokyo.ac.jp/quantitative/seminar/){target="_blank" type="button" class="btn btn-outline-primary"}
+
+# Quarto CLIの入手
+
+- mybinder.orgを使用する場合、ここは不要
+- 公式ホームページ（<https://quarto.org/>）から入手
+- Get Startedメニューから自分のOSに合ったものをダウンロードし、インストール
+- macOSの場合、homebrewもおすすめ
+
+```bash
+brew install --cask quarto
+```
+
+# 必要なパッケージをインストール
+
+- {quarto}
+- TinyTeX
+   - {tinytex} > `tinytex::install_tinytex()`
+   - ターミナルで`quarto install tinytex`
+
+# プロジェクトの作成

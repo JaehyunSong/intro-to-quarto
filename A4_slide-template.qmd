@@ -1,0 +1,9 @@
+---
+title: "本講義用スライドのテンプレート"
+modified-date: today
+format: 
+  html:
+    toc: false
+metadata-files: 
+  - "style/exercise.yml"
+---

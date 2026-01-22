@@ -1,0 +1,10 @@
+---
+title: "Quartoとは & R Markdownとの比較"
+modified-date: today
+format: html
+metadata-files: 
+  - "style/exercise.yml"
+---
+
+{{< revealjs file="01_intro_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
+
