@@ -223,22 +223,26 @@
 <li>HTML単体にすべてのものを埋め込む必要がある</li>
 </ul></li>
 </ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="border: 1px solid #CCCCCC;">
-<figure>
-<p><img data-src="figs/share/raw_html.png"></p>
-<figcaption>HTMLのみ（CSS/JavaScript抜き）</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center" style="border: 1px solid #CCCCCC;">
 <figure>
 <p><img data-src="figs/share/full_html.png"></p>
 <figcaption>StandaloneなHTML</figcaption>
 </figure>
 </div>
-</div></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center" style="border: 1px solid #CCCCCC;">
+<figure>
+<p><img data-src="figs/share/raw_html.png"></p>
+<figcaption>HTMLのみ（CSS/JavaScript抜き）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>短いJavaScriptはHTMLに埋め込まれているが、重めのJavaScriptは外部のものを読み込むことが多い</p></li></ol></aside></section>
 <section id="html形式ファイルの共有方法" class="slide level2">
 <h2>HTML形式ファイルの共有方法</h2>
@@ -475,15 +479,378 @@
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn4"><p>主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが<code>docs</code>フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。</p></li></ol></aside></section></section>
 <section>
-<section id="その他" class="title-slide slide level1 center">
-<h1><strong>5</strong> その他</h1>
+<section id="共有時の注意事項" class="title-slide slide level1 center">
+<h1><strong>5</strong> 共有時の注意事項</h1>
 
 </section>
-<section id="その他-1" class="slide level2">
-<h2>その他</h2>
+<section id="rパッケージのバージョン情報" class="slide level2">
+<h2>R、パッケージのバージョン情報</h2>
+<h4 id="時々刻々変化し続けるr生態系">時々刻々変化し続けるR生態系</h4>
 <ul>
-<li>セッション情報やパッケージのバージョンを明記</li>
-<li>renvや<a href="https://www.mybinder.org" class="uri">https://www.mybinder.org</a>など</li>
+<li>膨大なパッケージとその更新の早さはR最大のメリット</li>
+<li>一方、パッケージの仕様変更により<span class="alert"><strong>過去使えた関数が、今は使えない</strong></span>ケースも
+<ul>
+<li>または、引数名や実引数のクラスが変わることも</li>
+</ul></li>
+<li><span class="math inline">\(\Rightarrow\)</span> 過去のコードが今でも当時と100%同じように動作する保証はどこにもない</li>
+</ul>
+<h4 id="対処方法">対処方法</h4>
+<ul>
+<li>セッション情報やパッケージのバージョンを明記<span class="small">（多くの場合、これで十分）</span></li>
+<li>{renv}やdocker、mybinder.orgなどのパッケージ・サービスを利用</li>
+</ul>
+</section>
+<section id="セッション情報" class="slide level2">
+<h2>セッション情報</h2>
+<p>Rのバージョン、読み込み中パッケージの情報などが表示される</p>
+<ul>
+<li>文書やスライドの最後に入れておく</li>
+<li>特定のバージョンのパッケージは<code>devtools::install_version()</code>でインストール</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.5.2 (2025-10-31)
+Platform: aarch64-apple-darwin20
+Running under: macOS Tahoe 26.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Asia/Tokyo
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] lubridate_1.9.4 forcats_1.0.1   stringr_1.6.0   dplyr_1.1.4    
+ [5] purrr_1.2.1     readr_2.1.6     tidyr_1.3.2     tibble_3.3.1   
+ [9] ggplot2_4.0.1   tidyverse_2.0.0
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6       jsonlite_2.0.0     compiler_4.5.2     tidyselect_1.2.1  
+ [5] systemfonts_1.3.1  scales_1.4.0       textshaping_1.0.4  yaml_2.3.12       
+ [9] fastmap_1.2.0      R6_2.6.1           generics_0.1.4     knitr_1.51        
+[13] pillar_1.11.1      RColorBrewer_1.1-3 tzdb_0.5.0         rlang_1.1.7       
+[17] stringi_1.8.7      xfun_0.56          S7_0.2.1           otel_0.2.0        
+[21] timechange_0.3.0   cli_3.6.5          withr_3.0.2        magrittr_2.0.4    
+[25] digest_0.6.39      grid_4.5.2         rstudioapi_0.18.0  hms_1.1.4         
+[29] lifecycle_1.0.5    vctrs_0.7.1        evaluate_1.0.5     glue_1.8.0        
+[33] farver_2.1.2       ragg_1.5.0         pacman_0.5.1       rmarkdown_2.30    
+[37] tools_4.5.2        pkgconfig_2.0.3    htmltools_0.5.9   </code></pre>
+</div>
+</div>
+</section>
+<section id="全パッケージのバージョン情報" class="slide level2">
+<h2>全パッケージのバージョン情報</h2>
+<p>情報量が多すぎるので非推奨</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">installed.packages</span>()[, <span class="st">"Version"</span>]</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             abind                AER             altdoc            anytime 
+           "1.4-8"           "1.2-15"            "0.7.0"           "0.3.12" 
+           archive                arm        AsioHeaders            askpass 
+        "1.1.12.1"           "1.14-4"         "1.30.2-1"            "1.2.1" 
+        assertthat         attachment            attempt              audio 
+           "0.2.1"            "0.4.5"            "0.3.1"           "0.1-12" 
+         backports           BalanceR               base          base64enc 
+           "1.5.0"            "0.8.0"            "4.5.2"            "0.1-3" 
+        bayestestR              beepr           beeswarm            betareg 
+          "0.17.0"              "2.0"            "0.4.0"            "3.2-4" 
+                BH             bibtex               bigD                bit 
+        "1.90.0-1"            "0.5.1"            "0.3.1"            "4.6.0" 
+             bit64             bitops               blob           blogdown 
+         "4.6.0-1"            "1.0-9"            "1.3.0"             "1.23" 
+          bookdown               Boom      BoomSpikeSlab               boot 
+            "0.46"           "0.9.16"            "1.2.7"           "1.3-32" 
+              brew               brio              broom              bslib 
+          "1.0-10"            "1.1.5"           "1.0.11"           "0.10.0" 
+              bsts             cachem              callr                car 
+          "0.9.11"            "1.1.0"            "3.7.6"            "3.1-3" 
+           carData       CausalImpact         cellranger          checkmate 
+           "3.0-5"            "1.4.1"            "1.1.0"            "2.3.3" 
+               chk           chromote             cjoint             cjpowR 
+          "0.10.0"            "0.5.1"            "2.1.1"            "1.0.2" 
+             class           classInt                cli              clipr 
+          "7.3-23"           "0.4-11"            "3.6.5"            "0.8.0" 
+           cluster             cobalt               coda          codetools 
+         "2.1.8.1"            "4.6.1"         "0.19-4.1"           "0.2-20" 
+          coefplot        collections     colorBlindness         colorspace 
+           "1.2.9"           "0.3.10"            "0.1.9"            "2.1-2" 
+      colourpicker         commonmark           compiler             config 
+           "1.3.0"            "2.0.0"            "4.5.2"            "0.3.2" 
+        conflicted            corpcor           corrplot          countdown 
+           "1.2.0"           "1.6.10"             "0.95"            "0.6.0" 
+       countrycode               covr            cowplot              cpp11 
+           "1.6.1"            "3.6.5"            "1.2.0"            "0.5.3" 
+          cranlogs             crayon        credentials              cregg 
+           "2.1.1"            "1.5.3"            "2.0.3"            "0.3.7" 
+         crosstalk            cshapes               curl            dagitty 
+           "1.2.2"              "2.0"            "7.0.0"            "0.3-4" 
+        data.table          data.tree           datasets         datawizard 
+          "1.18.0"            "1.2.0"            "4.5.2"            "1.3.0" 
+               DBI             dbplyr            dcurver      democracyData 
+           "1.2.3"            "2.5.1"            "0.9.3"            "0.5.1" 
+        dendextend           DEoptimR              Deriv               desc 
+          "1.19.1"            "1.1-4"            "4.2.0"            "1.4.3" 
+         DescTools           devtools            diffobj             digest 
+         "0.99.60"            "2.4.6"            "0.3.6"           "0.6.39" 
+    distributional               doBy           doFuture         doParallel 
+           "0.6.0"            "4.7.1"            "1.2.0"           "1.0.17" 
+             doRNG            downlit              dplyr           dreamerr 
+         "1.8.6.2"            "0.4.5"            "1.1.4"            "1.5.0" 
+                DT             dtplyr           dygraphs              e1071 
+          "0.34.0"            "1.3.2"          "1.1.1.6"           "1.7-17" 
+          ellipsis               ergm           estimatr           evaluate 
+           "0.3.2"           "4.11.0"            "1.0.6"            "1.0.5" 
+             Exact               expm          extrafont        extrafontdb 
+             "3.3"            "1.0-0"             "0.20"              "1.1" 
+             fansi             farver        fastDummies            fastmap 
+           "1.0.7"            "2.1.2"            "1.7.5"            "1.2.0" 
+              fect             FindIt             fixest            flexmix 
+           "2.1.0"            "1.3.0"           "0.13.2"           "2.3-20" 
+       fontawesome  fontBitstreamVera     fontLiberation         fontquiver 
+           "0.5.3"            "0.1.1"            "0.1.0"            "0.2.1" 
+           forcats            foreach           forecast            foreign 
+           "1.0.1"            "1.5.2"            "9.0.0"           "0.8-90" 
+           formatR            Formula           fracdiff                 fs 
+            "1.14"            "1.2-5"            "1.5-3"            "1.6.6" 
+             fusen             future       future.apply          fuzzyjoin 
+           "0.7.2"           "1.69.0"           "1.20.1"          "0.1.6.1" 
+       gamlss.dist          gapminder             gargle            gdtools 
+           "6.1-1"            "1.0.1"            "1.6.0"            "0.4.4" 
+          generics           geofacet            geogrid          geojsonsf 
+           "0.1.4"            "0.2.4"            "0.1.2"            "2.0.5" 
+        geometries          geosphere               gert         ggalluvial 
+           "0.2.5"           "1.5-20"            "2.3.1"           "0.12.5" 
+            GGally         ggbeeswarm             ggbump              ggdag 
+           "2.4.0"            "0.7.3"            "0.1.0"           "0.2.13" 
+          ggdendro            ggExtra          ggfittext            ggflags 
+           "0.2.0"           "0.11.0"           "0.10.3"            "0.0.4" 
+           ggforce              ggh4x        gghighlight           ggmosaic 
+           "0.5.0"            "0.3.1"            "0.5.0"            "0.3.3" 
+           ggplot2             ggpubr             ggraph            ggrepel 
+           "4.0.1"            "0.6.2"            "2.2.2"            "0.9.6" 
+          ggridges              ggsci           ggsignif           ggstance 
+           "0.5.7"            "4.2.0"            "0.6.4"            "0.3.7" 
+           ggstats           ggthemes                 gh             ghibli 
+          "0.12.0"            "5.2.0"            "1.5.0"            "0.3.4" 
+          gitcreds                gld         glinternet             glmnet 
+           "0.1.2"            "2.6.8"           "1.0.12"           "4.1-10" 
+           globals               glue              golem        googledrive 
+          "0.18.0"            "1.8.0"            "0.5.1"            "2.1.2" 
+   googlePolylines      googlesheets4        GPArotation           graphics 
+           "0.8.7"            "1.1.2"         "2025.3-1"            "4.5.2" 
+      graphlayouts          grDevices               grid          gridExtra 
+           "1.2.2"            "4.5.2"            "4.5.2"              "2.3" 
+      gridGraphics           gridtext          grImport2             gsynth 
+           "0.5-1"            "0.1.5"            "0.3-3"            "1.3.1" 
+                gt             gtable           gtExtras             gtools 
+           "1.3.0"            "0.3.6"            "0.6.2"            "3.9.5" 
+             haven               here              highr              Hmisc 
+           "2.5.5"            "1.0.2"             "0.11"            "5.2-5" 
+               hms         hrbrthemes          htmlTable          htmltools 
+           "1.1.4"            "0.8.7"            "2.4.3"            "0.5.9" 
+       htmlwidgets             httpuv               httr              httr2 
+           "1.6.4"           "1.6.16"            "1.4.7"            "1.2.2" 
+             icons                ids             igraph                ini 
+           "0.2.0"            "1.0.1"            "2.2.1"            "0.3.1" 
+            inline            insight    interactionTest          interplot 
+          "0.3.21"            "1.4.5"              "1.2"            "0.2.3" 
+           isoband            isotone          iterators               jose 
+           "0.3.0"            "1.1-2"           "1.0.14"            "1.2.1" 
+              jpeg             jpmesh        jpndistrict          jquerylib 
+          "0.1-11"            "2.1.0"       "0.3.9.9000"            "0.1.4" 
+           jsonify           jsonlite         juicyjuice         kableExtra 
+           "1.2.3"            "2.0.0"            "0.1.0"            "1.4.0" 
+        KernSmooth              knitr           labeling     languageserver 
+         "2.23-26"             "1.51"            "0.4.3"           "0.3.16" 
+              lars              later          latex2exp            lattice 
+             "1.3"            "1.4.5"            "0.9.8"           "0.22-7" 
+          lazyeval            leaflet  leaflet.providers             learnr 
+           "0.2.2"            "2.2.3"            "2.0.0"           "0.11.6" 
+               lfe          lifecycle        lightparser           limSolve 
+           "3.1.1"            "1.0.5"            "0.1.0"            "2.0.1" 
+             lintr               list            listenv           litedown 
+         "3.3.0-1"            "9.2.6"           "0.10.0"              "0.9" 
+              lme4           lmerTest               lmom             lmtest 
+          "1.1-38"            "3.2-0"              "3.2"           "0.9-40" 
+            lobstr                loo          lpdensity            lpSolve 
+           "1.1.3"            "2.9.0"              "2.5"           "5.6.23" 
+        lpSolveAPI          lubridate              magic             magick 
+   "5.5.2.0-17.14"            "1.9.4"            "1.6-1"            "2.9.0" 
+          magrittr    marginaleffects            margins           markdown 
+           "2.0.4"           "0.31.0"           "0.3.28"              "2.0" 
+              MASS            MatchIt             Matrix       MatrixModels 
+          "7.3-65"            "4.7.2"            "1.7-4"            "0.5-4" 
+       matrixStats            memoise            methods           MF.beta4 
+           "1.5.0"            "2.0.1"            "4.5.2"            "1.1.2" 
+               mfx               mgcv     microbenchmark               mime 
+           "1.2-4"            "1.9-4"            "1.5.0"             "0.13" 
+            miniUI              minqa               mirt             misc3d 
+           "0.1.2"            "1.2.8"           "1.45.1"            "0.9-1" 
+           mitools             modelr       modelsummary         modeltools 
+             "2.4"           "0.1.11"            "2.5.0"           "0.2-24" 
+           munsell            mvtnorm             naniar        nanoparquet 
+           "0.5.1"            "1.3-3"            "1.1.0"            "0.4.3" 
+           network               nlme             nloptr               nnet 
+          "1.19.0"          "3.1-168"            "2.2.1"           "7.3-20" 
+              nnls               norm           numDeriv            openssl 
+             "1.6"         "1.0-11.1"       "2016.8-1.1"            "2.3.4" 
+              otel            packrat             pacman           pagedown 
+           "0.2.0"            "0.9.3"            "0.5.1"             "0.23" 
+         paletteer             pander          panelView           parallel 
+           "1.7.0"            "0.6.6"           "1.1.18"            "4.5.2" 
+        parallelly         parameters          patchwork            pbapply 
+          "1.46.1"           "0.28.3"            "1.3.2"            "1.7-4" 
+          pbkrtest        performance            permute             pillar 
+           "0.5.5"           "0.15.3"            "0.9-8"           "1.11.1" 
+          pkgbuild          pkgconfig            pkgdown            pkgload 
+           "1.4.8"            "2.0.3"            "2.2.0"            "1.4.1" 
+               PKI             plot3D             plotly               plyr 
+          "0.1-15"            "1.4.2"           "4.12.0"            "1.8.9" 
+               png           polyclip            polynom          posterior 
+           "0.1-8"           "1.10-7"            "1.4-1"            "1.6.1" 
+            praise             PRcalc         prediction        prettyunits 
+           "1.0.0"          "0.8.8.0"           "0.3.18"            "1.2.0" 
+         prismatic           processx       productplots            profvis 
+           "1.1.2"            "3.8.6"            "0.1.2"            "0.4.0" 
+          progress          progressr           projoint           promises 
+           "1.2.3"           "0.18.0"            "1.0.6"            "1.5.0" 
+             proxy               pryr                 ps              purrr 
+          "0.4-29"            "0.1.6"            "1.9.1"            "1.2.1" 
+             pwrss                q2c             qrcode           quadprog 
+           "1.0.0"            "0.2.1"            "0.3.0"            "1.5-8" 
+         qualtRics           quantmod           quantreg             quarto 
+           "3.2.2"           "0.4.28"              "6.1"            "1.5.1" 
+       quartostamp           QuickJSR            R.cache        R.methodsS3 
+           "0.1.1"            "1.9.0"           "0.17.0"            "1.8.2" 
+              R.oo            R.utils                 R6               ragg 
+          "1.27.1"           "2.13.0"            "2.6.1"            "1.5.0" 
+        rapidjsonr           rappdirs        rapportools             raster 
+           "1.2.1"            "0.3.4"              "1.2"           "3.6-32" 
+         rbibutils          rcmdcheck       RColorBrewer               Rcpp 
+           "2.4.1"            "1.4.0"            "1.1-3"            "1.1.1" 
+     RcppArmadillo          RcppEigen       RcppParallel       RcppProgress 
+        "15.2.3-1"        "0.3.4.0.2"         "5.1.11-1"            "0.4.2" 
+          RcppTOML                rdd             rddapp          rddensity 
+           "0.2.3"             "0.57"            "1.3.3"              "2.6" 
+            Rdpack           rdrobust                RDS          reactable 
+           "2.6.5"            "3.0.0"           "0.9-10"            "0.4.5" 
+            reactR              readr             readxl         RefManageR 
+           "0.6.1"            "2.1.6"            "1.4.5"            "1.4.0" 
+        reformulas            rematch           rematch2            remotes 
+         "0.4.3.1"            "2.0.0"            "2.1.2"            "2.5.0" 
+        renderthis               renv             reprex           reshape2 
+           "0.2.1"            "1.1.6"            "2.1.1"            "1.4.5" 
+               rex             rgamer              rjags              rlang 
+           "1.2.1"           "0.0.28"             "4-17"            "1.1.7" 
+               rle         rmapshaper          rmarkdown              rmdja 
+          "0.10.0"            "0.6.0"             "2.30"          "0.4.6.9" 
+     rnaturalearth  rnaturalearthdata rnaturalearthhires           rngtools 
+           "1.2.0"            "1.0.0"       "1.0.0.9000"            "1.5.2" 
+        robustbase          rootSolve           roxygen2              rpart 
+          "0.99-6"          "1.8.2.4"            "7.3.3"           "4.1.24" 
+         rprojroot               rqog          rsconnect              rstan 
+           "2.1.1"         "0.4.2023"            "1.7.0"           "2.32.7" 
+           rstatix         rstudioapi           Rttf2pt1          rversions 
+           "0.7.3"           "0.18.0"           "1.3.14"            "3.0.0" 
+             rvest                 s2                 S7           sandwich 
+           "1.0.5"            "1.1.9"            "0.2.1"            "3.1-1" 
+              sass             scales              scico            selectr 
+          "0.4.10"            "1.4.0"            "1.5.0"            "0.5-1" 
+             servr        sessioninfo                 sf          sfheaders 
+            "0.32"            "1.2.3"           "1.0-24"            "0.4.5" 
+            shades              shape              shiny         shiny.i18n 
+           "1.4.0"          "1.4.6.1"           "1.12.1"            "0.3.0" 
+           shinyBS            shinyjs        shinythemes       shinyWidgets 
+          "0.63.0"            "2.1.1"            "1.2.0"            "0.9.0" 
+         SimDesign     SimpleConjoint         sjlabelled      snowflakeauth 
+            "2.22"            "0.1.1"            "1.2.0"            "0.2.1" 
+       sourcetools                 sp            SparseM            spatial 
+         "0.1.7-1"            "2.2-0"           "1.84-2"           "7.3-18" 
+           splines        StanHeaders          stargazer     statnet.common 
+           "4.5.2"          "2.32.10"            "5.2.3"           "4.13.0" 
+             stats             stats4         stringdist            stringi 
+           "4.5.2"            "4.5.2"           "0.9.17"            "1.8.7" 
+       stringmagic            stringr             styler       summarytools 
+           "1.2.0"            "1.6.0"           "1.11.0"            "1.1.4" 
+            survey           survival            svglite                sys 
+           "4.4-8"            "3.8-6"            "2.2.2"            "3.4.3" 
+       systemfonts             tables              tcltk            tensorA 
+           "1.3.1"           "0.9.33"            "4.5.2"         "0.36.2.1" 
+             terra           testthat        textshaping             tibble 
+          "1.8-93"            "3.3.2"            "1.0.4"            "3.3.1" 
+          tidyfast          tidygraph              tidyr         tidyselect 
+           "0.4.0"            "1.3.1"            "1.3.2"            "1.2.1" 
+         tidyverse         timechange           timeDate          tinytable 
+           "2.0.0"            "0.3.0"         "4051.111"           "0.15.2" 
+           tinytex            titanic              tools         treemapify 
+            "0.58"            "0.1.0"            "4.5.2"            "2.6.0" 
+             trust            tseries                TTR              tuple 
+           "0.1-8"          "0.10-59"           "0.24.4"           "0.4-02" 
+            tweenr               tzdb              units             UpSetR 
+           "2.0.3"            "0.5.0"            "1.0-0"            "1.4.0" 
+              urca         urlchecker       urlshorteneR             useful 
+           "1.3-4"            "1.0.1"            "2.0.0"          "1.2.6.1" 
+           usethis               utf8              utils               uuid 
+           "3.2.1"            "1.2.6"            "4.5.2"            "1.2-2" 
+                V8              vctrs           vdemdata              vegan 
+           "8.0.1"            "0.7.1"             "15.0"            "2.7-2" 
+              VGAM              vipor            viridis        viridisLite 
+          "1.1-14"            "0.4.7"            "0.6.5"            "0.4.2" 
+            visdat              vroom              waldo          websocket 
+           "0.6.0"            "1.6.7"            "0.6.2"            "1.4.4" 
+          WeightIt            whisker              withr                 wk 
+           "1.5.1"            "0.4.1"            "3.0.2"            "0.9.5" 
+            woRdle           xaringan      xaringanExtra               xfun 
+           "0.0.1"             "0.31"       "0.8.0.9000"             "0.56" 
+               XML               xml2       xmlparsedata              xopen 
+       "3.99-0.20"            "1.5.2"            "1.0.5"            "1.0.1" 
+            xtable                xts               yaml                zip 
+           "1.8-4"           "0.14.1"           "2.3.12"            "2.3.3" 
+               zoo 
+          "1.8-15" </code></pre>
+</div>
+</div>
+</section>
+<section id="renvパッケージ" class="slide level2">
+<h2>{renv}パッケージ</h2>
+<p>「ある時点の」RおよびRパッケージを記録し、呼び戻すパッケージ</p>
+<ol type="1">
+<li><code>renv::init()</code>：「今の」Rバージョン、パッケージ情報を保存
+<ul>
+<li>Rのバージョン、パッケージのバージョンの情報はテキストファイルとして<code>renv.lock</code>というファイルに保存される</li>
+<li><code>renv/library</code>フォルダーには<code>renv::init()</code>を打った時点のライブラリ<span class="small">（のシンボリックリンク）</span>がすべて保存される</li>
+</ul></li>
+<li><code>renv::resotre()</code>：環境の呼び戻し
+<ul>
+<li>RStudioを使用中ならプロジェクトを開く際、自動的に作動する<span class="small">（=RStudioプロジェクト機能と相性が良い）</span><sup>1</sup></li>
+</ul></li>
+<li><code>renv::snapshot()</code>：更新</li>
+</ol>
+<ul>
+<li>簡単なチュートリアルは<a href="https://www.jaysong.net/RBook/renv.html">『私たちのR』</a>、詳細は<a href="https://rstudio.github.io/renv/index.html">公式ホームページ</a>を参照
+<ul>
+<li>他人に共有する場合、プロジェクトごとに渡す必要があるため非効率的</li>
+</ul></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>異なるPC環境でプロジェクトを開くとパッケージが見つからないとのメッセージが表示されるが、この場合、コンソールに<code>renv::repair()</code>を入力すると、<code>renv.lock</code>に記録されている情報を元に環境が再現される。</p></li></ol></aside></section>
+<section id="mybinder.org" class="slide level2">
+<h2>mybinder.org</h2>
+<ul>
+<li>再現・再生用のデータセットとコード<span class="small">（またはQuartoファイル）</span>、+ <span class="math inline">\(\alpha\)</span>を格納したGitHubレポジトリ
+<ul>
+<li><span class="math inline">\(\alpha\)</span>：<code>apt.txt</code>、<code>environment.yml</code>、<code>postBuild</code>など</li>
+<li><code>environment.yml</code>内にRおよびパッケージの情報を明記</li>
+</ul></li>
+<li>サンプルレポジトリ：<a href="https://github.com/JaehyunSong/quarto_binder" class="uri">https://github.com/JaehyunSong/quarto_binder</a></li>
+<li>詳細は<a href="https://jupyter.org/binder">公式ホームページ</a>を参照</li>
 </ul>
 
 

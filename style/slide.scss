@@ -6,8 +6,8 @@
 
 $font-family-sans-serif: "Noto Sans JP", Helvetica, sans-serif !default;
 $font-family-monospace:	"M PLUS 1 Code", "Noto Sans JP", monospace !default;
-$presentation-h-font12:	"Noto Sans JP", sans-serif !default; 
-$presentation-h-font36: "Noto Sans JP", sans-serif !default; 
+$presentation-h-font12:	$font-family-sans-serif !default; 
+$presentation-h-font36: $font-family-sans-serif !default; 
 
 $font-color: #131516;
 $background: #F0F5F9;

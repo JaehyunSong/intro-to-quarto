@@ -10,11 +10,6 @@ metadata-files:
   - "style/slide.yml"
 ---
 
-```{r}
-#| include: false
-pacman::p_load(tidyverse)
-```
-
 {{< include _common.qmd >}}
 
 ## 自己紹介

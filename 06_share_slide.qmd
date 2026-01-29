@@ -24,15 +24,11 @@ pacman::p_load(tidyverse)
 - HTMLだけを共有しても、我々が想定したものと違ったものが表示される。
    - HTML単体にすべてのものを埋め込む必要がある
 
-:::: {.columns}
-::: {.column width=50%}
+::: {layout-ncol=2}
+![StandaloneなHTML](figs/share/full_html.png){style="border: 1px solid #CCCCCC;"}
+
 ![HTMLのみ（CSS/JavaScript抜き）](figs/share/raw_html.png){style="border: 1px solid #CCCCCC;"}
 :::
-
-::: {.column width=50%}
-![StandaloneなHTML](figs/share/full_html.png){style="border: 1px solid #CCCCCC;"}
-:::
-::::
 
 ## HTML形式ファイルの共有方法
 
@@ -194,9 +190,61 @@ quarto publish quarto-pub my_quarto.qmd
 - アップロードしてから反映されるまで時間がかかる[（スライドや文書程度なら1〜2分）]{.small}
    - Actionsメニューから処理状況が確認できる。
 
-# **5** その他
+# **5** 共有時の注意事項
 
-## その他
+## R、パッケージのバージョン情報
 
-- セッション情報やパッケージのバージョンを明記
-- renvや<https://www.mybinder.org>など
+#### 時々刻々変化し続けるR生態系
+
+- 膨大なパッケージとその更新の早さはR最大のメリット
+- 一方、パッケージの仕様変更により[**過去使えた関数が、今は使えない**]{.alert}ケースも
+   - または、引数名や実引数のクラスが変わることも
+- $\Rightarrow$ 過去のコードが今でも当時と100%同じように動作する保証はどこにもない
+
+#### 対処方法
+
+- セッション情報やパッケージのバージョンを明記[（多くの場合、これで十分）]{.small}
+- {renv}やdocker、mybinder.orgなどのパッケージ・サービスを利用
+
+## セッション情報
+
+Rのバージョン、読み込み中パッケージの情報などが表示される
+
+- 文書やスライドの最後に入れておく
+- 特定のバージョンのパッケージは`devtools::install_version()`でインストール
+
+```{r}
+#| echo: true
+sessionInfo()
+```
+
+## 全パッケージのバージョン情報
+
+情報量が多すぎるので非推奨
+
+```{r}
+#| echo: true
+installed.packages()[, "Version"]
+```
+
+## {renv}パッケージ
+
+「ある時点の」RおよびRパッケージを記録し、呼び戻すパッケージ
+
+1. `renv::init()`：「今の」Rバージョン、パッケージ情報を保存
+   - Rのバージョン、パッケージのバージョンの情報はテキストファイルとして`renv.lock`というファイルに保存される
+   - `renv/library`フォルダーには`renv::init()`を打った時点のライブラリ[（のシンボリックリンク）]{.small}がすべて保存される
+1. `renv::resotre()`：環境の呼び戻し
+   - RStudioを使用中ならプロジェクトを開く際、自動的に作動する[（=RStudioプロジェクト機能と相性が良い）]{.small}^[異なるPC環境でプロジェクトを開くとパッケージが見つからないとのメッセージが表示されるが、この場合、コンソールに`renv::repair()`を入力すると、`renv.lock`に記録されている情報を元に環境が再現される。]
+1. `renv::snapshot()`：更新
+
+- 簡単なチュートリアルは[『私たちのR』](https://www.jaysong.net/RBook/renv.html)、詳細は[公式ホームページ](https://rstudio.github.io/renv/index.html)を参照
+   - 他人に共有する場合、プロジェクトごとに渡す必要があるため非効率的
+
+## mybinder.org
+
+- 再現・再生用のデータセットとコード[（またはQuartoファイル）]{.small}、+ $\alpha$を格納したGitHubレポジトリ
+   - $\alpha$：`apt.txt`、`environment.yml`、`postBuild`など
+   - `environment.yml`内にRおよびパッケージの情報を明記
+- サンプルレポジトリ：<https://github.com/JaehyunSong/quarto_binder>
+- 詳細は[公式ホームページ](https://jupyter.org/binder)を参照
