@@ -204,6 +204,7 @@ quarto publish quarto-pub my_quarto.qmd
 #### 対処方法
 
 - セッション情報やパッケージのバージョンを明記[（多くの場合、これで十分）]{.small}
+   - パッケージの仕様が劇的に変わることはそこまで多くはない
 - {renv}やdocker、mybinder.orgなどのパッケージ・サービスを利用
 
 ## セッション情報
@@ -234,17 +235,53 @@ installed.packages()[, "Version"]
 1. `renv::init()`：「今の」Rバージョン、パッケージ情報を保存
    - Rのバージョン、パッケージのバージョンの情報はテキストファイルとして`renv.lock`というファイルに保存される
    - `renv/library`フォルダーには`renv::init()`を打った時点のライブラリ[（のシンボリックリンク）]{.small}がすべて保存される
+1. `renv::snapshot()`：環境の更新
 1. `renv::resotre()`：環境の呼び戻し
    - RStudioを使用中ならプロジェクトを開く際、自動的に作動する[（=RStudioプロジェクト機能と相性が良い）]{.small}^[異なるPC環境でプロジェクトを開くとパッケージが見つからないとのメッセージが表示されるが、この場合、コンソールに`renv::repair()`を入力すると、`renv.lock`に記録されている情報を元に環境が再現される。]
-1. `renv::snapshot()`：更新
 
 - 簡単なチュートリアルは[『私たちのR』](https://www.jaysong.net/RBook/renv.html)、詳細は[公式ホームページ](https://rstudio.github.io/renv/index.html)を参照
    - 他人に共有する場合、プロジェクトごとに渡す必要があるため非効率的
 
 ## mybinder.org
 
-- 再現・再生用のデータセットとコード[（またはQuartoファイル）]{.small}、+ $\alpha$を格納したGitHubレポジトリ
-   - $\alpha$：`apt.txt`、`environment.yml`、`postBuild`など
-   - `environment.yml`内にRおよびパッケージの情報を明記
+再現・再生用のデータセットとコード[（またはQuartoファイル）]{.small}、+ $\alpha$を格納したGitHubレポジトリをベースに分析環境を生成するサービス
+
+- GitHubレポジトリの中身
+   - `apt.txt`、`environment.yml`、`postBuild`、分析用のコード、データなど
+      - `apt.txt`内に必要なライブラリを記述
+      - `environment.yml`内にRおよびパッケージの情報を記述
+   - ただし、すべてのパッケージ情報を記述することは非効率的
 - サンプルレポジトリ：<https://github.com/JaehyunSong/quarto_binder>
 - 詳細は[公式ホームページ](https://jupyter.org/binder)を参照
+
+## {renv} $\times$ mybinder.org
+
+詳細は<https://quarto.org/docs/projects/binder.html>を参照
+
+1. RStudioで新規プロジェクト（[Quarto Project]{.alert}）を作成 <!-- 使い勝手は変わらない -->
+   - Use renv with this projectも選択
+2. 公開の前に{renv}で（`renv::snapshot()`）環境を保存
+3. Terminalペインで`quarto user binder`
+4. 任意のGithubレポジトリを作成し、プロジェクトフォルダーの中身をそのままアップロード <!-- 不要なやつもそこそこあるが... -->
+   - `rnev`フォルダー内の`library`フォルダーはアップロードしなくても良い
+5. `https://mybinder.org/v2/gh/GitHubアカウント名/レポジトリ名/HEAD?urlpath=rstudio`
+   - 最初の立ち上げはかなり時間がかかるため、他人に共有する前に自分で立ち上げておくこと
+
+<!-- renv.lockには現在使われているパッケージのみ記録される -->
+
+## {renv} $\times$ mybinder.org：注意点
+
+1. プロジェクトごとgitで管理することを推奨[（gitの解説は省略）]{.small}
+2. GitHubアップロード[（または、プッシュ）]{.small}時、`.Rprofile`も忘れないこと
+   - `.Rprofile`は隠しファイル
+3. `apt.txt`は自分で書く必要がある
+   - `apt.txt`に書かれたライブラリはサーバー立ち上げ[（Dockerイメージ生成）]{.small}時、一緒にインストールされる
+   - mybinder.orgではサーバーが立ち上がると`sudo`コマンドが使えない
+   - 一旦、動作を確認し、必要なライブラリがあればそれを`apt.txt`に書いておく
+
+#### 結論
+
+- 2026年2月現在、2つを組み合わせて使うメリットは少ない
+   - {renv}は分析当時の環境を保存する自分用のパッケージ
+   - ただし、Binderの仕組みを理解しているのであれば、使える
+   - すくなくとも`apt.txt`を自動的に作成してくれれば...

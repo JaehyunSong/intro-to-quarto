@@ -7,13 +7,29 @@ format:
 metadata-files: 
   - "style/exercise.yml"
 lightbox: auto
+filters: 
+  - webr
+webr: 
+  show-startup-message: false
+  show-header-message: false
 ---
 
 ## 拡張機能とは
 
-https://quarto.org/docs/extensions/
+- <https://quarto.org/docs/extensions/managing.html>
+- <https://quarto.org/docs/extensions/>
 
 ## 使い方
+
+　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。
+
+### 拡張機能のインストール
+
+　拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。
+
+```bash
+quarto add GitHubアカウント名/拡張機能のレポジトリ名
+```
 
 ## 拡張機能の紹介
 
@@ -21,11 +37,16 @@ https://quarto.org/docs/extensions/
 
 ### pointer
 
+:::: {.panel-tabset}
+#### Install
+
 ```bash
 quarto add quarto-ext/pointer
 ```
 
-````{.yaml}
+#### YAML
+
+````yaml
 ---
 title: タイトル
 author: 著者名
@@ -37,13 +58,101 @@ revealjs-plugins:
 ---
 ````
 
+#### How to use
+
+- {{< kbd q >}}キーでポインターモードの切り替え
+- YAMLヘッダーを修正するとカスタマイズ可能
+   - 以下は大きさを24（デフォルトは16）、ポインターの色を青に変更した例
+
+````{.yaml}
+---
+title: タイトル
+author: 著者名
+format:
+  revealjs:
+    pointer:
+      pointerSize: 24
+      color: "blue"
+revealjs-plugins:
+  - pointer
+---
+````
+
+::::
+
 ### lightbox
+
+:::: {.panel-tabset}
+#### Install
 
 ```bash
 quarto add quarto-ext/lightbox
 ```
 
-![かわいいR猫](figs/rcat.png)
+#### YAML
+
+例1）lightbox適用有無を画像ごとに指定
+
+````{.yaml}
+---
+title: タイトル
+author: 著者名
+format: 
+  html:
+    ...
+filters:
+   - lightbox
+---
+````
+
+例2）全画像にlightboxを適用
+
+- lightboxを使うにはこちらを推奨
+
+````{.yaml}
+---
+title: タイトル
+author: 著者名
+format: 
+  html:
+    ...
+lightbox: auto
+---
+````
+
+#### Example 1
+
+lightboxの無効化
+
+**Input:**
+
+````markdown
+![かわいいR猫](画像のパス or URL){.nolightbox}
+````
+
+**Output:**
+
+![かわいいR猫](figs/rcat.png){.nolightbox}
+
+#### Example 2
+
+画像のグループ化
+
+**Input:**
+
+````markdown
+::: {layout-ncol=4}
+![零号機](画像のパス or URL){group="rcats"}
+
+![初号機](画像のパス or URL){group="rcats"}
+
+![弐号機](画像のパス or URL){group="rcats"}
+
+![量産機](画像のパス or URL){group="rcats"}
+:::
+````
+
+**Output:**
 
 ::: {layout-ncol=4}
 ![零号機](figs/markdown/rcat_0.png){group="rcats"}
@@ -55,6 +164,32 @@ quarto add quarto-ext/lightbox
 ![量産機](figs/markdown/rcat_3.png){group="rcats"}
 :::
 
+#### Example 3
+
+**Input:**
+
+````markdown
+```{{r}}
+#| label: fig-scatterplot-matrix
+#| echo: false
+#| fig-cap: 散布図行列の例
+#| fig-subcap: 
+#|   - mtcars
+#|   - iris
+#| fig-width: 7
+#| fig-height: 7
+#| layout-ncol: 2
+#| lightbox:
+#|   group: scatter-matrix
+#|     - mtcarsの散布図行列
+#|     - irisの散布図行列
+plot(mtcars)
+plot(iris)
+```
+````
+
+**Output:**
+
 ```{r}
 #| label: fig-scatterplot-matrix
 #| echo: false
@@ -62,8 +197,8 @@ quarto add quarto-ext/lightbox
 #| fig-subcap: 
 #|   - mtcars
 #|   - iris
-#| fig-width: 10
-#| fig-height: 10
+#| fig-width: 7
+#| fig-height: 7
 #| layout-ncol: 2
 #| lightbox:
 #|   group: scatter-matrix
@@ -73,32 +208,53 @@ plot(mtcars)
 plot(iris)
 ```
 
+::::
+
 ### qrcode
 
-:::: {.columns}
-::: {.column width=50%}
-**Input：**
+　簡単にQRコードを生成し埋め込む拡張機能。学会での発表用スライドに入れておくと便利
+
+:::: {.panel-tabset}
+#### Install
+
+```bash
+quarto add jmbuhr/quarto-qrcode
+```
+
+#### YAML
+
+YAMLヘッダーの設定は不要
+
+#### Input
 
 ````markdown
 {{{< qrcode https://www.jaysong.net >}}}
 ````
-:::
 
-::: {.column width=50%}
-**Output：**
+#### Output
 
 <center>
 {{< qrcode https://www.jaysong.net width=200 height=200 >}}
 </center>
 
-:::
 ::::
 
 ### countdown
 
-画面の右下にタイマーが表示されるので、revealjsと使用することを推奨。HTML文書とは相性はあまり良くない
+　画面の右下にタイマーが表示してくれる。授業用スライドと相性が良いのでrevealjsと使用することを推奨。HTML文書にも使えるが、あまり意味はないかも。
 
-**Input：**
+:::: {.panel-tabset}
+#### Install
+
+```bash
+quarto add gadenbuie/countdown/quarto
+```
+
+#### YAML
+
+使うだけならYAMLヘッダーの設定は不要だが、[YAMLヘッダーでカスタマイズ](https://github.com/gadenbuie/countdown/blob/main/quarto/README.md){target="_blank"}可能
+
+#### Input
 
 ````markdown
 ## 今すぐQuartoをインストールしてください
@@ -108,11 +264,139 @@ plot(iris)
 {{{< countdown "5:30" >}}}
 ````
 
-**Output：**
+#### Output
 
-![](figs/etc/countdown.png)
+![](figs/etc/countdown.png){style="border: 1px solid #cccccc;"}
 
+::::
+
+### embedio
+
+ページ内にHTMLページ、スライド、動画、PDFを埋め込む
+
+:::: {.panel-tabset}
+#### Install
+
+```bash
+quarto add coatless-quarto/embedio
+```
+
+#### YAML
+
+YAMLヘッダーの設定は不要
+
+#### How to use
+
+詳細は<https://quarto.thecoatlessprofessor.com/embedio/>を参照
+
+::::
 
 ### webr
 
+　HTMLページ上でRを動かす拡張機能。R教育時、簡単なコードの実習で使用
+
+:::: {.panel-tabset}
+#### Install
+
+```bash
+quarto add coatless/quarto-webr
+```
+
+#### YAML
+
+````yaml
+---
+title: タイトル
+author: 著者名
+format: 
+  html:
+    ...
+filters:
+  - webr
+# 以下は不要だが、邪魔なWEBR STATUSがなくなる
+webr: 
+  show-startup-message: false
+  show-header-message: false
+---
+````
+
+#### Input
+
+````markdown
+```{{webr-r}}
+#| editor-font-scale: 0.75
+#| fig-width: 6
+#| fig-height: 3
+#| out-height: 300px
+#| out-width: 600px
+#| editor-code-line-numbers: 2, 4
+# Step 1: mu = 0, sd = 2の正規分布から乱数を20個抽出すし、my_vecに格納
+my_vec <- _____
+# Step 2: 横軸を1:20、縦軸をmy_vecとする折れ線グラフを作成する
+plot(_____)
+```
+````
+
+#### Output
+
+```{webr-r}
+#| editor-font-scale: 0.75
+#| fig-width: 6
+#| fig-height: 3
+#| out-height: 300px
+#| out-width: 600px
+#| editor-code-line-numbers: 2, 4
+# Step 1: mu = 0, sd = 2の正規分布から乱数を20個抽出すし、my_vecに格納
+my_vec <- _____
+# Step 2: 横軸を1:20、縦軸をmy_vecとする折れ線グラフを作成する
+plot(_____)
+```
+
+::::
+
+
 ### metropolis-revealjs
+
+　Beamer界隈で人気のテーマであるmetropolisをrevealjsで再現したテーマ
+
+:::: {.panel-tabset}
+#### Install
+
+RStudioのTerminalペインに以下のコマンドを入力
+
+```bash
+quarto add shafayetShafee/metropolis-beamer
+```
+
+#### YAML
+
+`format`を`revealjs`から`metropolis-beamer-revealjs`へ変更
+
+````{.yaml}
+---
+title: タイトル
+author: 著者名
+format: 
+  metropolis-beamer-revealjs:
+    ...
+---
+````
+
+#### Input
+
+````yaml
+---
+title: "My first reveal.js"
+subtitle: "Metropolis theme"
+author: "Jaehyun Song (Kansai University)"
+date: today
+format: 
+  metropolis-beamer-revealjs:
+    footer: Meow!
+---
+````
+
+#### Output
+
+![](figs/etc/metropolis.png){style="border: 1px solid #cccccc;"}
+::::
