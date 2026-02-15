@@ -397,7 +397,7 @@ globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1)
 globalThis.qwebrAutoloadRPackages = true;
 
 // Display a startup message?
-globalThis.qwebrShowStartupMessage = false;
+globalThis.qwebrShowStartupMessage = true;
 globalThis.qwebrShowHeaderMessage = false;
 
 // Describe the webR settings that should be used
@@ -1811,10 +1811,7 @@ globalThis.qwebrExecuteCode = async function (
    
   <ul>
   <li><a href="#拡張機能とは" id="toc-拡張機能とは" class="nav-link active" data-scroll-target="#拡張機能とは"><span class="header-section-number">1</span> 拡張機能とは</a></li>
-  <li><a href="#使い方" id="toc-使い方" class="nav-link" data-scroll-target="#使い方"><span class="header-section-number">2</span> 使い方</a>
-  <ul class="collapse">
-  <li><a href="#拡張機能のインストール" id="toc-拡張機能のインストール" class="nav-link" data-scroll-target="#拡張機能のインストール"><span class="header-section-number">2.1</span> 拡張機能のインストール</a></li>
-  </ul></li>
+  <li><a href="#使い方" id="toc-使い方" class="nav-link" data-scroll-target="#使い方"><span class="header-section-number">2</span> 使い方</a></li>
   <li><a href="#拡張機能の紹介" id="toc-拡張機能の紹介" class="nav-link" data-scroll-target="#拡張機能の紹介"><span class="header-section-number">3</span> 拡張機能の紹介</a>
   <ul class="collapse">
   <li><a href="#pointer" id="toc-pointer" class="nav-link" data-scroll-target="#pointer"><span class="header-section-number">3.1</span> pointer</a></li>
@@ -2136,19 +2133,17 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <section id="拡張機能とは" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="拡張機能とは"><span class="header-section-number">1</span> 拡張機能とは</h2>
-<ul>
-<li><a href="https://quarto.org/docs/extensions/managing.html" class="uri">https://quarto.org/docs/extensions/managing.html</a></li>
-<li><a href="https://quarto.org/docs/extensions/" class="uri">https://quarto.org/docs/extensions/</a></li>
-</ul>
+<p>　Quartoには様々な拡張機能（extension）がある。RMarkdownの場合、Rパッケージによって追加された機能が、Quartoでは拡張機能として提供される。Rパッケージは一回インストールしておけば、同じPCでは継続して使える。一方、Quartoはプロジェクト単位で拡張機能を導入する必要があるのが面倒だが、パッケージに依存しないため、異なるPC環境でも使えると言ったメリットがある。</p>
+<p>　2026年2月現在、百を超える数の拡張機能がある（詳細は<a href="https://quarto.org/docs/extensions/" class="uri">https://quarto.org/docs/extensions/</a>）。Quarto公式で開発した拡張機能もあれば、ユーザーが作成した拡張機能もある。CRANのように公式レポジトリを使用せず、GitHubを使用するため、LUA言語の知識があれば誰でも拡張機能を作成し、公に公開することができる<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。</p>
 </section>
 <section id="使い方" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="使い方"><span class="header-section-number">2</span> 使い方</h2>
-<p>　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。</p>
-<section id="拡張機能のインストール" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="拡張機能のインストール"><span class="header-section-number">2.1</span> 拡張機能のインストール</h3>
-<p>　拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。</p>
+<p>　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。拡張機能の全般的な管理方法については公式ホームページを参照されたい。</p>
+<ul>
+<li><a href="https://quarto.org/docs/extensions/managing.html" class="uri">https://quarto.org/docs/extensions/managing.html</a></li>
+</ul>
+<p>　ただし、拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add GitHubアカウント名/拡張機能のレポジトリ名</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 </section>
 <section id="拡張機能の紹介" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="拡張機能の紹介"><span class="header-section-number">3</span> 拡張機能の紹介</h2>
@@ -2448,20 +2443,23 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| editor-font-scale: 0.75</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 6</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 3</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-height: 300px</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: 600px</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| editor-code-line-numbers: 2, 4</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="in"># Step 1: mu = 0, sd = 2の正規分布から乱数を20個抽出すし、my_vecに格納</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="in">my_vec &lt;- _____</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="in"># Step 2: 横軸を1:20、縦軸をmy_vecとする折れ線グラフを作成する</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="in">plot(_____)</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>「____」の箇所に正しいコードを入力してRun Codeをクリックしてみよう!</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| editor-font-scale: 0.75</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 6</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 3</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-height: 300px</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: 600px</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="in">#| editor-code-line-numbers: 2, 4</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="in"># Step 1: mu = 0, sd = 2の正規分布から乱数を20個抽出すし、my_vecに格納</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="in">my_vec &lt;- _____</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="in"># Step 2: 横軸を1:20、縦軸をmy_vecとする折れ線グラフを作成する</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="in">plot(_____)</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
+<p>「____」の箇所に正しいコードを入力してRun Codeをクリックしてみよう!</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -2509,7 +2507,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
+
+<ol>
+<li id="fn1"><p>公式に一報知らせたらリストにも掲載してくれるらしい。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

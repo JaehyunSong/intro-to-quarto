@@ -10,22 +10,22 @@ lightbox: auto
 filters: 
   - webr
 webr: 
-  show-startup-message: false
   show-header-message: false
 ---
 
 ## 拡張機能とは
 
-- <https://quarto.org/docs/extensions/managing.html>
-- <https://quarto.org/docs/extensions/>
+　Quartoには様々な拡張機能（extension）がある。RMarkdownの場合、Rパッケージによって追加された機能が、Quartoでは拡張機能として提供される。Rパッケージは一回インストールしておけば、同じPCでは継続して使える。一方、Quartoはプロジェクト単位で拡張機能を導入する必要があるのが面倒だが、パッケージに依存しないため、異なるPC環境でも使えると言ったメリットがある。
+
+　2026年2月現在、百を超える数の拡張機能がある（詳細は<https://quarto.org/docs/extensions/>）。Quarto公式で開発した拡張機能もあれば、ユーザーが作成した拡張機能もある。CRANのように公式レポジトリを使用せず、GitHubを使用するため、LUA言語の知識があれば誰でも拡張機能を作成し、公に公開することができる^[公式に一報知らせたらリストにも掲載してくれるらしい。]。
 
 ## 使い方
 
-　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。
+　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。拡張機能の全般的な管理方法については公式ホームページを参照されたい。
 
-### 拡張機能のインストール
+- <https://quarto.org/docs/extensions/managing.html>
 
-　拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。
+　ただし、拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。
 
 ```bash
 quarto add GitHubアカウント名/拡張機能のレポジトリ名
@@ -323,6 +323,8 @@ webr:
 #### Input
 
 ````markdown
+「____」の箇所に正しいコードを入力してRun Codeをクリックしてみよう!
+
 ```{{webr-r}}
 #| editor-font-scale: 0.75
 #| fig-width: 6
@@ -338,6 +340,8 @@ plot(_____)
 ````
 
 #### Output
+
+「____」の箇所に正しいコードを入力してRun Codeをクリックしてみよう!
 
 ```{webr-r}
 #| editor-font-scale: 0.75

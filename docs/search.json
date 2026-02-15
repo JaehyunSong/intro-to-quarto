@@ -46,7 +46,7 @@
     "href": "A3_extensions.html",
     "title": "拡張機能",
     "section": "",
-    "text": "https://quarto.org/docs/extensions/managing.html\nhttps://quarto.org/docs/extensions/",
+    "text": "Quartoには様々な拡張機能（extension）がある。RMarkdownの場合、Rパッケージによって追加された機能が、Quartoでは拡張機能として提供される。Rパッケージは一回インストールしておけば、同じPCでは継続して使える。一方、Quartoはプロジェクト単位で拡張機能を導入する必要があるのが面倒だが、パッケージに依存しないため、異なるPC環境でも使えると言ったメリットがある。\n　2026年2月現在、百を超える数の拡張機能がある（詳細はhttps://quarto.org/docs/extensions/）。Quarto公式で開発した拡張機能もあれば、ユーザーが作成した拡張機能もある。CRANのように公式レポジトリを使用せず、GitHubを使用するため、LUA言語の知識があれば誰でも拡張機能を作成し、公に公開することができる1。",
     "crumbs": [
       "その他の内容",
       "拡張機能"
@@ -57,7 +57,7 @@
     "href": "A3_extensions.html#拡張機能とは",
     "title": "拡張機能",
     "section": "",
-    "text": "https://quarto.org/docs/extensions/managing.html\nhttps://quarto.org/docs/extensions/",
+    "text": "Quartoには様々な拡張機能（extension）がある。RMarkdownの場合、Rパッケージによって追加された機能が、Quartoでは拡張機能として提供される。Rパッケージは一回インストールしておけば、同じPCでは継続して使える。一方、Quartoはプロジェクト単位で拡張機能を導入する必要があるのが面倒だが、パッケージに依存しないため、異なるPC環境でも使えると言ったメリットがある。\n　2026年2月現在、百を超える数の拡張機能がある（詳細はhttps://quarto.org/docs/extensions/）。Quarto公式で開発した拡張機能もあれば、ユーザーが作成した拡張機能もある。CRANのように公式レポジトリを使用せず、GitHubを使用するため、LUA言語の知識があれば誰でも拡張機能を作成し、公に公開することができる1。",
     "crumbs": [
       "その他の内容",
       "拡張機能"
@@ -68,7 +68,7 @@
     "href": "A3_extensions.html#使い方",
     "title": "拡張機能",
     "section": "2 使い方",
-    "text": "2 使い方\n　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。\n\n2.1 拡張機能のインストール\n　拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。\nquarto add GitHubアカウント名/拡張機能のレポジトリ名",
+    "text": "2 使い方\n　拡張機能ごとに使い方が微妙に違ったりもするので、各拡張機能のGithubレポジトリのREADMEを参照されたい。拡張機能の全般的な管理方法については公式ホームページを参照されたい。\n\nhttps://quarto.org/docs/extensions/managing.html\n\n　ただし、拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。\nquarto add GitHubアカウント名/拡張機能のレポジトリ名",
     "crumbs": [
       "その他の内容",
       "拡張機能"
@@ -79,7 +79,7 @@
     "href": "A3_extensions.html#拡張機能の紹介",
     "title": "拡張機能",
     "section": "3 拡張機能の紹介",
-    "text": "3 拡張機能の紹介\n　ここでは宋が実際に使ったことのある拡張機能や、面白いと思った拡張機能をいくつか紹介する。\n\n3.1 pointer\n\nInstallYAMLHow to use\n\n\nquarto add quarto-ext/pointer\n\n\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  revealjs:\n    ...\nrevealjs-plugins:\n  - pointer\n---\n\n\n\nqqキーでポインターモードの切り替え\nYAMLヘッダーを修正するとカスタマイズ可能\n\n以下は大きさを24（デフォルトは16）、ポインターの色を青に変更した例\n\n\n---\ntitle: タイトル\nauthor: 著者名\nformat:\n  revealjs:\n    pointer:\n      pointerSize: 24\n      color: \"blue\"\nrevealjs-plugins:\n  - pointer\n---\n\n\n\n\n\n3.2 lightbox\n\nInstallYAMLExample 1Example 2Example 3\n\n\nquarto add quarto-ext/lightbox\n\n\n例1）lightbox適用有無を画像ごとに指定\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  html:\n    ...\nfilters:\n   - lightbox\n---\n例2）全画像にlightboxを適用\n\nlightboxを使うにはこちらを推奨\n\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  html:\n    ...\nlightbox: auto\n---\n\n\nlightboxの無効化\nInput:\n![かわいいR猫](画像のパス or URL){.nolightbox}\nOutput:\n\n\n\nかわいいR猫\n\n\n\n\n画像のグループ化\nInput:\n::: {layout-ncol=4}\n![零号機](画像のパス or URL){group=\"rcats\"}\n\n![初号機](画像のパス or URL){group=\"rcats\"}\n\n![弐号機](画像のパス or URL){group=\"rcats\"}\n\n![量産機](画像のパス or URL){group=\"rcats\"}\n:::\nOutput:\n\n\n\n\n\n\n零号機\n\n\n\n\n\n\n\n初号機\n\n\n\n\n\n\n\n弐号機\n\n\n\n\n\n\n\n量産機\n\n\n\n\n\n\n\nInput:\n```{r}\n#| label: fig-scatterplot-matrix\n#| echo: false\n#| fig-cap: 散布図行列の例\n#| fig-subcap: \n#|   - mtcars\n#|   - iris\n#| fig-width: 7\n#| fig-height: 7\n#| layout-ncol: 2\n#| lightbox:\n#|   group: scatter-matrix\n#|     - mtcarsの散布図行列\n#|     - irisの散布図行列\nplot(mtcars)\nplot(iris)\n```\nOutput:\n\n\n\n\n\n\n\n\n\n\n\n(a) mtcars\n\n\n\n\n\n\n\n\n\n\n\n(b) iris\n\n\n\n\n\n\n\n図 1: 散布図行列の例\n\n\n\n\n\n\n\n\n3.3 qrcode\n　簡単にQRコードを生成し埋め込む拡張機能。学会での発表用スライドに入れておくと便利\n\nInstallYAMLInputOutput\n\n\nquarto add jmbuhr/quarto-qrcode\n\n\nYAMLヘッダーの設定は不要\n\n\n{{&lt; qrcode https://www.jaysong.net &gt;}}\n\n\n\n\n\n    \n\n\n\n\n\n\n3.4 countdown\n　画面の右下にタイマーが表示してくれる。授業用スライドと相性が良いのでrevealjsと使用することを推奨。HTML文書にも使えるが、あまり意味はないかも。\n\nInstallYAMLInputOutput\n\n\nquarto add gadenbuie/countdown/quarto\n\n\n使うだけならYAMLヘッダーの設定は不要だが、YAMLヘッダーでカスタマイズ可能\n\n\n## 今すぐQuartoをインストールしてください\n\n5分30秒以内にインストールしないと流血事件が発生します\n\n{{&lt; countdown \"5:30\" &gt;}}\n\n\n\n\n\n\n\n\n3.5 embedio\nページ内にHTMLページ、スライド、動画、PDFを埋め込む\n\nInstallYAMLHow to use\n\n\nquarto add coatless-quarto/embedio\n\n\nYAMLヘッダーの設定は不要\n\n\n詳細はhttps://quarto.thecoatlessprofessor.com/embedio/を参照\n\n\n\n\n\n3.6 webr\n　HTMLページ上でRを動かす拡張機能。R教育時、簡単なコードの実習で使用\n\nInstallYAMLInputOutput\n\n\nquarto add coatless/quarto-webr\n\n\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  html:\n    ...\nfilters:\n  - webr\n# 以下は不要だが、邪魔なWEBR STATUSがなくなる\nwebr: \n  show-startup-message: false\n  show-header-message: false\n---\n\n\n```{webr-r}\n#| editor-font-scale: 0.75\n#| fig-width: 6\n#| fig-height: 3\n#| out-height: 300px\n#| out-width: 600px\n#| editor-code-line-numbers: 2, 4\n# Step 1: mu = 0, sd = 2の正規分布から乱数を20個抽出すし、my_vecに格納\nmy_vec &lt;- _____\n# Step 2: 横軸を1:20、縦軸をmy_vecとする折れ線グラフを作成する\nplot(_____)\n```\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n3.7 metropolis-revealjs\n　Beamer界隈で人気のテーマであるmetropolisをrevealjsで再現したテーマ\n\nInstallYAMLInputOutput\n\n\nRStudioのTerminalペインに以下のコマンドを入力\nquarto add shafayetShafee/metropolis-beamer\n\n\nformatをrevealjsからmetropolis-beamer-revealjsへ変更\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  metropolis-beamer-revealjs:\n    ...\n---\n\n\n---\ntitle: \"My first reveal.js\"\nsubtitle: \"Metropolis theme\"\nauthor: \"Jaehyun Song (Kansai University)\"\ndate: today\nformat: \n  metropolis-beamer-revealjs:\n    footer: Meow!\n---",
+    "text": "3 拡張機能の紹介\n　ここでは宋が実際に使ったことのある拡張機能や、面白いと思った拡張機能をいくつか紹介する。\n\n3.1 pointer\n\nInstallYAMLHow to use\n\n\nquarto add quarto-ext/pointer\n\n\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  revealjs:\n    ...\nrevealjs-plugins:\n  - pointer\n---\n\n\n\nqqキーでポインターモードの切り替え\nYAMLヘッダーを修正するとカスタマイズ可能\n\n以下は大きさを24（デフォルトは16）、ポインターの色を青に変更した例\n\n\n---\ntitle: タイトル\nauthor: 著者名\nformat:\n  revealjs:\n    pointer:\n      pointerSize: 24\n      color: \"blue\"\nrevealjs-plugins:\n  - pointer\n---\n\n\n\n\n\n3.2 lightbox\n\nInstallYAMLExample 1Example 2Example 3\n\n\nquarto add quarto-ext/lightbox\n\n\n例1）lightbox適用有無を画像ごとに指定\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  html:\n    ...\nfilters:\n   - lightbox\n---\n例2）全画像にlightboxを適用\n\nlightboxを使うにはこちらを推奨\n\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  html:\n    ...\nlightbox: auto\n---\n\n\nlightboxの無効化\nInput:\n![かわいいR猫](画像のパス or URL){.nolightbox}\nOutput:\n\n\n\nかわいいR猫\n\n\n\n\n画像のグループ化\nInput:\n::: {layout-ncol=4}\n![零号機](画像のパス or URL){group=\"rcats\"}\n\n![初号機](画像のパス or URL){group=\"rcats\"}\n\n![弐号機](画像のパス or URL){group=\"rcats\"}\n\n![量産機](画像のパス or URL){group=\"rcats\"}\n:::\nOutput:\n\n\n\n\n\n\n零号機\n\n\n\n\n\n\n\n初号機\n\n\n\n\n\n\n\n弐号機\n\n\n\n\n\n\n\n量産機\n\n\n\n\n\n\n\nInput:\n```{r}\n#| label: fig-scatterplot-matrix\n#| echo: false\n#| fig-cap: 散布図行列の例\n#| fig-subcap: \n#|   - mtcars\n#|   - iris\n#| fig-width: 7\n#| fig-height: 7\n#| layout-ncol: 2\n#| lightbox:\n#|   group: scatter-matrix\n#|     - mtcarsの散布図行列\n#|     - irisの散布図行列\nplot(mtcars)\nplot(iris)\n```\nOutput:\n\n\n\n\n\n\n\n\n\n\n\n(a) mtcars\n\n\n\n\n\n\n\n\n\n\n\n(b) iris\n\n\n\n\n\n\n\n図 1: 散布図行列の例\n\n\n\n\n\n\n\n\n3.3 qrcode\n　簡単にQRコードを生成し埋め込む拡張機能。学会での発表用スライドに入れておくと便利\n\nInstallYAMLInputOutput\n\n\nquarto add jmbuhr/quarto-qrcode\n\n\nYAMLヘッダーの設定は不要\n\n\n{{&lt; qrcode https://www.jaysong.net &gt;}}\n\n\n\n\n\n    \n\n\n\n\n\n\n3.4 countdown\n　画面の右下にタイマーが表示してくれる。授業用スライドと相性が良いのでrevealjsと使用することを推奨。HTML文書にも使えるが、あまり意味はないかも。\n\nInstallYAMLInputOutput\n\n\nquarto add gadenbuie/countdown/quarto\n\n\n使うだけならYAMLヘッダーの設定は不要だが、YAMLヘッダーでカスタマイズ可能\n\n\n## 今すぐQuartoをインストールしてください\n\n5分30秒以内にインストールしないと流血事件が発生します\n\n{{&lt; countdown \"5:30\" &gt;}}\n\n\n\n\n\n\n\n\n3.5 embedio\nページ内にHTMLページ、スライド、動画、PDFを埋め込む\n\nInstallYAMLHow to use\n\n\nquarto add coatless-quarto/embedio\n\n\nYAMLヘッダーの設定は不要\n\n\n詳細はhttps://quarto.thecoatlessprofessor.com/embedio/を参照\n\n\n\n\n\n3.6 webr\n　HTMLページ上でRを動かす拡張機能。R教育時、簡単なコードの実習で使用\n\nInstallYAMLInputOutput\n\n\nquarto add coatless/quarto-webr\n\n\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  html:\n    ...\nfilters:\n  - webr\n# 以下は不要だが、邪魔なWEBR STATUSがなくなる\nwebr: \n  show-startup-message: false\n  show-header-message: false\n---\n\n\n「____」の箇所に正しいコードを入力してRun Codeをクリックしてみよう!\n\n```{webr-r}\n#| editor-font-scale: 0.75\n#| fig-width: 6\n#| fig-height: 3\n#| out-height: 300px\n#| out-width: 600px\n#| editor-code-line-numbers: 2, 4\n# Step 1: mu = 0, sd = 2の正規分布から乱数を20個抽出すし、my_vecに格納\nmy_vec &lt;- _____\n# Step 2: 横軸を1:20、縦軸をmy_vecとする折れ線グラフを作成する\nplot(_____)\n```\n\n\n「____」の箇所に正しいコードを入力してRun Codeをクリックしてみよう!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n3.7 metropolis-revealjs\n　Beamer界隈で人気のテーマであるmetropolisをrevealjsで再現したテーマ\n\nInstallYAMLInputOutput\n\n\nRStudioのTerminalペインに以下のコマンドを入力\nquarto add shafayetShafee/metropolis-beamer\n\n\nformatをrevealjsからmetropolis-beamer-revealjsへ変更\n---\ntitle: タイトル\nauthor: 著者名\nformat: \n  metropolis-beamer-revealjs:\n    ...\n---\n\n\n---\ntitle: \"My first reveal.js\"\nsubtitle: \"Metropolis theme\"\nauthor: \"Jaehyun Song (Kansai University)\"\ndate: today\nformat: \n  metropolis-beamer-revealjs:\n    footer: Meow!\n---",
     "crumbs": [
       "その他の内容",
       "拡張機能"
@@ -1174,6 +1174,28 @@
     "crumbs": [
       "その他の内容",
       "テンプレート"
+    ]
+  },
+  {
+    "objectID": "A3_extensions.html#footnotes",
+    "href": "A3_extensions.html#footnotes",
+    "title": "拡張機能",
+    "section": "脚注",
+    "text": "脚注\n\n\n公式に一報知らせたらリストにも掲載してくれるらしい。↩︎",
+    "crumbs": [
+      "その他の内容",
+      "拡張機能"
+    ]
+  },
+  {
+    "objectID": "A3_extensions.html#拡張機能のインストール",
+    "href": "A3_extensions.html#拡張機能のインストール",
+    "title": "拡張機能",
+    "section": "3 拡張機能のインストール",
+    "text": "3 拡張機能のインストール\n　拡張機能のインストール方法は全拡張機能共通である。プロジェクトを開いた状態でTerminalパネルに以下の入力する（Quartoの拡張機能はGitHub経由で公開されている）。\nquarto add GitHubアカウント名/拡張機能のレポジトリ名",
+    "crumbs": [
+      "その他の内容",
+      "拡張機能"
     ]
   }
 ]
