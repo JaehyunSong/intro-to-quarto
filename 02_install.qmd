@@ -4,11 +4,10 @@ modified-date: today
 format: html
 metadata-files: 
   - "style/exercise.yml"
+toc: false
 ---
 
 {{< revealjs file="02_install_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
-
-## Links
 
 - a
    - [<i class="bi bi-window-fullscreen"></i> mybinder.org](https://csrda.iss.u-tokyo.ac.jp/quantitative/seminar/){target="_blank" type="button" class="btn btn-outline-primary"}

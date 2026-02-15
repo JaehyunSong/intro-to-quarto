@@ -7,7 +7,6 @@ author:
     affiliation: 関西大学総合情報学部
     email: song@kansai-u.ac.jp
     url: https://www.jaysong.net
-toc: false
 ---
 
 ::: {.callout-important}

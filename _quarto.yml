@@ -57,7 +57,7 @@ format:
     grid:
       sidebar-width: 250px
     number-sections: true
-    toc-depth: 3
+    toc: false
     link-external-newwindow: true
 
 freeze: auto
