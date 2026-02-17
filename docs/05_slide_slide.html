@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d16e513934ddcf5ac4200ff3440253c9.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6f0504f73ce7d7daa471483f520ffc77.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -555,13 +555,102 @@
 <p><img data-src="figs/slide/speakernote.png" class="quarto-figure quarto-figure-center" style="border: 1px solid #000;;width:90.0%"></p>
 </figure>
 </div>
+</section></section>
+<section>
+<section id="その他の機能" class="title-slide slide level1 center">
+<h1><strong>3</strong> その他の機能</h1>
+
 </section>
-<section id="黒板とペン機能" class="slide level2">
+<section id="フラグメント" class="slide level2">
+<h2>フラグメント</h2>
+<p>Fragment</p>
+</section>
+<section id="テキストの自動サイズ調整" class="slide level2">
+<h2>テキストの自動サイズ調整</h2>
+<p><code>.r-fit-text</code>を使うと、スライドいっぱいに文字を拡大できる<span class="small">（強調したい一言などに）</span></p>
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>::: {.r-fit-text}</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>ご清聴ありがとうございました</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong></p>
+<div class="r-fit-text">
+<p>ご清聴ありがとうございました</p>
+</div>
+</section>
+<section id="画像の自動サイズ調整" class="slide level2">
+<h2>画像の自動サイズ調整</h2>
+<p><code>![]()</code>の後に<code>{.r-stretch}</code>を付けると、スライドいっぱいに画像が拡大される</p>
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="al">![巨大R猫](画像のパス or URL)</span>{.r-stretch}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong></p>
+
+<img data-src="figs/rcat.png" class="r-stretch quarto-figure-center"><p class="caption">巨大R猫</p></section>
+<section id="コードのハイライト" class="slide level2">
+<h2>コードのハイライト</h2>
+<p>最初は1行目、次は3〜4行目、最後に7行目をハイライト</p>
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{.r code-line-numbers="1|3-4|6"}</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ここでプロットします</span></span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-code-line-numbers="1|3-4|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a><span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb9-4"><a></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a><span class="co"># ここでプロットします</span></span>
+<span id="cb9-7"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="背景色" class="slide level2" data-background-color="#3F3F3F">
+<h2>背景（色）</h2>
+<p>ページの見出し（<code>##</code>で始まるもの）の後に<code>{background-color="色"}</code>を付ける</p>
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 背景（色）{background-color="#3F3F3F"}</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="背景画像" class="slide level2" data-background-image="figs/slide/nakamura.JPG" data-background-opacity="0.5">
+<h2>背景（画像）</h2>
+<p>見出し<span class="small">（<code>##</code>で始まるもの）</span>の後に<code>{background-image="画像のパス or URL"}</code>を付ける</p>
+<ul>
+<li><code>## {background-image=...}</code>にするとタイトルなしで画像のみ表示</li>
+<li><code>background-size</code>：背景画像の大きさ（<code>"cover"</code> [既定値]、数値 [例: <code>"100px"</code>]）</li>
+<li><code>background-repeat</code>：背景画像の反復有無（<code>"no-repeat"</code> [既定値]、<code>"repeat"</code>）</li>
+<li><code>background-opacity</code>：背景の透明度（0〜1[既定値]）</li>
+</ul>
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## 宋一押しのとんかつ屋さん {background-image="画像パス or URL"}</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="画面切り替え効果" class="slide level2">
+<h2>画面切り替え効果</h2>
+<ul>
+<li>既定値は<code>none</code>（切り替え効果なし）</li>
+<li><code>fade</code>、<code>slide</code>、<code>convex</code>、<code>concave</code>、<code>zoom</code>から選択可</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>全スライドに適用する場合</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">YAMLヘッダーほにゃほにゃ</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> slide</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p>特定のスライドのみに適用する場合</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## タイトル {transition="zoom"}</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section>
+<section id="黒板とペン機能" class="slide level2" data-transition="zoom">
 <h2>黒板とペン機能</h2>
 <p>YAMLヘッダーの<code>format: revealjs</code>の下に<code>chalkboard: true</code>を追加</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">chalkboard</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">chalkboard</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><kbd title="C" aria-hidden="true">C</kbd><span class="visually-hidden">C</span>でペンモード（<span class="alert"><strong>c</strong></span>anvas）、<kbd title="B" aria-hidden="true">B</kbd><span class="visually-hidden">B</span>で黒板モード（chalk<span class="alert"><strong>b</strong></span>oard）のON/OFF</li>
 <li>削除は<kbd title="BACKSPACE" aria-hidden="true">BACKSPACE</kbd><span class="visually-hidden">BACKSPACE</span>（すべて）、または<kbd title="DEL" aria-hidden="true">DEL</kbd><span class="visually-hidden">DEL</span>（当該スライドのみ）</li>
@@ -590,7 +679,7 @@
 </section></section>
 <section>
 <section id="pdf出力" class="title-slide slide level1 center">
-<h1><strong>3</strong> PDF出力</h1>
+<h1><strong>4</strong> PDF出力</h1>
 
 </section>
 <section id="スライドreveal.jsのpdf出力" class="slide level2">
@@ -612,18 +701,18 @@
 <ul>
 <li>BeamerについてはGoogle等で「beamer 入門」で検索<span class="small">（多少のTeXの知識も必要）</span></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> metropolis</span><span class="co">                # 好きなテーマを使おう</span></span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
-<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> aspectratio=169</span><span class="co">              # 縦横比4:3ならこの行を削除</span></span>
-<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10pt</span></span>
-<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">     # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span>
-<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>        \usepackage{luatexja}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> metropolis</span><span class="co">                # 好きなテーマを使おう</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">classoption</span><span class="kw">:</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> aspectratio=169</span><span class="co">              # 縦横比4:3ならこの行を削除</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 10pt</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">     # フォントは自分のPC環境に合わせて修正</span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CJKmainfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Noto Sans CJK JP"</span><span class="co">  # フォントは自分のPC環境に合わせて修正</span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb15-12"><a aria-hidden="true" tabindex="-1"></a>        \usepackage{luatexja}</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section></section>

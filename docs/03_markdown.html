@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -77,6 +112,35 @@ ul.task-list li input[type="checkbox"] {
   </style>
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -219,8 +283,44 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#markdownによる文書構造" id="toc-markdownによる文書構造" class="nav-link active" data-scroll-target="#markdownによる文書構造"><span class="header-section-number">1</span> Markdownによる文書構造</a>
+  <ul class="collapse">
+  <li><a href="#文字の装飾と強調" id="toc-文字の装飾と強調" class="nav-link" data-scroll-target="#文字の装飾と強調"><span class="header-section-number">1.1</span> 文字の装飾と強調</a></li>
+  <li><a href="#リストの作成" id="toc-リストの作成" class="nav-link" data-scroll-target="#リストの作成"><span class="header-section-number">1.2</span> リストの作成</a>
+  <ul class="collapse">
+  <li><a href="#順序なしリスト箇条書き" id="toc-順序なしリスト箇条書き" class="nav-link" data-scroll-target="#順序なしリスト箇条書き"><span class="header-section-number">1.2.1</span> 順序なしリスト（箇条書き）</a></li>
+  <li><a href="#順序ありリスト番号付き" id="toc-順序ありリスト番号付き" class="nav-link" data-scroll-target="#順序ありリスト番号付き"><span class="header-section-number">1.2.2</span> 順序ありリスト（番号付き）</a></li>
+  <li><a href="#タスクリスト" id="toc-タスクリスト" class="nav-link" data-scroll-target="#タスクリスト"><span class="header-section-number">1.2.3</span> タスクリスト</a></li>
+  </ul></li>
+  <li><a href="#リンクと脚注" id="toc-リンクと脚注" class="nav-link" data-scroll-target="#リンクと脚注"><span class="header-section-number">1.3</span> リンクと脚注</a></li>
+  </ul></li>
+  <li><a href="#高度なレイアウト表現" id="toc-高度なレイアウト表現" class="nav-link" data-scroll-target="#高度なレイアウト表現"><span class="header-section-number">2</span> 高度なレイアウト表現</a>
+  <ul class="collapse">
+  <li><a href="#表の作成" id="toc-表の作成" class="nav-link" data-scroll-target="#表の作成"><span class="header-section-number">2.1</span> 表の作成</a></li>
+  <li><a href="#画像の埋め込みとサイズ調整" id="toc-画像の埋め込みとサイズ調整" class="nav-link" data-scroll-target="#画像の埋め込みとサイズ調整"><span class="header-section-number">2.2</span> 画像の埋め込みとサイズ調整</a></li>
+  <li><a href="#数式の記述" id="toc-数式の記述" class="nav-link" data-scroll-target="#数式の記述"><span class="header-section-number">2.3</span> 数式の記述</a></li>
+  <li><a href="#複数コンテンツのレイアウト" id="toc-複数コンテンツのレイアウト" class="nav-link" data-scroll-target="#複数コンテンツのレイアウト"><span class="header-section-number">2.4</span> 複数コンテンツのレイアウト</a></li>
+  </ul></li>
+  <li><a href="#rコードの挿入" id="toc-rコードの挿入" class="nav-link" data-scroll-target="#rコードの挿入"><span class="header-section-number">3</span> Rコードの挿入</a>
+  <ul class="collapse">
+  <li><a href="#基本的なコード実行" id="toc-基本的なコード実行" class="nav-link" data-scroll-target="#基本的なコード実行"><span class="header-section-number">3.1</span> 基本的なコード実行</a></li>
+  <li><a href="#チャンクオプション" id="toc-チャンクオプション" class="nav-link" data-scroll-target="#チャンクオプション"><span class="header-section-number">3.2</span> チャンク・オプション</a></li>
+  <li><a href="#エラー処理" id="toc-エラー処理" class="nav-link" data-scroll-target="#エラー処理"><span class="header-section-number">3.3</span> エラー処理</a></li>
+  </ul></li>
+  <li><a href="#チャンクの表示" id="toc-チャンクの表示" class="nav-link" data-scroll-target="#チャンクの表示"><span class="header-section-number">4</span> チャンクの表示</a></li>
+  <li><a href="#図表の高度な配置" id="toc-図表の高度な配置" class="nav-link" data-scroll-target="#図表の高度な配置"><span class="header-section-number">5</span> 図表の高度な配置</a>
+  <ul class="collapse">
+  <li><a href="#図の参照とキャプション" id="toc-図の参照とキャプション" class="nav-link" data-scroll-target="#図の参照とキャプション"><span class="header-section-number">5.1</span> 図の参照とキャプション</a></li>
+  <li><a href="#サブキャプションと並列配置" id="toc-サブキャプションと並列配置" class="nav-link" data-scroll-target="#サブキャプションと並列配置"><span class="header-section-number">5.2</span> サブキャプションと並列配置</a></li>
+  <li><a href="#カスタムレイアウト" id="toc-カスタムレイアウト" class="nav-link" data-scroll-target="#カスタムレイアウト"><span class="header-section-number">5.3</span> カスタムレイアウト</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -249,10 +349,1415 @@ ul.task-list li input[type="checkbox"] {
       <iframe class="slide-deck" src="03_markdown_slide.html" height="900px"></iframe>
     </div>
   
+<div class="cell" data-layout-align="center">
+<style type="text/css">
+figcaption{text-align:center}a{color:royalblue;text-decoration:none}
+</style>
+</div>
+<section id="markdownによる文書構造" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Markdownによる文書構造</h1>
+<section id="文字の装飾と強調" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="文字の装飾と強調"><span class="header-section-number">1.1</span> 文字の装飾と強調</h2>
+<p>文章の一部を強調したい場合、以下のような記法が使えます。</p>
+<ul>
+<li><strong>太字（Bold）</strong>: ローマ字以外の強調に使います。</li>
+<li><em>イタリック（Italic）</em>: ローマ字の強調に使います。</li>
+<li><del>取り消し線（Strike）</del>: 削除された情報を表現します。</li>
+<li><u>下線（Underline）</u>: HTMLタグを使って表現します。</li>
+</ul>
+</section>
+<section id="リストの作成" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="リストの作成"><span class="header-section-number">1.2</span> リストの作成</h2>
+<section id="順序なしリスト箇条書き" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="順序なしリスト箇条書き"><span class="header-section-number">1.2.1</span> 順序なしリスト（箇条書き）</h3>
+<p>項目の並列な羅列に使います。インデント（字下げ）で階層化できます。</p>
+<ul>
+<li>データ分析の準備
+<ul>
+<li>データの収集</li>
+<li>データの整形
+<ul>
+<li>欠損値の処理</li>
+<li>異常値の確認</li>
+</ul></li>
+</ul></li>
+<li>分析の実行</li>
+</ul>
+</section>
+<section id="順序ありリスト番号付き" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="順序ありリスト番号付き"><span class="header-section-number">1.2.2</span> 順序ありリスト（番号付き）</h3>
+<p>手順やランキングなど、順序が重要な場合に使います。</p>
+<ol type="1">
+<li>RStudioを開く</li>
+<li>プロジェクトを作成する
+<ol type="1">
+<li>New Projectを選択</li>
+<li>ディレクトリを指定</li>
+</ol></li>
+<li>Quartoファイルを作成する</li>
+</ol>
+</section>
+<section id="タスクリスト" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="タスクリスト"><span class="header-section-number">1.2.3</span> タスクリスト</h3>
+<p>進捗管理などに便利です。</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">テーマの決定</label></li>
+<li><label><input type="checkbox" checked="">資料の収集</label></li>
+<li><label><input type="checkbox">レポートの執筆（現在進行中）</label></li>
+</ul>
+</section>
+</section>
+<section id="リンクと脚注" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="リンクと脚注"><span class="header-section-number">1.3</span> リンクと脚注</h2>
+<p>外部サイトへの誘導にはリンクを使います。<a href="https://quarto.org">Quartoの公式ドキュメント</a>などは頻繁に参照します。 また、本文の流れを妨げずに補足情報を入れたい場合は、脚注を利用します<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。</p>
+<p>識別子を使った脚注も可能です<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>。</p>
+<hr>
+</section>
+</section>
+<section id="高度なレイアウト表現" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 高度なレイアウト表現</h1>
+<section id="表の作成" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="表の作成"><span class="header-section-number">2.1</span> 表の作成</h2>
+<p>Markdownで表を作成するには、パイプ（<code>|</code>）とハイフン（<code>-</code>）を使用します。コロン（<code>:</code>）の位置で配置を指定できます。</p>
+<table class="caption-top table">
+<caption>表1: 成績一覧表のサンプル</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">ID</th>
+<th style="text-align: left;">名前</th>
+<th style="text-align: center;">スコア</th>
+<th style="text-align: left;">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">佐藤</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: left;">右寄せ・左寄せの例</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">田中</td>
+<td style="text-align: center;">82</td>
+<td style="text-align: left;"><strong>強調</strong>も可能</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">鈴木</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">中央揃え</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="画像の埋め込みとサイズ調整" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="画像の埋め込みとサイズ調整"><span class="header-section-number">2.2</span> 画像の埋め込みとサイズ調整</h2>
+<p>画像の表示サイズは <code>width</code> や <code>height</code> オプションで制御できます。</p>
+<p><strong>標準サイズ:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/rcat.png" class="img-fluid figure-img"></p>
+<figcaption>R猫</figcaption>
+</figure>
+</div>
+<p><strong>サイズ指定（幅75pxに縮小）:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/rcat.png" class="img-fluid figure-img" width="75"></p>
+<figcaption>小さくてかわいいR猫</figcaption>
+</figure>
+</div>
+</section>
+<section id="数式の記述" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="数式の記述"><span class="header-section-number">2.3</span> 数式の記述</h2>
+<p>レポートに数式を含める場合、LaTeX記法が使えます。</p>
+<p><strong>文中の数式（インライン）:</strong></p>
+<p>回帰分析のモデルは <span class="math inline">\(y = \beta_0 + \beta_1 x + \varepsilon\)</span> で表されます。</p>
+<p><strong>独立した数式ブロック（ディスプレイ）:</strong></p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+\]</span></p>
+</section>
+<section id="複数コンテンツのレイアウト" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="複数コンテンツのレイアウト"><span class="header-section-number">2.4</span> 複数コンテンツのレイアウト</h2>
+<p><code>layout-ncol</code> 属性を使うと、画像や表を横に並べて配置できます。比較を行う際に非常に強力です。</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/markdown/rcat_0.png" class="img-fluid figure-img"></p>
+<figcaption>R猫零号機</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/markdown/rcat_1.png" class="img-fluid figure-img"></p>
+<figcaption>R猫初号機</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<section id="グループa" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="グループa"><span class="header-section-number">2.4.1</span> グループA</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: right;">値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">平均</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">分散</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="グループb" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="グループb"><span class="header-section-number">2.4.2</span> グループB</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: right;">値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">平均</td>
+<td style="text-align: right;">65</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">分散</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="rコードの挿入" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Rコードの挿入</h1>
+<p>Quartoの最大の特徴は、ドキュメント内でRのコードを実行し、その結果を直接ドキュメントに反映できる点です。</p>
+<section id="基本的なコード実行" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="基本的なコード実行"><span class="header-section-number">3.1</span> 基本的なコード実行</h2>
+<p>以下は標準的なコードチャンクです。コードと結果の両方が表示されます。</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1から10までの整数の合計を計算</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 55</code></pre>
+</div>
+</div>
+<p><strong>インラインコード:</strong></p>
+<p>文章の中に計算結果を埋め込むこともできます。 例えば、計算された合計値は55です。</p>
+</section>
+<section id="チャンクオプション" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="チャンクオプション"><span class="header-section-number">3.2</span> チャンク・オプション</h2>
+<p>目的に応じて、コードや結果の表示・非表示を切り替えられます。チャンクオプションはチャンクの最上段に<code>#| オプション名: 引数</code>の書き方で記入します。チャンク・オプションは複数指定することができます。</p>
+<p><strong>ケース1:</strong> 結果だけ見せたい (echo: false)</p>
+<p>読者にコードを見せる必要がなく、グラフや表だけを示したい場合に使います。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03_markdown_files/figure-html/show-plot-only-1.png" class="img-fluid figure-img" width="900"></p>
+<figcaption>正規乱数のヒストグラム（コードは非表示）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>ケース2:</strong> コードだけ見せたい（<code>eval: false</code>）</p>
+<p>実行に時間がかかるコードや、解説用のコードを示す場合に便利です。</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># このコードは表示されますが、実行はされません</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"very_heavy_package"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">start_simulation</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>ケース3:</strong> コードと結果をまとめる（<code>collapse: true</code>）</p>
+<p>Rコンソールのように、コードと出力結果を一つのブロックにまとめます。</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hello, Quarto!"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Hello, Quarto!"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 20</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="エラー処理" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="エラー処理"><span class="header-section-number">3.3</span> エラー処理</h2>
+<p>通常、コードにエラーがあると文書生成（レンダー）は止まりますが、<code>error: true</code>を指定しておくと、エラーメッセージを表示して処理を続行します。デバッグ内容をレポートする場合に使います。</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 存在しない変数を呼び出してみる</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(undefined_variable)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! object 'undefined_variable' not found</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="チャンクの表示" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> チャンクの表示</h1>
+<p><code>```{r}</code>の代わりに<code>```{r}</code>を使用すると、チャンクごとに表示されます。ただし、チャンク内のコードは実行されません。Quarto教育用の教材作成時以外はあまり出番がないかも知れません。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hello, Quarto!"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<p>マークダウン文書のコードとチャンクを同時に入れるためには、されに<code>````{.markdown}</code>と<code>````</code>で囲みます。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>マークダウンのコードを見せる。</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>チャンクもそのまま見せる</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hello, Quarto!"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="図表の高度な配置" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 図表の高度な配置</h1>
+<p>図のキャプション、参照、そして複雑なレイアウト設定について学びます。</p>
+<section id="図の参照とキャプション" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="図の参照とキャプション"><span class="header-section-number">5.1</span> 図の参照とキャプション</h2>
+<p>チャンクオプションで<code>fig-cap</code>（キャプション）と<code>label</code>（ラベル）を設定すると、本文中で「図1を参照」のように自動採番付きで参照できます。</p>
+<p>以下の <a href="#fig-scatter" class="quarto-xref">図&nbsp;1</a> をご覧ください。</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">"darkorange"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_markdown_files/figure-html/fig-scatter-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;1: 車の速度と停止距離の関係（散布図）
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="サブキャプションと並列配置" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="サブキャプションと並列配置"><span class="header-section-number">5.2</span> サブキャプションと並列配置</h2>
+<p>一つのチャンクから複数のグラフを出力し、それぞれにサブキャプションを付けることもできます。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(<span class="fu">head</span>(iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(<span class="fu">head</span>(iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"virginica"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]))</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-panels" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;1: irisデータセットの中身
+</figcaption>
+<div aria-describedby="tbl-panels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-panels" style="flex-basis: 50.0%;justify-content: center;">
+<div id="lmwpifxhvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lmwpifxhvk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lmwpifxhvk thead, #lmwpifxhvk tbody, #lmwpifxhvk tfoot, #lmwpifxhvk tr, #lmwpifxhvk td, #lmwpifxhvk th {
+  border-style: none;
+}
+
+#lmwpifxhvk p {
+  margin: 0;
+  padding: 0;
+}
+
+#lmwpifxhvk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lmwpifxhvk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lmwpifxhvk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lmwpifxhvk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lmwpifxhvk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lmwpifxhvk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lmwpifxhvk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lmwpifxhvk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lmwpifxhvk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lmwpifxhvk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lmwpifxhvk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lmwpifxhvk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lmwpifxhvk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lmwpifxhvk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lmwpifxhvk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lmwpifxhvk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lmwpifxhvk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lmwpifxhvk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lmwpifxhvk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lmwpifxhvk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lmwpifxhvk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lmwpifxhvk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lmwpifxhvk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lmwpifxhvk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lmwpifxhvk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lmwpifxhvk .gt_left {
+  text-align: left;
+}
+
+#lmwpifxhvk .gt_center {
+  text-align: center;
+}
+
+#lmwpifxhvk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lmwpifxhvk .gt_font_normal {
+  font-weight: normal;
+}
+
+#lmwpifxhvk .gt_font_bold {
+  font-weight: bold;
+}
+
+#lmwpifxhvk .gt_font_italic {
+  font-style: italic;
+}
+
+#lmwpifxhvk .gt_super {
+  font-size: 65%;
+}
+
+#lmwpifxhvk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lmwpifxhvk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lmwpifxhvk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lmwpifxhvk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lmwpifxhvk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lmwpifxhvk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lmwpifxhvk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lmwpifxhvk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lmwpifxhvk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<div id="tbl-panels-1" class="gt_table do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-panels-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) setosa種
+</figcaption>
+<div aria-describedby="tbl-panels-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-panels-1" class="gt_table do-not-create-environment caption-top table" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Sepal.Length" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Sepal.Length</th>
+<th id="Sepal.Width" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Sepal.Width</th>
+<th id="Petal.Length" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Petal.Length</th>
+<th id="Petal.Width" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Petal.Width</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">5.1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.5</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">1.4</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">0.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">4.9</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">1.4</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">0.2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">4.7</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.2</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">1.3</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">0.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">4.6</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">1.5</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">0.2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">5.0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.6</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">1.4</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">0.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">5.4</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.9</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">1.7</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">0.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-panels" style="flex-basis: 50.0%;justify-content: center;">
+<div id="qoklzgczcb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qoklzgczcb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qoklzgczcb thead, #qoklzgczcb tbody, #qoklzgczcb tfoot, #qoklzgczcb tr, #qoklzgczcb td, #qoklzgczcb th {
+  border-style: none;
+}
+
+#qoklzgczcb p {
+  margin: 0;
+  padding: 0;
+}
+
+#qoklzgczcb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qoklzgczcb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qoklzgczcb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qoklzgczcb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qoklzgczcb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qoklzgczcb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qoklzgczcb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qoklzgczcb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qoklzgczcb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qoklzgczcb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qoklzgczcb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qoklzgczcb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qoklzgczcb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qoklzgczcb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qoklzgczcb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qoklzgczcb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qoklzgczcb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qoklzgczcb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qoklzgczcb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qoklzgczcb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qoklzgczcb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qoklzgczcb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qoklzgczcb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qoklzgczcb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qoklzgczcb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qoklzgczcb .gt_left {
+  text-align: left;
+}
+
+#qoklzgczcb .gt_center {
+  text-align: center;
+}
+
+#qoklzgczcb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qoklzgczcb .gt_font_normal {
+  font-weight: normal;
+}
+
+#qoklzgczcb .gt_font_bold {
+  font-weight: bold;
+}
+
+#qoklzgczcb .gt_font_italic {
+  font-style: italic;
+}
+
+#qoklzgczcb .gt_super {
+  font-size: 65%;
+}
+
+#qoklzgczcb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qoklzgczcb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qoklzgczcb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qoklzgczcb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qoklzgczcb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qoklzgczcb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qoklzgczcb .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qoklzgczcb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qoklzgczcb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<div id="tbl-panels-2" class="gt_table do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-panels-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) virginica種
+</figcaption>
+<div aria-describedby="tbl-panels-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-panels-2" class="gt_table do-not-create-environment caption-top table" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Sepal.Length" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Sepal.Length</th>
+<th id="Sepal.Width" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Sepal.Width</th>
+<th id="Petal.Length" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Petal.Length</th>
+<th id="Petal.Width" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Petal.Width</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">6.3</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.3</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">6.0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">2.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">5.8</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">2.7</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">5.1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">1.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">7.1</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">5.9</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">2.1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">6.3</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">2.9</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">5.6</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">1.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">6.5</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">5.8</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">2.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Length">7.6</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Sepal.Width">3.0</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Length">6.6</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="Petal.Width">2.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="カスタムレイアウト" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="カスタムレイアウト"><span class="header-section-number">5.3</span> カスタムレイアウト</h2>
+<p>layout オプションを使うと、「上段に2つ、下段に1つ」といった複雑な配置も可能です。</p>
+<p>指定例: 上段は50%-50%、下段は100%</p>
+<div class="cell" data-layout="[[50,50],[100]]" data-layout-align="center">
+<div id="fig-three-figs" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-three-figs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-three-figs" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-three-figs-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-three-figs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_markdown_files/figure-html/fig-three-figs-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-three-figs" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-three-figs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 図A
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-three-figs" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-three-figs-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-three-figs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_markdown_files/figure-html/fig-three-figs-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-three-figs" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-three-figs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 図B
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-three-figs" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-three-figs-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-three-figs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_markdown_files/figure-html/fig-three-figs-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-three-figs" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-three-figs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) 図C
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-figs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+図&nbsp;2: 図3つの配置の例
+</figcaption>
+</figure>
+</div>
+</div>
 
 
+</section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
+
+<ol>
+<li id="fn1"><p>脚注は、ページ下部や文末にまとめて表示されます。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>識別子を使うと、長い脚注を書きやすくなります。識別子を使わない脚注はマークダウンのコード基準、1行に1回しか使えませんが、識別子を使う方法は複数回使えます。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

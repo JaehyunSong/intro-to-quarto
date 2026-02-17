@@ -268,7 +268,128 @@ format:
 
 ![](figs/slide/speakernote.png){width=90% fig-align="center" style="border: 1px solid #000;"}
 
-## 黒板とペン機能
+# **3** その他の機能
+
+## フラグメント
+
+Fragment
+
+## テキストの自動サイズ調整
+
+`.r-fit-text`を使うと、スライドいっぱいに文字を拡大できる[（強調したい一言などに）]{.small}
+
+**Input:**
+
+```markdown
+::: {.r-fit-text}
+ご清聴ありがとうございました
+:::
+```
+
+**Output:**
+
+::: {.r-fit-text}
+ご清聴ありがとうございました
+:::
+
+## 画像の自動サイズ調整
+
+`![]()`の後に`{.r-stretch}`を付けると、スライドいっぱいに画像が拡大される
+
+**Input:**
+
+```markdown
+![巨大R猫](画像のパス or URL){.r-stretch}
+```
+
+**Output:**
+
+![巨大R猫](figs/rcat.png){.r-stretch}
+
+## コードのハイライト
+
+最初は1行目、次は3〜4行目、最後に7行目をハイライト
+
+**Input:**
+
+````
+```{{.r code-line-numbers="1|3-4|6"}}
+library(ggplot2)
+
+# ここでデータを読み込みます
+data <- mtcars
+
+# ここでプロットします
+ggplot(data, aes(mpg, wt)) + geom_point()
+```
+````
+
+**Output:**
+
+```{.r code-line-numbers="1|3-4|7"}
+library(ggplot2)
+
+# ここでデータを読み込みます
+data <- mtcars
+
+# ここでプロットします
+ggplot(data, aes(mpg, wt)) + geom_point()
+```
+
+## 背景（色）{background-color="#3F3F3F"}
+
+ページの見出し（`##`で始まるもの）の後に`{background-color="色"}`を付ける
+
+**Input:**
+
+```markdown
+## 背景（色）{background-color="#3F3F3F"}
+```
+
+## 背景（画像）{background-image="figs/slide/nakamura.JPG" background-opacity="0.5"}
+
+見出し[（`##`で始まるもの）]{.small}の後に`{background-image="画像のパス or URL"}`を付ける
+
+- `## {background-image=...}`にするとタイトルなしで画像のみ表示
+- `background-size`：背景画像の大きさ（`"cover"` [既定値]、数値 [例: `"100px"`]）
+- `background-repeat`：背景画像の反復有無（`"no-repeat"` [既定値]、`"repeat"`）
+- `background-opacity`：背景の透明度（0〜1[既定値]）
+
+**Input:**
+
+```markdown
+## 宋一押しのとんかつ屋さん {background-image="画像パス or URL"}
+```
+
+## 画面切り替え効果
+
+- 既定値は`none`（切り替え効果なし）
+- `fade`、`slide`、`convex`、`concave`、`zoom`から選択可
+
+:::: {.columns}
+::: {.column width=50%}
+全スライドに適用する場合
+
+```yaml
+---
+YAMLヘッダーほにゃほにゃ
+format:
+  revealjs:
+    transition: slide
+---
+```
+:::
+
+::: {.column width=50%}
+特定のスライドのみに適用する場合
+
+```markdown
+## タイトル {transition="zoom"}
+```
+:::
+::::
+
+## 黒板とペン機能 {transition="zoom"}
 
 YAMLヘッダーの`format: revealjs`の下に`chalkboard: true`を追加
 
@@ -288,7 +409,7 @@ format:
 ![Chalkboardモード（Bキー）](figs/slide/chalkboard.png){width=500 fig-align="center"}
 :::
 
-# **3** PDF出力
+# **4** PDF出力
 
 ## スライド（reveal.js）のPDF出力
 
