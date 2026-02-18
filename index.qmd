@@ -43,9 +43,9 @@ author:
 
 ※ 進度によって内容が若干変わることがあります。
 
-1. [Quartoとは＆R Markdownとの比較](intro.qmd)
-1. [実習環境の導入](install.qmd)
-1. [Markdown文法の基礎](markdown.qmd)
-1. [文書の作成](document.qmd)
-1. [スライドの作成](slide.qmd)
-1. [作成した文書・スライドの共有](share.qmd)
+1. [Quartoとは＆R Markdownとの比較](01_intro.qmd)
+1. [実習環境の導入](02_install.qmd)
+1. [Markdown文法の基礎](03_markdown.qmd)
+1. [文書の作成](04_document.qmd)
+1. [スライドの作成](05_slide.qmd)
+1. [作成した文書・スライドの共有](06_share.qmd)

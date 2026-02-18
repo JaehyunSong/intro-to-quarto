@@ -331,6 +331,8 @@ Quarto公式HPの[FAQ for R Markdown Users](https://quarto.org/docs/faq/rmarkdow
 :::
 ::::
 
+## 研究成果の共有ツールとしてのQuarto
+
 # **3** コース概要
 
 ## コース概要
