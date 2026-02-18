@@ -1516,5 +1516,54 @@
       "その他の内容",
       "テンプレート"
     ]
+  },
+  {
+    "objectID": "05_slide_exercise.html#改ページについて",
+    "href": "05_slide_exercise.html#改ページについて",
+    "title": "Quarto de スライド",
+    "section": "改ページについて",
+    "text": "改ページについて\nスライドの改ページはmarkdownのレベル2ヘッダー（##）を使う。\nページ内の記法はこれまでと変わらない。"
+  },
+  {
+    "objectID": "05_slide_exercise.html#箇条書き",
+    "href": "05_slide_exercise.html#箇条書き",
+    "title": "Quarto de スライド",
+    "section": "箇条書き",
+    "text": "箇条書き\n宋のおすすめのとんかつ屋さん（関西版）\n\nふじ井\n京町堀なかむら\n\nとんかつ中村\n\n日月\n勝山\nU.F.O\nとんかつ中村"
+  },
+  {
+    "objectID": "05_slide_exercise.html#アニメーション付き箇条書き",
+    "href": "05_slide_exercise.html#アニメーション付き箇条書き",
+    "title": "Quarto de スライド",
+    "section": "アニメーション付き箇条書き",
+    "text": "アニメーション付き箇条書き\n全国とんかつランキング！\n\n揚雫\n成蔵\nマンジェ\nふじ井"
+  },
+  {
+    "objectID": "05_slide_exercise.html#このスライドは見せたくない",
+    "href": "05_slide_exercise.html#このスライドは見せたくない",
+    "title": "Quarto de スライド",
+    "section": "このスライドは見せたくない",
+    "text": "このスライドは見せたくない\n\nふじ井のロイヤル・マンガリッツァのメンチカツは事前予約が必要"
+  },
+  {
+    "objectID": "05_slide_exercise.html#画像のスタック",
+    "href": "05_slide_exercise.html#画像のスタック",
+    "title": "Quarto de スライド",
+    "section": "画像のスタック",
+    "text": "画像のスタック"
+  },
+  {
+    "objectID": "05_slide_exercise.html#フラグメント",
+    "href": "05_slide_exercise.html#フラグメント",
+    "title": "Quarto de スライド",
+    "section": "フラグメント",
+    "text": "フラグメント"
+  },
+  {
+    "objectID": "05_slide_exercise.html#section",
+    "href": "05_slide_exercise.html#section",
+    "title": "Quarto de スライド",
+    "section": "",
+    "text": "次は「シェア」編です"
   }
 ]

@@ -6,9 +6,7 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/quarto-contrib/kbd/kbd.js"></script>
-<link href="site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="佐藤華子">
@@ -32,72 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -200,7 +132,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Quarto de スライド</h1>
-  <p class="subtitle">5/ スライドの作成</p>
+  <p class="subtitle">ここにはサブタイトル</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -224,174 +156,62 @@
   <p class="date">2026-02-20</p>
 </section>
 <section>
-<section id="スライドの構造" class="title-slide slide level1 center">
-<h1>スライドの構造</h1>
+<section id="quartoスライドの基本" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Quartoスライドの基本</h1>
 
 </section>
-<section id="見出しのルール" class="slide level2">
-<h2>見出しのルール</h2>
+<section id="改ページについて" class="slide level2">
+<h2>改ページについて</h2>
+<p>スライドの改ページはmarkdownのレベル2ヘッダー（<code>##</code>）を使う。</p>
+<p>ページ内の記法はこれまでと変わらない。</p>
+</section>
+<section id="箇条書き" class="slide level2">
+<h2>箇条書き</h2>
+<p>宋のおすすめのとんかつ屋さん（関西版）</p>
 <ul>
-<li><code>#</code> (レベル1見出し):
+<li>ふじ井</li>
+<li>京町堀なかむら
 <ul>
-<li>新しいセクションの表紙になります（このスライドの前のページ）。</li>
-<li>背景色が変わっているのは <code>data-background-color</code> の効果です。</li>
+<li>とんかつ中村</li>
 </ul></li>
-<li><code>##</code> (レベル2見出し):
-<ul>
-<li>通常のスライドページになります。</li>
-<li>基本的に1つの <code>##</code> が1枚のスライドに対応します。</li>
-</ul></li>
+<li>日月</li>
+<li>勝山</li>
+<li>U.F.O</li>
+<li>とんかつ中村</li>
 </ul>
 </section>
-<section id="ショートカットキー" class="slide level2">
-<h2>ショートカットキー</h2>
-<ul>
-<li><kbd title="F" aria-hidden="true">F</kbd><span class="visually-hidden">F</span>: フルスクリーンモード</li>
-<li><kbd title="S" aria-hidden="true">S</kbd><span class="visually-hidden">S</span>: スピーカービュー（ノート表示）</li>
-<li><kbd title="O" aria-hidden="true">O</kbd><span class="visually-hidden">O</span>、または<kbd title="Esc" aria-hidden="true">Esc</kbd><span class="visually-hidden">Esc</span>: スライド一覧（オーバービュー）</li>
-<li><kbd title="B" aria-hidden="true">B</kbd><span class="visually-hidden">B</span>: 画面を暗転（Blackout）</li>
-<li><kbd title="?" aria-hidden="true">?</kbd><span class="visually-hidden">?</span>: ヘルプの表示</li>
-</ul>
-</section>
-<section id="スピーカーノート" class="slide level2">
-<h2>スピーカーノート</h2>
-<p>このスライドには「スピーカーノート」が含まれています。</p>
-<ul>
-<li><strong>キーボードの <code>S</code> キー</strong> を押してみてください。</li>
-<li>発表者用ウィンドウが立ち上がり、下記のメモが見えるはずです。</li>
-</ul>
-<aside class="notes">
-<p>ここがスピーカーノートです。 聴衆には見えませんが、発表者はここを見てカンニングできます。 時間の経過もここで確認できます。</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="アニメーションと強調" class="title-slide slide level1 center">
-<h1>アニメーションと強調</h1>
-
-</section>
-<section id="増分リスト-incremental" class="slide level2">
-<h2>増分リスト (Incremental)</h2>
-<p>情報を一度に出さず、順番に表示することで聴衆の注目を集めます。</p>
+<section id="アニメーション付き箇条書き" class="slide level2">
+<h2>アニメーション付き箇条書き</h2>
+<p>全国とんかつランキング！</p>
 <ol type="1">
-<li class="fragment">最初のポイントを表示</li>
-<li class="fragment">クリックすると次が表示されます</li>
-<li class="fragment">これで話の腰を折られません</li>
+<li class="fragment">揚雫</li>
+<li class="fragment">成蔵</li>
+<li class="fragment">マンジェ</li>
+<li class="fragment">ふじ井</li>
 </ol>
-</section>
-<section id="フラグメント-fragments" class="slide level2">
-<h2>フラグメント (Fragments)</h2>
-<p>リスト以外のアニメーション制御も可能です。</p>
-<p><br></p>
-<p><span class="fragment">文の一部を</span> <span class="fragment fade-in-then-semi-out">強調したり、</span> <span class="fragment highlight-red">赤くしたり、</span> <span class="fragment strike">取り消したり</span> できます。</p>
-<div class="fragment fade-up">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>ヒント</strong></p>
-</div>
-<div class="callout-content">
-<p>ブロック全体をアニメーションさせることも可能です！</p>
-</div>
-</div>
-</div>
-</div>
 </section></section>
 <section>
-<section id="レイアウトとコンテンツ" class="title-slide slide level1 center">
-<h1>レイアウトとコンテンツ</h1>
+<section id="quartoスライドの機能" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Quartoスライドの機能</h1>
 
 </section>
-<section id="段組みレイアウト-columns" class="slide level2">
-<h2>2段組みレイアウト (Columns)</h2>
-<p>テキストと画像を左右に並べる定番のレイアウトです。</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="左側のカラム">左側のカラム</h3>
-<p>ここに説明文を書きます。</p>
-<p>箇条書きも可能です：</p>
-<ul>
-<li>特徴A</li>
-<li>特徴B</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<h3 id="右側のカラム">右側のカラム</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://placeholder.pics/svg/400x300.png"></p>
-<figcaption>画像の説明</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="テキストの自動サイズ調整" class="slide level2">
-<h2>テキストの自動サイズ調整</h2>
-<p><code>r-fit-text</code> クラスを使うと、スライドいっぱいに文字を拡大します。</p>
-<div class="r-fit-text">
-<p>BIG IMPACT</p>
-</div>
-<p>強調したい一言や、タイトルスライドで有効です。</p>
-</section>
-<section id="タブセット-tabsets" class="slide level2">
-<h2>タブセット (Tabsets)</h2>
-<p>情報を整理して見せたい場合に便利です。</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">企画</a></li><li><a href="#tabset-1-2">開発</a></li><li><a href="#tabset-1-3">リリース</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<ul>
-<li>コンセプトの立案</li>
-<li>ターゲットの選定</li>
-</ul>
-</div>
-<div id="tabset-1-2">
-<ul>
-<li>プロトタイプの作成</li>
-<li>テスト実装</li>
-</ul>
-</div>
-<div id="tabset-1-3">
-<ul>
-<li>広告展開</li>
-<li>ユーザーフィードバック</li>
-</ul>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="コード" class="title-slide slide level1 center">
-<h1>コード</h1>
 
+<section id="画像のスタック" class="slide level2">
+<h2>画像のスタック</h2>
 </section>
-<section id="コードブロックのハイライト" class="slide level2">
-<h2>コードブロックのハイライト</h2>
-<p>行番号を指定して、コードの特定部分を順番に説明できます。 （次へ進むキーを押して動きを確認してください）</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="1|3-4|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># ここでデータを読み込みます</span></span>
-<span id="cb1-4"><a></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># ここでプロットします</span></span>
-<span id="cb1-7"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="フラグメント" class="slide level2">
+<h2>フラグメント</h2>
+</section>
+<section id="section" class="slide level2" data-visibility="uncounted">
+<h2></h2>
+<div class="r-fit-text" style="position:absolute; top:40%;">
+<p>次は「シェア」編です</p>
+</div>
 
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="https://csrda.iss.u-tokyo.ac.jp/img2020/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Quarto実習（スライド作成編）</p>
 </div>
