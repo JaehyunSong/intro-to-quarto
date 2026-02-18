@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Quartoを使った研究成果と分析プロセスの共有",
     "section": "",
-    "text": "重要本資料は作成中のものです。\n\n\n\n　本資料は、以下の2026年2月20日に行われる東京大学社会科学研究所計量分析セミナーの「Quartoを使った研究成果と分析プロセスの共」の教材として執筆中のものであり、2026年2月15日頃の公開を予定しております。現時点では\\(\\alpha\\)版に相当する段階であり、内容に不備や誤りが含まれている可能性が非常に高いです。したがって、本資料の内容に起因するいかなる問題についても、著者（宋）は一切の責任を負いかねます。"
+    "text": "重要本資料は作成中のものです。\n\n\n\n　本資料は、以下の2026年2月20日に行われる東京大学社会科学研究所計量分析セミナーの「Quartoを使った研究成果と分析プロセスの共」の教材として執筆中のものであり、2026年2月19日の公開を予定しております。現時点では\\(\\alpha\\)版に相当する段階であり、内容に不備や誤りが含まれている可能性が非常に高いです。したがって、本資料の内容に起因するいかなる問題についても、著者（宋）は一切の責任を負いかねます。"
   },
   {
     "objectID": "index.html#概要",
@@ -39,7 +39,7 @@
     "href": "index.html#本コースの日程",
     "title": "Quartoを使った研究成果と分析プロセスの共有",
     "section": "本コースの日程",
-    "text": "本コースの日程\n※ 進度によって内容が若干変わることがあります。\n\nQuartoとは＆R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
+    "text": "本コースの日程\n※ 進度によって内容が若干変わることがあります（そんなことはないと思いますが、時間が余れば「その他の内容」について簡単に喋ります）。\n\nQuartoとは＆R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
   },
   {
     "objectID": "A3_extensions.html",
@@ -162,713 +162,67 @@
     ]
   },
   {
-    "objectID": "05_slide.html",
-    "href": "05_slide.html",
-    "title": "スライドの作成",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "5/ スライドの作成"
-    ]
+    "objectID": "05_slide_exercise.html#見出しのルール",
+    "href": "05_slide_exercise.html#見出しのルール",
+    "title": "Quarto de スライド",
+    "section": "見出しのルール",
+    "text": "見出しのルール\n\n# (レベル1見出し):\n\n新しいセクションの表紙になります（このスライドの前のページ）。\n背景色が変わっているのは data-background-color の効果です。\n\n## (レベル2見出し):\n\n通常のスライドページになります。\n基本的に1つの ## が1枚のスライドに対応します。"
   },
   {
-    "objectID": "04_document.html",
-    "href": "04_document.html",
-    "title": "文書の作成",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "05_slide_exercise.html#ショートカットキー",
+    "href": "05_slide_exercise.html#ショートカットキー",
+    "title": "Quarto de スライド",
+    "section": "ショートカットキー",
+    "text": "ショートカットキー\n\nFF: フルスクリーンモード\nSS: スピーカービュー（ノート表示）\nOO、またはEscEsc: スライド一覧（オーバービュー）\nBB: 画面を暗転（Blackout）\n??: ヘルプの表示"
   },
   {
-    "objectID": "04_document.html#図の参照",
-    "href": "04_document.html#図の参照",
-    "title": "文書の作成",
-    "section": "1.1 図の参照",
-    "text": "1.1 図の参照\nまずは単一の図を参照してみましょう。図 1 は、正規分布に従う乱数のヒストグラムです。\n\n\n\n\n\n\n\n\n図 1: 正規乱数のヒストグラム\n\n\n\n\n\n次に、複数の図を並べて参照する場合です。図 2 全体、あるいは個別の 図 2 (a) や 図 2 (b) を参照できます。\n\n\n\n\n\n\n\n\n\n\n\n(a) 散布図\n\n\n\n\n\n\n\n\n\n\n\n(b) 箱ひげ図\n\n\n\n\n\n\n\n図 2: 2種類のチャート",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "05_slide_exercise.html#スピーカーノート",
+    "href": "05_slide_exercise.html#スピーカーノート",
+    "title": "Quarto de スライド",
+    "section": "スピーカーノート",
+    "text": "スピーカーノート\nこのスライドには「スピーカーノート」が含まれています。\n\nキーボードの S キー を押してみてください。\n発表者用ウィンドウが立ち上がり、下記のメモが見えるはずです。\n\n\nここがスピーカーノートです。 聴衆には見えませんが、発表者はここを見てカンニングできます。 時間の経過もここで確認できます。"
   },
   {
-    "objectID": "04_document.html#表の参照",
-    "href": "04_document.html#表の参照",
-    "title": "文書の作成",
-    "section": "1.2 表の参照",
-    "text": "1.2 表の参照\n表の参照には tbl- 接頭辞を使います。表 1 はirisデータセットの要約です。\n\n\n\n\n表 1: irisデータの先頭5行\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n\n\n\n\n\n\nMarkdownで記述した表も参照可能です（表 2）。\n\n\n\n表 2: 誰が偉いか分からん\n\n\n\n\n\nID\n名前\n役割\n\n\n\n\n1\n田中太郎\n第一書記長\n\n\n2\n佐藤花子\n首席書記長",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "05_slide_exercise.html#増分リスト-incremental",
+    "href": "05_slide_exercise.html#増分リスト-incremental",
+    "title": "Quarto de スライド",
+    "section": "増分リスト (Incremental)",
+    "text": "増分リスト (Incremental)\n情報を一度に出さず、順番に表示することで聴衆の注目を集めます。\n\n最初のポイントを表示\nクリックすると次が表示されます\nこれで話の腰を折られません"
   },
   {
-    "objectID": "04_document.html#数式とセクションの参照",
-    "href": "04_document.html#数式とセクションの参照",
-    "title": "文書の作成",
-    "section": "1.3 数式とセクションの参照",
-    "text": "1.3 数式とセクションの参照\n数式にラベルを付けることもできます。ポアソン分布の確率質量関数 式 1 は以下のように定義されます。\n\\[\nP(X=k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\tag{1}\\]\nまた、冒頭の セクション 1 や、この セクション 6 自体を参照することも可能です。",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "05_slide_exercise.html#フラグメント-fragments",
+    "href": "05_slide_exercise.html#フラグメント-fragments",
+    "title": "Quarto de スライド",
+    "section": "フラグメント (Fragments)",
+    "text": "フラグメント (Fragments)\nリスト以外のアニメーション制御も可能です。\n\n文の一部を 強調したり、 赤くしたり、 取り消したり できます。\n\n\n\n\n\n\n\nヒント\n\n\nブロック全体をアニメーションさせることも可能です！"
   },
   {
-    "objectID": "04_document.html#タブセットパネル",
-    "href": "04_document.html#タブセットパネル",
-    "title": "文書の作成",
-    "section": "2.1 タブセットパネル",
-    "text": "2.1 タブセットパネル\nコードと結果を別々のタブに分けて表示すると、スペースを節約できます。\n\nRコード実行結果\n\n\n作図に使用したコードはこちらです。\n\nlibrary(ggplot2)\nmtcars |&gt; \n  ggplot(aes(x = wt, y = mpg, color = factor(cyl))) +\n  geom_point(size=3) +\n  theme_classic()\n\n\n\n実際のプロットはこちらのタブで確認してください。",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "05_slide_exercise.html#段組みレイアウト-columns",
+    "href": "05_slide_exercise.html#段組みレイアウト-columns",
+    "title": "Quarto de スライド",
+    "section": "2段組みレイアウト (Columns)",
+    "text": "2段組みレイアウト (Columns)\nテキストと画像を左右に並べる定番のレイアウトです。\n\n\n左側のカラム\nここに説明文を書きます。\n箇条書きも可能です：\n\n特徴A\n特徴B\n\n\n右側のカラム\n\n\n\n画像の説明"
   },
   {
-    "objectID": "04_document.html#段組み",
-    "href": "04_document.html#段組み",
-    "title": "文書の作成",
-    "section": "2.2 段組み",
-    "text": "2.2 段組み\nテキストと図表を左右に並べることで、雑誌のようなレイアウトが可能です。\n\n\n解説\n　左側の段（column; カラム）には文章を配置します。右側のグラフは、データセットの相関行列を可視化したものです。このように、解説を見ながら図を確認できる配置は、プレゼンテーションやポスターで特に有効です。",
-    "crumbs": [
-      "4/ 文書の作成"
-    ]
+    "objectID": "05_slide_exercise.html#テキストの自動サイズ調整",
+    "href": "05_slide_exercise.html#テキストの自動サイズ調整",
+    "title": "Quarto de スライド",
+    "section": "テキストの自動サイズ調整",
+    "text": "テキストの自動サイズ調整\nr-fit-text クラスを使うと、スライドいっぱいに文字を拡大します。\n\nBIG IMPACT\n\n強調したい一言や、タイトルスライドで有効です。"
   },
   {
-    "objectID": "03_markdown.html",
-    "href": "03_markdown.html",
-    "title": "Markdown文法の基礎",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
+    "objectID": "05_slide_exercise.html#タブセット-tabsets",
+    "href": "05_slide_exercise.html#タブセット-tabsets",
+    "title": "Quarto de スライド",
+    "section": "タブセット (Tabsets)",
+    "text": "タブセット (Tabsets)\n情報を整理して見せたい場合に便利です。\n\n企画開発リリース\n\n\n\nコンセプトの立案\nターゲットの選定\n\n\n\n\nプロトタイプの作成\nテスト実装\n\n\n\n\n広告展開\nユーザーフィードバック"
   },
   {
-    "objectID": "03_markdown.html#文字の装飾と強調",
-    "href": "03_markdown.html#文字の装飾と強調",
-    "title": "Markdown文法の基礎",
-    "section": "1.1 文字の装飾と強調",
-    "text": "1.1 文字の装飾と強調\n文章の一部を強調したい場合、以下のような記法が使えます。\n\n太字（Bold）: ローマ字以外の強調に使います。\nイタリック（Italic）: ローマ字の強調に使います。\n取り消し線（Strike）: 削除された情報を表現します。\n下線（Underline）: HTMLタグを使って表現します。",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#リストの作成",
-    "href": "03_markdown.html#リストの作成",
-    "title": "Markdown文法の基礎",
-    "section": "1.2 リストの作成",
-    "text": "1.2 リストの作成\n\n1.2.1 順序なしリスト（箇条書き）\n項目の並列な羅列に使います。インデント（字下げ）で階層化できます。\n\nデータ分析の準備\n\nデータの収集\nデータの整形\n\n欠損値の処理\n異常値の確認\n\n\n分析の実行\n\n\n\n1.2.2 順序ありリスト（番号付き）\n手順やランキングなど、順序が重要な場合に使います。\n\nRStudioを開く\nプロジェクトを作成する\n\nNew Projectを選択\nディレクトリを指定\n\nQuartoファイルを作成する\n\n\n\n1.2.3 タスクリスト\n進捗管理などに便利です。\n\nテーマの決定\n資料の収集\nレポートの執筆（現在進行中）",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#リンクと脚注",
-    "href": "03_markdown.html#リンクと脚注",
-    "title": "Markdown文法の基礎",
-    "section": "1.3 リンクと脚注",
-    "text": "1.3 リンクと脚注\n外部サイトへの誘導にはリンクを使います。Quartoの公式ドキュメントなどは頻繁に参照します。 また、本文の流れを妨げずに補足情報を入れたい場合は、脚注を利用します1。\n識別子を使った脚注も可能です2。",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#表の作成",
-    "href": "03_markdown.html#表の作成",
-    "title": "Markdown文法の基礎",
-    "section": "2.1 表の作成",
-    "text": "2.1 表の作成\nMarkdownで表を作成するには、パイプ（|）とハイフン（-）を使用します。コロン（:）の位置で配置を指定できます。\n\n表1: 成績一覧表のサンプル\n\n\nID\n名前\nスコア\n備考\n\n\n\n\n1\n佐藤\n95\n右寄せ・左寄せの例\n\n\n2\n田中\n82\n強調も可能\n\n\n3\n鈴木\n100\n中央揃え",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#画像の埋め込みとサイズ調整",
-    "href": "03_markdown.html#画像の埋め込みとサイズ調整",
-    "title": "Markdown文法の基礎",
-    "section": "2.2 画像の埋め込みとサイズ調整",
-    "text": "2.2 画像の埋め込みとサイズ調整\n画像の表示サイズは width や height オプションで制御できます。\n標準サイズ:\n\n\n\nR猫\n\n\nサイズ指定（幅75pxに縮小）:\n\n\n\n小さくてかわいいR猫",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#数式の記述",
-    "href": "03_markdown.html#数式の記述",
-    "title": "Markdown文法の基礎",
-    "section": "2.3 数式の記述",
-    "text": "2.3 数式の記述\nレポートに数式を含める場合、LaTeX記法が使えます。\n文中の数式（インライン）:\n回帰分析のモデルは \\(y = \\beta_0 + \\beta_1 x + \\varepsilon\\) で表されます。\n独立した数式ブロック（ディスプレイ）:\n\\[\nf(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#複数コンテンツのレイアウト",
-    "href": "03_markdown.html#複数コンテンツのレイアウト",
-    "title": "Markdown文法の基礎",
-    "section": "2.4 複数コンテンツのレイアウト",
-    "text": "2.4 複数コンテンツのレイアウト\nlayout-ncol 属性を使うと、画像や表を横に並べて配置できます。比較を行う際に非常に強力です。\n\n\n\n\n\n\nR猫零号機\n\n\n\n\n\n\n\nR猫初号機\n\n\n\n\n\n\n\n\n2.4.1 グループA\n\n\n\n項目\n値\n\n\n\n\n平均\n50\n\n\n分散\n10\n\n\n\n\n\n2.4.2 グループB\n\n\n\n項目\n値\n\n\n\n\n平均\n65\n\n\n分散\n15",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#基本的なコード実行",
-    "href": "03_markdown.html#基本的なコード実行",
-    "title": "Markdown文法の基礎",
-    "section": "3.1 基本的なコード実行",
-    "text": "3.1 基本的なコード実行\n以下は標準的なコードチャンクです。コードと結果の両方が表示されます。\n\n# 1から10までの整数の合計を計算\nx &lt;- 1:10\nsum(x)\n\n[1] 55\n\n\nインラインコード:\n文章の中に計算結果を埋め込むこともできます。 例えば、計算された合計値は55です。",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#チャンクオプション",
-    "href": "03_markdown.html#チャンクオプション",
-    "title": "Markdown文法の基礎",
-    "section": "3.2 チャンク・オプション",
-    "text": "3.2 チャンク・オプション\n目的に応じて、コードや結果の表示・非表示を切り替えられます。チャンクオプションはチャンクの最上段に#| オプション名: 引数の書き方で記入します。チャンク・オプションは複数指定することができます。\nケース1: 結果だけ見せたい (echo: false)\n読者にコードを見せる必要がなく、グラフや表だけを示したい場合に使います。\n\n\n\n\n\n正規乱数のヒストグラム（コードは非表示）\n\n\n\n\nケース2: コードだけ見せたい（eval: false）\n実行に時間がかかるコードや、解説用のコードを示す場合に便利です。\n\n# このコードは表示されますが、実行はされません\ninstall.packages(\"very_heavy_package\")\nstart_simulation()\n\nケース3: コードと結果をまとめる（collapse: true）\nRコンソールのように、コードと出力結果を一つのブロックにまとめます。\n\nprint(\"Hello, Quarto!\")\n## [1] \"Hello, Quarto!\"\nmean(c(10, 20, 30))\n## [1] 20",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#エラー処理",
-    "href": "03_markdown.html#エラー処理",
-    "title": "Markdown文法の基礎",
-    "section": "3.3 エラー処理",
-    "text": "3.3 エラー処理\n通常、コードにエラーがあると文書生成（レンダー）は止まりますが、error: trueを指定しておくと、エラーメッセージを表示して処理を続行します。デバッグ内容をレポートする場合に使います。\n\n# 存在しない変数を呼び出してみる\nprint(undefined_variable)\n\nError:\n! object 'undefined_variable' not found",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#図の参照とキャプション",
-    "href": "03_markdown.html#図の参照とキャプション",
-    "title": "Markdown文法の基礎",
-    "section": "5.1 図の参照とキャプション",
-    "text": "5.1 図の参照とキャプション\nチャンクオプションでfig-cap（キャプション）とlabel（ラベル）を設定すると、本文中で「図1を参照」のように自動採番付きで参照できます。\n以下の 図 1 をご覧ください。\n\nplot(cars, pch=19, col=\"darkorange\")\n\n\n\n\n\n\n\n図 1: 車の速度と停止距離の関係（散布図）",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#サブキャプションと並列配置",
-    "href": "03_markdown.html#サブキャプションと並列配置",
-    "title": "Markdown文法の基礎",
-    "section": "5.2 サブキャプションと並列配置",
-    "text": "5.2 サブキャプションと並列配置\n一つのチャンクから複数のグラフを出力し、それぞれにサブキャプションを付けることもできます。\ngt::gt(head(iris[iris$Species == \"setosa\", 1:4]))\ngt::gt(head(iris[iris$Species == \"virginica\", 1:4]))\n\n\n\n表 1: irisデータセットの中身\n\n\n\n\n\n\n\n\n\n\n(a) setosa種\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\n\n\n\n\n5.1\n3.5\n1.4\n0.2\n\n\n4.9\n3.0\n1.4\n0.2\n\n\n4.7\n3.2\n1.3\n0.2\n\n\n4.6\n3.1\n1.5\n0.2\n\n\n5.0\n3.6\n1.4\n0.2\n\n\n5.4\n3.9\n1.7\n0.4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) virginica種\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\n\n\n\n\n6.3\n3.3\n6.0\n2.5\n\n\n5.8\n2.7\n5.1\n1.9\n\n\n7.1\n3.0\n5.9\n2.1\n\n\n6.3\n2.9\n5.6\n1.8\n\n\n6.5\n3.0\n5.8\n2.2\n\n\n7.6\n3.0\n6.6\n2.1",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#カスタムレイアウト",
-    "href": "03_markdown.html#カスタムレイアウト",
-    "title": "Markdown文法の基礎",
-    "section": "5.3 カスタムレイアウト",
-    "text": "5.3 カスタムレイアウト\nlayout オプションを使うと、「上段に2つ、下段に1つ」といった複雑な配置も可能です。\n指定例: 上段は50%-50%、下段は100%\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 図A\n\n\n\n\n\n\n\n\n\n\n\n(b) 図B\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) 図C\n\n\n\n\n\n\n\n図 2: 図3つの配置の例",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "03_markdown.html#footnotes",
-    "href": "03_markdown.html#footnotes",
-    "title": "Markdown文法の基礎",
-    "section": "脚注",
-    "text": "脚注\n\n\n脚注は、ページ下部や文末にまとめて表示されます。↩︎\n識別子を使うと、長い脚注を書きやすくなります。識別子を使わない脚注はマークダウンのコード基準、1行に1回しか使えませんが、識別子を使う方法は複数回使えます。↩︎",
-    "crumbs": [
-      "3/ Markdown文法"
-    ]
-  },
-  {
-    "objectID": "02_install.html",
-    "href": "02_install.html",
-    "title": "実習環境の構築",
-    "section": "",
-    "text": "新しいタブで開く\n       \n      \n    \n  \n\na\n\n mybinder.org\n\nb\n\n JDCat分析ツール（起動）\n JDCat分析ツール（サーバー立ち上げ; 1回のみ）\n\nc\n\n Posit Cloud",
-    "crumbs": [
-      "2/ 実習環境の導入"
-    ]
-  },
-  {
-    "objectID": "01_intro.html",
-    "href": "01_intro.html",
-    "title": "Quartoとは & R Markdownとの比較",
-    "section": "",
-    "text": "新しいタブで開く",
-    "crumbs": [
-      "1/ イントロダクション"
-    ]
-  },
-  {
-    "objectID": "01_intro_slide.html#自己紹介",
-    "href": "01_intro_slide.html#自己紹介",
-    "title": "1/ Quartoとは",
-    "section": "自己紹介",
-    "text": "自己紹介\n\n\n\n\n\n講義名：社会科学における因果推論\n担当教員：宋そん財泫じぇひょん\n\n関西大学総合情報学部　准教授\n博士（政治学）\n\n https://www.jaysong.net/\n songkansai-u.ac.jp"
-  },
-  {
-    "objectID": "01_intro_slide.html#まずはr-markdownから",
-    "href": "01_intro_slide.html#まずはr-markdownから",
-    "title": "1/ Quartoとは",
-    "section": "まずはR Markdownから",
-    "text": "まずはR Markdownから\n\n\n\n\n\n\n{knitr}（2012年頃）と{rmarkdown}（2014年頃）パッケージの登場\nRのコードと結果、文章が一つの文書としてまとめたもの\n\nHTML、Microsoft Word、PDF等\n\n外部パッケージを使用することで様々な出力物が作成可能\n\nスライド（{xaringan}）、ホームページ（{blogdown}）、書籍（{bookdown}）など\n\nR + Markdown \\(\\rightarrow\\) Markdownって何?"
-  },
-  {
-    "objectID": "01_intro_slide.html#プレーンテキストとリッチテキスト",
-    "href": "01_intro_slide.html#プレーンテキストとリッチテキスト",
-    "title": "1/ Quartoとは",
-    "section": "プレーンテキストとリッチテキスト",
-    "text": "プレーンテキストとリッチテキスト\n\nPlain text：純粋なテキストのみで構成されている文書（図表、書式情報\\(\\times\\)）\n\nmacOSのテキストエディット、Windowsのメモ帳、VS Code、Vimなど\n\nRich text：テキストだけでなく、書式情報、図表なども含まれる文書\n\n書式情報の例: 文書の余白、行間の幅、文字サイズ、太さ、色\nMicrosoft Word、Apple Pages、LibreOffice Writer、一太郎など\n\nリッチテキストには文字情報以外にも様々な書式情報が含まれているため、サイズが大きく、パソコンへの負担も大きい（\\(\\doteqdot\\) .xlsx vs. .csv）"
-  },
-  {
-    "objectID": "01_intro_slide.html#プレーンテキストからリッチテキストへ",
-    "href": "01_intro_slide.html#プレーンテキストからリッチテキストへ",
-    "title": "1/ Quartoとは",
-    "section": "プレーンテキストからリッチテキストへ",
-    "text": "プレーンテキストからリッチテキストへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\nWebブラウザ（Chrome、Firefox、Edge、Safari等）はHTMLをリッチテキストへ変換するレンダリングエンジン（Gecko、Blink、WebKit等）を搭載している\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nOutput:\nこの文字は太字にしましょう。 ここをクリックしてください。"
-  },
-  {
-    "objectID": "01_intro_slide.html#markdownとは",
-    "href": "01_intro_slide.html#markdownとは",
-    "title": "1/ Quartoとは",
-    "section": "Markdownとは",
-    "text": "Markdownとは\n\nMarkdown（）: Markup言語の軽量版\n\n文章作成に必要なタグ（tag）を、より簡単に記述できる。\n\n\nMarkupの場合（HTML）\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nMarkdownの場合\nこの文字は**太字**にしましょう。\n\n[ここ](https://www.jaysong.net)をクリックしてください。\n結果\nこの文字は太字にしましょう。 ここをクリックしてください。"
-  },
-  {
-    "objectID": "01_intro_slide.html#markup-vs.-markdown表",
-    "href": "01_intro_slide.html#markup-vs.-markdown表",
-    "title": "1/ Quartoとは",
-    "section": "Markup vs. Markdown（表）",
-    "text": "Markup vs. Markdown（表）\n\n\nMarkup（HTML）\n&lt;table&gt;\n    &lt;thead style = \"font-weight:bold;\"&gt;\n        &lt;td&gt;ID&lt;/td&gt;\n        &lt;td&gt;Name&lt;/td&gt;\n    &lt;/thead&gt;\n    &lt;tr&gt;\n        &lt;td&gt;1&lt;/td&gt;\n        &lt;td&gt;Quarto&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;2&lt;/td&gt;\n        &lt;td&gt;Markdown&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n\nMarkdown\n| ID | Name     |\n|----|----------|\n| 1  | Quarto   |\n| 2  | Markdown |\nOutput\n\n\n\nID\nName\n\n\n\n\n1\nQuarto\n\n\n2\nMarkdown"
-  },
-  {
-    "objectID": "01_intro_slide.html#markup-vs.-markdown箇条書き1",
-    "href": "01_intro_slide.html#markup-vs.-markdown箇条書き1",
-    "title": "1/ Quartoとは",
-    "section": "Markup vs. Markdown（箇条書き1）",
-    "text": "Markup vs. Markdown（箇条書き1）\n\n\nMarkup（HTML）\n&lt;ul&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ul&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ul&gt;\n\nMarkdown\n- 箇条書き1\n   - 箇条書き1A\n   - 箇条書き1B\n- 箇条書き2\n- 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
-  },
-  {
-    "objectID": "01_intro_slide.html#markup-vs.-markdown箇条書き2",
-    "href": "01_intro_slide.html#markup-vs.-markdown箇条書き2",
-    "title": "1/ Quartoとは",
-    "section": "Markup vs. Markdown（箇条書き2）",
-    "text": "Markup vs. Markdown（箇条書き2）\n\n\nMarkup（HTML）\n&lt;ol&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ol&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ol&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ol&gt;\n\nMarkdown\n1. 箇条書き1\n   1. 箇条書き1A\n   1. 箇条書き1B\n1. 箇条書き2\n1. 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
-  },
-  {
-    "objectID": "01_intro_slide.html#quartoの登場",
-    "href": "01_intro_slide.html#quartoの登場",
-    "title": "1/ Quartoとは",
-    "section": "Quartoの登場",
-    "text": "Quartoの登場\n2026年2月現在、QuartoはR Markdownの（ほぼ）上位互換だと考えても良い\n\n\n\n\n\n\n2022年7月登場（Ver. 1.0）したR markdownの後継\n読み方は「クゥオート」（クワトロじゃない）\n断片化されつつあるR Markdown生態系を一つに統合したもの\n\nR Markdown界隈の{blogdown}、{bookdown}、{xaringan}、…\nQuartoは別途のパッケージ不要\n\nR以外の言語、knitr以外のエンジンも使用可能\nR Markdownと使い方はほぼ同じ"
-  },
-  {
-    "objectID": "01_intro_slide.html#なぜquartor-markdownを使うか",
-    "href": "01_intro_slide.html#なぜquartor-markdownを使うか",
-    "title": "1/ Quartoとは",
-    "section": "なぜQuarto/R Markdownを使うか",
-    "text": "なぜQuarto/R Markdownを使うか\nQuarto/R Markdownは文芸的プログラミング（literate programming）のツール\n\n文芸的プログラミング：ソースコードとドキュメントを別々のファイルに記入せず、一つのファイルでまとめるプログラミングのスタイル\n\n既存の「コード + コメント（#、//、&lt;!-- ~ --&gt;、…）」より発展した概念\nプログラミングの界隈では流行らなかったが…\n\n\n\n学術研究における文芸的プログラミングとは…\n\n「何をしたか（code）」と「そこから何が得られたか（result）」、「説明（narrative; なぜそうしたか、その結果は何を意味するか、…）」を同じ場所に記述すること\n\n例）既存のやり方：Rで分析し、推定結果や作成した図をLaTeX、Wordに貼り付けながら論文や資料を作成\n例）文芸的プログラミングのやり方：Quarto"
-  },
-  {
-    "objectID": "01_intro_slide.html#文芸的プログラミングのすゝめ",
-    "href": "01_intro_slide.html#文芸的プログラミングのすゝめ",
-    "title": "1/ Quartoとは",
-    "section": "文芸的プログラミングのすゝめ",
-    "text": "文芸的プログラミングのすゝめ\n\n「手作業」の排除によるエラー防止（自動化）\n分析プロセスの透明化\nバージョン管理システムとの親和性\n環境依存性の記述とポータビリティ\n\n\n\n\n\n\n\n\n\n\n従来のツール（R + Word）\nQuarto\n\n\n\n\nプロセス\n手作業の連続（分断）\nコードによる自動化（統合）\n\n\n変更への対応\n最初からやり直し（高コスト）\n再実行のみ（低コスト）\n\n\n透明性\n操作履歴が見えにくい\nコードですべて可視化される\n\n\n再現性\n低い（人の記憶や手作業に依存）\n高い（データとコードがあれば再現可能）\n\n\n\n\n\\(\\Downarrow\\)\nQuartoやR Markdownを使用すると「分析結果」だけでなく「分析のプロセスそのもの」を成果物として保存・共有できる"
-  },
-  {
-    "objectID": "01_intro_slide.html#文書生成の流れr-markdownの場合",
-    "href": "01_intro_slide.html#文書生成の流れr-markdownの場合",
-    "title": "1/ Quartoとは",
-    "section": "文書生成の流れ（R Markdownの場合）",
-    "text": "文書生成の流れ（R Markdownの場合）\nR&Knitr使用を前提として開発され、拡張されていくR Markdown"
-  },
-  {
-    "objectID": "01_intro_slide.html#文書生成の流れquartoの場合",
-    "href": "01_intro_slide.html#文書生成の流れquartoの場合",
-    "title": "1/ Quartoとは",
-    "section": "文書生成の流れ（Quartoの場合）",
-    "text": "文書生成の流れ（Quartoの場合）\n複数言語&エンジン使用を念頭において開発されたQuarto"
-  },
-  {
-    "objectID": "01_intro_slide.html#言語エンジンの豊富さ",
-    "href": "01_intro_slide.html#言語エンジンの豊富さ",
-    "title": "1/ Quartoとは",
-    "section": "言語、エンジンの豊富さ",
-    "text": "言語、エンジンの豊富さ\nQuarto公式HPのFAQ for R Markdown Usersにより\n\n(…) Quarto is at its core multi-language and multi-engine (supporting Knitr, Jupyter, and Observable today and potentially other engines tomorrow). (…) Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don’t yet exist.\n\n\n使用可能な言語：R、Python、Julia、Javascript、…\n使用可能なエンジン：Knitr、Jupyter、Observable、…\nその他：PDF作成の際、\\(\\LaTeX\\)でなくtypstも使用可能"
-  },
-  {
-    "objectID": "01_intro_slide.html#生態系の統合",
-    "href": "01_intro_slide.html#生態系の統合",
-    "title": "1/ Quartoとは",
-    "section": "生態系の統合",
-    "text": "生態系の統合\n詳細な例は公式ホームページを確認\n\nただし、Quartoは外部のパッケージでなく、拡張機能（extensions）が存在\nダッシュボードの作成やShinyとの統合もOK\n\n\n\nR Markdown\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n{bookdown}\n\n\nスライド\n{xaringan}\n\n\nホームページ\n{blogdown}\n\n\nポスター\n{posterdown}\n\n\n\n\nQuarto\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n不要\n\n\nスライド\n不要\n\n\nホームページ\n不要\n\n\nポスター\n???"
-  },
-  {
-    "objectID": "01_intro_slide.html#コース概要-1",
-    "href": "01_intro_slide.html#コース概要-1",
-    "title": "1/ Quartoとは",
-    "section": "コース概要",
-    "text": "コース概要\n進度によって内容が若干変わることがある。\n\nQuartoとは & R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
-  },
-  {
-    "objectID": "01_intro_slide.html#到達目標",
-    "href": "01_intro_slide.html#到達目標",
-    "title": "1/ Quartoとは",
-    "section": "到達目標",
-    "text": "到達目標\n\nMarkdown文法が分かる。\nQuartoで再現・再生用ファイルが作成できる。\n\nPDF文書が作成できる。\n\nQuartoでHTMLスライドが作れる。\n作成した文書、スライドが共有できる。\nより複雑なプロジェクトに取り組むための基礎知識を習得する。\n\nQuarto公式のガイド/レファレンスを読めば応用できるようになる。"
-  },
-  {
-    "objectID": "01_intro_slide.html#コース資料の入手先",
-    "href": "01_intro_slide.html#コース資料の入手先",
-    "title": "1/ Quartoとは",
-    "section": "コース資料の入手先",
-    "text": "コース資料の入手先\n\nhttps://www.jaysong.net/quarto_intro"
-  },
-  {
-    "objectID": "02_install_slide.html#実習環境",
-    "href": "02_install_slide.html#実習環境",
-    "title": "2/ 実習環境の構築",
-    "section": "実習環境",
-    "text": "実習環境\n以下のソフトウェア、ライブラリをなるべく最新版で用意\n\nR\nRStudio\nQuarto CLI\n{quarto}パッケージ\n（PDF出力をする場合）TeX環境（TeX Live、MacTeX、TinyTeXなど）"
-  },
-  {
-    "objectID": "02_install_slide.html#ローカル環境とクラウド環境",
-    "href": "02_install_slide.html#ローカル環境とクラウド環境",
-    "title": "2/ 実習環境の構築",
-    "section": "ローカル環境とクラウド環境",
-    "text": "ローカル環境とクラウド環境\n\nローカル環境\n\n自分のPCにR/RStudio/Quarto CLI/TeX等をすべてインストール\n導入コスト（時間）はかかるが、クラウド環境より快適1\n既存のRユーザーならこちらを推奨\n\nクラウド環境\n\nR/RStudio/Quarto CLI/TeX一式が完備された環境（ネット接続必須）\n導入コストは非常に低いが、動作が重い\nとりあえずQuartoと味わってみたいのであれば、これも\\(\\bigcirc\\)\n\n\nPCのスペックにもよる。"
-  },
-  {
-    "objectID": "02_install_slide.html#rとrstudio",
-    "href": "02_install_slide.html#rとrstudio",
-    "title": "2/ 実習環境の構築",
-    "section": "RとRStudio",
-    "text": "RとRStudio\n省略"
-  },
-  {
-    "objectID": "02_install_slide.html#quarto-cli",
-    "href": "02_install_slide.html#quarto-cli",
-    "title": "2/ 実習環境の構築",
-    "section": "Quarto CLI",
-    "text": "Quarto CLI\nQuarto公式ホームページ（https://quarto.org/）から入手&インストール\n\n「Get Started」メニュー、または以下のページから入手\n\nhttps://quarto.org/docs/download/\n\nmacOSの場合、homebrewからインストールも可\n\nターミナルでbrew install --cask quarto"
-  },
-  {
-    "objectID": "02_install_slide.html#quartoパッケージ",
-    "href": "02_install_slide.html#quartoパッケージ",
-    "title": "2/ 実習環境の構築",
-    "section": "{quarto}パッケージ",
-    "text": "{quarto}パッケージ\nRコンソールで以下のコマンドで{quarto}パッケージをインストール\ninstall.packages(\"quarto\")\n\nインストールのみで十分（読み込みは不要）"
-  },
-  {
-    "objectID": "02_install_slide.html#tex環境",
-    "href": "02_install_slide.html#tex環境",
-    "title": "2/ 実習環境の構築",
-    "section": "TeX環境",
-    "text": "TeX環境\n作成した文書、スライドをPDFフォーマットで出力したい場合\n\nすでに自分のPCにTeX環境が用意されている場合 \\(\\Rightarrow\\) 別途の設定は不要\n\n例）TeX Live（Windows/Unix/Linux）、MacTeX（macOS）\n\nTeXを使ったことがない or クラウド版（Overleafなど）のみ使用している場合\n\n{tinytex}のインストールがおすすめ\n\n\n# {tinytexパッケージのインストール}\ninstall.packages(\"tinytex\")\n# tinytexのインストール\ntinytex::install_tinytex()\n# 今は（多分）不要だが、念のために\ntinytex::tlmgr_install(\"haranoaji\")"
-  },
-  {
-    "objectID": "02_install_slide.html#クラウド環境の種類",
-    "href": "02_install_slide.html#クラウド環境の種類",
-    "title": "2/ 実習環境の構築",
-    "section": "クラウド環境の種類",
-    "text": "クラウド環境の種類\n\nposit Cloud\nmybinder.org\nJDCat分析ツール"
-  },
-  {
-    "objectID": "02_install_slide.html#posit-cloud",
-    "href": "02_install_slide.html#posit-cloud",
-    "title": "2/ 実習環境の構築",
-    "section": "posit Cloud",
-    "text": "posit Cloud\nRStudioの開発元であるposit社が提供するクラウド版R & RStudio\n\n無料版の制約（詳細はhttps://posit.cloud/plans）\n\n月間利用時間の上限あり（25時間）\nスペックの制限（1GB RAM / 1CPU）\n\n導入手順\n\nposit Cloud（https://posit.cloud/）のアカウント登録&ログイン\n右のNew ProjectでNew RStudio Project\n\nRStudioの設定は以下の設定を参照\nhttps://www.jaysong.net/RBook/r_customize.html\n\nDefault working directoryは「/cloud/project」のままでOK\n\n\n画面上段の「Untitled Project」をクリックし、プロジェクト名を指定\n{quarto}、{ragg}パッケージをインストールする"
-  },
-  {
-    "objectID": "02_install_slide.html#mybinder.org",
-    "href": "02_install_slide.html#mybinder.org",
-    "title": "2/ 実習環境の構築",
-    "section": "mybinder.org",
-    "text": "mybinder.org\nウェブでRStudioが使えるサービス（事前登録不要）\n\nアカウントの概念が存在しないため、アクセスする度にすべて初期化される。\n\n再現/再生用データ&コードの共有に適したサービス\nとりあえず手軽にQuartoを味わっていみないのであればオススメ\n\n次頁で紹介するJDCat分析ツールより劣るが、安定性は\n起動方法\n\nhttps://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD \\(\\leftarrow\\) クリック"
-  },
-  {
-    "objectID": "02_install_slide.html#jdcat分析ツール",
-    "href": "02_install_slide.html#jdcat分析ツール",
-    "title": "2/ 実習環境の構築",
-    "section": "JDCat分析ツール",
-    "text": "JDCat分析ツール\n\nmybinder.orgと同じサービスだが、継続的に使用可能なサービス\n\nただし、サーバーが不安定になることが多々ある\n\n導入手順（サーバーの立ち上げ）\n\nOrthrosのホームーページでアカウント登録\n\nhttps://ui.orthros.gakunin.nii.ac.jp/\n必ず.ac.jp、または.go.jpのメールアドレスを使うこと\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD\n所属機関を「Orthros」とし、ログインする。\n数分待てばOK\n\n立ち上げたサーバーの起動（再利用）\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n所属機関を「Orthros」とし、ログインする。\n表示されているURLをクリックする\n\nURLが表示されていない場合、右の「Start」をクリック"
-  },
-  {
-    "objectID": "02_install_slide.html#プロジェクトの作成-1",
-    "href": "02_install_slide.html#プロジェクトの作成-1",
-    "title": "2/ 実習環境の構築",
-    "section": "プロジェクトの作成",
-    "text": "プロジェクトの作成\n実習用のプロジェクトを作成する\n\nプロジェクトを作る理由、方法は省略（本講義の前提知識）\nposit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）"
-  },
-  {
-    "objectID": "03_markdown_slide.html#とりあえずレンダー1",
-    "href": "03_markdown_slide.html#とりあえずレンダー1",
-    "title": "3/ Markdown文法の基礎",
-    "section": "とりあえずレンダー（1）",
-    "text": "とりあえずレンダー（1）\n\nFile &gt; New File &gt; Quarto Document"
-  },
-  {
-    "objectID": "03_markdown_slide.html#とりあえずレンダー2",
-    "href": "03_markdown_slide.html#とりあえずレンダー2",
-    "title": "3/ Markdown文法の基礎",
-    "section": "とりあえずレンダー（2）",
-    "text": "とりあえずレンダー（2）\n\n「Editor: User visual markdown editor」のチェックを外す"
-  },
-  {
-    "objectID": "03_markdown_slide.html#とりあえずレンダー3",
-    "href": "03_markdown_slide.html#とりあえずレンダー3",
-    "title": "3/ Markdown文法の基礎",
-    "section": "とりあえずレンダー（3）",
-    "text": "とりあえずレンダー（3）\n\nSourceペイン上段の「Render」をクリック"
-  },
-  {
-    "objectID": "03_markdown_slide.html#とりあえずレンダー4",
-    "href": "03_markdown_slide.html#とりあえずレンダー4",
-    "title": "3/ Markdown文法の基礎",
-    "section": "とりあえずレンダー（4）",
-    "text": "とりあえずレンダー（4）\n\nソースコードとViewerペインの出力物の対応関係を確認"
-  },
-  {
-    "objectID": "03_markdown_slide.html#quartoファイルの構造",
-    "href": "03_markdown_slide.html#quartoファイルの構造",
-    "title": "3/ Markdown文法の基礎",
-    "section": "Quartoファイルの構造",
-    "text": "Quartoファイルの構造\n---\nYAMLヘッダー\n---\n\nテキスト1\n\n```{r}\nチャンク\n```\n\nテキスト2\n\nYAMLヘッダー：文書のメタ情報や見た目などに関する設定。YAML文法で記述\n本文\n\nテキスト：そのまま出力される。Markdown文法で記述\nチャンク：チャンク内のRコードは評価され、出力される。"
-  },
-  {
-    "objectID": "03_markdown_slide.html#様々なmarkdown記法",
-    "href": "03_markdown_slide.html#様々なmarkdown記法",
-    "title": "3/ Markdown文法の基礎",
-    "section": "様々なMarkdown記法",
-    "text": "様々なMarkdown記法\nQuartoのMarkdown記法は以下の記法をほとんど内包し、+ \\(\\alpha\\)の機能も多い。\n\nCommonMark\n\nJohn Gruber（とAaron Swartz）が考案したMarkdown記法の標準化\n\nGitHub Flavored Markdown（GFM）\n\nCommonMarkに表、自動リンク、取り消し線などを追加した記法\n\nMarkdown Extra、MultiMarkdown、Markua、…\n\n脚注、数式、引用、相互参照、…"
-  },
-  {
-    "objectID": "03_markdown_slide.html#改行と強調",
-    "href": "03_markdown_slide.html#改行と強調",
-    "title": "3/ Markdown文法の基礎",
-    "section": "改行と強調",
-    "text": "改行と強調\n\n改行は必ず2回改行すること（1回改行は同じ行として認識される）\n\n\n\nInput:\n文章1\n文章2\n\n文章3\n\nOutput:\n文章1 文章2\n文章3\n\n\nイタリックは*、太字は**、取り消しは~~で囲む1。\n\n\n\nInput:\n*Italic*\n\n**太字**\n\n~~取り消し~~\n\nOutput:\nItalic\n太字\n取り消し\n\n下線は用意されていないため、HTMLタグを使用する（&lt;u&gt;と&lt;/u&gt;で囲むなど）。"
-  },
-  {
-    "objectID": "03_markdown_slide.html#見出し",
-    "href": "03_markdown_slide.html#見出し",
-    "title": "3/ Markdown文法の基礎",
-    "section": "見出し",
-    "text": "見出し\n\n部、章、節、項、…の見出し（#の数が多いほど文字が小さくなる）\n\n#は6つまで\n\n章の見出しを##にするなら節は###、小節（または項）は####、…\n\n\n\nInput:\n# 見出し1\n\n## 見出し2\n\n### 見出し3\n\n#### 見出し3\n\nOutput:\n見出し1\n見出し2\n見出し3\n見出し4"
-  },
-  {
-    "objectID": "03_markdown_slide.html#リンク",
-    "href": "03_markdown_slide.html#リンク",
-    "title": "3/ Markdown文法の基礎",
-    "section": "リンク",
-    "text": "リンク\n[リンク文](URL)：[]で囲まれた文章をクリックすると()内で指定したURLへ移動\n\n{target=\"_blank\"}を付けると新しいタブで開くようになる（Quarto仕様）1。\n\nInput:\n[宋のHP](https://www.jaysong.net)\n\n[関大のHP](https://www.kansai-u.ac.jp/){target=\"_blank\"}\nOutput:\n宋のHP\n関大のHP\nYAMLヘッダーでlink-external-newwindow: trueを指定すると、すべてのリンクが新しいタブで開くようになる。"
-  },
-  {
-    "objectID": "03_markdown_slide.html#脚注",
-    "href": "03_markdown_slide.html#脚注",
-    "title": "3/ Markdown文法の基礎",
-    "section": "脚注",
-    "text": "脚注\n\n脚注の入れ方：^[脚注の内容]\n内容が長い場合、[^識別子]で脚注の位置だけ指定し、別の箇所に[^識別子]: 脚注の内容\n\n\n\nInput:\n家系ラーメン^[横浜]が食べたい。\n\nラーメン二郎[^jiro]も食べたい。\n\n[^jiro]: 港区（東京）\n\nOutput:\n家系ラーメン1が食べたい。\nラーメン二郎2も食べたい。\n\n横浜港区（東京）"
-  },
-  {
-    "objectID": "03_markdown_slide.html#コメント",
-    "href": "03_markdown_slide.html#コメント",
-    "title": "3/ Markdown文法の基礎",
-    "section": "コメント",
-    "text": "コメント\n出力に影響されないコメントを入れる場合\n\nHTMLのコメント機能を使用：&lt;!--と--&gt;内に囲む\n\n&lt;!--と--&gt;の間の文章は出力されない\n\n自分用のメモ、とりあえず出力させない内容などに使用\n\n\n\nInput:\nこれは文章1です。\n\n&lt;!--\nこれはコメントです。\n--&gt;\n\nこれは文章2です。\n\nOutput:\nこれは文章1です。\n\nこれは文章2です。"
-  },
-  {
-    "objectID": "03_markdown_slide.html#箇条書き順序なし",
-    "href": "03_markdown_slide.html#箇条書き順序なし",
-    "title": "3/ Markdown文法の基礎",
-    "section": "箇条書き（順序なし）",
-    "text": "箇条書き（順序なし）\n\n- + 半角スペース + 内容\n\n入れ子型の箇条書きは半角スペース2つ以上の字下げ\n-の代わりに*も可\n\n\n\n\nInput:\n- 項目1\n  - 項目1-1\n  - 項目1-2\n    - 項目1-2-1\n      - 項目1-2-1-1\n    - 項目1-2-2\n- 項目2\n- 項目3\n\nOutput:\n\n項目1\n\n項目1-1\n項目1-2\n\n項目1-2-1\n\n項目1-2-1-1\n\n項目1-2-2\n\n\n項目2\n項目3"
-  },
-  {
-    "objectID": "03_markdown_slide.html#箇条書き順序あり",
-    "href": "03_markdown_slide.html#箇条書き順序あり",
-    "title": "3/ Markdown文法の基礎",
-    "section": "箇条書き（順序あり）",
-    "text": "箇条書き（順序あり）\n\n1. + 半角スペース + 内容\n\n番号は自動的に振られるが、1.の代わりに2.を使うと2からスタート\n1.、2.、3.、…の書き方も可（非推奨）\n\n\n\n\nInput:\n1. 項目1\n   1. 項目1-1\n   1. 項目1-2\n   1. 項目1-3\n2. 項目2\n   * 項目2-1\n   * 項目2-2\n3. 項目3\n\nOutput:\n\n項目1\n\n項目1-1\n項目1-2\n項目1-3\n\n項目2\n\n項目2-1\n項目2-2\n\n項目3"
-  },
-  {
-    "objectID": "03_markdown_slide.html#箇条書きチェックリスト",
-    "href": "03_markdown_slide.html#箇条書きチェックリスト",
-    "title": "3/ Markdown文法の基礎",
-    "section": "箇条書き（チェックリスト）",
-    "text": "箇条書き（チェックリスト）\n\n- + 半角スペース + [x] + 半角スペース + テキスト：checked item\n\nxを半角スペースにするとunchecked item\n\n\n\n\nInput:\n買い物リスト（キムチチゲ）\n\n- 食材\n   - [x] キムチ\n   - [ ] 玉ねぎ\n   - [x] 豚肉（肩ロース）\n- 調味料\n   - [ ] 醤油\n   - [ ] 砂糖\n   - [x] 味の素\n\nOutput:\n買い物リスト（キムチチゲ）\n\n食材\n\nキムチ\n玉ねぎ\n豚肉（肩ロース）\n\n調味料\n\n醤油\n砂糖\n味の素"
-  },
-  {
-    "objectID": "03_markdown_slide.html#表",
-    "href": "03_markdown_slide.html#表",
-    "title": "3/ Markdown文法の基礎",
-    "section": "表",
-    "text": "表\n\n行は改行（1回） + 列は|で表記\nただし、1行目（ヘッダー）と2行目（ボディー）の間には-を1つ以上入れる\n\n:-は左揃え、-:は右揃え、:-:は中央揃え（-のみは左揃え）\n\n\n\n\nInput:\n|ID   |Name |Height|Favorite|\n|:---:|-----|-----:|:-------|\n|1    |SONG |176   |Ramen   |\n|2    |Yanai|230   |Cat food|\n\nOutput:\n\n\n\nID\nName\nHeight\nFavorite\n\n\n\n\n1\nSONG\n176\nRamen\n\n\n2\nYanai\n230\nCat food\n\n\n\n\n\n\nInput:\n|ID|Name|Height|Favorite|\n|:-:|-|-:|:-|\n|1|SONG|176|Ramen|\n|2|Yanai|230|Cat food|\n\nOutput:\n\n\n\nID\nName\nHeight\nFavorite\n\n\n\n\n1\nSONG\n176\nRamen\n\n\n2\nYanai\n230\nCat food"
-  },
-  {
-    "objectID": "03_markdown_slide.html#図",
-    "href": "03_markdown_slide.html#図",
-    "title": "3/ Markdown文法の基礎",
-    "section": "図",
-    "text": "図\n\n![代替テキスト](画像のパス/URL)\n\n代替テキストはキャプションとしても機能する\n\n\nInput:\n![R Cat](https://www.jaysong.net/imgs/favicon.png)\nOutput:\n\n\n\nR Cat"
-  },
-  {
-    "objectID": "03_markdown_slide.html#図の大きさ",
-    "href": "03_markdown_slide.html#図の大きさ",
-    "title": "3/ Markdown文法の基礎",
-    "section": "図の大きさ",
-    "text": "図の大きさ\n\n{width=図の幅}を追加（Quarto限定）\n\n例）300px（300ピクセル; pxは省略可）、1in（1インチ）、25%（画面の25%）\n\n\n\n\nInput:\n![Tiny cat](画像URL){width=30}\n\n![Big cat](画像URL){width=100}\n\nOutput:\n\n\n\nTiny cat\n\n\n\n\n\nBig cat"
-  },
-  {
-    "objectID": "03_markdown_slide.html#数式",
-    "href": "03_markdown_slide.html#数式",
-    "title": "3/ Markdown文法の基礎",
-    "section": "数式",
-    "text": "数式\n文中数式は$数式$、独立した行の数式は$$で囲む。\n\n\nInput:\n文中の数式：$e = mc^2$\n\nOutput:\n文中の数式の例：\\(e = mc^2\\)\n\nInput:\n$$\nF(x; \\mu, b) =\n\\begin{cases}\n   0.5 \\exp(\\frac{x - \\mu}{b})       & \\text{if} \\quad x &lt; \\mu \\\\\n   1 - 0.5 \\exp(- \\frac{x - \\mu}{b}) & \\text{if} \\quad x \\geq \\mu\n\\end{cases}\n$$\nOutput: \\[\nF(x; \\mu, b) =\n\\begin{cases}\n   0.5 \\exp(\\frac{x - \\mu}{b})       & \\text{if} \\quad x &lt; \\mu \\\\\n   1 - 0.5 \\exp(- \\frac{x - \\mu}{b}) & \\text{if} \\quad x \\geq \\mu\n\\end{cases}\n\\]"
-  },
-  {
-    "objectID": "03_markdown_slide.html#複数の図表の配置",
-    "href": "03_markdown_slide.html#複数の図表の配置",
-    "title": "3/ Markdown文法の基礎",
-    "section": "複数の図表の配置",
-    "text": "複数の図表の配置\n::: {layout-*=}と:::の間に図表を入れる（layout-ncol、またはlayout-nrow）\n\n\nInput:\n::: {layout-ncol=4}\n![零号機](画像1のURL or パス)\n\n![初号機](画像2のURL or パス)\n\n![弐号機](画像3のURL or パス)\n\n![量産機](画像4のURL or パス)\n:::\nOutput:\n\n\n\n\n\n\n零号機\n\n\n\n\n\n\n\n初号機\n\n\n\n\n\n\n\n弐号機\n\n\n\n\n\n\n\n量産機\n\n\n\n\n\n\nInput:\n::: {layout-ncol=2}\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|1    |SONG |Ramen   |\n\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|2    |Yanai|Cat food|\n:::\nOutput:\n\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n1\nSONG\nRamen\n\n\n\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n2\nYanai\nCat food"
-  },
-  {
-    "objectID": "03_markdown_slide.html#rコードの入れ方",
-    "href": "03_markdown_slide.html#rコードの入れ方",
-    "title": "3/ Markdown文法の基礎",
-    "section": "Rコードの入れ方",
-    "text": "Rコードの入れ方\nチャンク（chunk）内で記述されたRコードは評価（evaluation）される。\n\nチャンクは```{r}で始まり、```で終わる。\nショートカットキー：Cmd + Option + I（macOS）、Ctrl + Alt + I（その他のOS）\n\n\n\nInput:\n以下のRコードは評価されない\n\nsum(1:100)\n\n```{r}\n# 以下はRコードは評価される\nsum(1:100)\n```\n\nOutput:\n以下のRコードは評価されない\nsum(1:100)\n\n# 以下はRコードは評価される\nsum(1:100)\n\n[1] 5050"
-  },
-  {
-    "objectID": "03_markdown_slide.html#インラインコード",
-    "href": "03_markdown_slide.html#インラインコード",
-    "title": "3/ Markdown文法の基礎",
-    "section": "インラインコード",
-    "text": "インラインコード\nインラインコード（inline code）：チャンク外（=文章内）に挿入するRコード\n\nチャンク内のRコードはRコードと評価結果、両方出力されるが、インラインコードは評価結果のみ出力される。\n`rと`の間にコードを記述（rを省略するとコードのみ出力）\n\nチャンク内のオブジェクトを参照することも可能\n\n\n\n\nInput:\n1〜100の総和：`r sum(1:100)`\n\n```{r}\nx &lt;- c(1, 2, 3, 5, 7)\n```\n\n`sum(x)`の実行結果：`r sum(x)`\n\nOutput:\n1〜100の総和：5050\n\nx &lt;- c(1, 2, 3, 5, 7)\n\nsum(x)の実行結果：18"
-  },
-  {
-    "objectID": "03_markdown_slide.html#チャンクオプション-1",
-    "href": "03_markdown_slide.html#チャンクオプション-1",
-    "title": "3/ Markdown文法の基礎",
-    "section": "チャンクオプション",
-    "text": "チャンクオプション\nチャンクの最上段で指定（コードより後ろのオプションは無視される）\n\n#| + 半角スペース + オプション名: + 半角スペース + 値\n1つのチャンクに複数のオプションも可\n論理型の値はTRUE/FALSEでなく、true/false\n\n```{r}\n#| オプション1: 値\n#| オプション2: 値\nRコード\n```"
-  },
-  {
-    "objectID": "03_markdown_slide.html#代表的なチャンクオプション",
-    "href": "03_markdown_slide.html#代表的なチャンクオプション",
-    "title": "3/ Markdown文法の基礎",
-    "section": "代表的なチャンクオプション",
-    "text": "代表的なチャンクオプション\n\nlabel、cahce、dependson\necho、eval、include、collapse\nerror、message、warning\n図に関連するオプション\n\nfig-width、fig-height、out-width、out-height、fig-dpi、devなど\n\nレイアウト、キャプション、サブキャプション"
-  },
-  {
-    "objectID": "03_markdown_slide.html#labelチャンクのラベル",
-    "href": "03_markdown_slide.html#labelチャンクのラベル",
-    "title": "3/ Markdown文法の基礎",
-    "section": "label：チャンクのラベル",
-    "text": "label：チャンクのラベル\n\nチャンクにラベル（名前）を付ける理由\n\nレンダー時エラーが発生した際、どのチャンクが問題かが分かる。\n図表番号の相互参照（後述）\n他チャンクとの依存関係の指定（後述）\n\n付け方：#| label: ラベル名\n\n図（表）を生成するチャンクは接頭詞としてfig-（tab-）を付ける。\n\nラベル指定によって処理結果や見た目が変わることはない\n\n\n\nInput:\n```{r}\n#| label: my-chunk\nx &lt;- 1:10\nsum(x)\n```\n\nOutput:\n\nx &lt;- 1:10\nsum(x)\n\n[1] 55"
-  },
-  {
-    "objectID": "03_markdown_slide.html#cache処理結果の保存",
-    "href": "03_markdown_slide.html#cache処理結果の保存",
-    "title": "3/ Markdown文法の基礎",
-    "section": "cache：処理結果の保存",
-    "text": "cache：処理結果の保存\n\nチャンク内コードの実行時間が非常に長い場合\n\n#| cache: true：処理結果を最初のレンダー時に別途保存し、チャンク内コードに変更がない限り、その結果を参照\n\n注意：当該チャンクが別のチャンクに依存していても、当該チャンクのコードの変更がなければ処理結果は変わらない\n\n\n\nInput:\n```{r}\nx &lt;- 1:10\n```\n\n```{r}\n#| cache: true\nsum(x)\n```\n\nOutput:\n\nx &lt;- 1:10\n\n\nsum(x)\n\n[1] 55\n\n\n\nしかし、1番目のコードがx &lt;- 1:100になっても、２番目のコードは変わっていないため、sum(x)の結果は55のまま"
-  },
-  {
-    "objectID": "03_markdown_slide.html#dependsonチャンク間の依存関係",
-    "href": "03_markdown_slide.html#dependsonチャンク間の依存関係",
-    "title": "3/ Markdown文法の基礎",
-    "section": "dependson：チャンク間の依存関係",
-    "text": "dependson：チャンク間の依存関係\n\n依存されるチャンクにラベルを指定し、依存するチャンクにはdependsonオプションを追加\n\n\n\nExample:\n```{r}\n#| label: my-chunk-01\nx &lt;- 1:10\n```\n\n```{r}\n#| cache: true\n#| dependson: my-chunk-01\nsum(x)\n```\n\n\nこれで問題なく作動したが、2026年1月12月現在、宋の環境では機能しない\n#| autodep: trueをすると、自動的に依存関係を検知してくれるらしいが、これも機能しない"
-  },
-  {
-    "objectID": "03_markdown_slide.html#echoevalコード評価結果の出力",
-    "href": "03_markdown_slide.html#echoevalコード評価結果の出力",
-    "title": "3/ Markdown文法の基礎",
-    "section": "echo、eval：コード、評価結果の出力",
-    "text": "echo、eval：コード、評価結果の出力\n\nいずれも既定値はtrue\n\n#| echo: false：コードを出力しない（評価はする）\n#| eval: false：評価しない（コードは出力する）\n\n\n\n\nInput（1）:\n```{r}\n#| echo: false\nsum(1:100)\n```\n\nOutput（1）:\n\n\n[1] \"Hi!\"\n\n\n\n\n\nInput（2）:\n```{r}\n#| eval: false\nsum(1:100)\n```\n\nOutput（2）:\n\nprint(\"Hi!\")"
-  },
-  {
-    "objectID": "03_markdown_slide.html#include評価のみ行う",
-    "href": "03_markdown_slide.html#include評価のみ行う",
-    "title": "3/ Markdown文法の基礎",
-    "section": "include：評価のみ行う",
-    "text": "include：評価のみ行う\n\n#| include: false：コード、評価結果いずれも出力しない\n\nしかし、コードの評価は行う。\necho: false＆eval: falseはコードを評価しない\n\n\n\n\nInput:\n```{r}\n#| include: false\nhidden_x &lt;- 1:10\n```\n\n```{r}\nsum(hidden_x)\n```\n\nOutput:\n\nsum(hidden_x)\n\n[1] 55"
-  },
-  {
-    "objectID": "03_markdown_slide.html#collapseコードと評価結果をまとめる",
-    "href": "03_markdown_slide.html#collapseコードと評価結果をまとめる",
-    "title": "3/ Markdown文法の基礎",
-    "section": "collapse：コードと評価結果をまとめる",
-    "text": "collapse：コードと評価結果をまとめる\nコードと評価結果を同一ブロックにまとめる（既定値はfalse）\n\n\n\nInput（1）:\n```{r}\nprint(\"Hi!\")\nsum(1:100)\n```\n\nOutput（1）:\n\nprint(\"Hi!\")\n\n[1] \"Hi!\"\n\nsum(1:100)\n\n[1] 5050\n\n\n\n\n\nInput（2）:\n```{r}\n#| collapse: true\nprint(\"Hi!\")\nsum(1:100)\n```\n\nOutput（2）:\n\nprint(\"Hi!\")\n## [1] \"Hi!\"\nsum(1:100)\n## [1] 5050"
-  },
-  {
-    "objectID": "03_markdown_slide.html#各種メッセージの出力",
-    "href": "03_markdown_slide.html#各種メッセージの出力",
-    "title": "3/ Markdown文法の基礎",
-    "section": "各種メッセージの出力",
-    "text": "各種メッセージの出力\n\n警告メッセージ（warning）、通常のメッセージ（message）のON/OFF\n\n既定値はtrue\n{tidyverse}の読み込み、read_csv()によるファイルの読込時に表示されるメッセージが鬱陶しいなら#| message:false\n\nerror：エラーメッセージの出力\n\n既定値（false）のままだと、レンダーが中止される\n#| error: trueの場合、レンダーは中止されず最後のチャンクまで評価される。エラーメッセージは出力物に出力される。"
-  },
-  {
-    "objectID": "03_markdown_slide.html#図の大きさ-1",
-    "href": "03_markdown_slide.html#図の大きさ-1",
-    "title": "3/ Markdown文法の基礎",
-    "section": "図の大きさ",
-    "text": "図の大きさ\n\n図そのものの大きさ：fig-widthとfig-height\n\n単位はインチ\n\n出力物上での大きさ：out-widthとout-height\n\n単位はインチ（3in）、センチ（8cm）、px（500px）、割合（75%）\n\n図の解像度：fig-dpi\n\n既定値は96だが、PDF出力や印刷をする場合、最低でも300は必要\n解像度が高いほどファイルのサイズが大ききなるため注意\n\n作図エンジン：dev\n\ndev: ragg_pngにしておけば、とりあえず文字化けの心配はない（{ragg}が必要）\nすべてのチャンクに指定することは非効率的なので、YAMLヘッダーで指定することを推奨[（後述）]"
-  },
-  {
-    "objectID": "03_markdown_slide.html#図表のキャプション",
-    "href": "03_markdown_slide.html#図表のキャプション",
-    "title": "3/ Markdown文法の基礎",
-    "section": "図表のキャプション",
-    "text": "図表のキャプション\n\nfig-cap（図）とtbl-cap（表）：ラベルと組み合わせると「図1. …」\n\n注意：図（表）を生成するチャンクのラベルはfig-（tbl-）で始める\n\n\n\n\nInput:\n```{r}\n#| tbl-cap: \"表のキャプション\"\ngt(iris[1:3,])\n```\n\nOutput:\n\ngt(iris[1:3,])\n\n\n\n表のキャプション\n  \n    \n      Sepal.Length\n      Sepal.Width\n      Petal.Length\n      Petal.Width\n      Species\n    \n  \n  \n    5.1\n3.5\n1.4\n0.2\nsetosa\n    4.9\n3.0\n1.4\n0.2\nsetosa\n    4.7\n3.2\n1.3\n0.2\nsetosa\n  \n  \n\n\n\n\n\n\n\nInput（2）:\n```{r}\n#| echo: false\n#| label: fig-myfig-01\n#| fig-cap: \"図のキャプション\"\nplot(rnorm(100), type = \"l\")\n```\n\nOutput（2）:\n\n\n\n\n\n\n\n\n図 1: 図のキャプション"
-  },
-  {
-    "objectID": "03_markdown_slide.html#複数の図表の配置1",
-    "href": "03_markdown_slide.html#複数の図表の配置1",
-    "title": "3/ Markdown文法の基礎",
-    "section": "複数の図表の配置（1）",
-    "text": "複数の図表の配置（1）\n\n#| layout-ncol: 2にするとチャンク内の図は2列構成で配置される\n\nRコードで生成される表（{gt}など）も可\n\n\n\n\nInput:\n```{r}\n#| layout-ncol: 2\nplot(1:10)\n\nplot(rnorm(10), type = \"l\")\n```\n\nOutput:\nplot(1:10)\nplot(rnorm(10), type = \"l\")"
-  },
-  {
-    "objectID": "03_markdown_slide.html#複数の図表の配置2",
-    "href": "03_markdown_slide.html#複数の図表の配置2",
-    "title": "3/ Markdown文法の基礎",
-    "section": "複数の図表の配置（2）",
-    "text": "複数の図表の配置（2）\n\n#| layoutでカスタムレイアウト　　　　　　　　　　　\n\n\n\nInput:\n```{r}\n#| layout: [[50, 50], [100]]\nplot(1:10)\n\nplot(rnorm(10), type = \"l\")\n```\n\n2行構成で1行目は図2枚を50%、50%の割合、2行目は1枚を配置した例\n\n[49, -2, 49]にすると、49% + 2%の余白 + 49%\n\n\n\nOutput:\nplot(1:10)\nplot(rnorm(10))\nplot(rnorm(10), type = \"l\")"
-  },
-  {
-    "objectID": "03_markdown_slide.html#複数の図表のキャプション1",
-    "href": "03_markdown_slide.html#複数の図表のキャプション1",
-    "title": "3/ Markdown文法の基礎",
-    "section": "複数の図表のキャプション（1）",
-    "text": "複数の図表のキャプション（1）\n\n#| fig-cap:（tbl-cap）後に改行し、#| + 半角スペース3個 + - キャプション\n\nラベルは共有するが、個別のプロットを参照する場合はfig-two-plots-1（左）とfig-two-plots-2（右）\n\n\n\n\nInput:\n```{r}\n#| label: fig-two-plots\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"左の図\"\n#|   - \"右の図\"\nplot(cars)\nplot(pressure)\n```\n\nOutput:\n\n\n\n\n\n\n\n\n\n図 2: 左の図\n\n\n\n\n\n\n\n\n\n\n\n図 3: 右の図"
-  },
-  {
-    "objectID": "03_markdown_slide.html#複数の図表のキャプション2",
-    "href": "03_markdown_slide.html#複数の図表のキャプション2",
-    "title": "3/ Markdown文法の基礎",
-    "section": "複数の図表のキャプション（2）",
-    "text": "複数の図表のキャプション（2）\n\ntbl-cap（共通キャプション）とtbl-subcap（サブキャプション）を指定\n\n個別の図表を参照する方法は前頁と同じ\n\n\n\n\nInput:\n```{r}\n#| label: tbl-three-tables\n#| layout-ncol: 3\n#| tbl-cap: irisデータセット\n#| tbl-subcap: \n#|   - \"setosa\"\n#|   - \"versicolor\"\n#|   - \"virginica\"\ngt(iris[1:5, 1:2])\ngt(iris[51:55, 1:2])\n```\n\nOutput:\ngt(iris[1:5, 1:2])\ngt(iris[51:55, 1:2])\ngt(iris[101:105, 1:2])\n\n\n\n表 1: irisデータセット\n\n\n\n\n\n\n\n(a) setosa\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    5.1\n3.5\n    4.9\n3.0\n    4.7\n3.2\n    4.6\n3.1\n    5.0\n3.6\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n(b) versicolor\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    7.0\n3.2\n    6.4\n3.2\n    6.9\n3.1\n    5.5\n2.3\n    6.5\n2.8\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n(c) virginica\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    6.3\n3.3\n    5.8\n2.7\n    7.1\n3.0\n    6.3\n2.9\n    6.5\n3.0"
-  },
-  {
-    "objectID": "03_markdown_slide.html#yamlヘッダー内のチャンクオプション",
-    "href": "03_markdown_slide.html#yamlヘッダー内のチャンクオプション",
-    "title": "3/ Markdown文法の基礎",
-    "section": "YAMLヘッダー内のチャンクオプション",
-    "text": "YAMLヘッダー内のチャンクオプション\nYAMLヘッダー内で指定したチャンクオプションはすべてのチャンクに適用される\n\nknitr &gt; opts_chunk内に指定\n一部のオプション名に注意\n\n例）fig-widthとfig.width、fig-dpiとdpiなど\n\n例）すべてのチャンクにdpi: 300、dev: ragg_pngオプションを付けたい場合\n\n---\ntitle: タイトル\nauthor: 作成者名\nknitr:\n  opts_chunk: \n    dpi: 300\n    dev: ragg_png\n---"
-  },
-  {
-    "objectID": "03_markdown_slide.html#その他のオプション",
-    "href": "03_markdown_slide.html#その他のオプション",
-    "title": "3/ Markdown文法の基礎",
-    "section": "その他のオプション",
-    "text": "その他のオプション\nQuartoの公式ホームページかknitrエンジンのマニュアルを参照\n\nhttps://quarto.org/docs/reference/cells/cells-knitr.html\nhttps://yihui.org/knitr/options/"
+    "objectID": "05_slide_exercise.html#コードブロックのハイライト",
+    "href": "05_slide_exercise.html#コードブロックのハイライト",
+    "title": "Quarto de スライド",
+    "section": "コードブロックのハイライト",
+    "text": "コードブロックのハイライト\n行番号を指定して、コードの特定部分を順番に説明できます。 （次へ進むキーを押して動きを確認してください）\nlibrary(ggplot2)\n\n# ここでデータを読み込みます\ndata &lt;- mtcars\n\n# ここでプロットします\nggplot(data, aes(mpg, wt)) + geom_point()"
   },
   {
     "objectID": "04_document_slide.html#yamlヘッダーの構成要素の一部",
@@ -1046,6 +400,736 @@
     "text": "参考文献\n\n\nImai, Kosuke, and Nora Webb Williams. 2022. Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111."
   },
   {
+    "objectID": "03_markdown_slide.html#とりあえずレンダー1",
+    "href": "03_markdown_slide.html#とりあえずレンダー1",
+    "title": "3/ Markdown文法の基礎",
+    "section": "とりあえずレンダー（1）",
+    "text": "とりあえずレンダー（1）\n\nFile &gt; New File &gt; Quarto Document"
+  },
+  {
+    "objectID": "03_markdown_slide.html#とりあえずレンダー2",
+    "href": "03_markdown_slide.html#とりあえずレンダー2",
+    "title": "3/ Markdown文法の基礎",
+    "section": "とりあえずレンダー（2）",
+    "text": "とりあえずレンダー（2）\n\n「Editor: User visual markdown editor」のチェックを外す"
+  },
+  {
+    "objectID": "03_markdown_slide.html#とりあえずレンダー3",
+    "href": "03_markdown_slide.html#とりあえずレンダー3",
+    "title": "3/ Markdown文法の基礎",
+    "section": "とりあえずレンダー（3）",
+    "text": "とりあえずレンダー（3）\n\nSourceペイン上段の「Render」をクリック"
+  },
+  {
+    "objectID": "03_markdown_slide.html#とりあえずレンダー4",
+    "href": "03_markdown_slide.html#とりあえずレンダー4",
+    "title": "3/ Markdown文法の基礎",
+    "section": "とりあえずレンダー（4）",
+    "text": "とりあえずレンダー（4）\n\nソースコードとViewerペインの出力物の対応関係を確認"
+  },
+  {
+    "objectID": "03_markdown_slide.html#quartoファイルの構造",
+    "href": "03_markdown_slide.html#quartoファイルの構造",
+    "title": "3/ Markdown文法の基礎",
+    "section": "Quartoファイルの構造",
+    "text": "Quartoファイルの構造\n---\nYAMLヘッダー\n---\n\nテキスト1\n\n```{r}\nチャンク\n```\n\nテキスト2\n\nYAMLヘッダー：文書のメタ情報や見た目などに関する設定。YAML文法で記述\n本文\n\nテキスト：そのまま出力される。Markdown文法で記述\nチャンク：チャンク内のRコードは評価され、出力される。"
+  },
+  {
+    "objectID": "03_markdown_slide.html#様々なmarkdown記法",
+    "href": "03_markdown_slide.html#様々なmarkdown記法",
+    "title": "3/ Markdown文法の基礎",
+    "section": "様々なMarkdown記法",
+    "text": "様々なMarkdown記法\nQuartoのMarkdown記法は以下の記法をほとんど内包し、+ \\(\\alpha\\)の機能も多い。\n\nCommonMark\n\nJohn Gruber（とAaron Swartz）が考案したMarkdown記法の標準化\n\nGitHub Flavored Markdown（GFM）\n\nCommonMarkに表、自動リンク、取り消し線などを追加した記法\n\nMarkdown Extra、MultiMarkdown、Markua、…\n\n脚注、数式、引用、相互参照、…"
+  },
+  {
+    "objectID": "03_markdown_slide.html#改行と強調",
+    "href": "03_markdown_slide.html#改行と強調",
+    "title": "3/ Markdown文法の基礎",
+    "section": "改行と強調",
+    "text": "改行と強調\n\n改行は必ず2回改行すること（1回改行は同じ行として認識される）\n\n\n\nInput:\n文章1\n文章2\n\n文章3\n\nOutput:\n文章1 文章2\n文章3\n\n\nイタリックは*、太字は**、取り消しは~~で囲む1。\n\n\n\nInput:\n*Italic*\n\n**太字**\n\n~~取り消し~~\n\nOutput:\nItalic\n太字\n取り消し\n\n下線は用意されていないため、HTMLタグを使用する（&lt;u&gt;と&lt;/u&gt;で囲むなど）。"
+  },
+  {
+    "objectID": "03_markdown_slide.html#見出し",
+    "href": "03_markdown_slide.html#見出し",
+    "title": "3/ Markdown文法の基礎",
+    "section": "見出し",
+    "text": "見出し\n\n部、章、節、項、…の見出し（#の数が多いほど文字が小さくなる）\n\n#は6つまで\n\n章の見出しを##にするなら節は###、小節（または項）は####、…\n\n\n\nInput:\n# 見出し1\n\n## 見出し2\n\n### 見出し3\n\n#### 見出し3\n\nOutput:\n見出し1\n見出し2\n見出し3\n見出し4"
+  },
+  {
+    "objectID": "03_markdown_slide.html#リンク",
+    "href": "03_markdown_slide.html#リンク",
+    "title": "3/ Markdown文法の基礎",
+    "section": "リンク",
+    "text": "リンク\n[リンク文](URL)：[]で囲まれた文章をクリックすると()内で指定したURLへ移動\n\n{target=\"_blank\"}を付けると新しいタブで開くようになる（Quarto仕様）1。\n\nInput:\n[宋のHP](https://www.jaysong.net)\n\n[関大のHP](https://www.kansai-u.ac.jp/){target=\"_blank\"}\nOutput:\n宋のHP\n関大のHP\nYAMLヘッダーでlink-external-newwindow: trueを指定すると、すべてのリンクが新しいタブで開くようになる。"
+  },
+  {
+    "objectID": "03_markdown_slide.html#脚注",
+    "href": "03_markdown_slide.html#脚注",
+    "title": "3/ Markdown文法の基礎",
+    "section": "脚注",
+    "text": "脚注\n\n脚注の入れ方：^[脚注の内容]\n内容が長い場合、[^識別子]で脚注の位置だけ指定し、別の箇所に[^識別子]: 脚注の内容\n\n\n\nInput:\n家系ラーメン^[横浜]が食べたい。\n\nラーメン二郎[^jiro]も食べたい。\n\n[^jiro]: 港区（東京）\n\nOutput:\n家系ラーメン1が食べたい。\nラーメン二郎2も食べたい。\n\n横浜港区（東京）"
+  },
+  {
+    "objectID": "03_markdown_slide.html#コメント",
+    "href": "03_markdown_slide.html#コメント",
+    "title": "3/ Markdown文法の基礎",
+    "section": "コメント",
+    "text": "コメント\n出力に影響されないコメントを入れる場合\n\nHTMLのコメント機能を使用：&lt;!--と--&gt;内に囲む\n\n&lt;!--と--&gt;の間の文章は出力されない\n\n自分用のメモ、とりあえず出力させない内容などに使用\n\n\n\nInput:\nこれは文章1です。\n\n&lt;!--\nこれはコメントです。\n--&gt;\n\nこれは文章2です。\n\nOutput:\nこれは文章1です。\n\nこれは文章2です。"
+  },
+  {
+    "objectID": "03_markdown_slide.html#箇条書き順序なし",
+    "href": "03_markdown_slide.html#箇条書き順序なし",
+    "title": "3/ Markdown文法の基礎",
+    "section": "箇条書き（順序なし）",
+    "text": "箇条書き（順序なし）\n\n- + 半角スペース + 内容\n\n入れ子型の箇条書きは半角スペース2つ以上の字下げ\n-の代わりに*も可\n\n\n\n\nInput:\n- 項目1\n  - 項目1-1\n  - 項目1-2\n    - 項目1-2-1\n      - 項目1-2-1-1\n    - 項目1-2-2\n- 項目2\n- 項目3\n\nOutput:\n\n項目1\n\n項目1-1\n項目1-2\n\n項目1-2-1\n\n項目1-2-1-1\n\n項目1-2-2\n\n\n項目2\n項目3"
+  },
+  {
+    "objectID": "03_markdown_slide.html#箇条書き順序あり",
+    "href": "03_markdown_slide.html#箇条書き順序あり",
+    "title": "3/ Markdown文法の基礎",
+    "section": "箇条書き（順序あり）",
+    "text": "箇条書き（順序あり）\n\n1. + 半角スペース + 内容\n\n番号は自動的に振られるが、1.の代わりに2.を使うと2からスタート\n1.、2.、3.、…の書き方も可（非推奨）\n\n\n\n\nInput:\n1. 項目1\n   1. 項目1-1\n   1. 項目1-2\n   1. 項目1-3\n2. 項目2\n   * 項目2-1\n   * 項目2-2\n3. 項目3\n\nOutput:\n\n項目1\n\n項目1-1\n項目1-2\n項目1-3\n\n項目2\n\n項目2-1\n項目2-2\n\n項目3"
+  },
+  {
+    "objectID": "03_markdown_slide.html#箇条書きチェックリスト",
+    "href": "03_markdown_slide.html#箇条書きチェックリスト",
+    "title": "3/ Markdown文法の基礎",
+    "section": "箇条書き（チェックリスト）",
+    "text": "箇条書き（チェックリスト）\n\n- + 半角スペース + [x] + 半角スペース + テキスト：checked item\n\nxを半角スペースにするとunchecked item\n\n\n\n\nInput:\n買い物リスト（キムチチゲ）\n\n- 食材\n   - [x] キムチ\n   - [ ] 玉ねぎ\n   - [x] 豚肉（肩ロース）\n- 調味料\n   - [ ] 醤油\n   - [ ] 砂糖\n   - [x] 味の素\n\nOutput:\n買い物リスト（キムチチゲ）\n\n食材\n\nキムチ\n玉ねぎ\n豚肉（肩ロース）\n\n調味料\n\n醤油\n砂糖\n味の素"
+  },
+  {
+    "objectID": "03_markdown_slide.html#表",
+    "href": "03_markdown_slide.html#表",
+    "title": "3/ Markdown文法の基礎",
+    "section": "表",
+    "text": "表\n\n行は改行（1回） + 列は|で表記\nただし、1行目（ヘッダー）と2行目（ボディー）の間には-を1つ以上入れる\n\n:-は左揃え、-:は右揃え、:-:は中央揃え（-のみは左揃え）\n\n\n\n\nInput:\n|ID   |Name |Height|Favorite|\n|:---:|-----|-----:|:-------|\n|1    |SONG |176   |Ramen   |\n|2    |Yanai|230   |Cat food|\n\nOutput:\n\n\n\nID\nName\nHeight\nFavorite\n\n\n\n\n1\nSONG\n176\nRamen\n\n\n2\nYanai\n230\nCat food\n\n\n\n\n\n\nInput:\n|ID|Name|Height|Favorite|\n|:-:|-|-:|:-|\n|1|SONG|176|Ramen|\n|2|Yanai|230|Cat food|\n\nOutput:\n\n\n\nID\nName\nHeight\nFavorite\n\n\n\n\n1\nSONG\n176\nRamen\n\n\n2\nYanai\n230\nCat food"
+  },
+  {
+    "objectID": "03_markdown_slide.html#図",
+    "href": "03_markdown_slide.html#図",
+    "title": "3/ Markdown文法の基礎",
+    "section": "図",
+    "text": "図\n\n![代替テキスト](画像のパス/URL)\n\n代替テキストはキャプションとしても機能する\n\n\nInput:\n![R Cat](https://www.jaysong.net/imgs/favicon.png)\nOutput:\n\n\n\nR Cat"
+  },
+  {
+    "objectID": "03_markdown_slide.html#図の位置",
+    "href": "03_markdown_slide.html#図の位置",
+    "title": "3/ Markdown文法の基礎",
+    "section": "図の位置",
+    "text": "図の位置\n\n{fig-align=位置}を追加（Quarto限定）\n\n例）\"left\"（左）、\"center\"（中央）、\"right\"（右）\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"left\"}\n\nOutput:\n\n\n\n\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"center\"}\n\nOutput:\n\n\n\n\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"right\"}\n\nOutput:"
+  },
+  {
+    "objectID": "03_markdown_slide.html#図の大きさ",
+    "href": "03_markdown_slide.html#図の大きさ",
+    "title": "3/ Markdown文法の基礎",
+    "section": "図の大きさ",
+    "text": "図の大きさ\n\n{width=図の幅}を追加（Quarto限定）\n\n例）300px（300ピクセル; pxは省略可）、1in（1インチ）、25%（画面の25%）\n\n\n\n\nInput:\n![Tiny cat](画像URL){width=30}\n\n![Big cat](画像URL){width=100}\n\nOutput:\n\n\n\nTiny cat\n\n\n\n\n\nBig cat"
+  },
+  {
+    "objectID": "03_markdown_slide.html#数式",
+    "href": "03_markdown_slide.html#数式",
+    "title": "3/ Markdown文法の基礎",
+    "section": "数式",
+    "text": "数式\n\n文中数式は$数式$、独立した行の数式は$$で囲む。\n\n\nInput:\n文中の数式：$e = mc^2$\n\nOutput:\n文中の数式：\\(e = mc^2\\)\n\nInput:\n$$\nF(x; \\mu, b) =\n\\begin{cases}\n   0.5 \\exp(\\frac{x - \\mu}{b})       & \\text{if} \\quad x &lt; \\mu \\\\\n   1 - 0.5 \\exp(- \\frac{x - \\mu}{b}) & \\text{if} \\quad x \\geq \\mu\n\\end{cases}\n$$\nOutput: \\[\nF(x; \\mu, b) =\n\\begin{cases}\n   0.5 \\exp(\\frac{x - \\mu}{b})       & \\text{if} \\quad x &lt; \\mu \\\\\n   1 - 0.5 \\exp(- \\frac{x - \\mu}{b}) & \\text{if} \\quad x \\geq \\mu\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "03_markdown_slide.html#複数の図表の配置",
+    "href": "03_markdown_slide.html#複数の図表の配置",
+    "title": "3/ Markdown文法の基礎",
+    "section": "複数の図表の配置",
+    "text": "複数の図表の配置\n::: {layout-*=}と:::の間に図表を入れる（layout-ncol、またはlayout-nrow）\n\n\nInput:\n::: {layout-ncol=4}\n![零号機](画像1のURL or パス)\n\n![初号機](画像2のURL or パス)\n\n![弐号機](画像3のURL or パス)\n\n![量産機](画像4のURL or パス)\n:::\nOutput:\n\n\n\n\n\n\n零号機\n\n\n\n\n\n\n\n初号機\n\n\n\n\n\n\n\n弐号機\n\n\n\n\n\n\n\n量産機\n\n\n\n\n\n\nInput:\n::: {layout-ncol=2}\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|1    |SONG |Ramen   |\n\n|ID   |Name |Favorite|\n|:---:|-----|:-------|\n|2    |Yanai|Cat food|\n:::\nOutput:\n\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n1\nSONG\nRamen\n\n\n\n\n\n\n\n\nID\nName\nFavorite\n\n\n\n\n2\nYanai\nCat food"
+  },
+  {
+    "objectID": "03_markdown_slide.html#rコードの入れ方",
+    "href": "03_markdown_slide.html#rコードの入れ方",
+    "title": "3/ Markdown文法の基礎",
+    "section": "Rコードの入れ方",
+    "text": "Rコードの入れ方\nチャンク（chunk）内で記述されたRコードは評価（evaluation）される。\n\nチャンクは```{r}で始まり、```で終わる1。\nショートカットキー：Cmd + Option + I（macOS）、Ctrl + Alt + I（その他のOS）\n\n\n\nInput:\n以下のRコードは評価されない\n\nsum(1:100)\n\n```{r}\n# 以下はRコードは評価される\nsum(1:100)\n```\n\nOutput:\n以下のRコードは評価されない\nsum(1:100)\n\n# 以下はRコードは評価される\nsum(1:100)\n\n[1] 5050\n\n\n\nrの箇所をmarkdown、css等にすることも出来る"
+  },
+  {
+    "objectID": "03_markdown_slide.html#インラインコード",
+    "href": "03_markdown_slide.html#インラインコード",
+    "title": "3/ Markdown文法の基礎",
+    "section": "インラインコード",
+    "text": "インラインコード\nインラインコード（inline code）：チャンク外（=文章内）に挿入するRコード\n\nチャンク内のRコードはRコードと評価結果、両方出力されるが、インラインコードは評価結果のみ出力される。\n`rと`の間にコードを記述（rを省略するとコードのみ出力）\n\nチャンク内のオブジェクトを参照することも可能\n\n\n\n\nInput:\n1〜100の総和：`r sum(1:100)`\n\n```{r}\nx &lt;- c(1, 2, 3, 5, 7)\n```\n\n`sum(x)`の実行結果：`r sum(x)`\n\nOutput:\n1〜100の総和：5050\n\nx &lt;- c(1, 2, 3, 5, 7)\n\nsum(x)の実行結果：18"
+  },
+  {
+    "objectID": "03_markdown_slide.html#チャンクオプション-1",
+    "href": "03_markdown_slide.html#チャンクオプション-1",
+    "title": "3/ Markdown文法の基礎",
+    "section": "チャンクオプション",
+    "text": "チャンクオプション\nチャンクの最上段で指定（コードより後ろのオプションは無視される）\n\n#| + 半角スペース + オプション名: + 半角スペース + 値\n1つのチャンクに複数のオプションも可\n論理型の値はTRUE/FALSEでなく、true/false\n\n```{r}\n#| オプション1: 値\n#| オプション2: 値\nRコード\n```"
+  },
+  {
+    "objectID": "03_markdown_slide.html#代表的なチャンクオプション",
+    "href": "03_markdown_slide.html#代表的なチャンクオプション",
+    "title": "3/ Markdown文法の基礎",
+    "section": "代表的なチャンクオプション",
+    "text": "代表的なチャンクオプション\n\nlabel、cahce、dependson\necho、eval、include、collapse\nerror、message、warning\n図に関連するオプション\n\nfig-width、fig-height、out-width、out-height、fig-dpi、devなど\n\nレイアウト、キャプション、サブキャプション"
+  },
+  {
+    "objectID": "03_markdown_slide.html#labelチャンクのラベル",
+    "href": "03_markdown_slide.html#labelチャンクのラベル",
+    "title": "3/ Markdown文法の基礎",
+    "section": "label：チャンクのラベル",
+    "text": "label：チャンクのラベル\n\nチャンクにラベル（名前）を付ける理由\n\nレンダー時エラーが発生した際、どのチャンクが問題かが分かる。\n図表番号の相互参照（後述）\n他チャンクとの依存関係の指定（後述）\n\n付け方：#| label: ラベル名\n\n図（表）を生成するチャンクは接頭詞としてfig-（tab-）を付ける。\n\nラベル指定によって処理結果や見た目が変わることはない\n\n\n\nInput:\n```{r}\n#| label: my-chunk\nx &lt;- 1:10\nsum(x)\n```\n\nOutput:\n\nx &lt;- 1:10\nsum(x)\n\n[1] 55"
+  },
+  {
+    "objectID": "03_markdown_slide.html#cache処理結果の保存",
+    "href": "03_markdown_slide.html#cache処理結果の保存",
+    "title": "3/ Markdown文法の基礎",
+    "section": "cache：処理結果の保存",
+    "text": "cache：処理結果の保存\n\nチャンク内コードの実行時間が非常に長い場合\n\n#| cache: true：処理結果を最初のレンダー時に別途保存し、チャンク内コードに変更がない限り、その結果を参照\n\n注意：当該チャンクが別のチャンクに依存していても、当該チャンクのコードの変更がなければ処理結果は変わらない\n\n\n\nInput:\n```{r}\nx &lt;- 1:10\n```\n\n```{r}\n#| cache: true\nsum(x)\n```\n\nOutput:\n\nx &lt;- 1:10\n\n\nsum(x)\n\n[1] 55\n\n\n\nしかし、1番目のコードがx &lt;- 1:100になっても、２番目のコードは変わっていないため、sum(x)の結果は55のまま"
+  },
+  {
+    "objectID": "03_markdown_slide.html#dependsonチャンク間の依存関係",
+    "href": "03_markdown_slide.html#dependsonチャンク間の依存関係",
+    "title": "3/ Markdown文法の基礎",
+    "section": "dependson：チャンク間の依存関係",
+    "text": "dependson：チャンク間の依存関係\n\n依存されるチャンクにラベルを指定し、依存するチャンクにはdependsonオプションを追加\n\n\n\nExample:\n```{r}\n#| label: my-chunk-01\nx &lt;- 1:10\n```\n\n```{r}\n#| cache: true\n#| dependson: my-chunk-01\nsum(x)\n```\n\n\nこれで問題なく作動したが、2026年1月12月現在、宋の環境では機能しない\n#| autodep: trueをすると、自動的に依存関係を検知してくれるらしいが、これも機能しない"
+  },
+  {
+    "objectID": "03_markdown_slide.html#echoevalコード評価結果の出力",
+    "href": "03_markdown_slide.html#echoevalコード評価結果の出力",
+    "title": "3/ Markdown文法の基礎",
+    "section": "echo、eval：コード、評価結果の出力",
+    "text": "echo、eval：コード、評価結果の出力\n\nいずれも既定値はtrue\n\n#| echo: false：コードを出力しない（評価はする）\n#| eval: false：評価しない（コードは出力する）\n\n\n\n\nInput（1）:\n```{r}\n#| echo: false\nsum(1:100)\n```\n\nOutput（1）:\n\n\n[1] \"Hi!\"\n\n\n\n\n\nInput（2）:\n```{r}\n#| eval: false\nsum(1:100)\n```\n\nOutput（2）:\n\nprint(\"Hi!\")"
+  },
+  {
+    "objectID": "03_markdown_slide.html#参考評価されないチャンクの作り方",
+    "href": "03_markdown_slide.html#参考評価されないチャンクの作り方",
+    "title": "3/ Markdown文法の基礎",
+    "section": "参考）評価されないチャンクの作り方",
+    "text": "参考）評価されないチャンクの作り方\n{r}の代わりに{.r}かrを使用\n\nmarkdown、yaml、cssなどのチャンクにも使用可\n\n\n\nInput:\n```r\nprint(\"Hi\"!)\n```\n\nOutput:\nprint(\"Hi\"!)\n\n\n\nInput:\n```{.r}\nprint(\"Hi\"!)\n```\n\nOutput:\nprint(\"Hi\"!)"
+  },
+  {
+    "objectID": "03_markdown_slide.html#include評価のみ行う",
+    "href": "03_markdown_slide.html#include評価のみ行う",
+    "title": "3/ Markdown文法の基礎",
+    "section": "include：評価のみ行う",
+    "text": "include：評価のみ行う\n\n#| include: false：コード、評価結果いずれも出力しない\n\nしかし、コードの評価は行う。\necho: false＆eval: falseはコードを評価しない\n\n\n\n\nInput:\n```{r}\n#| include: false\nhidden_x &lt;- 1:10\n```\n\n```{r}\nsum(hidden_x)\n```\n\nOutput:\n\nsum(hidden_x)\n\n[1] 55"
+  },
+  {
+    "objectID": "03_markdown_slide.html#collapseコードと評価結果をまとめる",
+    "href": "03_markdown_slide.html#collapseコードと評価結果をまとめる",
+    "title": "3/ Markdown文法の基礎",
+    "section": "collapse：コードと評価結果をまとめる",
+    "text": "collapse：コードと評価結果をまとめる\nコードと評価結果を同一ブロックにまとめる（既定値はfalse）\n\n\n\nInput（1）:\n```{r}\nprint(\"Hi!\")\nsum(1:100)\n```\n\nOutput（1）:\n\nprint(\"Hi!\")\n\n[1] \"Hi!\"\n\nsum(1:100)\n\n[1] 5050\n\n\n\n\n\nInput（2）:\n```{r}\n#| collapse: true\nprint(\"Hi!\")\nsum(1:100)\n```\n\nOutput（2）:\n\nprint(\"Hi!\")\n## [1] \"Hi!\"\nsum(1:100)\n## [1] 5050"
+  },
+  {
+    "objectID": "03_markdown_slide.html#各種メッセージの出力",
+    "href": "03_markdown_slide.html#各種メッセージの出力",
+    "title": "3/ Markdown文法の基礎",
+    "section": "各種メッセージの出力",
+    "text": "各種メッセージの出力\n\n警告メッセージ（warning）、通常のメッセージ（message）のON/OFF\n\n既定値はtrue\n{tidyverse}の読み込み、read_csv()によるファイルの読込時に表示されるメッセージが鬱陶しいなら#| message:false\n\nerror：エラーメッセージの出力\n\n既定値（false）のままだと、レンダーが中止される\n#| error: trueの場合、レンダーは中止されず最後のチャンクまで評価される。エラーメッセージは出力物に出力される。"
+  },
+  {
+    "objectID": "03_markdown_slide.html#図の大きさ-1",
+    "href": "03_markdown_slide.html#図の大きさ-1",
+    "title": "3/ Markdown文法の基礎",
+    "section": "図の大きさ",
+    "text": "図の大きさ\n\n図そのものの大きさ：fig-widthとfig-height\n\n単位はインチ\n\n出力物上での大きさ：out-widthとout-height\n\n単位はインチ（3in）、センチ（8cm）、px（500px）、割合（75%）\n\n図の解像度：fig-dpi\n\n既定値は96だが、PDF出力や印刷をする場合、最低でも300は必要\n解像度が高いほどファイルのサイズが大きくなることに注意\n\n作図エンジン：dev\n\ndev: ragg_pngにしておけば、とりあえず文字化けの心配はない（{ragg}が必要）\nすべてのチャンクに指定することは非効率的なので、YAMLヘッダーで指定することを推奨（後述）"
+  },
+  {
+    "objectID": "03_markdown_slide.html#図表のキャプション",
+    "href": "03_markdown_slide.html#図表のキャプション",
+    "title": "3/ Markdown文法の基礎",
+    "section": "図表のキャプション",
+    "text": "図表のキャプション\n\nfig-cap（図）とtbl-cap（表）：ラベルと組み合わせると「図1. …」\n\n注意：図（表）を生成するチャンクのラベルはfig-（tbl-）で始める\n\n\n\n\nInput:\n```{r}\n#| tbl-cap: \"表のキャプション\"\ngt(iris[1:3,])\n```\n\nOutput:\n\ngt(iris[1:3,])\n\n\n\n表のキャプション\n  \n    \n      Sepal.Length\n      Sepal.Width\n      Petal.Length\n      Petal.Width\n      Species\n    \n  \n  \n    5.1\n3.5\n1.4\n0.2\nsetosa\n    4.9\n3.0\n1.4\n0.2\nsetosa\n    4.7\n3.2\n1.3\n0.2\nsetosa\n  \n  \n\n\n\n\n\n\n\nInput（2）:\n```{r}\n#| echo: false\n#| label: fig-myfig-01\n#| fig-cap: \"図のキャプション\"\nplot(rnorm(100), type = \"l\")\n```\n\nOutput（2）:\n\n\n\n\n\n\n\n\n図 1: 図のキャプション"
+  },
+  {
+    "objectID": "03_markdown_slide.html#複数の図表の配置1",
+    "href": "03_markdown_slide.html#複数の図表の配置1",
+    "title": "3/ Markdown文法の基礎",
+    "section": "複数の図表の配置（1）",
+    "text": "複数の図表の配置（1）\n\n#| layout-ncol: 2にするとチャンク内の図は2列構成で配置される\n\nRコードで生成される表（{gt}など）も可\n\n\n\n\nInput:\n```{r}\n#| layout-ncol: 2\nplot(1:10)\n\nplot(rnorm(10), type = \"l\")\n```\n\nOutput:\nplot(1:10)\nplot(rnorm(10), type = \"l\")"
+  },
+  {
+    "objectID": "03_markdown_slide.html#複数の図表の配置2",
+    "href": "03_markdown_slide.html#複数の図表の配置2",
+    "title": "3/ Markdown文法の基礎",
+    "section": "複数の図表の配置（2）",
+    "text": "複数の図表の配置（2）\n\n#| layoutでカスタムレイアウト　　　　　　　　　　　\n\n\n\nInput:\n```{r}\n#| layout: [[50, 50], [100]]\nplot(1:10)\n\nplot(rnorm(10), type = \"l\")\n```\n\n2行構成で1行目は図2枚を50%、50%の割合、2行目は1枚を配置した例\n\n[49, -2, 49]にすると、49% + 2%の余白 + 49%\n\n\n\nOutput:\nplot(1:10)\nplot(rnorm(10))\nplot(rnorm(10), type = \"l\")"
+  },
+  {
+    "objectID": "03_markdown_slide.html#複数の図表のキャプション1",
+    "href": "03_markdown_slide.html#複数の図表のキャプション1",
+    "title": "3/ Markdown文法の基礎",
+    "section": "複数の図表のキャプション（1）",
+    "text": "複数の図表のキャプション（1）\n\n#| fig-cap:（tbl-cap）後に改行し、#| + 半角スペース3個 + - キャプション\n\nラベルは共有するが、個別のプロットを参照する場合はfig-two-plots-1（左）とfig-two-plots-2（右）\n\n\n\n\nInput:\n```{r}\n#| label: fig-two-plots\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"左の図\"\n#|   - \"右の図\"\nplot(cars)\nplot(pressure)\n```\n\nOutput:\n\n\n\n\n\n\n\n\n\n図 2: 左の図\n\n\n\n\n\n\n\n\n\n\n\n図 3: 右の図"
+  },
+  {
+    "objectID": "03_markdown_slide.html#複数の図表のキャプション2",
+    "href": "03_markdown_slide.html#複数の図表のキャプション2",
+    "title": "3/ Markdown文法の基礎",
+    "section": "複数の図表のキャプション（2）",
+    "text": "複数の図表のキャプション（2）\n\ntbl-cap（共通キャプション）とtbl-subcap（サブキャプション）を指定\n\n個別の図表を参照する方法は前頁と同じ\n\n\n\n\nInput:\n```{r}\n#| label: tbl-three-tables\n#| layout-ncol: 3\n#| tbl-cap: irisデータセット\n#| tbl-subcap: \n#|   - \"setosa\"\n#|   - \"versicolor\"\n#|   - \"virginica\"\ngt(iris[1:5, 1:2])\ngt(iris[51:55, 1:2])\n```\n\nOutput:\ngt(iris[1:5, 1:2])\ngt(iris[51:55, 1:2])\ngt(iris[101:105, 1:2])\n\n\n\n表 1: irisデータセット\n\n\n\n\n\n\n\n(a) setosa\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    5.1\n3.5\n    4.9\n3.0\n    4.7\n3.2\n    4.6\n3.1\n    5.0\n3.6\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n(b) versicolor\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    7.0\n3.2\n    6.4\n3.2\n    6.9\n3.1\n    5.5\n2.3\n    6.5\n2.8\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n(c) virginica\n\n\n\n\n\n\n  \n    \n      Sepal.Length\n      Sepal.Width\n    \n  \n  \n    6.3\n3.3\n    5.8\n2.7\n    7.1\n3.0\n    6.3\n2.9\n    6.5\n3.0"
+  },
+  {
+    "objectID": "03_markdown_slide.html#yamlヘッダー内のチャンクオプション",
+    "href": "03_markdown_slide.html#yamlヘッダー内のチャンクオプション",
+    "title": "3/ Markdown文法の基礎",
+    "section": "YAMLヘッダー内のチャンクオプション",
+    "text": "YAMLヘッダー内のチャンクオプション\nYAMLヘッダー内で指定したチャンクオプションはすべてのチャンクに適用される\n\nknitr &gt; opts_chunk内に指定\n一部のオプション名に注意\n\n例）fig-widthとfig.width、fig-dpiとdpiなど\n\n例）すべてのチャンクにdpi: 300、dev: ragg_pngオプションを付けたい場合\n\n---\ntitle: タイトル\nauthor: 作成者名\nknitr:\n  opts_chunk: \n    dpi: 300\n    dev: ragg_png\n---"
+  },
+  {
+    "objectID": "03_markdown_slide.html#その他のオプション",
+    "href": "03_markdown_slide.html#その他のオプション",
+    "title": "3/ Markdown文法の基礎",
+    "section": "その他のオプション",
+    "text": "その他のオプション\nQuartoの公式ホームページかknitrエンジンのマニュアルを参照\n\nhttps://quarto.org/docs/reference/cells/cells-knitr.html\nhttps://yihui.org/knitr/options/"
+  },
+  {
+    "objectID": "02_install_slide.html#実習環境",
+    "href": "02_install_slide.html#実習環境",
+    "title": "2/ 実習環境の構築",
+    "section": "実習環境",
+    "text": "実習環境\n以下のソフトウェア、ライブラリをなるべく最新版で用意\n\nR\nRStudio\nQuarto CLI\n{quarto}パッケージ\n（PDF出力をする場合）TeX環境（TeX Live、MacTeX、TinyTeXなど）"
+  },
+  {
+    "objectID": "02_install_slide.html#ローカル環境とクラウド環境",
+    "href": "02_install_slide.html#ローカル環境とクラウド環境",
+    "title": "2/ 実習環境の構築",
+    "section": "ローカル環境とクラウド環境",
+    "text": "ローカル環境とクラウド環境\n\nローカル環境\n\n自分のPCにR/RStudio/Quarto CLI/TeX等をすべてインストール\n導入コスト（時間）はかかるが、クラウド環境より快適1\n既存のRユーザーならこちらを推奨\n\nクラウド環境\n\nR/RStudio/Quarto CLI/TeX一式が完備された環境（ネット接続必須）\n導入コストは非常に低いが、動作が重い\nとりあえずQuartoと味わってみたいのであれば、これも\\(\\bigcirc\\)\n\n\nPCのスペックにもよる。"
+  },
+  {
+    "objectID": "02_install_slide.html#rとrstudio",
+    "href": "02_install_slide.html#rとrstudio",
+    "title": "2/ 実習環境の構築",
+    "section": "RとRStudio",
+    "text": "RとRStudio\n省略"
+  },
+  {
+    "objectID": "02_install_slide.html#quarto-cli",
+    "href": "02_install_slide.html#quarto-cli",
+    "title": "2/ 実習環境の構築",
+    "section": "Quarto CLI",
+    "text": "Quarto CLI\nQuarto公式ホームページ（https://quarto.org/）から入手&インストール\n\n「Get Started」メニュー、または以下のページから入手\n\nhttps://quarto.org/docs/download/\n\nmacOSの場合、homebrewからインストールも可\n\nターミナルでbrew install --cask quarto"
+  },
+  {
+    "objectID": "02_install_slide.html#quartoパッケージ",
+    "href": "02_install_slide.html#quartoパッケージ",
+    "title": "2/ 実習環境の構築",
+    "section": "{quarto}パッケージ",
+    "text": "{quarto}パッケージ\nRコンソールで以下のコマンドで{quarto}パッケージをインストール\ninstall.packages(\"quarto\")\n\nインストールのみで十分（読み込みは不要）"
+  },
+  {
+    "objectID": "02_install_slide.html#tex環境",
+    "href": "02_install_slide.html#tex環境",
+    "title": "2/ 実習環境の構築",
+    "section": "TeX環境",
+    "text": "TeX環境\n作成した文書、スライドをPDFフォーマットで出力したい場合\n\nすでに自分のPCにTeX環境が用意されている場合 \\(\\Rightarrow\\) 別途の設定は不要\n\n例）TeX Live（Windows/Unix/Linux）、MacTeX（macOS）\n\nTeXを使ったことがない or クラウド版（Overleafなど）のみ使用している場合\n\n{tinytex}のインストールがおすすめ\n\n\n# {tinytexパッケージのインストール}\ninstall.packages(\"tinytex\")\n# tinytexのインストール\ntinytex::install_tinytex()\n# 今は（多分）不要だが、念のために\ntinytex::tlmgr_install(\"haranoaji\")"
+  },
+  {
+    "objectID": "02_install_slide.html#クラウド環境の種類",
+    "href": "02_install_slide.html#クラウド環境の種類",
+    "title": "2/ 実習環境の構築",
+    "section": "クラウド環境の種類",
+    "text": "クラウド環境の種類\n\nposit Cloud\nmybinder.org\nJDCat分析ツール"
+  },
+  {
+    "objectID": "02_install_slide.html#posit-cloud",
+    "href": "02_install_slide.html#posit-cloud",
+    "title": "2/ 実習環境の構築",
+    "section": "posit Cloud",
+    "text": "posit Cloud\nRStudioの開発元であるposit社が提供するクラウド版R & RStudio\n\n無料版の制約（詳細はhttps://posit.cloud/plans）\n\n月間利用時間の上限あり（25時間）\nスペックの制限（1GB RAM / 1CPU）\n\n導入手順\n\nposit Cloud（https://posit.cloud/）のアカウント登録&ログイン\n右のNew ProjectでNew RStudio Project\n\nRStudioの設定は以下の設定を参照\nhttps://www.jaysong.net/RBook/r_customize.html\n\nDefault working directoryは「/cloud/project」のままでOK\n\n\n画面上段の「Untitled Project」をクリックし、プロジェクト名を指定\n{quarto}、{ragg}パッケージをインストールする"
+  },
+  {
+    "objectID": "02_install_slide.html#mybinder.org",
+    "href": "02_install_slide.html#mybinder.org",
+    "title": "2/ 実習環境の構築",
+    "section": "mybinder.org",
+    "text": "mybinder.org\nウェブでRStudioが使えるサービス（事前登録不要）\n\nアカウントの概念が存在しないため、アクセスする度にすべて初期化される。\n\n再現/再生用データ&コードの共有に適したサービス\nとりあえず手軽にQuartoを味わっていみないのであればオススメ\n\n次頁で紹介するJDCat分析ツールより劣るが、安定性は\n起動方法\n\nhttps://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD \\(\\leftarrow\\) クリック"
+  },
+  {
+    "objectID": "02_install_slide.html#jdcat分析ツール",
+    "href": "02_install_slide.html#jdcat分析ツール",
+    "title": "2/ 実習環境の構築",
+    "section": "JDCat分析ツール",
+    "text": "JDCat分析ツール\n\nmybinder.orgと同じサービスだが、継続的に使用可能なサービス\n\nただし、サーバーが不安定になることが多々ある\n\n導入手順（サーバーの立ち上げ）\n\nOrthrosのホームーページでアカウント登録\n\nhttps://ui.orthros.gakunin.nii.ac.jp/\n必ず.ac.jp、または.go.jpのメールアドレスを使うこと\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD\n所属機関を「Orthros」とし、ログインする。\n数分待てばOK\n\n立ち上げたサーバーの起動（再利用）\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n所属機関を「Orthros」とし、ログインする。\n表示されているURLをクリックする\n\nURLが表示されていない場合、右の「Start」をクリック"
+  },
+  {
+    "objectID": "02_install_slide.html#プロジェクトの作成-1",
+    "href": "02_install_slide.html#プロジェクトの作成-1",
+    "title": "2/ 実習環境の構築",
+    "section": "プロジェクトの作成",
+    "text": "プロジェクトの作成\n実習用のプロジェクトを作成する\n\nプロジェクトを作る理由、方法は省略（本講義の前提知識）\nposit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）"
+  },
+  {
+    "objectID": "01_intro_slide.html#自己紹介",
+    "href": "01_intro_slide.html#自己紹介",
+    "title": "1/ Quartoとは",
+    "section": "自己紹介",
+    "text": "自己紹介\n\n\n\n\n\n講義名：社会科学における因果推論\n担当教員：宋そん財泫じぇひょん\n\n関西大学総合情報学部　准教授\n博士（政治学）\n\n https://www.jaysong.net/\n songkansai-u.ac.jp"
+  },
+  {
+    "objectID": "01_intro_slide.html#まずはr-markdownから",
+    "href": "01_intro_slide.html#まずはr-markdownから",
+    "title": "1/ Quartoとは",
+    "section": "まずはR Markdownから",
+    "text": "まずはR Markdownから\n\n\n\n\n\n\n{knitr}（2012年頃）と{rmarkdown}（2014年頃）パッケージの登場\nRのコードと結果、文章が一つの文書としてまとめたもの\n\nHTML、Microsoft Word、PDF等\n\n外部パッケージを使用することで様々な出力物が作成可能\n\nスライド（{xaringan}）、ホームページ（{blogdown}）、書籍（{bookdown}）など\n\nR + Markdown \\(\\rightarrow\\) Markdownって何?"
+  },
+  {
+    "objectID": "01_intro_slide.html#プレーンテキストとリッチテキスト",
+    "href": "01_intro_slide.html#プレーンテキストとリッチテキスト",
+    "title": "1/ Quartoとは",
+    "section": "プレーンテキストとリッチテキスト",
+    "text": "プレーンテキストとリッチテキスト\n\nPlain text：純粋なテキストのみで構成されている文書（図表、書式情報\\(\\times\\)）\n\nmacOSのテキストエディット、Windowsのメモ帳、VS Code、Vimなど\n\nRich text：テキストだけでなく、書式情報、図表なども含まれる文書\n\n書式情報の例: 文書の余白、行間の幅、文字サイズ、太さ、色\nMicrosoft Word、Apple Pages、LibreOffice Writer、一太郎など\n\nリッチテキストには文字情報以外にも様々な書式情報が含まれているため、サイズが大きく、パソコンへの負担も大きい（\\(\\doteqdot\\) .xlsx vs. .csv）"
+  },
+  {
+    "objectID": "01_intro_slide.html#プレーンテキストからリッチテキストへ",
+    "href": "01_intro_slide.html#プレーンテキストからリッチテキストへ",
+    "title": "1/ Quartoとは",
+    "section": "プレーンテキストからリッチテキストへ",
+    "text": "プレーンテキストからリッチテキストへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\nWebブラウザ（Chrome、Firefox、Edge、Safari等）はHTMLをリッチテキストへ変換するレンダリングエンジン（Gecko、Blink、WebKit等）を搭載している\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nOutput:\nこの文字は太字にしましょう。 ここをクリックしてください。"
+  },
+  {
+    "objectID": "01_intro_slide.html#markdownとは",
+    "href": "01_intro_slide.html#markdownとは",
+    "title": "1/ Quartoとは",
+    "section": "Markdownとは",
+    "text": "Markdownとは\n\nMarkdown（）: Markup言語の軽量版\n\n文章作成に必要なタグ（tag）を、より簡単に記述できる。\n\n\nMarkupの場合（HTML）\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nMarkdownの場合\nこの文字は**太字**にしましょう。\n\n[ここ](https://www.jaysong.net)をクリックしてください。\n結果\nこの文字は太字にしましょう。 ここをクリックしてください。"
+  },
+  {
+    "objectID": "01_intro_slide.html#markup-vs.-markdown表",
+    "href": "01_intro_slide.html#markup-vs.-markdown表",
+    "title": "1/ Quartoとは",
+    "section": "Markup vs. Markdown（表）",
+    "text": "Markup vs. Markdown（表）\n\n\nMarkup（HTML）\n&lt;table&gt;\n    &lt;thead style = \"font-weight:bold;\"&gt;\n        &lt;td&gt;ID&lt;/td&gt;\n        &lt;td&gt;Name&lt;/td&gt;\n    &lt;/thead&gt;\n    &lt;tr&gt;\n        &lt;td&gt;1&lt;/td&gt;\n        &lt;td&gt;Quarto&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;2&lt;/td&gt;\n        &lt;td&gt;Markdown&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n\nMarkdown\n| ID | Name     |\n|----|----------|\n| 1  | Quarto   |\n| 2  | Markdown |\nOutput\n\n\n\nID\nName\n\n\n\n\n1\nQuarto\n\n\n2\nMarkdown"
+  },
+  {
+    "objectID": "01_intro_slide.html#markup-vs.-markdown箇条書き1",
+    "href": "01_intro_slide.html#markup-vs.-markdown箇条書き1",
+    "title": "1/ Quartoとは",
+    "section": "Markup vs. Markdown（箇条書き1）",
+    "text": "Markup vs. Markdown（箇条書き1）\n\n\nMarkup（HTML）\n&lt;ul&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ul&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ul&gt;\n\nMarkdown\n- 箇条書き1\n   - 箇条書き1A\n   - 箇条書き1B\n- 箇条書き2\n- 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
+  },
+  {
+    "objectID": "01_intro_slide.html#markup-vs.-markdown箇条書き2",
+    "href": "01_intro_slide.html#markup-vs.-markdown箇条書き2",
+    "title": "1/ Quartoとは",
+    "section": "Markup vs. Markdown（箇条書き2）",
+    "text": "Markup vs. Markdown（箇条書き2）\n\n\nMarkup（HTML）\n&lt;ol&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ol&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ol&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ol&gt;\n\nMarkdown\n1. 箇条書き1\n   1. 箇条書き1A\n   1. 箇条書き1B\n1. 箇条書き2\n1. 箇条書き3\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
+  },
+  {
+    "objectID": "01_intro_slide.html#quartoの登場",
+    "href": "01_intro_slide.html#quartoの登場",
+    "title": "1/ Quartoとは",
+    "section": "Quartoの登場",
+    "text": "Quartoの登場\n2026年2月現在、QuartoはR Markdownの（ほぼ）上位互換だと考えても良い\n\n\n\n\n\n\n2022年7月登場（Ver. 1.0）したR markdownの後継\n読み方は「クゥオート」（クワトロじゃない）\n断片化されつつあるR Markdown生態系を一つに統合したもの\n\nR Markdown界隈の{blogdown}、{bookdown}、{xaringan}、…\nQuartoは別途のパッケージ不要\n\nR以外の言語、knitr以外のエンジンも使用可能\nR Markdownと使い方はほぼ同じ"
+  },
+  {
+    "objectID": "01_intro_slide.html#なぜquartor-markdownを使うか",
+    "href": "01_intro_slide.html#なぜquartor-markdownを使うか",
+    "title": "1/ Quartoとは",
+    "section": "なぜQuarto/R Markdownを使うか",
+    "text": "なぜQuarto/R Markdownを使うか\nQuarto/R Markdownは文芸的プログラミング（literate programming）のツール\n\n文芸的プログラミング：ソースコードとドキュメントを別々のファイルに記入せず、一つのファイルでまとめるプログラミングのスタイル\n\n既存の「コード + コメント（#、//、&lt;!-- ~ --&gt;、…）」より発展した概念\nプログラミングの界隈では流行らなかったが…\n\n\n\n学術研究における文芸的プログラミングとは…\n\n「何をしたか（code）」と「そこから何が得られたか（result）」、「説明（narrative; なぜそうしたか、その結果は何を意味するか、…）」を同じ場所に記述すること\n\n例）既存のやり方：Rで分析し、推定結果や作成した図をLaTeX、Wordに貼り付けながら論文や資料を作成\n例）文芸的プログラミングのやり方：Quarto"
+  },
+  {
+    "objectID": "01_intro_slide.html#文芸的プログラミングのすゝめ",
+    "href": "01_intro_slide.html#文芸的プログラミングのすゝめ",
+    "title": "1/ Quartoとは",
+    "section": "文芸的プログラミングのすゝめ",
+    "text": "文芸的プログラミングのすゝめ\n\n「手作業」の排除によるエラー防止（自動化）\n分析プロセスの透明化\nバージョン管理システムとの親和性\n環境依存性の記述とポータビリティ\n\n\n\n\n\n\n\n\n\n\n従来のツール（R + Word）\nQuarto\n\n\n\n\nプロセス\n手作業の連続（分断）\nコードによる自動化（統合）\n\n\n変更への対応\n最初からやり直し（高コスト）\n再実行のみ（低コスト）\n\n\n透明性\n操作履歴が見えにくい\nコードですべて可視化される\n\n\n再現性\n低い（人の記憶や手作業に依存）\n高い（データとコードがあれば再現可能）\n\n\n\n\n\\(\\Downarrow\\)\nQuartoやR Markdownを使用すると「分析結果」だけでなく「分析のプロセスそのもの」を成果物として保存・共有できる"
+  },
+  {
+    "objectID": "01_intro_slide.html#文書生成の流れr-markdownの場合",
+    "href": "01_intro_slide.html#文書生成の流れr-markdownの場合",
+    "title": "1/ Quartoとは",
+    "section": "文書生成の流れ（R Markdownの場合）",
+    "text": "文書生成の流れ（R Markdownの場合）\nR&Knitr使用を前提として開発され、拡張されていくR Markdown"
+  },
+  {
+    "objectID": "01_intro_slide.html#文書生成の流れquartoの場合",
+    "href": "01_intro_slide.html#文書生成の流れquartoの場合",
+    "title": "1/ Quartoとは",
+    "section": "文書生成の流れ（Quartoの場合）",
+    "text": "文書生成の流れ（Quartoの場合）\n複数言語&エンジン使用を念頭において開発されたQuarto"
+  },
+  {
+    "objectID": "01_intro_slide.html#言語エンジンの豊富さ",
+    "href": "01_intro_slide.html#言語エンジンの豊富さ",
+    "title": "1/ Quartoとは",
+    "section": "言語、エンジンの豊富さ",
+    "text": "言語、エンジンの豊富さ\nQuarto公式HPのFAQ for R Markdown Usersにより\n\n(…) Quarto is at its core multi-language and multi-engine (supporting Knitr, Jupyter, and Observable today and potentially other engines tomorrow). (…) Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don’t yet exist.\n\n\n使用可能な言語：R、Python、Julia、Javascript、…\n使用可能なエンジン：Knitr、Jupyter、Observable、…\nその他：PDF作成の際、\\(\\LaTeX\\)でなくtypstも使用可能"
+  },
+  {
+    "objectID": "01_intro_slide.html#生態系の統合",
+    "href": "01_intro_slide.html#生態系の統合",
+    "title": "1/ Quartoとは",
+    "section": "生態系の統合",
+    "text": "生態系の統合\n詳細な例は公式ホームページを確認\n\nただし、Quartoは外部のパッケージでなく、拡張機能（extensions）が存在\nダッシュボードの作成やShinyとの統合もOK\n\n\n\nR Markdown\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n{bookdown}\n\n\nスライド\n{xaringan}\n\n\nホームページ\n{blogdown}\n\n\nポスター\n{posterdown}\n\n\n\n\nQuarto\n\n\n\n目的\n必要パッケージ\n\n\n\n\n文書\n不要\n\n\n書籍\n不要\n\n\nスライド\n不要\n\n\nホームページ\n不要\n\n\nポスター\n???"
+  },
+  {
+    "objectID": "01_intro_slide.html#研究成果の共有ツールとしてのquarto",
+    "href": "01_intro_slide.html#研究成果の共有ツールとしてのquarto",
+    "title": "1/ Quartoとは",
+    "section": "研究成果の共有ツールとしてのQuarto",
+    "text": "研究成果の共有ツールとしてのQuarto\n研究成果の共有方法\n\n文書（論文、報告書、レポート、書籍、…）\n学会発表のためのスライド、ポスター\n再現/再生可能な研究のための再現用コード\nウェブサイト、ダッシュボード、ウェブアプリケーション\n\nQuartoの役割\nQuarto一つでは以上のすべて（実はほとんど）が作成できる\n\n基礎的なMarkdown知識を身につければonline appendix、supplementary material、Harvard Dataverse用の再現用コードが作成可能\n\n静的ドキュメント（PDF等）だけでなく、HTMLベースの動的ドキュメントも\n\n文書とスライドは片方を作っておけば、少しの修正で切り替えも可能"
+  },
+  {
+    "objectID": "01_intro_slide.html#コース概要-1",
+    "href": "01_intro_slide.html#コース概要-1",
+    "title": "1/ Quartoとは",
+    "section": "コース概要",
+    "text": "コース概要\n進度によって内容が若干変わることがある。\n\nQuartoとは & R Markdownとの比較\n実習環境の導入\nMarkdown文法の基礎\n文書の作成\nスライドの作成\n作成した文書・スライドの共有"
+  },
+  {
+    "objectID": "01_intro_slide.html#到達目標",
+    "href": "01_intro_slide.html#到達目標",
+    "title": "1/ Quartoとは",
+    "section": "到達目標",
+    "text": "到達目標\n\nMarkdown文法が分かる。\nQuartoで再現・再生用ファイルが作成できる。\n\nPDF文書が作成できる。\n\nQuartoでHTMLスライドが作れる。\n作成した文書、スライドが共有できる。\nより複雑なプロジェクトに取り組むための基礎知識を習得する。\n\nQuarto公式のガイド/レファレンスを読めば応用できるようになる。"
+  },
+  {
+    "objectID": "01_intro_slide.html#コース資料の入手先",
+    "href": "01_intro_slide.html#コース資料の入手先",
+    "title": "1/ Quartoとは",
+    "section": "コース資料の入手先",
+    "text": "コース資料の入手先\n\nhttps://www.jaysong.net/quarto_intro"
+  },
+  {
+    "objectID": "01_intro.html",
+    "href": "01_intro.html",
+    "title": "Quartoとは & R Markdownとの比較",
+    "section": "",
+    "text": "新しいタブで開く",
+    "crumbs": [
+      "1/ イントロダクション"
+    ]
+  },
+  {
+    "objectID": "02_install.html",
+    "href": "02_install.html",
+    "title": "実習環境の構築",
+    "section": "",
+    "text": "新しいタブで開く\n       \n      \n    \n  \n\na\n\n mybinder.org\n\nb\n\n JDCat分析ツール（起動）\n JDCat分析ツール（サーバー立ち上げ; 1回のみ）\n\nc\n\n Posit Cloud",
+    "crumbs": [
+      "2/ 実習環境の導入"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html",
+    "href": "03_markdown.html",
+    "title": "Markdown文法の基礎",
+    "section": "",
+    "text": "新しいタブで開く",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#文字の装飾と強調",
+    "href": "03_markdown.html#文字の装飾と強調",
+    "title": "Markdown文法の基礎",
+    "section": "1.1 文字の装飾と強調",
+    "text": "1.1 文字の装飾と強調\n文章の一部を強調したい場合、以下のような記法が使えます。\n\n太字（Bold）: ローマ字以外の強調に使います。\nイタリック（Italic）: ローマ字の強調に使います。\n取り消し線（Strike）: 削除された情報を表現します。\n下線（Underline）: HTMLタグを使って表現します。",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#リストの作成",
+    "href": "03_markdown.html#リストの作成",
+    "title": "Markdown文法の基礎",
+    "section": "1.2 リストの作成",
+    "text": "1.2 リストの作成\n\n1.2.1 順序なしリスト（箇条書き）\n項目の並列な羅列に使います。インデント（字下げ）で階層化できます。\n\nデータ分析の準備\n\nデータの収集\nデータの整形\n\n欠損値の処理\n異常値の確認\n\n\n分析の実行\n\n\n\n1.2.2 順序ありリスト（番号付き）\n手順やランキングなど、順序が重要な場合に使います。\n\nRStudioを開く\nプロジェクトを作成する\n\nNew Projectを選択\nディレクトリを指定\n\nQuartoファイルを作成する\n\n\n\n1.2.3 タスクリスト\n進捗管理などに便利です。\n\nテーマの決定\n資料の収集\nレポートの執筆（現在進行中）",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#リンクと脚注",
+    "href": "03_markdown.html#リンクと脚注",
+    "title": "Markdown文法の基礎",
+    "section": "1.3 リンクと脚注",
+    "text": "1.3 リンクと脚注\n外部サイトへの誘導にはリンクを使います。Quartoの公式ドキュメントなどは頻繁に参照します。 また、本文の流れを妨げずに補足情報を入れたい場合は、脚注を利用します1。\n識別子を使った脚注も可能です2。",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#表の作成",
+    "href": "03_markdown.html#表の作成",
+    "title": "Markdown文法の基礎",
+    "section": "2.1 表の作成",
+    "text": "2.1 表の作成\nMarkdownで表を作成するには、パイプ（|）とハイフン（-）を使用します。コロン（:）の位置で配置を指定できます。\n\n表1: 成績一覧表のサンプル\n\n\nID\n名前\nスコア\n備考\n\n\n\n\n1\n佐藤\n95\n右寄せ・左寄せの例\n\n\n2\n田中\n82\n強調も可能\n\n\n3\n鈴木\n100\n中央揃え",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#画像の埋め込みとサイズ調整",
+    "href": "03_markdown.html#画像の埋め込みとサイズ調整",
+    "title": "Markdown文法の基礎",
+    "section": "2.2 画像の埋め込みとサイズ調整",
+    "text": "2.2 画像の埋め込みとサイズ調整\n画像の表示サイズは width や height オプションで制御できます。\n標準サイズ:\n\n\n\nR猫\n\n\nサイズ指定（幅75pxに縮小）:\n\n\n\n小さくてかわいいR猫",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#数式の記述",
+    "href": "03_markdown.html#数式の記述",
+    "title": "Markdown文法の基礎",
+    "section": "2.3 数式の記述",
+    "text": "2.3 数式の記述\nレポートに数式を含める場合、LaTeX記法が使えます。\n文中の数式（インライン）:\n回帰分析のモデルは \\(y = \\beta_0 + \\beta_1 x + \\varepsilon\\) で表されます。\n独立した数式ブロック（ディスプレイ）:\n\\[\nf(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#複数コンテンツのレイアウト",
+    "href": "03_markdown.html#複数コンテンツのレイアウト",
+    "title": "Markdown文法の基礎",
+    "section": "2.4 複数コンテンツのレイアウト",
+    "text": "2.4 複数コンテンツのレイアウト\nlayout-ncol 属性を使うと、画像や表を横に並べて配置できます。比較を行う際に非常に強力です。\n\n\n\n\n\n\nR猫零号機\n\n\n\n\n\n\n\nR猫初号機\n\n\n\n\n\n\n\n\n2.4.1 グループA\n\n\n\n項目\n値\n\n\n\n\n平均\n50\n\n\n分散\n10\n\n\n\n\n\n2.4.2 グループB\n\n\n\n項目\n値\n\n\n\n\n平均\n65\n\n\n分散\n15",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#基本的なコード実行",
+    "href": "03_markdown.html#基本的なコード実行",
+    "title": "Markdown文法の基礎",
+    "section": "3.1 基本的なコード実行",
+    "text": "3.1 基本的なコード実行\n以下は標準的なコードチャンクです。コードと結果の両方が表示されます。\n\n# 1から10までの整数の合計を計算\nx &lt;- 1:10\nsum(x)\n\n[1] 55\n\n\nインラインコード:\n文章の中に計算結果を埋め込むこともできます。 例えば、計算された合計値は55です。",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#チャンクオプション",
+    "href": "03_markdown.html#チャンクオプション",
+    "title": "Markdown文法の基礎",
+    "section": "3.2 チャンク・オプション",
+    "text": "3.2 チャンク・オプション\n目的に応じて、コードや結果の表示・非表示を切り替えられます。チャンクオプションはチャンクの最上段に#| オプション名: 引数の書き方で記入します。チャンク・オプションは複数指定することができます。\nケース1: 結果だけ見せたい (echo: false)\n読者にコードを見せる必要がなく、グラフや表だけを示したい場合に使います。\n\n\n\n\n\n正規乱数のヒストグラム（コードは非表示）\n\n\n\n\nケース2: コードだけ見せたい（eval: false）\n実行に時間がかかるコードや、解説用のコードを示す場合に便利です。\n\n# このコードは表示されますが、実行はされません\ninstall.packages(\"very_heavy_package\")\nstart_simulation()\n\nケース3: コードと結果をまとめる（collapse: true）\nRコンソールのように、コードと出力結果を一つのブロックにまとめます。\n\nprint(\"Hello, Quarto!\")\n## [1] \"Hello, Quarto!\"\nmean(c(10, 20, 30))\n## [1] 20",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#エラー処理",
+    "href": "03_markdown.html#エラー処理",
+    "title": "Markdown文法の基礎",
+    "section": "3.3 エラー処理",
+    "text": "3.3 エラー処理\n通常、コードにエラーがあると文書生成（レンダー）は止まりますが、error: trueを指定しておくと、エラーメッセージを表示して処理を続行します。デバッグ内容をレポートする場合に使います。\n\n# 存在しない変数を呼び出してみる\nprint(undefined_variable)\n\nError:\n! object 'undefined_variable' not found",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#図の参照とキャプション",
+    "href": "03_markdown.html#図の参照とキャプション",
+    "title": "Markdown文法の基礎",
+    "section": "5.1 図の参照とキャプション",
+    "text": "5.1 図の参照とキャプション\nチャンクオプションでfig-cap（キャプション）とlabel（ラベル）を設定すると、本文中で「図1を参照」のように自動採番付きで参照できます。\n以下の 図 1 をご覧ください。\n\nplot(cars, pch=19, col=\"darkorange\")\n\n\n\n\n\n\n\n図 1: 車の速度と停止距離の関係（散布図）",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#サブキャプションと並列配置",
+    "href": "03_markdown.html#サブキャプションと並列配置",
+    "title": "Markdown文法の基礎",
+    "section": "5.2 サブキャプションと並列配置",
+    "text": "5.2 サブキャプションと並列配置\n一つのチャンクから複数のグラフを出力し、それぞれにサブキャプションを付けることもできます。\ngt::gt(head(iris[iris$Species == \"setosa\", 1:4]))\ngt::gt(head(iris[iris$Species == \"virginica\", 1:4]))\n\n\n\n表 1: irisデータセットの中身\n\n\n\n\n\n\n\n\n\n\n(a) setosa種\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\n\n\n\n\n5.1\n3.5\n1.4\n0.2\n\n\n4.9\n3.0\n1.4\n0.2\n\n\n4.7\n3.2\n1.3\n0.2\n\n\n4.6\n3.1\n1.5\n0.2\n\n\n5.0\n3.6\n1.4\n0.2\n\n\n5.4\n3.9\n1.7\n0.4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) virginica種\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\n\n\n\n\n6.3\n3.3\n6.0\n2.5\n\n\n5.8\n2.7\n5.1\n1.9\n\n\n7.1\n3.0\n5.9\n2.1\n\n\n6.3\n2.9\n5.6\n1.8\n\n\n6.5\n3.0\n5.8\n2.2\n\n\n7.6\n3.0\n6.6\n2.1",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#カスタムレイアウト",
+    "href": "03_markdown.html#カスタムレイアウト",
+    "title": "Markdown文法の基礎",
+    "section": "5.3 カスタムレイアウト",
+    "text": "5.3 カスタムレイアウト\nlayout オプションを使うと、「上段に2つ、下段に1つ」といった複雑な配置も可能です。\n指定例: 上段は50%-50%、下段は100%\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 図A\n\n\n\n\n\n\n\n\n\n\n\n(b) 図B\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) 図C\n\n\n\n\n\n\n\n図 2: 図3つの配置の例",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "03_markdown.html#footnotes",
+    "href": "03_markdown.html#footnotes",
+    "title": "Markdown文法の基礎",
+    "section": "脚注",
+    "text": "脚注\n\n\n脚注は、ページ下部や文末にまとめて表示されます。↩︎\n識別子を使うと、長い脚注を書きやすくなります。識別子を使わない脚注はマークダウンのコード基準、1行に1回しか使えませんが、識別子を使う方法は複数回使えます。↩︎",
+    "crumbs": [
+      "3/ Markdown文法"
+    ]
+  },
+  {
+    "objectID": "04_document.html",
+    "href": "04_document.html",
+    "title": "文書の作成",
+    "section": "",
+    "text": "新しいタブで開く",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "04_document.html#図の参照",
+    "href": "04_document.html#図の参照",
+    "title": "文書の作成",
+    "section": "1.1 図の参照",
+    "text": "1.1 図の参照\nまずは単一の図を参照してみましょう。図 1 は、正規分布に従う乱数のヒストグラムです。\n\n\n\n\n\n\n\n\n図 1: 正規乱数のヒストグラム\n\n\n\n\n\n次に、複数の図を並べて参照する場合です。図 2 全体、あるいは個別の 図 2 (a) や 図 2 (b) を参照できます。\n\n\n\n\n\n\n\n\n\n\n\n(a) 散布図\n\n\n\n\n\n\n\n\n\n\n\n(b) 箱ひげ図\n\n\n\n\n\n\n\n図 2: 2種類のチャート",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "04_document.html#表の参照",
+    "href": "04_document.html#表の参照",
+    "title": "文書の作成",
+    "section": "1.2 表の参照",
+    "text": "1.2 表の参照\n表の参照には tbl- 接頭辞を使います。表 1 はirisデータセットの要約です。\n\n\n\n\n表 1: irisデータの先頭5行\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n\n\n\n\n\n\nMarkdownで記述した表も参照可能です（表 2）。\n\n\n\n表 2: 誰が偉いか分からん\n\n\n\n\n\nID\n名前\n役割\n\n\n\n\n1\n田中太郎\n第一書記長\n\n\n2\n佐藤花子\n首席書記長",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "04_document.html#数式とセクションの参照",
+    "href": "04_document.html#数式とセクションの参照",
+    "title": "文書の作成",
+    "section": "1.3 数式とセクションの参照",
+    "text": "1.3 数式とセクションの参照\n数式にラベルを付けることもできます。ポアソン分布の確率質量関数 式 1 は以下のように定義されます。\n\\[\nP(X=k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\tag{1}\\]\nまた、冒頭の セクション 1 や、この セクション 6 自体を参照することも可能です。",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "04_document.html#タブセットパネル",
+    "href": "04_document.html#タブセットパネル",
+    "title": "文書の作成",
+    "section": "2.1 タブセットパネル",
+    "text": "2.1 タブセットパネル\nコードと結果を別々のタブに分けて表示すると、スペースを節約できます。\n\nRコード実行結果\n\n\n作図に使用したコードはこちらです。\n\nlibrary(ggplot2)\nmtcars |&gt; \n  ggplot(aes(x = wt, y = mpg, color = factor(cyl))) +\n  geom_point(size=3) +\n  theme_classic()\n\n\n\n実際のプロットはこちらのタブで確認してください。",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "04_document.html#段組み",
+    "href": "04_document.html#段組み",
+    "title": "文書の作成",
+    "section": "2.2 段組み",
+    "text": "2.2 段組み\nテキストと図表を左右に並べることで、雑誌のようなレイアウトが可能です。\n\n\n解説\n　左側の段（column; カラム）には文章を配置します。右側のグラフは、データセットの相関行列を可視化したものです。このように、解説を見ながら図を確認できる配置は、プレゼンテーションやポスターで特に有効です。",
+    "crumbs": [
+      "4/ 文書の作成"
+    ]
+  },
+  {
+    "objectID": "05_slide.html",
+    "href": "05_slide.html",
+    "title": "スライドの作成",
+    "section": "",
+    "text": "新しいタブで開く\n       \n      \n    \n  \n     新しいタブで開く",
+    "crumbs": [
+      "5/ スライドの作成"
+    ]
+  },
+  {
     "objectID": "05_slide_slide.html#reveal.jsについて",
     "href": "05_slide_slide.html#reveal.jsについて",
     "title": "5/ スライドの作成",
@@ -1085,7 +1169,7 @@
     "href": "05_slide_slide.html#フォーマット例",
     "title": "5/ スライドの作成",
     "section": "フォーマット（例）",
-    "text": "フォーマット（例）\nformat:\n  revealjs:\n1    theme: simple\n2    width: 1200\n    height: 900\n3    footer: \"はじめてのQuarto\"\n4    link-external-newwindow: true\n5    slide-number: \"c/t\"\n6    code-line-numbers: true\n7    auto-stretch: false\n\n1\n\nスライドのテーマ（default = black、white、beige、solarized、…）\n\n2\n\nスライドの横と縦の幅（px単位）\n\n3\n\nスライド中央下段のテキスト\n\n4\n\nリンクを新しいタブとして開くようにする\n\n5\n\n右下にスライド番号を挿入（\"c/t\" = 現在のページ/ページ数）\n\n6\n\nコードチャンクの各行に番号を付ける\n\n7\n\nオートストレッチ1を無効化（既定値はture）\n\n\n\nlogo: 画像のURL or パスでロゴの挿入可\n\n図の大きさがスライドの残りの空間よりも小さい場合、自動的に拡大する機能"
+    "text": "フォーマット（例）\nformat:\n  revealjs:\n1    theme: simple\n2    width: 1200\n    height: 900\n3    footer: \"はじめてのQuarto\"\n4    link-external-newwindow: true\n5    slide-number: \"c/t\"\n6    code-line-numbers: true\n7    auto-stretch: false\n\n1\n\nスライドのテーマ（default = black、white、beige、solarized、…）\n\n2\n\nスライドの横と縦の幅（px単位）\n\n3\n\nスライド中央下段のテキスト\n\n4\n\nリンクを新しいタブとして開くようにする\n\n5\n\n右下にスライド番号を挿入（\"c/t\" = 現在のページ/ページ数）\n\n6\n\nコードチャンクの各行に番号を付ける\n\n7\n\nオートストレッチ1を無効化（既定値はture）\n\n\n図の大きさがスライドの残りの空間よりも小さい場合、自動的に拡大する機能"
   },
   {
     "objectID": "05_slide_slide.html#チャンクオプション例",
@@ -1142,6 +1226,13 @@
     "title": "5/ スライドの作成",
     "section": "発表者用画面（例）",
     "text": "発表者用画面（例）\n\n右上のボタンでレイアウト変更可能\n時計部分はクリックするとリセットされる"
+  },
+  {
+    "objectID": "05_slide_slide.html#画像のスタック",
+    "href": "05_slide_slide.html#画像のスタック",
+    "title": "5/ スライドの作成",
+    "section": "画像のスタック",
+    "text": "画像のスタック\n:::{.r-stack}環境内に画像の埋め込み後、{.fragment}を追加\n\n{}内にはfig-align、width等も使用可\n\n\n\nInput:\n::: {.r-stack}\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n:::\n\nOutput:"
   },
   {
     "objectID": "05_slide_slide.html#フラグメント",
@@ -1425,33 +1516,5 @@
       "その他の内容",
       "テンプレート"
     ]
-  },
-  {
-    "objectID": "01_intro_slide.html#研究成果の共有ツールとしてのquarto",
-    "href": "01_intro_slide.html#研究成果の共有ツールとしてのquarto",
-    "title": "1/ Quartoとは",
-    "section": "研究成果の共有ツールとしてのQuarto",
-    "text": "研究成果の共有ツールとしてのQuarto\n研究成果の共有方法\n\n文書（論文、報告書、レポート、書籍、…）\n学会発表のためのスライド、ポスター\n再現/再生可能な研究のための再現用コード\nウェブサイト、ダッシュボード、ウェブアプリケーション\n\nQuartoの役割\nQuarto一つでは以上のすべて（実はほとんど）が作成できる\n\n基礎的なMarkdown知識を身につければonline appendix、supplementary material、Harvard Dataverse用の再現用コードが作成可能\n\n静的ドキュメント（PDF等）だけでなく、HTMLベースの動的ドキュメントも\n\n文書とスライドは片方を作っておけば、少しの修正で切り替えも可能"
-  },
-  {
-    "objectID": "05_slide_slide.html#フラグメント応用",
-    "href": "05_slide_slide.html#フラグメント応用",
-    "title": "5/ スライドの作成",
-    "section": "フラグメント（応用）",
-    "text": "フラグメント（応用）\n\nFade in\n\n\nFade out\n\n\nHighlight red\n\n\nFade in, then out\n\n\nSlide up while fading in"
-  },
-  {
-    "objectID": "05_slide_slide.html#画像のスタック",
-    "href": "05_slide_slide.html#画像のスタック",
-    "title": "5/ スライドの作成",
-    "section": "画像のスタック",
-    "text": "画像のスタック\n:::{.r-stack}環境内に画像の埋め込み後、{.fragment}を追加\n\n{}内にはfig-align、width等も使用可\n\n\n\nInput:\n::: {.r-stack}\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n:::\n\nOutput:"
-  },
-  {
-    "objectID": "03_markdown_slide.html#図の位置",
-    "href": "03_markdown_slide.html#図の位置",
-    "title": "3/ Markdown文法の基礎",
-    "section": "図の位置",
-    "text": "図の位置\n\n{fig-align=位置}を追加（Quarto限定）\n\n例）\"left\"（左）、\"center\"（中央）、\"right\"（右）\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"left\"}\n\nOutput:\n\n\n\n\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"center\"}\n\nOutput:\n\n\n\n\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"right\"}\n\nOutput:"
   }
 ]

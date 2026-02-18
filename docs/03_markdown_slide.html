@@ -716,6 +716,7 @@
 </section>
 <section id="数式" class="slide level2">
 <h2>数式</h2>
+<!-- inline と display -->
 <p>文中数式は<code>$数式$</code>、独立した行の数式は<code>$$</code>で囲む。</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -723,7 +724,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>文中の数式：$e = mc^2$</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
-<p>文中の数式の例：<span class="math inline">\(e = mc^2\)</span></p>
+<p>文中の数式：<span class="math inline">\(e = mc^2\)</span></p>
 </div></div>
 <p><strong>Input:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -856,7 +857,7 @@ F(x; \mu, b) =
 <h2>Rコードの入れ方</h2>
 <p><span class="alert"><strong>チャンク<span class="small">（chunk）</span></strong></span>内で記述されたRコードは評価<span class="small">（evaluation）</span>される。</p>
 <ul>
-<li>チャンクは<code>```{r}</code>で始まり、<code>```</code>で終わる。</li>
+<li>チャンクは<code>```{r}</code>で始まり、<code>```</code>で終わる<sup>1</sup>。</li>
 <li>ショートカットキー：Cmd + Option + I（macOS）、Ctrl + Alt + I（その他のOS）</li>
 </ul>
 <div class="columns">
@@ -882,7 +883,7 @@ F(x; \mu, b) =
 </div>
 </div>
 </div></div>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn5"><p><code>r</code>の箇所を<code>markdown</code>、<code>css</code>等にすることも出来る</p></li></ol></aside></section>
 <section id="インラインコード" class="slide level2">
 <h2>インラインコード</h2>
 <p><span class="alert"><strong>インラインコード</strong><span class="small">（inline code）</span></span>：チャンク外<span class="small">（=文章内）</span>に挿入するRコード</p>
@@ -1077,6 +1078,33 @@ F(x; \mu, b) =
 </div>
 </div></div>
 </section>
+<section id="参考評価されないチャンクの作り方" class="slide level2">
+<h2>参考）評価されないチャンクの作り方</h2>
+<p><code>{r}</code>の代わりに<code>{.r}</code>か<code>r</code>を使用</p>
+<ul>
+<li><code>markdown</code>、<code>yaml</code>、<code>css</code>などのチャンクにも使用可</li>
+</ul>
+<div class="columns">
+<div class="column">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi"</span><span class="sc">!</span>)</span>
+<span id="cb40-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<p><strong>Output:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi"</span><span class="sc">!</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<div class="columns">
+<div class="column">
+<p><strong>Input:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{.r}</span></span>
+<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi"</span><span class="sc">!</span>)</span>
+<span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<p><strong>Output:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi"</span><span class="sc">!</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section>
 <section id="include評価のみ行う" class="slide level2">
 <h2>include：評価のみ行う</h2>
 <ul>
@@ -1089,18 +1117,18 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb40-3"><a aria-hidden="true" tabindex="-1"></a>hidden_x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb40-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb40-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb40-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(hidden_x)</span>
-<span id="cb40-8"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb44-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb44-3"><a aria-hidden="true" tabindex="-1"></a>hidden_x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb44-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb44-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb44-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(hidden_x)</span>
+<span id="cb44-8"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(hidden_x)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(hidden_x)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 55</code></pre>
 </div>
@@ -1118,18 +1146,18 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input（1）:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span>
-<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
-<span id="cb43-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span>
+<span id="cb47-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb47-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output（1）:</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Hi!"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5050</code></pre>
 </div>
@@ -1138,18 +1166,18 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input（2）:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb48-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| collapse: true</span></span>
-<span id="cb48-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span>
-<span id="cb48-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
-<span id="cb48-5"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| collapse: true</span></span>
+<span id="cb52-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span>
+<span id="cb52-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb52-5"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output（2）:</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span>
-<span id="cb49-2"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Hi!"</span></span>
-<span id="cb49-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
-<span id="cb49-4"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5050</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hi!"</span>)</span>
+<span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Hi!"</span></span>
+<span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb53-4"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5050</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </section>
@@ -1182,12 +1210,12 @@ F(x; \mu, b) =
 <li>図の解像度：<code>fig-dpi</code>
 <ul>
 <li>既定値は96だが、PDF出力や印刷をする場合、最低でも300は必要</li>
-<li>解像度が高いほどファイルのサイズが大ききなるため注意</li>
+<li>解像度が高いほどファイルのサイズが大きくなることに注意</li>
 </ul></li>
 <li>作図エンジン：<code>dev</code>
 <ul>
 <li><code>dev: ragg_png</code>にしておけば、とりあえず文字化けの心配はない<span class="small">（{ragg}が必要）</span></li>
-<li>すべてのチャンクに指定することは非効率的なので、YAMLヘッダーで指定することを推奨[（後述）]</li>
+<li>すべてのチャンクに指定することは非効率的なので、YAMLヘッダーで指定することを推奨<span class="small">（後述）</span></li>
 </ul></li>
 </ul>
 </section>
@@ -1202,32 +1230,32 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb50-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "表のキャプション"</span></span>
-<span id="cb50-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,])</span>
-<span id="cb50-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb54-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "表のキャプション"</span></span>
+<span id="cb54-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,])</span>
+<span id="cb54-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
 <div class="cell" data-layout-align="center" data-tbl-cap="表のキャプション">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,])</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,])</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="gkdrifojvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gkdrifojvf table {
+<div id="xbsnlxcgul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xbsnlxcgul table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gkdrifojvf thead, #gkdrifojvf tbody, #gkdrifojvf tfoot, #gkdrifojvf tr, #gkdrifojvf td, #gkdrifojvf th {
+#xbsnlxcgul thead, #xbsnlxcgul tbody, #xbsnlxcgul tfoot, #xbsnlxcgul tr, #xbsnlxcgul td, #xbsnlxcgul th {
   border-style: none;
 }
 
-#gkdrifojvf p {
+#xbsnlxcgul p {
   margin: 0;
   padding: 0;
 }
 
-#gkdrifojvf .gt_table {
+#xbsnlxcgul .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1253,12 +1281,12 @@ F(x; \mu, b) =
   border-left-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_caption {
+#xbsnlxcgul .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gkdrifojvf .gt_title {
+#xbsnlxcgul .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1270,7 +1298,7 @@ F(x; \mu, b) =
   border-bottom-width: 0;
 }
 
-#gkdrifojvf .gt_subtitle {
+#xbsnlxcgul .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1282,7 +1310,7 @@ F(x; \mu, b) =
   border-top-width: 0;
 }
 
-#gkdrifojvf .gt_heading {
+#xbsnlxcgul .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1294,13 +1322,13 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_bottom_border {
+#xbsnlxcgul .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_col_headings {
+#xbsnlxcgul .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1315,7 +1343,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_col_heading {
+#xbsnlxcgul .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1335,7 +1363,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#gkdrifojvf .gt_column_spanner_outer {
+#xbsnlxcgul .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1347,15 +1375,15 @@ F(x; \mu, b) =
   padding-right: 4px;
 }
 
-#gkdrifojvf .gt_column_spanner_outer:first-child {
+#xbsnlxcgul .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gkdrifojvf .gt_column_spanner_outer:last-child {
+#xbsnlxcgul .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gkdrifojvf .gt_column_spanner {
+#xbsnlxcgul .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1367,11 +1395,11 @@ F(x; \mu, b) =
   width: 100%;
 }
 
-#gkdrifojvf .gt_spanner_row {
+#xbsnlxcgul .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gkdrifojvf .gt_group_heading {
+#xbsnlxcgul .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1397,7 +1425,7 @@ F(x; \mu, b) =
   text-align: left;
 }
 
-#gkdrifojvf .gt_empty_group_heading {
+#xbsnlxcgul .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1412,15 +1440,15 @@ F(x; \mu, b) =
   vertical-align: middle;
 }
 
-#gkdrifojvf .gt_from_md > :first-child {
+#xbsnlxcgul .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gkdrifojvf .gt_from_md > :last-child {
+#xbsnlxcgul .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gkdrifojvf .gt_row {
+#xbsnlxcgul .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1439,7 +1467,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#gkdrifojvf .gt_stub {
+#xbsnlxcgul .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1452,7 +1480,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#gkdrifojvf .gt_stub_row_group {
+#xbsnlxcgul .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1466,15 +1494,15 @@ F(x; \mu, b) =
   vertical-align: top;
 }
 
-#gkdrifojvf .gt_row_group_first td {
+#xbsnlxcgul .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gkdrifojvf .gt_row_group_first th {
+#xbsnlxcgul .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gkdrifojvf .gt_summary_row {
+#xbsnlxcgul .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1484,16 +1512,16 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#gkdrifojvf .gt_first_summary_row {
+#xbsnlxcgul .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_first_summary_row.thick {
+#xbsnlxcgul .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gkdrifojvf .gt_last_summary_row {
+#xbsnlxcgul .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1503,7 +1531,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_grand_summary_row {
+#xbsnlxcgul .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1513,7 +1541,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#gkdrifojvf .gt_first_grand_summary_row {
+#xbsnlxcgul .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1523,7 +1551,7 @@ F(x; \mu, b) =
   border-top-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_last_grand_summary_row_top {
+#xbsnlxcgul .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1533,11 +1561,11 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_striped {
+#xbsnlxcgul .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gkdrifojvf .gt_table_body {
+#xbsnlxcgul .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1546,7 +1574,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_footnotes {
+#xbsnlxcgul .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1560,7 +1588,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_footnote {
+#xbsnlxcgul .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1569,7 +1597,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#gkdrifojvf .gt_sourcenotes {
+#xbsnlxcgul .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1583,7 +1611,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#gkdrifojvf .gt_sourcenote {
+#xbsnlxcgul .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1591,72 +1619,72 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#gkdrifojvf .gt_left {
+#xbsnlxcgul .gt_left {
   text-align: left;
 }
 
-#gkdrifojvf .gt_center {
+#xbsnlxcgul .gt_center {
   text-align: center;
 }
 
-#gkdrifojvf .gt_right {
+#xbsnlxcgul .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gkdrifojvf .gt_font_normal {
+#xbsnlxcgul .gt_font_normal {
   font-weight: normal;
 }
 
-#gkdrifojvf .gt_font_bold {
+#xbsnlxcgul .gt_font_bold {
   font-weight: bold;
 }
 
-#gkdrifojvf .gt_font_italic {
+#xbsnlxcgul .gt_font_italic {
   font-style: italic;
 }
 
-#gkdrifojvf .gt_super {
+#xbsnlxcgul .gt_super {
   font-size: 65%;
 }
 
-#gkdrifojvf .gt_footnote_marks {
+#xbsnlxcgul .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gkdrifojvf .gt_asterisk {
+#xbsnlxcgul .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gkdrifojvf .gt_indent_1 {
+#xbsnlxcgul .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gkdrifojvf .gt_indent_2 {
+#xbsnlxcgul .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gkdrifojvf .gt_indent_3 {
+#xbsnlxcgul .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gkdrifojvf .gt_indent_4 {
+#xbsnlxcgul .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gkdrifojvf .gt_indent_5 {
+#xbsnlxcgul .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gkdrifojvf .katex-display {
+#xbsnlxcgul .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gkdrifojvf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xbsnlxcgul div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1696,12 +1724,12 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input（2）:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb52-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-myfig-01</span></span>
-<span id="cb52-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "図のキャプション"</span></span>
-<span id="cb52-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb52-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-myfig-01</span></span>
+<span id="cb56-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "図のキャプション"</span></span>
+<span id="cb56-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb56-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output（2）:</strong></p>
 <div class="cell" data-layout-align="center">
@@ -1731,17 +1759,17 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
-<span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb53-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb53-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb57-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb57-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb54-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1769,12 +1797,12 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout: [[50, 50], [100]]</span></span>
-<span id="cb55-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb55-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb55-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout: [[50, 50], [100]]</span></span>
+<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb59-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb59-6"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>2行構成で1行目は図2枚を50%、50%の割合、2行目は1枚を配置した例
 <ul>
@@ -1783,10 +1811,10 @@ F(x; \mu, b) =
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
-<span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout="[[50,50],[100]]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb60-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb60-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell quarto-layout-panel" data-layout="[[50,50],[100]]" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1826,18 +1854,18 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-two-plots</span></span>
-<span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
-<span id="cb57-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: </span></span>
-<span id="cb57-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "左の図"</span></span>
-<span id="cb57-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "右の図"</span></span>
-<span id="cb57-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
-<span id="cb57-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span>
-<span id="cb57-9"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-two-plots</span></span>
+<span id="cb61-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb61-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: </span></span>
+<span id="cb61-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "左の図"</span></span>
+<span id="cb61-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "右の図"</span></span>
+<span id="cb61-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
+<span id="cb61-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span>
+<span id="cb61-9"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-two-plots-1" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
@@ -1878,22 +1906,22 @@ F(x; \mu, b) =
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-three-tables</span></span>
-<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 3</span></span>
-<span id="cb58-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: irisデータセット</span></span>
-<span id="cb58-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-subcap: </span></span>
-<span id="cb58-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "setosa"</span></span>
-<span id="cb58-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "versicolor"</span></span>
-<span id="cb58-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "virginica"</span></span>
-<span id="cb58-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
-<span id="cb58-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
-<span id="cb58-11"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb62-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb62-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-three-tables</span></span>
+<span id="cb62-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 3</span></span>
+<span id="cb62-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: irisデータセット</span></span>
+<span id="cb62-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-subcap: </span></span>
+<span id="cb62-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "setosa"</span></span>
+<span id="cb62-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "versicolor"</span></span>
+<span id="cb62-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "virginica"</span></span>
+<span id="cb62-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb62-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb62-11"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Output:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
-<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
-<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">101</span><span class="sc">:</span><span class="dv">105</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb63-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">51</span><span class="sc">:</span><span class="dv">55</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb63-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(iris[<span class="dv">101</span><span class="sc">:</span><span class="dv">105</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-three-tables" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-three-tables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1909,23 +1937,23 @@ F(x; \mu, b) =
 </figcaption>
 <div aria-describedby="tbl-three-tables-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="deuecgdinh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#deuecgdinh table {
+<div id="pkqtnlvamt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pkqtnlvamt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#deuecgdinh thead, #deuecgdinh tbody, #deuecgdinh tfoot, #deuecgdinh tr, #deuecgdinh td, #deuecgdinh th {
+#pkqtnlvamt thead, #pkqtnlvamt tbody, #pkqtnlvamt tfoot, #pkqtnlvamt tr, #pkqtnlvamt td, #pkqtnlvamt th {
   border-style: none;
 }
 
-#deuecgdinh p {
+#pkqtnlvamt p {
   margin: 0;
   padding: 0;
 }
 
-#deuecgdinh .gt_table {
+#pkqtnlvamt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1951,12 +1979,12 @@ F(x; \mu, b) =
   border-left-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_caption {
+#pkqtnlvamt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#deuecgdinh .gt_title {
+#pkqtnlvamt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1968,7 +1996,7 @@ F(x; \mu, b) =
   border-bottom-width: 0;
 }
 
-#deuecgdinh .gt_subtitle {
+#pkqtnlvamt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1980,7 +2008,7 @@ F(x; \mu, b) =
   border-top-width: 0;
 }
 
-#deuecgdinh .gt_heading {
+#pkqtnlvamt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1992,13 +2020,13 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_bottom_border {
+#pkqtnlvamt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_col_headings {
+#pkqtnlvamt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2013,7 +2041,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_col_heading {
+#pkqtnlvamt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2033,7 +2061,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#deuecgdinh .gt_column_spanner_outer {
+#pkqtnlvamt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2045,15 +2073,15 @@ F(x; \mu, b) =
   padding-right: 4px;
 }
 
-#deuecgdinh .gt_column_spanner_outer:first-child {
+#pkqtnlvamt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#deuecgdinh .gt_column_spanner_outer:last-child {
+#pkqtnlvamt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#deuecgdinh .gt_column_spanner {
+#pkqtnlvamt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2065,11 +2093,11 @@ F(x; \mu, b) =
   width: 100%;
 }
 
-#deuecgdinh .gt_spanner_row {
+#pkqtnlvamt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#deuecgdinh .gt_group_heading {
+#pkqtnlvamt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2095,7 +2123,7 @@ F(x; \mu, b) =
   text-align: left;
 }
 
-#deuecgdinh .gt_empty_group_heading {
+#pkqtnlvamt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2110,15 +2138,15 @@ F(x; \mu, b) =
   vertical-align: middle;
 }
 
-#deuecgdinh .gt_from_md > :first-child {
+#pkqtnlvamt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#deuecgdinh .gt_from_md > :last-child {
+#pkqtnlvamt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#deuecgdinh .gt_row {
+#pkqtnlvamt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2137,7 +2165,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#deuecgdinh .gt_stub {
+#pkqtnlvamt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2150,7 +2178,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#deuecgdinh .gt_stub_row_group {
+#pkqtnlvamt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2164,15 +2192,15 @@ F(x; \mu, b) =
   vertical-align: top;
 }
 
-#deuecgdinh .gt_row_group_first td {
+#pkqtnlvamt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#deuecgdinh .gt_row_group_first th {
+#pkqtnlvamt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#deuecgdinh .gt_summary_row {
+#pkqtnlvamt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2182,16 +2210,16 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#deuecgdinh .gt_first_summary_row {
+#pkqtnlvamt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_first_summary_row.thick {
+#pkqtnlvamt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#deuecgdinh .gt_last_summary_row {
+#pkqtnlvamt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2201,7 +2229,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_grand_summary_row {
+#pkqtnlvamt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2211,7 +2239,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#deuecgdinh .gt_first_grand_summary_row {
+#pkqtnlvamt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2221,7 +2249,7 @@ F(x; \mu, b) =
   border-top-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_last_grand_summary_row_top {
+#pkqtnlvamt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2231,11 +2259,11 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_striped {
+#pkqtnlvamt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#deuecgdinh .gt_table_body {
+#pkqtnlvamt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2244,7 +2272,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_footnotes {
+#pkqtnlvamt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2258,7 +2286,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_footnote {
+#pkqtnlvamt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2267,7 +2295,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#deuecgdinh .gt_sourcenotes {
+#pkqtnlvamt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2281,7 +2309,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#deuecgdinh .gt_sourcenote {
+#pkqtnlvamt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2289,72 +2317,72 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#deuecgdinh .gt_left {
+#pkqtnlvamt .gt_left {
   text-align: left;
 }
 
-#deuecgdinh .gt_center {
+#pkqtnlvamt .gt_center {
   text-align: center;
 }
 
-#deuecgdinh .gt_right {
+#pkqtnlvamt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#deuecgdinh .gt_font_normal {
+#pkqtnlvamt .gt_font_normal {
   font-weight: normal;
 }
 
-#deuecgdinh .gt_font_bold {
+#pkqtnlvamt .gt_font_bold {
   font-weight: bold;
 }
 
-#deuecgdinh .gt_font_italic {
+#pkqtnlvamt .gt_font_italic {
   font-style: italic;
 }
 
-#deuecgdinh .gt_super {
+#pkqtnlvamt .gt_super {
   font-size: 65%;
 }
 
-#deuecgdinh .gt_footnote_marks {
+#pkqtnlvamt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#deuecgdinh .gt_asterisk {
+#pkqtnlvamt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#deuecgdinh .gt_indent_1 {
+#pkqtnlvamt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#deuecgdinh .gt_indent_2 {
+#pkqtnlvamt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#deuecgdinh .gt_indent_3 {
+#pkqtnlvamt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#deuecgdinh .gt_indent_4 {
+#pkqtnlvamt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#deuecgdinh .gt_indent_5 {
+#pkqtnlvamt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#deuecgdinh .katex-display {
+#pkqtnlvamt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#deuecgdinh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pkqtnlvamt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2393,23 +2421,23 @@ F(x; \mu, b) =
 </figcaption>
 <div aria-describedby="tbl-three-tables-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="feluadgfud" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#feluadgfud table {
+<div id="pozuamtfhe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pozuamtfhe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#feluadgfud thead, #feluadgfud tbody, #feluadgfud tfoot, #feluadgfud tr, #feluadgfud td, #feluadgfud th {
+#pozuamtfhe thead, #pozuamtfhe tbody, #pozuamtfhe tfoot, #pozuamtfhe tr, #pozuamtfhe td, #pozuamtfhe th {
   border-style: none;
 }
 
-#feluadgfud p {
+#pozuamtfhe p {
   margin: 0;
   padding: 0;
 }
 
-#feluadgfud .gt_table {
+#pozuamtfhe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2435,12 +2463,12 @@ F(x; \mu, b) =
   border-left-color: #D3D3D3;
 }
 
-#feluadgfud .gt_caption {
+#pozuamtfhe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#feluadgfud .gt_title {
+#pozuamtfhe .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2452,7 +2480,7 @@ F(x; \mu, b) =
   border-bottom-width: 0;
 }
 
-#feluadgfud .gt_subtitle {
+#pozuamtfhe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2464,7 +2492,7 @@ F(x; \mu, b) =
   border-top-width: 0;
 }
 
-#feluadgfud .gt_heading {
+#pozuamtfhe .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2476,13 +2504,13 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#feluadgfud .gt_bottom_border {
+#pozuamtfhe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#feluadgfud .gt_col_headings {
+#pozuamtfhe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2497,7 +2525,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#feluadgfud .gt_col_heading {
+#pozuamtfhe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2517,7 +2545,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#feluadgfud .gt_column_spanner_outer {
+#pozuamtfhe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2529,15 +2557,15 @@ F(x; \mu, b) =
   padding-right: 4px;
 }
 
-#feluadgfud .gt_column_spanner_outer:first-child {
+#pozuamtfhe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#feluadgfud .gt_column_spanner_outer:last-child {
+#pozuamtfhe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#feluadgfud .gt_column_spanner {
+#pozuamtfhe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2549,11 +2577,11 @@ F(x; \mu, b) =
   width: 100%;
 }
 
-#feluadgfud .gt_spanner_row {
+#pozuamtfhe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#feluadgfud .gt_group_heading {
+#pozuamtfhe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2579,7 +2607,7 @@ F(x; \mu, b) =
   text-align: left;
 }
 
-#feluadgfud .gt_empty_group_heading {
+#pozuamtfhe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2594,15 +2622,15 @@ F(x; \mu, b) =
   vertical-align: middle;
 }
 
-#feluadgfud .gt_from_md > :first-child {
+#pozuamtfhe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#feluadgfud .gt_from_md > :last-child {
+#pozuamtfhe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#feluadgfud .gt_row {
+#pozuamtfhe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2621,7 +2649,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#feluadgfud .gt_stub {
+#pozuamtfhe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2634,7 +2662,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#feluadgfud .gt_stub_row_group {
+#pozuamtfhe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2648,15 +2676,15 @@ F(x; \mu, b) =
   vertical-align: top;
 }
 
-#feluadgfud .gt_row_group_first td {
+#pozuamtfhe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#feluadgfud .gt_row_group_first th {
+#pozuamtfhe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#feluadgfud .gt_summary_row {
+#pozuamtfhe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2666,16 +2694,16 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#feluadgfud .gt_first_summary_row {
+#pozuamtfhe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#feluadgfud .gt_first_summary_row.thick {
+#pozuamtfhe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#feluadgfud .gt_last_summary_row {
+#pozuamtfhe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2685,7 +2713,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#feluadgfud .gt_grand_summary_row {
+#pozuamtfhe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2695,7 +2723,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#feluadgfud .gt_first_grand_summary_row {
+#pozuamtfhe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2705,7 +2733,7 @@ F(x; \mu, b) =
   border-top-color: #D3D3D3;
 }
 
-#feluadgfud .gt_last_grand_summary_row_top {
+#pozuamtfhe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2715,11 +2743,11 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#feluadgfud .gt_striped {
+#pozuamtfhe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#feluadgfud .gt_table_body {
+#pozuamtfhe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2728,7 +2756,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#feluadgfud .gt_footnotes {
+#pozuamtfhe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2742,7 +2770,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#feluadgfud .gt_footnote {
+#pozuamtfhe .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2751,7 +2779,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#feluadgfud .gt_sourcenotes {
+#pozuamtfhe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2765,7 +2793,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#feluadgfud .gt_sourcenote {
+#pozuamtfhe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2773,72 +2801,72 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#feluadgfud .gt_left {
+#pozuamtfhe .gt_left {
   text-align: left;
 }
 
-#feluadgfud .gt_center {
+#pozuamtfhe .gt_center {
   text-align: center;
 }
 
-#feluadgfud .gt_right {
+#pozuamtfhe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#feluadgfud .gt_font_normal {
+#pozuamtfhe .gt_font_normal {
   font-weight: normal;
 }
 
-#feluadgfud .gt_font_bold {
+#pozuamtfhe .gt_font_bold {
   font-weight: bold;
 }
 
-#feluadgfud .gt_font_italic {
+#pozuamtfhe .gt_font_italic {
   font-style: italic;
 }
 
-#feluadgfud .gt_super {
+#pozuamtfhe .gt_super {
   font-size: 65%;
 }
 
-#feluadgfud .gt_footnote_marks {
+#pozuamtfhe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#feluadgfud .gt_asterisk {
+#pozuamtfhe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#feluadgfud .gt_indent_1 {
+#pozuamtfhe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#feluadgfud .gt_indent_2 {
+#pozuamtfhe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#feluadgfud .gt_indent_3 {
+#pozuamtfhe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#feluadgfud .gt_indent_4 {
+#pozuamtfhe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#feluadgfud .gt_indent_5 {
+#pozuamtfhe .gt_indent_5 {
   text-indent: 25px;
 }
 
-#feluadgfud .katex-display {
+#pozuamtfhe .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#feluadgfud div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pozuamtfhe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2877,23 +2905,23 @@ F(x; \mu, b) =
 </figcaption>
 <div aria-describedby="tbl-three-tables-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tmojfijdae" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tmojfijdae table {
+<div id="jdacalzvay" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jdacalzvay table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tmojfijdae thead, #tmojfijdae tbody, #tmojfijdae tfoot, #tmojfijdae tr, #tmojfijdae td, #tmojfijdae th {
+#jdacalzvay thead, #jdacalzvay tbody, #jdacalzvay tfoot, #jdacalzvay tr, #jdacalzvay td, #jdacalzvay th {
   border-style: none;
 }
 
-#tmojfijdae p {
+#jdacalzvay p {
   margin: 0;
   padding: 0;
 }
 
-#tmojfijdae .gt_table {
+#jdacalzvay .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2919,12 +2947,12 @@ F(x; \mu, b) =
   border-left-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_caption {
+#jdacalzvay .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tmojfijdae .gt_title {
+#jdacalzvay .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2936,7 +2964,7 @@ F(x; \mu, b) =
   border-bottom-width: 0;
 }
 
-#tmojfijdae .gt_subtitle {
+#jdacalzvay .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2948,7 +2976,7 @@ F(x; \mu, b) =
   border-top-width: 0;
 }
 
-#tmojfijdae .gt_heading {
+#jdacalzvay .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2960,13 +2988,13 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_bottom_border {
+#jdacalzvay .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_col_headings {
+#jdacalzvay .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2981,7 +3009,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_col_heading {
+#jdacalzvay .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3001,7 +3029,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#tmojfijdae .gt_column_spanner_outer {
+#jdacalzvay .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3013,15 +3041,15 @@ F(x; \mu, b) =
   padding-right: 4px;
 }
 
-#tmojfijdae .gt_column_spanner_outer:first-child {
+#jdacalzvay .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tmojfijdae .gt_column_spanner_outer:last-child {
+#jdacalzvay .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tmojfijdae .gt_column_spanner {
+#jdacalzvay .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3033,11 +3061,11 @@ F(x; \mu, b) =
   width: 100%;
 }
 
-#tmojfijdae .gt_spanner_row {
+#jdacalzvay .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tmojfijdae .gt_group_heading {
+#jdacalzvay .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3063,7 +3091,7 @@ F(x; \mu, b) =
   text-align: left;
 }
 
-#tmojfijdae .gt_empty_group_heading {
+#jdacalzvay .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3078,15 +3106,15 @@ F(x; \mu, b) =
   vertical-align: middle;
 }
 
-#tmojfijdae .gt_from_md > :first-child {
+#jdacalzvay .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tmojfijdae .gt_from_md > :last-child {
+#jdacalzvay .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tmojfijdae .gt_row {
+#jdacalzvay .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3105,7 +3133,7 @@ F(x; \mu, b) =
   overflow-x: hidden;
 }
 
-#tmojfijdae .gt_stub {
+#jdacalzvay .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3118,7 +3146,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#tmojfijdae .gt_stub_row_group {
+#jdacalzvay .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3132,15 +3160,15 @@ F(x; \mu, b) =
   vertical-align: top;
 }
 
-#tmojfijdae .gt_row_group_first td {
+#jdacalzvay .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tmojfijdae .gt_row_group_first th {
+#jdacalzvay .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tmojfijdae .gt_summary_row {
+#jdacalzvay .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3150,16 +3178,16 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#tmojfijdae .gt_first_summary_row {
+#jdacalzvay .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_first_summary_row.thick {
+#jdacalzvay .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tmojfijdae .gt_last_summary_row {
+#jdacalzvay .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3169,7 +3197,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_grand_summary_row {
+#jdacalzvay .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3179,7 +3207,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#tmojfijdae .gt_first_grand_summary_row {
+#jdacalzvay .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3189,7 +3217,7 @@ F(x; \mu, b) =
   border-top-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_last_grand_summary_row_top {
+#jdacalzvay .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3199,11 +3227,11 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_striped {
+#jdacalzvay .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tmojfijdae .gt_table_body {
+#jdacalzvay .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3212,7 +3240,7 @@ F(x; \mu, b) =
   border-bottom-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_footnotes {
+#jdacalzvay .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3226,7 +3254,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_footnote {
+#jdacalzvay .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3235,7 +3263,7 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#tmojfijdae .gt_sourcenotes {
+#jdacalzvay .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3249,7 +3277,7 @@ F(x; \mu, b) =
   border-right-color: #D3D3D3;
 }
 
-#tmojfijdae .gt_sourcenote {
+#jdacalzvay .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3257,72 +3285,72 @@ F(x; \mu, b) =
   padding-right: 5px;
 }
 
-#tmojfijdae .gt_left {
+#jdacalzvay .gt_left {
   text-align: left;
 }
 
-#tmojfijdae .gt_center {
+#jdacalzvay .gt_center {
   text-align: center;
 }
 
-#tmojfijdae .gt_right {
+#jdacalzvay .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tmojfijdae .gt_font_normal {
+#jdacalzvay .gt_font_normal {
   font-weight: normal;
 }
 
-#tmojfijdae .gt_font_bold {
+#jdacalzvay .gt_font_bold {
   font-weight: bold;
 }
 
-#tmojfijdae .gt_font_italic {
+#jdacalzvay .gt_font_italic {
   font-style: italic;
 }
 
-#tmojfijdae .gt_super {
+#jdacalzvay .gt_super {
   font-size: 65%;
 }
 
-#tmojfijdae .gt_footnote_marks {
+#jdacalzvay .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tmojfijdae .gt_asterisk {
+#jdacalzvay .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tmojfijdae .gt_indent_1 {
+#jdacalzvay .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tmojfijdae .gt_indent_2 {
+#jdacalzvay .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tmojfijdae .gt_indent_3 {
+#jdacalzvay .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tmojfijdae .gt_indent_4 {
+#jdacalzvay .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tmojfijdae .gt_indent_5 {
+#jdacalzvay .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tmojfijdae .katex-display {
+#jdacalzvay .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tmojfijdae div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jdacalzvay div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3370,14 +3398,14 @@ F(x; \mu, b) =
 </ul></li>
 <li>例）すべてのチャンクに<code>dpi: 300</code>、<code>dev: ragg_png</code>オプションを付けたい場合</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb60-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> タイトル</span></span>
-<span id="cb60-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> 作成者名</span></span>
-<span id="cb60-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span></span>
-<span id="cb60-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb60-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dpi</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
-<span id="cb60-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dev</span><span class="kw">:</span><span class="at"> ragg_png</span></span>
-<span id="cb60-8"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb64-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb64-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> タイトル</span></span>
+<span id="cb64-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> 作成者名</span></span>
+<span id="cb64-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span></span>
+<span id="cb64-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb64-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dpi</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
+<span id="cb64-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dev</span><span class="kw">:</span><span class="at"> ragg_png</span></span>
+<span id="cb64-8"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="その他のオプション" class="slide level2">
 <h2>その他のオプション</h2>

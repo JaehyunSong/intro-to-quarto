@@ -7,3 +7,5 @@ metadata-files:
 ---
 
 {{< revealjs file="05_slide_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
+
+{{< revealjs file="05_slide_exercise.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
