@@ -423,10 +423,63 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 
 ![R Cat](https://www.jaysong.net/imgs/favicon.png)
 
+## 図の位置
+
+- `{fig-align=位置}`を追加[（Quarto限定）]{.small}
+   - 例）`"left"`（左）、`"center"`（中央）、`"right"`（右）
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+```markdown
+![](画像URL or パス){fig-align="left"}
+```
+:::
+
+::: {.column width=50%}
+**Output:**
+
+![](figs/rcat.png){width="100px" fig-align="left"}
+:::
+::::
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+```markdown
+![](画像URL or パス){fig-align="center"}
+```
+:::
+
+::: {.column width=50%}
+**Output:**
+
+![](figs/rcat.png){width="100px" fig-align="center"}
+:::
+::::
+
+:::: {.columns}
+::: {.column width=50%}
+**Input:**
+
+```markdown
+![](画像URL or パス){fig-align="right"}
+```
+:::
+
+::: {.column width=50%}
+**Output:**
+
+![](figs/rcat.png){width="100px" fig-align="right"}
+:::
+::::
+
 ## 図の大きさ
 
 - `{width=図の幅}`を追加[（Quarto限定）]{.small}
-   -  例）`300`（300ピクセル）、`1in`（1インチ）、`25%`（画面の25%）
+   -  例）`300px`[（300ピクセル; `px`は省略可）]{.small}、`1in`[（1インチ）]{.small}、`25%`[（画面の25%）]{.small}
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -450,6 +503,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 
 ## 数式
 
+<!-- inline と display -->
 文中数式は`$数式$`、独立した行の数式は`$$`で囲む。
 
 :::: {.columns}
@@ -464,7 +518,7 @@ QuartoのMarkdown記法は以下の記法をほとんど内包し、+ $\alpha$�
 ::: {.column width=50%}
 **Output:**
 
-文中の数式の例：$e = mc^2$
+文中の数式：$e = mc^2$
 :::
 ::::
 

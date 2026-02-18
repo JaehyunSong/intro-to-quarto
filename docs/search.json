@@ -721,7 +721,7 @@
     "href": "03_markdown_slide.html#図の大きさ",
     "title": "3/ Markdown文法の基礎",
     "section": "図の大きさ",
-    "text": "図の大きさ\n\n{width=図の幅}を追加（Quarto限定）\n\n例）300（300ピクセル）、1in（1インチ）、25%（画面の25%）\n\n\n\n\nInput:\n![Tiny cat](画像URL){width=30}\n\n![Big cat](画像URL){width=100}\n\nOutput:\n\n\n\nTiny cat\n\n\n\n\n\nBig cat"
+    "text": "図の大きさ\n\n{width=図の幅}を追加（Quarto限定）\n\n例）300px（300ピクセル; pxは省略可）、1in（1インチ）、25%（画面の25%）\n\n\n\n\nInput:\n![Tiny cat](画像URL){width=30}\n\n![Big cat](画像URL){width=100}\n\nOutput:\n\n\n\nTiny cat\n\n\n\n\n\nBig cat"
   },
   {
     "objectID": "03_markdown_slide.html#数式",
@@ -1148,7 +1148,7 @@
     "href": "05_slide_slide.html#フラグメント",
     "title": "5/ スライドの作成",
     "section": "フラグメント",
-    "text": "フラグメント\nFragment"
+    "text": "フラグメント\n{.fragment .フラグメントクラス}（fade-in、fade-out、highlight-redなど）\n\n詳細はhttps://quarto.org/docs/presentations/revealjs/advanced.html\n\n\n\nInput:\n::: {.fragment .fade-in}\nフェードイン（最初は非表示）\n:::\n\n::: {.fragment .fade-out}\nフェードアウト（最初は表示）\n:::\n\n::: {.fragment .highlight-red}\n赤色にハイライト（最初は表示）\n:::\n\n::: {.fragment .fade-in-then-out}\nフェードインからアウト（最初は非表示）\n:::\n\n::: {.fragment .fade-right}\n取り消し線（最初は非表示）\n:::\n\nOutput:\n\nフェードイン\n\n\nフェードアウト\n\n\n赤色にハイライト\n\n\nフェードインからアウト\n\n\n取り消し線"
   },
   {
     "objectID": "05_slide_slide.html#テキストの自動サイズ調整",
@@ -1431,6 +1431,27 @@
     "href": "01_intro_slide.html#研究成果の共有ツールとしてのquarto",
     "title": "1/ Quartoとは",
     "section": "研究成果の共有ツールとしてのQuarto",
-    "text": "研究成果の共有ツールとしてのQuarto"
+    "text": "研究成果の共有ツールとしてのQuarto\n研究成果の共有方法\n\n文書（論文、報告書、レポート、書籍、…）\n学会発表のためのスライド、ポスター\n再現/再生可能な研究のための再現用コード\nウェブサイト、ダッシュボード、ウェブアプリケーション\n\nQuartoの役割\nQuarto一つでは以上のすべて（実はほとんど）が作成できる\n\n基礎的なMarkdown知識を身につければonline appendix、supplementary material、Harvard Dataverse用の再現用コードが作成可能\n\n静的ドキュメント（PDF等）だけでなく、HTMLベースの動的ドキュメントも\n\n文書とスライドは片方を作っておけば、少しの修正で切り替えも可能"
+  },
+  {
+    "objectID": "05_slide_slide.html#フラグメント応用",
+    "href": "05_slide_slide.html#フラグメント応用",
+    "title": "5/ スライドの作成",
+    "section": "フラグメント（応用）",
+    "text": "フラグメント（応用）\n\nFade in\n\n\nFade out\n\n\nHighlight red\n\n\nFade in, then out\n\n\nSlide up while fading in"
+  },
+  {
+    "objectID": "05_slide_slide.html#画像のスタック",
+    "href": "05_slide_slide.html#画像のスタック",
+    "title": "5/ スライドの作成",
+    "section": "画像のスタック",
+    "text": "画像のスタック\n:::{.r-stack}環境内に画像の埋め込み後、{.fragment}を追加\n\n{}内にはfig-align、width等も使用可\n\n\n\nInput:\n::: {.r-stack}\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n\n![](画像のパス or URL){.fragment}\n:::\n\nOutput:"
+  },
+  {
+    "objectID": "03_markdown_slide.html#図の位置",
+    "href": "03_markdown_slide.html#図の位置",
+    "title": "3/ Markdown文法の基礎",
+    "section": "図の位置",
+    "text": "図の位置\n\n{fig-align=位置}を追加（Quarto限定）\n\n例）\"left\"（左）、\"center\"（中央）、\"right\"（右）\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"left\"}\n\nOutput:\n\n\n\n\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"center\"}\n\nOutput:\n\n\n\n\n\n\n\n\nInput:\n![](画像URL or パス){fig-align=\"right\"}\n\nOutput:"
   }
 ]

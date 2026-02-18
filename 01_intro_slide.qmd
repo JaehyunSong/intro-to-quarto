@@ -333,6 +333,21 @@ Quarto公式HPの[FAQ for R Markdown Users](https://quarto.org/docs/faq/rmarkdow
 
 ## 研究成果の共有ツールとしてのQuarto
 
+#### 研究成果の共有方法
+
+- [**文書**]{.alert}[（論文、報告書、レポート、書籍、...）]{.small}
+- 学会発表のための[**スライド**]{.alert}、ポスター
+- 再現/再生可能な研究のための[**再現用コード**]{.alert}
+- ウェブサイト、ダッシュボード、ウェブアプリケーション
+
+#### Quartoの役割
+
+Quarto一つでは以上のすべて[（実はほとんど）]{.small}が作成できる
+
+- 基礎的なMarkdown知識を身につければonline appendix、supplementary material、Harvard Dataverse用の再現用コードが作成可能
+   - 静的ドキュメント[（PDF等）]{.small}だけでなく、HTMLベースの動的ドキュメントも
+- 文書とスライドは片方を作っておけば、少しの修正で切り替えも可能
+
 # **3** コース概要
 
 ## コース概要

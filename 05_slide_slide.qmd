@@ -270,9 +270,102 @@ format:
 
 # **3** その他の機能
 
+## 画像のスタック
+
+`:::{.r-stack}`環境内に画像の埋め込み後、`{.fragment}`を追加
+
+- `{}`内には`fig-align`、`width`等も使用可
+
+:::: {.columns}
+::: {.column}
+**Input:**
+
+```{.markdown}
+::: {.r-stack}
+![](画像のパス or URL){.fragment}
+
+![](画像のパス or URL){.fragment}
+
+![](画像のパス or URL){.fragment}
+
+![](画像のパス or URL){.fragment}
+:::
+```
+:::
+
+::: {.column}
+**Output:**
+
+::: {.r-stack}
+![](figs/markdown/rcat_3.png){.fragment width="450"}
+
+![](figs/markdown/rcat_2.png){.fragment width="450"}
+
+![](figs/markdown/rcat_1.png){.fragment width="300"}
+
+![](figs/markdown/rcat_0.png){.fragment width="150"}
+:::
+:::
+::::
+
 ## フラグメント
 
-Fragment
+`{.fragment .フラグメントクラス}`[（`fade-in`、`fade-out`、`highlight-red`など）]{.small}
+
+- 詳細は<https://quarto.org/docs/presentations/revealjs/advanced.html>
+
+:::: {.columns}
+::: {.column width=55%}
+**Input:**
+
+```{.markdown}
+::: {.fragment .fade-in}
+フェードイン（最初は非表示）
+:::
+
+::: {.fragment .fade-out}
+フェードアウト（最初は表示）
+:::
+
+::: {.fragment .highlight-red}
+赤色にハイライト（最初は表示）
+:::
+
+::: {.fragment .fade-in-then-out}
+フェードインからアウト（最初は非表示）
+:::
+
+::: {.fragment .fade-right}
+取り消し線（最初は非表示）
+:::
+```
+
+:::
+
+::: {.column width=45%}
+**Output:**
+
+::: {.fragment .fade-in}
+フェードイン
+:::
+
+::: {.fragment .fade-out}
+フェードアウト
+:::
+
+::: {.fragment .highlight-red}
+赤色にハイライト
+:::
+
+::: {.fragment .fade-in-then-out}
+フェードインからアウト
+:::
+
+::: {.fragment .strike}
+取り消し線
+:::
+:::
+::::
 
 ## テキストの自動サイズ調整
 
