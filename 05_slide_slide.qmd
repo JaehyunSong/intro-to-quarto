@@ -70,9 +70,10 @@ title: 文書のタイトル              # <1>
 subtitle: 文書のサブタイトル       # <1>
 author:                            # <2>
   - name: 宋財泫                   # <2>
-    affiliation: 関西大学          # <2>
     email: song@kansai-u.ac.jp     # <2>
     url: https://www.jaysong.net   # <2>
+  - name: ぽよんぽよん             # <2>
+    email: poyon@poyon.net         # <2>
 date: 1986/10/8                    # <3>
 lang: ja                           # <4>
 ```
@@ -81,6 +82,8 @@ lang: ja                           # <4>
 2. 著者情報
 3. 作成日
 4. スライドの言語
+
+- 著者が1名、かつ氏名のみ表記なら`author: 氏名`だけでもOK
 
 ## フォーマット（例）
 
@@ -105,11 +108,13 @@ format:
 6. コードチャンクの各行に番号を付ける
 7. オートストレッチ^[図の大きさがスライドの残りの空間よりも小さい場合、自動的に拡大する機能]を無効化[（既定値は`ture`）]{.small}
 
+- `logo: 画像のURL or パス`でロゴの挿入可
+
 ## チャンクオプション（例）
 
 すべてのチャンクに同じオプションを付けたい場合
 
-- 個別のチャンクにオプションは`knitr: opts_chunk`より優先する
+- 個別のチャンクオプション[（`#| オブション: ...`）]{.small}は`knitr: opts_chunk`より優先する
 
 ```yaml
 knitr: 
@@ -512,7 +517,7 @@ Firefox、Chrome、Chromium[^edge]の場合[^safari]
 [^safari]: Safariでは使用不可（使用はできるが、見た目が大きく崩れてしまう）
 
 1. スライドをWEBブラウザで開く
-2. `E`キーを教えてPrint Viewモードへ
+2. {{< kbd E >}}キーを教えてPrint Viewモードへ
 3. プリント画面を開く[（Cmd + P[macOS] or Ctrl + P[Windows/Linux]）]{.small}
 4. プリンターを「PDFとして保存」選択
 5. 用紙の向きを横長（landscape）にし、余白を「なし」にする
