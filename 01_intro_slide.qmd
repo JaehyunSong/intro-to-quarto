@@ -20,10 +20,9 @@ metadata-files:
 :::
 
 ::: {.column width=70%}
-- **講義名：**社会科学における因果推論
-- **担当教員：**<ruby>宋<rt>そん</rt></ruby><ruby>財泫<rt>じぇひょん</rt></ruby>
-   - 関西大学総合情報学部　准教授
-   - 博士（政治学）
+- **氏名：**<ruby>宋<rt>そん</rt></ruby><ruby>財泫<rt>じぇひょん</rt></ruby>
+- **所属：**関西大学総合情報学部　准教授
+- 博士（政治学; 神戸大学）
 - <i class="bi bi-house"></i> <https://www.jaysong.net/>
 - <i class="bi bi-envelope"></i> song<i class="bi bi-at"></i>kansai-u.ac.jp
 :::
@@ -36,7 +35,7 @@ metadata-files:
 ![](figs/intro/rmarkdown_logo.png){width=250px fig-align="center"}
 
 - {knitr}[（2012年頃）]{.small}と{rmarkdown}[（2014年頃）]{.small}パッケージの登場
-- Rのコードと結果、文章が一つの文書としてまとめたもの
+- Rのコードと結果、文章が一つの文書としてまとめたものを生成
    - HTML、Microsoft Word、PDF等
 - 外部パッケージを使用することで様々な出力物が作成可能
    - スライド[（{xaringan}）]{.small}、ホームページ[（{blogdown}）]{.small}、書籍[（{bookdown}）]{.small}など
@@ -57,7 +56,7 @@ metadata-files:
 - HTML[（HyperText **Markup** Language）]{.small}が代表的
   - 例1） `<b>`と`</b>`で囲まれた文字は太字として出力される。
   - 例2） `<a>`と`</a>`で囲まれた文字はリンクであり、`<a>`の`href`引数で指定されたリンク先へ飛ばされる。
-- Webブラウザ[（Chrome、Firefox、Edge、Safari等）]{.small}はHTMLをリッチテキストへ変換するレンダリングエンジン[（Gecko、Blink、WebKit等）]{.small}を搭載している
+- Webブラウザ[（Firefox、Chrome、Edge、Safari等）]{.small}はプレーンテキストであるHTMLをリッチテキストへ変換するエンジン[（Gecko、Blink、WebKit等）]{.small}を搭載している
 
 **Input:**
 

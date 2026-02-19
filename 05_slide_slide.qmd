@@ -4,7 +4,6 @@ modified-date: today
 format: 
   revealjs:
     footer: "スライドの作成"
-    chalkboard: true
 metadata-files: 
   - "style/slide.yml"
 ---

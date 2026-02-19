@@ -26,6 +26,7 @@ format:
     code-line-numbers: false
     code-annotations: select
     auto-stretch: false
+    chalkboard: true
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

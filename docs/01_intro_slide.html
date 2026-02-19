@@ -99,6 +99,8 @@
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -213,12 +215,9 @@
 <p><img data-src="figs/intro/profile.png"></p>
 </div><div class="column" style="width:70%;">
 <ul>
-<li><strong>講義名：</strong>社会科学における因果推論</li>
-<li><strong>担当教員：</strong><ruby>宋<rt>そん</rt></ruby><ruby>財泫<rt>じぇひょん</rt></ruby>
-<ul>
-<li>関西大学総合情報学部　准教授</li>
-<li>博士（政治学）</li>
-</ul></li>
+<li><strong>氏名：</strong><ruby>宋<rt>そん</rt></ruby><ruby>財泫<rt>じぇひょん</rt></ruby></li>
+<li><strong>所属：</strong>関西大学総合情報学部　准教授</li>
+<li>博士（政治学; 神戸大学）</li>
 <li><i class="bi bi-house"></i> <a href="https://www.jaysong.net/" class="uri">https://www.jaysong.net/</a></li>
 <li><i class="bi bi-envelope"></i> song<i class="bi bi-at"></i>kansai-u.ac.jp</li>
 </ul>
@@ -238,7 +237,7 @@
 </div>
 <ul>
 <li>{knitr}<span class="small">（2012年頃）</span>と{rmarkdown}<span class="small">（2014年頃）</span>パッケージの登場</li>
-<li>Rのコードと結果、文章が一つの文書としてまとめたもの
+<li>Rのコードと結果、文章が一つの文書としてまとめたものを生成
 <ul>
 <li>HTML、Microsoft Word、PDF等</li>
 </ul></li>
@@ -273,7 +272,7 @@
 <li>例1） <code>&lt;b&gt;</code>と<code>&lt;/b&gt;</code>で囲まれた文字は太字として出力される。</li>
 <li>例2） <code>&lt;a&gt;</code>と<code>&lt;/a&gt;</code>で囲まれた文字はリンクであり、<code>&lt;a&gt;</code>の<code>href</code>引数で指定されたリンク先へ飛ばされる。</li>
 </ul></li>
-<li>Webブラウザ<span class="small">（Chrome、Firefox、Edge、Safari等）</span>はHTMLをリッチテキストへ変換するレンダリングエンジン<span class="small">（Gecko、Blink、WebKit等）</span>を搭載している</li>
+<li>Webブラウザ<span class="small">（Firefox、Chrome、Edge、Safari等）</span>はプレーンテキストであるHTMLをリッチテキストへ変換するエンジン<span class="small">（Gecko、Blink、WebKit等）</span>を搭載している</li>
 </ul>
 <p><strong>Input:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>この文字は<span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>太字<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span>にしましょう。<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">/&gt;</span></span>
@@ -684,6 +683,7 @@ QuartoやR Markdownを使用すると「分析結果」だけでなく「分析�
   <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -706,7 +706,8 @@ QuartoやR Markdownを使用すると「分析結果」だけでなく「分析�
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
 'smaller': false,
  
@@ -878,7 +879,7 @@ QuartoやR Markdownを使用すると「分析結果」だけでなく「分析�
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

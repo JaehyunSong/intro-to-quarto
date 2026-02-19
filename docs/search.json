@@ -824,14 +824,14 @@
     "href": "01_intro_slide.html#自己紹介",
     "title": "1/ Quartoとは",
     "section": "自己紹介",
-    "text": "自己紹介\n\n\n\n\n\n講義名：社会科学における因果推論\n担当教員：宋そん財泫じぇひょん\n\n関西大学総合情報学部　准教授\n博士（政治学）\n\n https://www.jaysong.net/\n songkansai-u.ac.jp"
+    "text": "自己紹介\n\n\n\n\n\n氏名：宋そん財泫じぇひょん\n所属：関西大学総合情報学部　准教授\n博士（政治学; 神戸大学）\n https://www.jaysong.net/\n songkansai-u.ac.jp"
   },
   {
     "objectID": "01_intro_slide.html#まずはr-markdownから",
     "href": "01_intro_slide.html#まずはr-markdownから",
     "title": "1/ Quartoとは",
     "section": "まずはR Markdownから",
-    "text": "まずはR Markdownから\n\n\n\n\n\n\n{knitr}（2012年頃）と{rmarkdown}（2014年頃）パッケージの登場\nRのコードと結果、文章が一つの文書としてまとめたもの\n\nHTML、Microsoft Word、PDF等\n\n外部パッケージを使用することで様々な出力物が作成可能\n\nスライド（{xaringan}）、ホームページ（{blogdown}）、書籍（{bookdown}）など\n\nR + Markdown \\(\\rightarrow\\) Markdownって何?"
+    "text": "まずはR Markdownから\n\n\n\n\n\n\n{knitr}（2012年頃）と{rmarkdown}（2014年頃）パッケージの登場\nRのコードと結果、文章が一つの文書としてまとめたものを生成\n\nHTML、Microsoft Word、PDF等\n\n外部パッケージを使用することで様々な出力物が作成可能\n\nスライド（{xaringan}）、ホームページ（{blogdown}）、書籍（{bookdown}）など\n\nR + Markdown \\(\\rightarrow\\) Markdownって何?"
   },
   {
     "objectID": "01_intro_slide.html#プレーンテキストとリッチテキスト",
@@ -845,7 +845,7 @@
     "href": "01_intro_slide.html#プレーンテキストからリッチテキストへ",
     "title": "1/ Quartoとは",
     "section": "プレーンテキストからリッチテキストへ",
-    "text": "プレーンテキストからリッチテキストへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\nWebブラウザ（Chrome、Firefox、Edge、Safari等）はHTMLをリッチテキストへ変換するレンダリングエンジン（Gecko、Blink、WebKit等）を搭載している\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nOutput:\nこの文字は太字にしましょう。 ここをクリックしてください。"
+    "text": "プレーンテキストからリッチテキストへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\nWebブラウザ（Firefox、Chrome、Edge、Safari等）はプレーンテキストであるHTMLをリッチテキストへ変換するエンジン（Gecko、Blink、WebKit等）を搭載している\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\n&lt;a href = \"https://www.jaysong.net\"&gt;ここ&lt;/a&gt;をクリックしてください。\nOutput:\nこの文字は太字にしましょう。 ここをクリックしてください。"
   },
   {
     "objectID": "01_intro_slide.html#markdownとは",
