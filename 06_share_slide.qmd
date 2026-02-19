@@ -49,6 +49,7 @@ YAMLヘッダーを修正[（`html:`、または`revealjs:`の下）]{.small}
 - ファイルのサイズが非常に大きくなるので注意
    - `embed-resources`：画像[（コードから生成された図を含む）]{.small}、CSS、JavaScript^[数式レンダリングエンジンを除く]等をHTML内に埋め込む
    - `self-contained-math`：数式レンダリングエンジン[（MathJax等）]{.small}を埋め込む
+      - ファイルサイズがかなり大きくなるため注意^[ネットが使えない環境で閲覧する必要がある文書なら`true`が必須だが、それ以外のケースだと`false`（既定値）を推奨]
 
 ````yaml
 format:

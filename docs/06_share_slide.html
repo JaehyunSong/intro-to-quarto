@@ -276,14 +276,17 @@
 <li>ファイルのサイズが非常に大きくなるので注意
 <ul>
 <li><code>embed-resources</code>：画像<span class="small">（コードから生成された図を含む）</span>、CSS、JavaScript<sup>1</sup>等をHTML内に埋め込む</li>
-<li><code>self-contained-math</code>：数式レンダリングエンジン<span class="small">（MathJax等）</span>を埋め込む</li>
+<li><code>self-contained-math</code>：数式レンダリングエンジン<span class="small">（MathJax等）</span>を埋め込む
+<ul>
+<li>ファイルサイズがかなり大きくなるため注意<sup>2</sup></li>
+</ul></li>
 </ul></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self-contained-math</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>数式レンダリングエンジンを除く</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>数式レンダリングエンジンを除く</p></li><li id="fn3"><p>ネットが使えない環境で閲覧する必要がある文書なら<code>true</code>が必須だが、それ以外のケースだと<code>false</code>（既定値）を推奨</p></li></ol></aside></section>
 <section id="pdfファイルの作成" class="slide level2">
 <h2>PDFファイルの作成</h2>
 <ul>
@@ -453,7 +456,7 @@
 <li>それ以外の場合、<code>*_files</code>フォルダーや画像が格納されているフォルダー<sup>1</sup>等も入れる必要がある。</li>
 </ul>
 </div></div>
-<aside><ol class="aside-footnotes"><li id="fn3"><p><code>![](画像のパス)</code>でローカルの画像を埋め込んだ場合など</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn4"><p><code>![](画像のパス)</code>でローカルの画像を埋め込んだ場合など</p></li></ol></aside></section>
 <section id="github-pagesの設定" class="slide level2">
 <h2>GitHub Pagesの設定</h2>
 <ol type="1">
@@ -479,7 +482,7 @@
 <li>Actionsメニューから処理状況が確認できる。</li>
 </ul></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn4"><p>主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが<code>docs</code>フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。</p></li></ol></aside></section></section>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>主にホームページを作成する時に使う。この場合、WebページのHTMLファイルが<code>docs</code>フォルダーに入っていることが多いので、Branchのフォルダーを/(root)でなく、docsに設定することが多い。</p></li></ol></aside></section></section>
 <section>
 <section id="共有時の注意事項" class="title-slide slide level1 center">
 <h1><strong>5</strong> 共有時の注意事項</h1>
@@ -586,7 +589,7 @@ loaded via a namespace (and not attached):
               curl            dagitty         data.table           datasets 
            "7.0.0"            "0.3-4"         "1.18.2.1"            "4.5.2" 
         datawizard                DBI             dbplyr              Deriv 
-           "1.3.0"            "1.2.3"            "2.5.1"            "4.2.0" 
+           "1.3.0"            "1.2.3"            "2.5.2"            "4.2.0" 
               desc           devtools            diffobj             digest 
            "1.4.3"            "2.4.6"            "0.3.6"           "0.6.39" 
               doBy            downlit              dplyr                 DT 
@@ -598,7 +601,7 @@ loaded via a namespace (and not attached):
            fastmap               fmsb        fontawesome            forcats 
            "1.2.0"            "0.7.6"            "0.5.3"            "1.0.1" 
           forecast            foreign            formatR            Formula 
-           "9.0.0"           "0.8-91"             "1.14"            "1.2-5" 
+           "9.0.1"           "0.8-91"             "1.14"            "1.2-5" 
           fracdiff                 fs        gamlss.dist             gargle 
            "1.5-3"            "1.6.6"            "6.1-1"            "1.6.1" 
           generics               gert         ggalluvial             ggbump 
@@ -624,7 +627,7 @@ loaded via a namespace (and not attached):
                hms          htmlTable          htmltools        htmlwidgets 
            "1.1.4"            "2.4.3"            "0.5.9"            "1.6.4" 
             httpuv               httr              httr2                ids 
-          "1.6.16"            "1.4.7"            "1.2.2"            "1.0.1" 
+          "1.6.16"            "1.4.8"            "1.2.2"            "1.0.1" 
             igraph                ini            insight            isoband 
            "2.2.2"            "0.3.1"            "1.4.6"            "0.3.0" 
               jpeg             jpmesh        jpndistrict          jquerylib 
@@ -632,7 +635,7 @@ loaded via a namespace (and not attached):
           jsonlite         juicyjuice         kableExtra         KernSmooth 
            "2.0.0"            "0.1.0"            "1.4.0"          "2.23-26" 
              knitr           labeling     languageserver              later 
-            "1.51"            "0.4.3"           "0.3.16"            "1.4.5" 
+            "1.51"            "0.4.3"           "0.3.16"            "1.4.6" 
          latex2exp            lattice           lazyeval            leaflet 
            "0.9.8"           "0.22-9"            "0.2.2"            "2.2.3" 
  leaflet.providers          lifecycle              lintr               list 
@@ -642,7 +645,7 @@ loaded via a namespace (and not attached):
            lpSolve          lubridate             lwgeom              magic 
           "5.6.23"            "1.9.5"           "0.2-15"            "1.6-1" 
             magick           magrittr    marginaleffects           markdown 
-           "2.9.0"            "2.0.4"           "0.31.0"              "2.0" 
+           "2.9.0"            "2.0.4"           "0.32.0"              "2.0" 
               MASS             Matrix       MatrixModels        matrixStats 
           "7.3-65"            "1.7-4"            "0.5-4"            "1.5.0" 
          mediation            memoise            methods               mgcv 
@@ -650,7 +653,7 @@ loaded via a namespace (and not attached):
     microbenchmark               mime             miniUI              minqa 
            "1.5.0"             "0.13"            "0.1.2"            "1.2.8" 
              minty            mitools             modelr       modelsummary 
-           "0.0.6"              "2.4"           "0.1.11"            "2.5.0" 
+           "0.0.6"              "2.4"           "0.1.11"            "2.6.0" 
            mvtnorm             naniar             NHANES               nlme 
            "1.3-3"            "1.1.0"            "2.1.0"          "3.1-168" 
             nloptr               nnet               norm           numDeriv 
@@ -704,7 +707,7 @@ loaded via a namespace (and not attached):
            shinyjs           showtext         showtextdb         sjlabelled 
            "2.1.1"            "0.9-7"              "3.0"            "1.2.0" 
        sourcetools                 sp            SparseM            spatial 
-         "0.1.7-1"            "2.2-0"           "1.84-2"           "7.3-18" 
+         "0.1.7-1"            "2.2-1"           "1.84-2"           "7.3-18" 
            splines              stats             stats4            stringi 
            "4.5.2"            "4.5.2"            "4.5.2"            "1.8.7" 
            stringr             styler       summarytools             survey 
@@ -761,7 +764,7 @@ loaded via a namespace (and not attached):
 <li>他人に共有する場合、プロジェクトごとに渡す必要があるため非効率的</li>
 </ul></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn5"><p>異なるPC環境でプロジェクトを開くとパッケージが見つからないとのメッセージが表示されるが、この場合、コンソールに<code>renv::repair()</code>を入力すると、<code>renv.lock</code>に記録されている情報を元に環境が再現される。</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>異なるPC環境でプロジェクトを開くとパッケージが見つからないとのメッセージが表示されるが、この場合、コンソールに<code>renv::repair()</code>を入力すると、<code>renv.lock</code>に記録されている情報を元に環境が再現される。</p></li></ol></aside></section>
 <section id="mybinder.org" class="slide level2">
 <h2>mybinder.org</h2>
 <p>再現・再生用のデータセットとコード<span class="small">（またはQuartoファイル）</span>、+ <span class="math inline">\(\alpha\)</span>を格納したGitHubレポジトリをベースに分析環境を生成するサービス</p>
