@@ -894,7 +894,7 @@
     "href": "01_intro_slide.html#文芸的プログラミングのすゝめ",
     "title": "1/ Quartoとは",
     "section": "文芸的プログラミングのすゝめ",
-    "text": "文芸的プログラミングのすゝめ\n\n「手作業」の排除によるエラー防止（自動化）\n分析プロセスの透明化\nバージョン管理システムとの親和性\n環境依存性の記述とポータビリティ\n\n\n\n\n\n\n\n\n\n\n従来のツール（R + Word）\nQuarto\n\n\n\n\nプロセス\n手作業の連続（分断）\nコードによる自動化（統合）\n\n\n変更への対応\n最初からやり直し（高コスト）\n再実行のみ（低コスト）\n\n\n透明性\n操作履歴が見えにくい\nコードですべて可視化される\n\n\n再現性\n低い（人の記憶や手作業に依存）\n高い（データとコードがあれば再現可能）\n\n\n\n\n\\(\\Downarrow\\)\nQuartoやR Markdownを使用すると「分析結果」だけでなく「分析のプロセスそのもの」を成果物として保存・共有できる"
+    "text": "文芸的プログラミングのすゝめ\n\n「手作業」の排除によるエラー防止（自動化）\n分析プロセスの透明化\nバージョン管理システムとの親和性\n\n\n\n\n\n\n\n\n\n\n従来のツール（R + Word）\nQuarto\n\n\n\n\nプロセス\n手作業の連続（分断）\nコードによる自動化（統合）\n\n\n変更への対応\n最初からやり直し（高コスト）\n再実行のみ（低コスト）\n\n\n透明性\n操作履歴が見えにくい\nコードですべて可視化される\n\n\n再現性\n低い（人の記憶や手作業に依存）\n高い（データとコードがあれば再現可能）\n\n\n\n\n\\(\\Downarrow\\)\nQuartoやR Markdownを使用すると「分析結果」だけでなく「分析のプロセスそのもの」を成果物として保存・共有できる"
   },
   {
     "objectID": "01_intro_slide.html#文書生成の流れr-markdownの場合",
@@ -950,7 +950,7 @@
     "href": "01_intro_slide.html#コース資料の入手先",
     "title": "1/ Quartoとは",
     "section": "コース資料の入手先",
-    "text": "コース資料の入手先\n\nhttps://www.jaysong.net/quarto_intro"
+    "text": "コース資料の入手先\n\nhttps://www.jaysong.net/intro-to-quarto"
   },
   {
     "objectID": "01_intro.html",

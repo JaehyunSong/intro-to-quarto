@@ -259,7 +259,6 @@ Quarto/R Markdownは[**文芸的プログラミング**]{.alert}[（literate pro
 - 「手作業」の排除によるエラー防止[（自動化）]{.small}
 - 分析プロセスの透明化
 - バージョン管理システムとの親和性
-- 環境依存性の記述とポータビリティ
 
 | | 従来のツール（R + Word） | Quarto |
 |:---|:---------|:---------|
@@ -372,10 +371,10 @@ Quarto一つでは以上のすべて[（実はほとんど）]{.small}が作成�
 
 ## コース資料の入手先
 
-- <https://www.jaysong.net/quarto_intro>
+- <https://www.jaysong.net/intro-to-quarto>
 
 ```{r}
 #| echo: false
-qrcode::qr_code("https://www.jaysong.net/quarto_intro", ecl = "L") |> 
+qrcode::qr_code("https://www.jaysong.net/intro-to-quarto", ecl = "L") |> 
   plot(col = c(NA, "black"))
 ```
