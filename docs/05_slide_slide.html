@@ -680,25 +680,28 @@
 <img data-src="figs/rcat.png" class="r-stretch quarto-figure-center"><p class="caption">巨大R猫</p></section>
 <section id="コードのハイライト" class="slide level2">
 <h2>コードのハイライト</h2>
-<p>最初は1行目、次は3〜4行目、最後に7行目をハイライト</p>
+<ul>
+<li>通常のチャンク（<code>{r}</code>）だと、チャンクオプションとして使うことも可
+<ul>
+<li>例）<code>#| code-line-numbers: "1|3|5-6"</code></li>
+</ul></li>
+</ul>
 <p><strong>Input:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{.r code-line-numbers="1|3-4|6"}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{.r code-line-numbers="1|3|5-6"}</span></span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ここでデータを読み込みます</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ここでプロットします</span></span>
-<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars <span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ここでプロットします</span></span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Output:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers="1|3-4|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers="1|3|5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb12-2"><a></a></span>
-<span id="cb12-3"><a></a><span class="co"># ここでデータを読み込みます</span></span>
-<span id="cb12-4"><a></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb12-5"><a></a></span>
-<span id="cb12-6"><a></a><span class="co"># ここでプロットします</span></span>
-<span id="cb12-7"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-3"><a></a>data <span class="ot">&lt;-</span> mtcars <span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a><span class="co"># ここでプロットします</span></span>
+<span id="cb12-6"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="背景色" class="slide level2" data-background-color="#3F3F3F">
 <h2>背景（色）</h2>
