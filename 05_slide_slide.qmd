@@ -220,6 +220,27 @@ format:
 
 :::
 
+## 画像の位置
+
+Quartoのマークダウン記法では左、中央、右のみ[（`{fig-align=}`）]{.small}
+
+- `{.absolute}`で任意の位置に図を表示可能[（`top`、`left`等で位置調節; 単位はpx）]{.small}
+
+```{.markdown}
+![](画像パス or URL){.absolute top=200 left=0}
+
+![](画像パス or URL){.absolute top=400 left=50 width="50px"}
+
+![](画像パス or URL){.absolute bottom=0 left=200 width="100px" height="300px"}
+```
+
+![](figs/rcat.png){.absolute top=200 right=150}
+
+![](figs/rcat.png){.absolute top=400 left=50 width="50px"}
+
+![](figs/rcat.png){.absolute bottom=0 left=200 width="100px" height="300px"}
+
+
 ## 隠しスライド
 
 見出し（`#`と`##`）の後ろに`{visibility=}`を追加
@@ -322,6 +343,8 @@ format:
 **Input:**
 
 ```{.markdown}
+フラグメントは上から順番に評価
+
 ::: {.fragment .fade-in}
 フェードイン（最初は非表示）
 :::
@@ -338,7 +361,7 @@ format:
 フェードインからアウト（最初は非表示）
 :::
 
-::: {.fragment .fade-right}
+::: {.fragment .strike}
 取り消し線（最初は非表示）
 :::
 ```
@@ -347,6 +370,8 @@ format:
 
 ::: {.column width=45%}
 **Output:**
+
+フラグメントは上から順番に評価
 
 ::: {.fragment .fade-in}
 フェードイン

@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quartoを使った研究成果と分析プロセスの共有",
-    "section": "",
-    "text": "重要本資料は作成中のものです。\n\n\n\n　本資料は、以下の2026年2月20日に行われる東京大学社会科学研究所計量分析セミナーの「Quartoを使った研究成果と分析プロセスの共」の教材として執筆中のものであり、2026年2月19日の公開を予定しております。現時点では\\(\\alpha\\)版に相当する段階であり、内容に不備や誤りが含まれている可能性が非常に高いです。したがって、本資料の内容に起因するいかなる問題についても、著者（宋）は一切の責任を負いかねます。"
-  },
-  {
     "objectID": "index.html#概要",
     "href": "index.html#概要",
     "title": "Quartoを使った研究成果と分析プロセスの共有",
@@ -162,67 +155,137 @@
     ]
   },
   {
-    "objectID": "05_slide_exercise.html#見出しのルール",
-    "href": "05_slide_exercise.html#見出しのルール",
+    "objectID": "05_slide_exercise.html#改ページについて",
+    "href": "05_slide_exercise.html#改ページについて",
     "title": "Quarto de スライド",
-    "section": "見出しのルール",
-    "text": "見出しのルール\n\n# (レベル1見出し):\n\n新しいセクションの表紙になります（このスライドの前のページ）。\n背景色が変わっているのは data-background-color の効果です。\n\n## (レベル2見出し):\n\n通常のスライドページになります。\n基本的に1つの ## が1枚のスライドに対応します。"
+    "section": "改ページについて",
+    "text": "改ページについて\nスライドの改ページはmarkdownのレベル2ヘッダー（##）を使う。\nページ内の記法はこれまでと変わらない。"
   },
   {
-    "objectID": "05_slide_exercise.html#ショートカットキー",
-    "href": "05_slide_exercise.html#ショートカットキー",
+    "objectID": "05_slide_exercise.html#箇条書き",
+    "href": "05_slide_exercise.html#箇条書き",
     "title": "Quarto de スライド",
-    "section": "ショートカットキー",
-    "text": "ショートカットキー\n\nFF: フルスクリーンモード\nSS: スピーカービュー（ノート表示）\nOO、またはEscEsc: スライド一覧（オーバービュー）\nBB: 画面を暗転（Blackout）\n??: ヘルプの表示"
+    "section": "箇条書き",
+    "text": "箇条書き\n宋のおすすめのとんかつ屋さん（関西版）\n\nふじ井\n京町堀なかむら\n\nとんかつ中村\n\n日月\n勝山\nU.F.O\nとんかつ中村"
   },
   {
-    "objectID": "05_slide_exercise.html#スピーカーノート",
-    "href": "05_slide_exercise.html#スピーカーノート",
+    "objectID": "05_slide_exercise.html#アニメーション付き箇条書き",
+    "href": "05_slide_exercise.html#アニメーション付き箇条書き",
     "title": "Quarto de スライド",
-    "section": "スピーカーノート",
-    "text": "スピーカーノート\nこのスライドには「スピーカーノート」が含まれています。\n\nキーボードの S キー を押してみてください。\n発表者用ウィンドウが立ち上がり、下記のメモが見えるはずです。\n\n\nここがスピーカーノートです。 聴衆には見えませんが、発表者はここを見てカンニングできます。 時間の経過もここで確認できます。"
+    "section": "アニメーション付き箇条書き",
+    "text": "アニメーション付き箇条書き\n全国とんかつランキング（食べログ）\n\n揚雫\n成蔵\nマンジェ\nふじ井"
   },
   {
-    "objectID": "05_slide_exercise.html#増分リスト-incremental",
-    "href": "05_slide_exercise.html#増分リスト-incremental",
+    "objectID": "05_slide_exercise.html#図の位置",
+    "href": "05_slide_exercise.html#図の位置",
     "title": "Quarto de スライド",
-    "section": "増分リスト (Incremental)",
-    "text": "増分リスト (Incremental)\n情報を一度に出さず、順番に表示することで聴衆の注目を集めます。\n\n最初のポイントを表示\nクリックすると次が表示されます\nこれで話の腰を折られません"
+    "section": "図の位置",
+    "text": "図の位置"
   },
   {
-    "objectID": "05_slide_exercise.html#フラグメント-fragments",
-    "href": "05_slide_exercise.html#フラグメント-fragments",
+    "objectID": "05_slide_exercise.html#画像のスタック",
+    "href": "05_slide_exercise.html#画像のスタック",
     "title": "Quarto de スライド",
-    "section": "フラグメント (Fragments)",
-    "text": "フラグメント (Fragments)\nリスト以外のアニメーション制御も可能です。\n\n文の一部を 強調したり、 赤くしたり、 取り消したり できます。\n\n\n\n\n\n\n\nヒント\n\n\nブロック全体をアニメーションさせることも可能です！"
+    "section": "画像のスタック",
+    "text": "画像のスタック"
   },
   {
-    "objectID": "05_slide_exercise.html#段組みレイアウト-columns",
-    "href": "05_slide_exercise.html#段組みレイアウト-columns",
+    "objectID": "05_slide_exercise.html#フラグメント",
+    "href": "05_slide_exercise.html#フラグメント",
     "title": "Quarto de スライド",
-    "section": "2段組みレイアウト (Columns)",
-    "text": "2段組みレイアウト (Columns)\nテキストと画像を左右に並べる定番のレイアウトです。\n\n\n左側のカラム\nここに説明文を書きます。\n箇条書きも可能です：\n\n特徴A\n特徴B\n\n\n右側のカラム\n\n\n\n画像の説明"
+    "section": "フラグメント",
+    "text": "フラグメント\n\nフェードイン（最初は非表示）\n\n\nフェードアウト（最初は表示）\n\n\n赤色にハイライト（最初は表示）\n\n\nフェードインからアウト（最初は非表示）\n\n\nフェードインからアウト（2）（最初は非表示）\n\n\n取り消し線（最初は非表示）"
   },
   {
-    "objectID": "05_slide_exercise.html#テキストの自動サイズ調整",
-    "href": "05_slide_exercise.html#テキストの自動サイズ調整",
+    "objectID": "05_slide_exercise.html#画像の自動サイズ調整",
+    "href": "05_slide_exercise.html#画像の自動サイズ調整",
     "title": "Quarto de スライド",
-    "section": "テキストの自動サイズ調整",
-    "text": "テキストの自動サイズ調整\nr-fit-text クラスを使うと、スライドいっぱいに文字を拡大します。\n\nBIG IMPACT\n\n強調したい一言や、タイトルスライドで有効です。"
+    "section": "画像の自動サイズ調整",
+    "text": "画像の自動サイズ調整"
   },
   {
-    "objectID": "05_slide_exercise.html#タブセット-tabsets",
-    "href": "05_slide_exercise.html#タブセット-tabsets",
+    "objectID": "05_slide_exercise.html#section",
+    "href": "05_slide_exercise.html#section",
     "title": "Quarto de スライド",
-    "section": "タブセット (Tabsets)",
-    "text": "タブセット (Tabsets)\n情報を整理して見せたい場合に便利です。\n\n企画開発リリース\n\n\n\nコンセプトの立案\nターゲットの選定\n\n\n\n\nプロトタイプの作成\nテスト実装\n\n\n\n\n広告展開\nユーザーフィードバック"
+    "section": "",
+    "text": "ご清聴ありがとうございました"
   },
   {
-    "objectID": "05_slide_exercise.html#コードブロックのハイライト",
-    "href": "05_slide_exercise.html#コードブロックのハイライト",
+    "objectID": "05_slide_exercise.html#コードハイライト1",
+    "href": "05_slide_exercise.html#コードハイライト1",
     "title": "Quarto de スライド",
-    "section": "コードブロックのハイライト",
-    "text": "コードブロックのハイライト\n行番号を指定して、コードの特定部分を順番に説明できます。 （次へ進むキーを押して動きを確認してください）\nlibrary(ggplot2)\n\n# ここでデータを読み込みます\ndata &lt;- mtcars\n\n# ここでプロットします\nggplot(data, aes(mpg, wt)) + geom_point()"
+    "section": "コードハイライト（1）",
+    "text": "コードハイライト（1）\nlibrary(ggplot2)\n\n# ここでデータを読み込みます\ndata &lt;- mtcars\n\n# ここでプロットします\nggplot(data, aes(mpg, wt)) + geom_point()"
+  },
+  {
+    "objectID": "05_slide_exercise.html#コードアニメーション",
+    "href": "05_slide_exercise.html#コードアニメーション",
+    "title": "Quarto de スライド",
+    "section": "コードアニメーション",
+    "text": "コードアニメーション\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "05_slide_exercise.html#コードアニメーション-1",
+    "href": "05_slide_exercise.html#コードアニメーション-1",
+    "title": "Quarto de スライド",
+    "section": "コードアニメーション",
+    "text": "コードアニメーション\nlibrary(ggplot2)\n\n# ここでデータを読み込みます\ndata &lt;- mtcars"
+  },
+  {
+    "objectID": "05_slide_exercise.html#コードアニメーション-2",
+    "href": "05_slide_exercise.html#コードアニメーション-2",
+    "title": "Quarto de スライド",
+    "section": "コードアニメーション",
+    "text": "コードアニメーション\nlibrary(ggplot2)\n\n# ここでデータを読み込みます\ndata &lt;- mtcars\n\n# ここでプロットします\nggplot(data, aes(mpg, wt)) + geom_point()"
+  },
+  {
+    "objectID": "05_slide_exercise.html#スライドの背景色",
+    "href": "05_slide_exercise.html#スライドの背景色",
+    "title": "Quarto de スライド",
+    "section": "スライドの背景（色）",
+    "text": "スライドの背景（色）"
+  },
+  {
+    "objectID": "05_slide_exercise.html#スライドの背景画像",
+    "href": "05_slide_exercise.html#スライドの背景画像",
+    "title": "Quarto de スライド",
+    "section": "スライドの背景（画像）",
+    "text": "スライドの背景（画像）"
+  },
+  {
+    "objectID": "05_slide_exercise.html#画面の切替効果1",
+    "href": "05_slide_exercise.html#画面の切替効果1",
+    "title": "Quarto de スライド",
+    "section": "画面の切替効果（1）",
+    "text": "画面の切替効果（1）\nfadeの場合"
+  },
+  {
+    "objectID": "05_slide_exercise.html#画面の切替効果2",
+    "href": "05_slide_exercise.html#画面の切替効果2",
+    "title": "Quarto de スライド",
+    "section": "画面の切替効果（2）",
+    "text": "画面の切替効果（2）\nslideの場合"
+  },
+  {
+    "objectID": "05_slide_exercise.html#画面の切替効果3",
+    "href": "05_slide_exercise.html#画面の切替効果3",
+    "title": "Quarto de スライド",
+    "section": "画面の切替効果（3）",
+    "text": "画面の切替効果（3）\nconvexの場合"
+  },
+  {
+    "objectID": "05_slide_exercise.html#画面の切替効果4",
+    "href": "05_slide_exercise.html#画面の切替効果4",
+    "title": "Quarto de スライド",
+    "section": "画面の切替効果（4）",
+    "text": "画面の切替効果（4）\nconcaveの場合"
+  },
+  {
+    "objectID": "05_slide_exercise.html#画面の切替効果5",
+    "href": "05_slide_exercise.html#画面の切替効果5",
+    "title": "Quarto de スライド",
+    "section": "画面の切替効果（5）",
+    "text": "画面の切替効果（5）\nzoomの場合"
   },
   {
     "objectID": "04_document_slide.html#yamlヘッダーの構成要素の一部",
@@ -1207,6 +1270,13 @@
     "text": "箇条書きのアニメーション（結果）\n宋が訪問したことのある店のみ紹介（順不同）\n\n蔵木（牛モツつけ麺）\nまんしゅう（じゃんめん+白ご飯）\n鶏と魚（メニューがよく変わる）\nチョンマゲ（ラーメン零）\nとさの家（ラーメン+のり多め+硬め濃いめ少なめ）\n呑兵衛屋台（しじみラーメン）\n谷口食堂（鍋焼きラーメン）"
   },
   {
+    "objectID": "05_slide_slide.html#画像の位置",
+    "href": "05_slide_slide.html#画像の位置",
+    "title": "5/ スライドの作成",
+    "section": "画像の位置",
+    "text": "画像の位置\nQuartoのマークダウン記法では左、中央、右のみ（{fig-align=}）\n\n{.absolute}で任意の位置に図を表示可能（top、left等で位置調節; 単位はpx）\n\n![](画像パス or URL){.absolute top=200 left=0}\n\n![](画像パス or URL){.absolute top=400 left=50 width=\"50px\"}\n\n![](画像パス or URL){.absolute bottom=0 left=200 width=\"100px\" height=\"300px\"}"
+  },
+  {
     "objectID": "05_slide_slide.html#隠しスライド",
     "href": "05_slide_slide.html#隠しスライド",
     "title": "5/ スライドの作成",
@@ -1239,7 +1309,7 @@
     "href": "05_slide_slide.html#フラグメント",
     "title": "5/ スライドの作成",
     "section": "フラグメント",
-    "text": "フラグメント\n{.fragment .フラグメントクラス}（fade-in、fade-out、highlight-redなど）\n\n詳細はhttps://quarto.org/docs/presentations/revealjs/advanced.html\n\n\n\nInput:\n::: {.fragment .fade-in}\nフェードイン（最初は非表示）\n:::\n\n::: {.fragment .fade-out}\nフェードアウト（最初は表示）\n:::\n\n::: {.fragment .highlight-red}\n赤色にハイライト（最初は表示）\n:::\n\n::: {.fragment .fade-in-then-out}\nフェードインからアウト（最初は非表示）\n:::\n\n::: {.fragment .fade-right}\n取り消し線（最初は非表示）\n:::\n\nOutput:\n\nフェードイン\n\n\nフェードアウト\n\n\n赤色にハイライト\n\n\nフェードインからアウト\n\n\n取り消し線"
+    "text": "フラグメント\n{.fragment .フラグメントクラス}（fade-in、fade-out、highlight-redなど）\n\n詳細はhttps://quarto.org/docs/presentations/revealjs/advanced.html\n\n\n\nInput:\nフラグメントは上から順番に評価\n\n::: {.fragment .fade-in}\nフェードイン（最初は非表示）\n:::\n\n::: {.fragment .fade-out}\nフェードアウト（最初は表示）\n:::\n\n::: {.fragment .highlight-red}\n赤色にハイライト（最初は表示）\n:::\n\n::: {.fragment .fade-in-then-out}\nフェードインからアウト（最初は非表示）\n:::\n\n::: {.fragment .strike}\n取り消し線（最初は非表示）\n:::\n\nOutput:\nフラグメントは上から順番に評価\n\nフェードイン\n\n\nフェードアウト\n\n\n赤色にハイライト\n\n\nフェードインからアウト\n\n\n取り消し線"
   },
   {
     "objectID": "05_slide_slide.html#テキストの自動サイズ調整",
@@ -1516,54 +1586,5 @@
       "その他の内容",
       "テンプレート"
     ]
-  },
-  {
-    "objectID": "05_slide_exercise.html#改ページについて",
-    "href": "05_slide_exercise.html#改ページについて",
-    "title": "Quarto de スライド",
-    "section": "改ページについて",
-    "text": "改ページについて\nスライドの改ページはmarkdownのレベル2ヘッダー（##）を使う。\nページ内の記法はこれまでと変わらない。"
-  },
-  {
-    "objectID": "05_slide_exercise.html#箇条書き",
-    "href": "05_slide_exercise.html#箇条書き",
-    "title": "Quarto de スライド",
-    "section": "箇条書き",
-    "text": "箇条書き\n宋のおすすめのとんかつ屋さん（関西版）\n\nふじ井\n京町堀なかむら\n\nとんかつ中村\n\n日月\n勝山\nU.F.O\nとんかつ中村"
-  },
-  {
-    "objectID": "05_slide_exercise.html#アニメーション付き箇条書き",
-    "href": "05_slide_exercise.html#アニメーション付き箇条書き",
-    "title": "Quarto de スライド",
-    "section": "アニメーション付き箇条書き",
-    "text": "アニメーション付き箇条書き\n全国とんかつランキング！\n\n揚雫\n成蔵\nマンジェ\nふじ井"
-  },
-  {
-    "objectID": "05_slide_exercise.html#このスライドは見せたくない",
-    "href": "05_slide_exercise.html#このスライドは見せたくない",
-    "title": "Quarto de スライド",
-    "section": "このスライドは見せたくない",
-    "text": "このスライドは見せたくない\n\nふじ井のロイヤル・マンガリッツァのメンチカツは事前予約が必要"
-  },
-  {
-    "objectID": "05_slide_exercise.html#画像のスタック",
-    "href": "05_slide_exercise.html#画像のスタック",
-    "title": "Quarto de スライド",
-    "section": "画像のスタック",
-    "text": "画像のスタック"
-  },
-  {
-    "objectID": "05_slide_exercise.html#フラグメント",
-    "href": "05_slide_exercise.html#フラグメント",
-    "title": "Quarto de スライド",
-    "section": "フラグメント",
-    "text": "フラグメント"
-  },
-  {
-    "objectID": "05_slide_exercise.html#section",
-    "href": "05_slide_exercise.html#section",
-    "title": "Quarto de スライド",
-    "section": "",
-    "text": "次は「シェア」編です"
   }
 ]

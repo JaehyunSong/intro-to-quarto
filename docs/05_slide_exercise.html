@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -182,13 +248,19 @@
 </section>
 <section id="アニメーション付き箇条書き" class="slide level2">
 <h2>アニメーション付き箇条書き</h2>
-<p>全国とんかつランキング！</p>
+<p>全国とんかつランキング（食べログ）</p>
 <ol type="1">
 <li class="fragment">揚雫</li>
 <li class="fragment">成蔵</li>
 <li class="fragment">マンジェ</li>
 <li class="fragment">ふじ井</li>
 </ol>
+</section>
+<section id="図の位置" class="slide level2">
+<h2>図の位置</h2>
+<p><img data-src="figs/rcat.png" class="absolute" style="top: 200px; right: 150px; "></p>
+<p><img data-src="figs/rcat.png" class="absolute" style="top: 400px; left: 50px; width: 50px; "></p>
+<p><img data-src="figs/rcat.png" class="absolute" style="left: 200px; bottom: 0px; width: 100px; height: 300px; "></p>
 </section></section>
 <section>
 <section id="quartoスライドの機能" class="title-slide slide level1 center" data-visibility="uncounted">
@@ -198,18 +270,107 @@
 
 <section id="画像のスタック" class="slide level2">
 <h2>画像のスタック</h2>
+<div class="r-stack">
+<p><img data-src="figs/markdown/rcat_3.png" class="fragment"></p>
+<p><img data-src="figs/markdown/rcat_1.png" class="fragment"></p>
+<p><img data-src="figs/rcat.png" class="fragment"></p>
+</div>
 </section>
 <section id="フラグメント" class="slide level2">
 <h2>フラグメント</h2>
+<div class="fragment fade-in">
+<p>フェードイン（最初は非表示）</p>
+</div>
+<div class="fragment fade-out">
+<p>フェードアウト（最初は表示）</p>
+</div>
+<div class="fragment highlight-red">
+<p>赤色にハイライト（最初は表示）</p>
+</div>
+<div class="fragment fade-in-then-out">
+<p>フェードインからアウト（最初は非表示）</p>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<p>フェードインからアウト（2）（最初は非表示）</p>
+</div>
+<div class="fragment strike">
+<p>取り消し線（最初は非表示）</p>
+</div>
 </section>
+<section id="画像の自動サイズ調整" class="slide level2">
+<h2>画像の自動サイズ調整</h2>
+
+<img data-src="figs/rcat.png" class="r-image-stretch quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section" class="slide level2" data-visibility="uncounted">
 <h2></h2>
 <div class="r-fit-text" style="position:absolute; top:40%;">
-<p>次は「シェア」編です</p>
+<p>ご清聴ありがとうございました</p>
 </div>
+</section>
+<section id="コードハイライト1" class="slide level2">
+<h2>コードハイライト（1）</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="1|3-4|6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb1-4"><a></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="co"># ここでプロットします</span></span>
+<span id="cb1-7"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="コードアニメーション" class="slide level2" data-auto-animate="true" data-visibility="uncounted">
+<h2 data-id="quarto-animate-title">コードアニメーション</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="コードアニメーション-1" class="slide level2" data-auto-animate="true" data-visibility="uncounted">
+<h2 data-id="quarto-animate-title">コードアニメーション</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2" class="hljs-ln-code"><a></a></span>
+<span id="cb3-3" class="hljs-ln-code"><a></a><span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb3-4" class="hljs-ln-code"><a></a>data <span class="ot">&lt;-</span> mtcars</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="コードアニメーション-2" class="slide level2" data-auto-animate="true" data-visibility="uncounted">
+<h2 data-id="quarto-animate-title">コードアニメーション</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2" class="hljs-ln-code"><a></a></span>
+<span id="cb4-3" class="hljs-ln-code"><a></a><span class="co"># ここでデータを読み込みます</span></span>
+<span id="cb4-4" class="hljs-ln-code"><a></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb4-5" class="hljs-ln-code"><a></a></span>
+<span id="cb4-6" class="hljs-ln-code"><a></a><span class="co"># ここでプロットします</span></span>
+<span id="cb4-7" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="スライドの背景色" class="slide level2" data-background-color="cornsilk">
+<h2>スライドの背景（色）</h2>
+</section>
+<section id="スライドの背景画像" class="slide level2" data-background-image="figs/rcat.png" data-background-size="250px" data-background-repeat="repeat" data-background-opacity="0.5">
+<h2>スライドの背景（画像）</h2>
+</section>
+<section id="画面の切替効果1" class="slide level2" data-transition="fade">
+<h2>画面の切替効果（1）</h2>
+<p><code>fade</code>の場合</p>
+
+<img data-src="05_slide_exercise_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section id="画面の切替効果2" class="slide level2" data-transition="slide">
+<h2>画面の切替効果（2）</h2>
+<p><code>slide</code>の場合</p>
+
+<img data-src="05_slide_exercise_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="画面の切替効果3" class="slide level2" data-transition="convex">
+<h2>画面の切替効果（3）</h2>
+<p><code>convex</code>の場合</p>
+
+<img data-src="05_slide_exercise_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="画面の切替効果4" class="slide level2" data-transition="concave">
+<h2>画面の切替効果（4）</h2>
+<p><code>concave</code>の場合</p>
+
+<img data-src="05_slide_exercise_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="画面の切替効果5" class="slide level2" data-transition="zoom">
+<h2>画面の切替効果（5）</h2>
+<p><code>zoom</code>の場合</p>
 
 
-</section></section>
+
+<img data-src="05_slide_exercise_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -427,6 +588,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
