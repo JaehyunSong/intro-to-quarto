@@ -5,6 +5,7 @@ project:
     - "*.qmd"
   resources:
     - "robots.txt"
+    - "data/intro-to-quarto.zip"
 
 lang: ja
 

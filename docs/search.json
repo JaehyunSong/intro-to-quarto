@@ -796,21 +796,21 @@
     "href": "02_install_slide.html#posit-cloud",
     "title": "2/ 実習環境の構築",
     "section": "posit Cloud",
-    "text": "posit Cloud\nRStudioの開発元であるposit社が提供するクラウド版R & RStudio\n\n無料版の制約（詳細はhttps://posit.cloud/plans）\n\n月間利用時間の上限あり（25時間）\nスペックの制限（1GB RAM / 1CPU）\n\n導入手順\n\nposit Cloud（https://posit.cloud/）のアカウント登録&ログイン\n右のNew ProjectでNew RStudio Project\n\nRStudioの設定は以下の設定を参照\nhttps://www.jaysong.net/RBook/r_customize.html\n\nDefault working directoryは「/cloud/project」のままでOK\n\n\n画面上段の「Untitled Project」をクリックし、プロジェクト名を指定\n{quarto}、{ragg}パッケージをインストールする"
+    "text": "posit Cloud\nRStudioの開発元であるposit社が提供するクラウド版R & RStudio\n\n無料版の制約（詳細はhttps://posit.cloud/plans）\n\n月間利用時間の上限あり（25時間）\nスペックの制限（1GB RAM / 1CPU）\n\n導入手順\n\nposit Cloud（https://posit.cloud/）のアカウント登録&ログイン\n右のNew ProjectでNew RStudio Project\n\nRStudioの設定は以下の設定を参照\nhttps://www.jaysong.net/RBook/r_customize.html\n\nDefault working directoryは「/cloud/project」のままでOK\n\n\n画面上段の「Untitled Project」をクリックし、プロジェクト名を指定\n{quarto}、{magick}、{ragg}、{tidyverse}等のパッケージをインストールする"
   },
   {
     "objectID": "02_install_slide.html#mybinder.org",
     "href": "02_install_slide.html#mybinder.org",
     "title": "2/ 実習環境の構築",
     "section": "mybinder.org",
-    "text": "mybinder.org\nウェブでRStudioが使えるサービス（事前登録不要）\n\nアカウントの概念が存在しないため、アクセスする度にすべて初期化される。\n\n再現/再生用データ&コードの共有に適したサービス\nとりあえず手軽にQuartoを味わっていみないのであればオススメ\n\n次頁で紹介するJDCat分析ツールより劣るが、安定性は\n起動方法\n\nhttps://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD \\(\\leftarrow\\) クリック"
+    "text": "mybinder.org\nウェブでRStudioが使えるサービス（事前登録不要）\n\nアカウントの概念が存在しないため、アクセスする度にすべて初期化される。\n\n再現/再生用データ&コードの共有に適したサービス\nとりあえず手軽にQuartoを味わっていみないのであればオススメ\n\n次頁で紹介するJDCat分析ツールより劣るが、安定性は\n起動方法\n\nhttps://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD"
   },
   {
     "objectID": "02_install_slide.html#jdcat分析ツール",
     "href": "02_install_slide.html#jdcat分析ツール",
     "title": "2/ 実習環境の構築",
     "section": "JDCat分析ツール",
-    "text": "JDCat分析ツール\n\nmybinder.orgと同じサービスだが、継続的に使用可能なサービス\n\nただし、サーバーが不安定になることが多々ある\n\n導入手順（サーバーの立ち上げ）\n\nOrthrosのホームーページでアカウント登録\n\nhttps://ui.orthros.gakunin.nii.ac.jp/\n必ず.ac.jp、または.go.jpのメールアドレスを使うこと\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD\n所属機関を「Orthros」とし、ログインする。\n数分待てばOK\n\n立ち上げたサーバーの起動（再利用）\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n所属機関を「Orthros」とし、ログインする。\n表示されているURLをクリックする\n\nURLが表示されていない場合、右の「Start」をクリック"
+    "text": "JDCat分析ツール\n\nmybinder.orgと同じサービスだが、継続的に使用可能なサービス\n\nクラウド版を使うなら一番おすすめ（スペック的に）\n\n導入手順（サーバーの立ち上げ）\n\nOrthrosのホームーページでアカウント登録\n\nhttps://ui.orthros.gakunin.nii.ac.jp/\n必ず.ac.jp、または.go.jpのメールアドレスを使うこと\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD\n所属機関を「Orthros」とし、ログインする。\n数分待てばOK\n\n立ち上げたサーバーの起動（再利用）\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n所属機関を「Orthros」とし、ログインする。\n表示されているURLをクリックする\n\nURLが表示されていない場合、右の「Start」をクリック"
   },
   {
     "objectID": "02_install_slide.html#プロジェクトの作成-1",
