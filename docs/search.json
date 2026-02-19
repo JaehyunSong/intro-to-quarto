@@ -1372,7 +1372,7 @@
     "href": "05_slide_slide.html#pdf形式のスライドbeamerの作成",
     "title": "5/ スライドの作成",
     "section": "PDF形式のスライド（Beamer）の作成",
-    "text": "PDF形式のスライド（Beamer）の作成\nformat: beamerを使用\n\nreveal.jsとは見た目が大きく変わることに注意\n\nカスタマイズのためにはBeamer知識が必要\nBeamerについてはGoogle等で「beamer 入門」で検索（多少のTeXの知識も必要）\n\n\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis                # 好きなテーマを使おう\n    classoption:\n      - aspectratio=169              # 縦横比4:3ならこの行を削除\n      - 10pt\n    mainfont: \"Noto Sans CJK JP\"     # フォントは自分のPC環境に合わせて修正\n    CJKmainfont: \"Noto Sans CJK JP\"  # フォントは自分のPC環境に合わせて修正\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}"
+    "text": "PDF形式のスライド（Beamer）の作成\nformat: beamerを使用1\n\nreveal.jsとは見た目が大きく変わることに注意\n\nカスタマイズのためにはBeamer + TeX知識が必要\n\n\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis                # 好きなテーマを使おう\n    classoption:\n      - aspectratio=169              # 縦横比4:3ならこの行を削除\n      - 10pt\n    mainfont: \"Noto Sans CJK JP\"     # フォントは自分のPC環境に合わせて修正\n    CJKmainfont: \"Noto Sans CJK JP\"  # フォントは自分のPC環境に合わせて修正\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}\n\n\n実習環境がmybinder.orgの場合、コンパイルできない可能性がある"
   },
   {
     "objectID": "06_share_slide.html#通常のhtmlファイルの限界",

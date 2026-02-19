@@ -548,11 +548,10 @@ Firefox、Chrome、Chromium[^edge]の場合[^safari]
 
 ## PDF形式のスライド（Beamer）の作成
 
-`format: beamer`を使用
+`format: beamer`を使用^[実習環境がmybinder.orgの場合、コンパイルできない可能性がある]
 
 - [reveal.jsとは見た目が大きく変わる]{.alert}ことに注意
-   - カスタマイズのためにはBeamer知識が必要
-   - BeamerについてはGoogle等で「beamer 入門」で検索[（多少のTeXの知識も必要）]{.small}
+   - カスタマイズのためにはBeamer + TeX知識が必要
 
 ```{.yaml}
 format: 
