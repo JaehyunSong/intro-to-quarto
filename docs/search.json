@@ -712,7 +712,7 @@
     "href": "03_markdown_slide.html#複数の図表の配置2",
     "title": "3/ Markdown文法の基礎",
     "section": "複数の図表の配置（2）",
-    "text": "複数の図表の配置（2）\n\n#| layoutでカスタムレイアウト　　　　　　　　　　　\n\n\n\nInput:\n```{r}\n#| layout: [[50, 50], [100]]\nplot(1:10)\n\nplot(rnorm(10), type = \"l\")\n```\n\n2行構成で1行目は図2枚を50%、50%の割合、2行目は1枚を配置した例\n\n[49, -2, 49]にすると、49% + 2%の余白 + 49%\n\n\n\nOutput:\nplot(1:10)\nplot(rnorm(10))\nplot(rnorm(10), type = \"l\")"
+    "text": "複数の図表の配置（2）\n\n#| layoutでカスタムレイアウト　　　　　　　　　　　\n\n\n\nInput:\n```{r}\n#| layout: [[50, 50], [100]]\nplot(1:10)\n\nplot(rnorm(10))\n\nplot(rnorm(10), type = \"l\")\n```\n\n2行構成で1行目は図2枚を50%、50%の割合、2行目は1枚を配置した例\n\n[49, -2, 49]にすると、49% + 2%の余白 + 49%\n\n\n\nOutput:\nplot(1:10)\nplot(rnorm(10))\nplot(rnorm(10), type = \"l\")"
   },
   {
     "objectID": "03_markdown_slide.html#複数の図表のキャプション1",

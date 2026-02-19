@@ -1116,6 +1116,8 @@ plot(rnorm(10), type = "l")
 #| layout: [[50, 50], [100]]
 plot(1:10)
 
+plot(rnorm(10))
+
 plot(rnorm(10), type = "l")
 ```
 
