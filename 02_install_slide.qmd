@@ -142,3 +142,22 @@ RStudioの開発元であるposit社が提供するクラウド版R & RStudio
 - プロジェクトの種類はNew Projectか[**Quarto Project**]{.alert}
 - プロジェクトを作る理由、方法は省略[（本講義の前提知識）]{.small}
 - posit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要[（というか自然にプロジェクトが作成される）]{.small}
+
+## サンプルファイルの入手
+
+大したものは入っておりませんが...
+
+### ローカル環境の場合
+
+- ファイルをダウンロードし、プロジェクトフォルダー内に解凍
+   - <https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip>
+
+### クラウド環境の場合
+
+- プロジェクトを開いた状態で以下のコードを実行
+
+```{.r}
+download.file("https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip", "temp.zip")
+unzip("temp.zip")
+file.remove("temp.zip")
+```

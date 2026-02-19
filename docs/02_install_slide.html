@@ -388,6 +388,24 @@
 <li>プロジェクトを作る理由、方法は省略<span class="small">（本講義の前提知識）</span></li>
 <li>posit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要<span class="small">（というか自然にプロジェクトが作成される）</span></li>
 </ul>
+</section>
+<section id="サンプルファイルの入手" class="slide level2">
+<h2>サンプルファイルの入手</h2>
+<p>大したものは入っておりませんが…</p>
+<h3 id="ローカル環境の場合-1">ローカル環境の場合</h3>
+<ul>
+<li>ファイルをダウンロードし、プロジェクトフォルダー内に解凍
+<ul>
+<li><a href="https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip" class="uri">https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip</a></li>
+</ul></li>
+</ul>
+<h3 id="クラウド環境の場合-1">クラウド環境の場合</h3>
+<ul>
+<li>プロジェクトを開いた状態で以下のコードを実行</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip"</span>, <span class="st">"temp.zip"</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"temp.zip"</span>)</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">file.remove</span>(<span class="st">"temp.zip"</span>)</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section></section>
