@@ -166,7 +166,7 @@
     "href": "05_slide_exercise.html#箇条書き",
     "title": "Quarto de スライド",
     "section": "箇条書き",
-    "text": "箇条書き\n宋のおすすめのとんかつ屋さん（関西版）\n\nふじ井\n京町堀なかむら\n\nとんかつ中村\n\n日月\n勝山\nU.F.O\nとんかつ中村"
+    "text": "箇条書き\n宋のおすすめのとんかつ屋さん（関西版）\n\nふじ井\n京町堀なかむら\n\nとんかつ中村\n\n日月\n勝山\nU.F.O\nとんかつ中村\n\n\n3500円で95点を狙うなら「ふじ井」、7000円で97点を狙うなら「京町堀なかむら」"
   },
   {
     "objectID": "05_slide_exercise.html#アニメーション付き箇条書き",
@@ -817,7 +817,7 @@
     "href": "02_install_slide.html#プロジェクトの作成-1",
     "title": "2/ 実習環境の構築",
     "section": "プロジェクトの作成",
-    "text": "プロジェクトの作成\n実習用のプロジェクトを作成する\n\nプロジェクトを作る理由、方法は省略（本講義の前提知識）\nposit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）"
+    "text": "プロジェクトの作成\n実習用のプロジェクトを作成する\n\nプロジェクトの種類はNew ProjectかQuarto Project\nプロジェクトを作る理由、方法は省略（本講義の前提知識）\nposit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）"
   },
   {
     "objectID": "01_intro_slide.html#自己紹介",
@@ -967,7 +967,7 @@
     "href": "02_install.html",
     "title": "実習環境の構築",
     "section": "",
-    "text": "新しいタブで開く\n       \n      \n    \n  \n\na\n\n mybinder.org\n\nb\n\n JDCat分析ツール（起動）\n JDCat分析ツール（サーバー立ち上げ; 1回のみ）\n\nc\n\n Posit Cloud",
+    "text": "新しいタブで開く",
     "crumbs": [
       "2/ 実習環境の導入"
     ]
@@ -1187,7 +1187,7 @@
     "href": "05_slide.html",
     "title": "スライドの作成",
     "section": "",
-    "text": "新しいタブで開く\n       \n      \n    \n  \n     新しいタブで開く",
+    "text": "新しいタブで開く\n       \n      \n    \n  \n\n1 サンプル",
     "crumbs": [
       "5/ スライドの作成"
     ]
@@ -1372,7 +1372,7 @@
     "href": "05_slide_slide.html#pdf形式のスライドbeamerの作成",
     "title": "5/ スライドの作成",
     "section": "PDF形式のスライド（Beamer）の作成",
-    "text": "PDF形式のスライド（Beamer）の作成\nformat: beamerを使用\n\nBeamerについてはGoogle等で「beamer 入門」で検索（多少のTeXの知識も必要）\n\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis                # 好きなテーマを使おう\n    classoption:\n      - aspectratio=169              # 縦横比4:3ならこの行を削除\n      - 10pt\n    mainfont: \"Noto Sans CJK JP\"     # フォントは自分のPC環境に合わせて修正\n    CJKmainfont: \"Noto Sans CJK JP\"  # フォントは自分のPC環境に合わせて修正\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}"
+    "text": "PDF形式のスライド（Beamer）の作成\nformat: beamerを使用\n\nreveal.jsとは見た目が大きく変わることに注意\n\nカスタマイズのためにはBeamer知識が必要\nBeamerについてはGoogle等で「beamer 入門」で検索（多少のTeXの知識も必要）\n\n\nformat: \n  beamer:\n    pdf-engine: lualatex\n    theme: metropolis                # 好きなテーマを使おう\n    classoption:\n      - aspectratio=169              # 縦横比4:3ならこの行を削除\n      - 10pt\n    mainfont: \"Noto Sans CJK JP\"     # フォントは自分のPC環境に合わせて修正\n    CJKmainfont: \"Noto Sans CJK JP\"  # フォントは自分のPC環境に合わせて修正\n    include-in-header: \n      text: |\n        \\usepackage{luatexja}"
   },
   {
     "objectID": "06_share_slide.html#通常のhtmlファイルの限界",

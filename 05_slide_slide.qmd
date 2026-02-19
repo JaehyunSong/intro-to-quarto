@@ -551,7 +551,9 @@ Firefox、Chrome、Chromium[^edge]の場合[^safari]
 
 `format: beamer`を使用
 
-- BeamerについてはGoogle等で「beamer 入門」で検索[（多少のTeXの知識も必要）]{.small}
+- [reveal.jsとは見た目が大きく変わる]{.alert}ことに注意
+   - カスタマイズのためにはBeamer知識が必要
+   - BeamerについてはGoogle等で「beamer 入門」で検索[（多少のTeXの知識も必要）]{.small}
 
 ```{.yaml}
 format: 

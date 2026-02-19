@@ -8,11 +8,3 @@ toc: false
 ---
 
 {{< revealjs file="02_install_slide.html" height="900px" class="ratio ratio-4x3" full-screen-link="true">}}
-
-- a
-   - [<i class="bi bi-window-fullscreen"></i> mybinder.org](https://csrda.iss.u-tokyo.ac.jp/quantitative/seminar/){target="_blank" type="button" class="btn btn-outline-primary"}
-- b
-   - [<i class="bi bi-window-fullscreen"></i> JDCat分析ツール（起動）](https://csrda.iss.u-tokyo.ac.jp/quantitative/seminar/){target="_blank" type="button" class="btn btn-outline-primary"}
-   - [<i class="bi bi-window-fullscreen"></i> JDCat分析ツール（サーバー立ち上げ; 1回のみ）](https://csrda.iss.u-tokyo.ac.jp/quantitative/seminar/){target="_blank" type="button" class="btn btn-outline-primary"}
-- c
-   - [<i class="bi bi-window-fullscreen"></i> Posit Cloud](https://posit.cloud/){target="_blank" type="button" class="btn btn-outline-primary"}

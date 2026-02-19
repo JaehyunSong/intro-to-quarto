@@ -120,14 +120,14 @@ RStudioの開発元であるposit社が提供するクラウド版R & RStudio
 
 - mybinder.orgと同じサービスだが、継続的に使用可能なサービス
    - ただし、サーバーが不安定になることが多々ある
-- 導入手順（サーバーの立ち上げ）
+- 導入手順[（サーバーの立ち上げ）]{.small}
    1. Orthrosのホームーページでアカウント登録
       - <https://ui.orthros.gakunin.nii.ac.jp/>
       - [**必ず**]{.alert}`.ac.jp`、または`.go.jp`のメールアドレスを使うこと
    1. <https://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD>
    1. 所属機関を「Orthros」とし、ログインする。
    1. 数分待てばOK
-- 立ち上げたサーバーの起動（再利用）
+- 立ち上げたサーバーの起動[（再利用）]{.small}
    1. <https://jupyter.cs.rcos.nii.ac.jp/>
    1. 所属機関を「Orthros」とし、ログインする。
    1. 表示されているURLをクリックする
@@ -139,5 +139,6 @@ RStudioの開発元であるposit社が提供するクラウド版R & RStudio
 
 実習用のプロジェクトを作成する
 
-- プロジェクトを作る理由、方法は省略（本講義の前提知識）
-- posit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要（というか自然にプロジェクトが作成される）
+- プロジェクトの種類はNew Projectか[**Quarto Project**]{.alert}
+- プロジェクトを作る理由、方法は省略[（本講義の前提知識）]{.small}
+- posit Cloudはそもそもプロジェクト単位で分析環境が管理されているため、不要[（というか自然にプロジェクトが作成される）]{.small}
