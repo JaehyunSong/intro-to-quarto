@@ -1592,6 +1592,6 @@
     "href": "02_install_slide.html#サンプルファイルの入手",
     "title": "2/ 実習環境の構築",
     "section": "サンプルファイルの入手",
-    "text": "サンプルファイルの入手\n大したものは入っておりませんが…\nローカル環境の場合\n\nファイルをダウンロードし、プロジェクトフォルダー内に解凍\n\nhttps://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip\n\n\nクラウド環境の場合\n\nプロジェクトを開いた状態で以下のコードを実行\n\ndownload.file(\"https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip\", \"temp.zip\")\nunzip(\"temp.zip\")\nfile.remove(\"temp.zip\")"
+    "text": "サンプルファイルの入手\n大したものは入っておりませんが…\n\nローカル環境の場合\n\nファイルをダウンロードし、プロジェクトフォルダー内に解凍\n\nhttps://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip\n\n\nクラウド環境（posit cloud）の場合\n\nプロジェクトを開いた状態で以下のコードを実行\n\ndownload.file(\"https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip\", \"temp.zip\")\nunzip(\"temp.zip\")\nfile.remove(\"temp.zip\")\nクラウド環境（その他）の場合\n\n特になし（レポジトリにサンプルファイル格納済み）"
   }
 ]

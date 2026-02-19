@@ -147,12 +147,14 @@ RStudioの開発元であるposit社が提供するクラウド版R & RStudio
 
 大したものは入っておりませんが...
 
+<br/>
+
 ### ローカル環境の場合
 
 - ファイルをダウンロードし、プロジェクトフォルダー内に解凍
    - <https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip>
 
-### クラウド環境の場合
+### クラウド環境（posit cloud）の場合
 
 - プロジェクトを開いた状態で以下のコードを実行
 
@@ -161,3 +163,7 @@ download.file("https://www.jaysong.net/intro-to-quarto/data/intro-to-quarto.zip"
 unzip("temp.zip")
 file.remove("temp.zip")
 ```
+
+### クラウド環境（その他）の場合
+
+- 特になし（レポジトリにサンプルファイル格納済み）
