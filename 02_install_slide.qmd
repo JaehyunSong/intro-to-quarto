@@ -105,17 +105,6 @@ RStudioの開発元であるposit社が提供するクラウド版R & RStudio
    1. 画面上段の「Untitled Project」をクリックし、プロジェクト名を指定
    1. {quarto}、{ragg}パッケージをインストールする
 
-## mybinder.org
-
-ウェブでRStudioが使えるサービス（事前登録不要）
-
-- アカウントの概念が存在しないため、[アクセスする度にすべて初期化]{.alert}される。
-   - 再現/再生用データ&コードの共有に適したサービス
-   - とりあえず手軽にQuartoを味わっていみないのであればオススメ
-- 次頁で紹介するJDCat分析ツールより劣るが、安定性は<i class="bi bi-hand-thumbs-up"></i>
-- 起動方法
-   - <https://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD> $\leftarrow$ クリック
-
 ## JDCat分析ツール
 
 - mybinder.orgと同じサービスだが、継続的に使用可能なサービス
@@ -132,6 +121,17 @@ RStudioの開発元であるposit社が提供するクラウド版R & RStudio
    1. 所属機関を「Orthros」とし、ログインする。
    1. 表示されているURLをクリックする
       - URLが表示されていない場合、右の「Start」をクリック
+
+## mybinder.org
+
+ウェブでRStudioが使えるサービス（事前登録不要）
+
+- アカウントの概念が存在しないため、[アクセスする度にすべて初期化]{.alert}される。
+   - 再現/再生用データ&コードの共有に適したサービス
+   - とりあえず手軽にQuartoを味わっていみないのであればオススメ
+- 次頁で紹介するJDCat分析ツールより劣るが、安定性は<i class="bi bi-hand-thumbs-up"></i>
+- 起動方法
+   - <https://mybinder.org/v2/gh/JaehyunSong/quarto_binder/HEAD> $\leftarrow$ クリック
 
 # **4** プロジェクトの作成
 

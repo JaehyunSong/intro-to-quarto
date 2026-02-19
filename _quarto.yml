@@ -47,6 +47,12 @@ website:
           - text: "私たちのR"
             href: https://www.jaysong.net/RBook
             target: _blank
+          - text: "JDCat分析ツール"
+            href: https://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/quarto_binder/HEAD
+            target: _blank
+          - text: "Posit Cloud"
+            href: https://posit.cloud/
+            target: _blank
           - text: "mybinder.org"
             href: https://mybinder.org/v2/gh/JaehyunSong/quarto_binder/main?urlpath=rstudio
             target: _blank
