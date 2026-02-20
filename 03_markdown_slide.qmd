@@ -1195,6 +1195,7 @@ plot(pressure)
 #|   - "virginica"
 gt(iris[1:5, 1:2])
 gt(iris[51:55, 1:2])
+gt(iris[101:105, 1:2])
 ```
 :::
 
