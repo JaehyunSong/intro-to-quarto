@@ -649,7 +649,7 @@
     "href": "03_markdown_slide.html#dependsonチャンク間の依存関係",
     "title": "3/ Markdown文法の基礎",
     "section": "dependson：チャンク間の依存関係",
-    "text": "dependson：チャンク間の依存関係\n\n依存されるチャンクにラベルを指定し、依存するチャンクにはdependsonオプションを追加\n\n\n\nExample:\n```{r}\n#| label: my-chunk-01\nx &lt;- 1:10\n```\n\n```{r}\n#| cache: true\n#| dependson: my-chunk-01\nsum(x)\n```\n\n\nこれで問題なく作動したが、2026年1月12月現在、宋の環境では機能しない\n#| autodep: trueをすると、自動的に依存関係を検知してくれるらしいが、これも機能しない"
+    "text": "dependson：チャンク間の依存関係\n\n依存されるチャンクにラベルを指定し、依存するチャンクにはdependsonオプションを追加\n\n\n\nExample:\n```{r}\n#| label: my-chunk-01\n#| cache: true\nx &lt;- 1:10\n```\n\n```{r}\n#| cache: true\n#| dependson: my-chunk-01\nsum(x)\n```\n\n注意点\n\n依存される・・・側のチャンクにも|# cache: trueを付ける\n\n依存するチャンク、されるチャンク、両方をキャッシング（caching）したいとdependsonは機能しない"
   },
   {
     "objectID": "03_markdown_slide.html#echoevalコード評価結果の出力",

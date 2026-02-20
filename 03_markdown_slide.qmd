@@ -791,9 +791,10 @@ sum(x)
 ::: {.column width=50%}
 **Example:**
 
-````
+````{.markdown}
 ```{{r}}
 #| label: my-chunk-01
+#| cache: true
 x <- 1:10
 ```
 
@@ -806,8 +807,10 @@ sum(x)
 :::
 
 ::: {.column width=50%}
-- これで問題なく作動したが、2026年1月12月現在、宋の環境では機能しない
-- `#| autodep: true`をすると、自動的に依存関係を検知してくれるらしいが、これも機能しない
+[**注意点**]{.alert}
+
+- 依存<ruby>される<rt>・・・</rt></ruby>側のチャンクにも`|# cache: true`を付ける
+   - 依存するチャンク、されるチャンク、両方をキャッシング[（caching）]{.small}したいと`dependson`は機能しない
 :::
 ::::
 
